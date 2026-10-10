@@ -1,0 +1,12 @@
+[
+  { "n": "d01_o3d_mesh", "u": "https://www.open3d.org/docs/release/python_api/open3d.geometry.TriangleMesh.html" },
+  { "n": "d02_o3d_pts", "u": "https://www.open3d.org/docs/release/python_api/open3d.geometry.PointCloud.html" },
+  { "n": "d03_o3d_surfrec", "u": "https://www.open3d.org/docs/release/tutorial/geometry/surface_reconstruction.html" },
+  { "n": "d04_o3d_tsdf", "u": "https://www.open3d.org/docs/release/python_api/open3d.pipelines.integration.ScalableTSDFVolume.html" },
+  { "n": "d05_o3d_reg", "u": "https://www.open3d.org/docs/release/tutorial/pipelines/multiway_registration.html" },
+  { "n": "d06_trimesh", "u": "https://trimesh.org/trimesh.html" },
+  { "n": "d07_cgal_alpha", "u": "https://doc.cgal.org/latest/Alpha_shapes_3/index.html" },
+  { "n": "d08_pcl_filters", "u": "https://pointclouds.org/documentation/group__filters.html" },
+  { "n": "d09_o3d_icp", "u": "https://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html" },
+  { "n": "d10_o3d_recon_sys", "u": "https://www.open3d.org/docs/release/tutorial/reconstruction_system/index.html" }
+]

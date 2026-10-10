@@ -1,0 +1,20 @@
+{
+  "q-einscan": "EinScan 手持三维扫描仪 精度 价格",
+  "q-revopoint": "Revopoint POP 3 structured light 3D scanner accuracy price",
+  "q-keyence": "激光轮廓仪 价格 精度 基恩士 轮廓测量仪",
+  "q-realsense": "Intel RealSense D435 depth accuracy short range small object minimum depth",
+  "q-orbbec": "奥比中光 深度相机 精度 三维测量",
+  "q-openscan": "OpenScan 3D scanner open source hardware cost accuracy photogrammetry",
+  "q-ciclop": "BQ Ciclop FreeLSS open source 3D scanner laser triangulation accuracy",
+  "q-github": "github open source structured light 3D scanner volume measurement",
+  "q-dws": "快递 DWS 体积测量 一体机 精度 价格",
+  "q-fruit": "水果 分级 体积测量 机器视觉 精度 分选机",
+  "q-relic": "文物 三维扫描 数字化 精度 成本",
+  "q-opt4": "第四届全国大学生光电设计竞赛 复杂表面物体体积 非接触光学测量",
+  "q-optall": "全国大学生光电设计竞赛 官网 历届赛题 评分",
+  "q-nuedc": "全国大学生电子设计竞赛 体积测量 题目 获奖",
+  "q-diy": "结构光 三维重建 DIY DLP 投影仪 成本 精度",
+  "q-iphone": "iPhone LiDAR accuracy small object 3D scan volume",
+  "q-tiaozhan": "挑战杯 机械创新设计大赛 体积测量 作品",
+  "q-disq": "光电设计竞赛 取消成绩 违规 商用设备"
+}
