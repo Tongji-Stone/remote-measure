@@ -4,9 +4,13 @@
   { "n": "d03_o3d_surfrec", "u": "https://www.open3d.org/docs/release/tutorial/geometry/surface_reconstruction.html" },
   { "n": "d04_o3d_tsdf", "u": "https://www.open3d.org/docs/release/python_api/open3d.pipelines.integration.ScalableTSDFVolume.html" },
   { "n": "d05_o3d_reg", "u": "https://www.open3d.org/docs/release/tutorial/pipelines/multiway_registration.html" },
-  { "n": "d06_trimesh", "u": "https://trimesh.org/trimesh.html" },
+  { "n": "d06_trimesh_repair", "u": "https://trimesh.org/trimesh.repair.html" },
   { "n": "d07_cgal_alpha", "u": "https://doc.cgal.org/latest/Alpha_shapes_3/index.html" },
   { "n": "d08_pcl_filters", "u": "https://pointclouds.org/documentation/group__filters.html" },
-  { "n": "d09_o3d_icp", "u": "https://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html" },
-  { "n": "d10_o3d_recon_sys", "u": "https://www.open3d.org/docs/release/tutorial/reconstruction_system/index.html" }
+  { "n": "d09_nist_sl_errors", "u": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=927473" },
+  { "n": "d10_fpp_precision", "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10613632/" },
+  { "n": "d11_hq_camera", "u": "https://www.waveshare.net/shop/Raspberry-Pi-HQ-Camera.htm" },
+  { "n": "d12_volumetric_acc", "u": "https://www.revopoint3d.com/blogs/blog/understanding-volumetric-accuracy" },
+  { "n": "d13_opencv_calib", "u": "https://docs.opencv.org/4.13.0/dc/dbb/tutorial_py_calibration.html" },
+  { "n": "d14_o3d_icp", "u": "https://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html" }
 ]

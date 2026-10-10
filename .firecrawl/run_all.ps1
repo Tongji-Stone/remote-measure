@@ -1,5 +1,6 @@
-param([string]$Mode = "search", [string]$Filter = "", [string]$Tag = "x", [int]$Delay = 6)
-$file = if ($Mode -eq "search") { ".firecrawl\queries.json" } else { ".firecrawl\scrapes.json" }
+param([string]$Mode = "search", [string]$Filter = "", [string]$Tag = "x", [int]$Delay = 6, [string]$File = "")
+if ($File -eq "") { $File = if ($Mode -eq "search") { "queries.json" } else { "scrapes.json" } }
+$file = ".firecrawl\$File"
 $all = Get-Content -Raw -Encoding UTF8 $file | ConvertFrom-Json
 foreach ($item in $all) {
   if ($Filter -ne "" -and $item.n -notlike "$Filter*") { continue }
