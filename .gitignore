@@ -1,1 +1,14 @@
 *.firecrawl
+data/
+
+# Local build output and Python environments
+build/
+build-local-*/
+upload-local-*/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Camera captures and separate local checkout
+tools/hik-preview/capture_*.png
+/procam-calibration/
