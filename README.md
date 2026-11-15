@@ -6,7 +6,7 @@
 
 ## 结构光实验数据
 
-原始采集图像和试验结果存放在[同济云盘](https://yunpan.tongji.edu.cn/link/AAAE071E5B2DF34896A8C3A9EE4046624D)，不提交到 Git。链接允许预览和下载，有效期至 **2026 年 12 月 15 日 15:54（北京时间）**，到期后需要重新分享。
+原始采集图像和完整试验数据存放在[同济云盘](https://yunpan.tongji.edu.cn/link/AAAE071E5B2DF34896A8C3A9EE4046624D)，不提交到 Git。链接允许预览和下载，有效期至 **2026 年 12 月 15 日 15:54（北京时间）**，到期后需要重新分享。较小的试验参数、点云及预览图保存在 [results/structured-light](results/structured-light/README.md)。
 
 数据分为三个压缩包，解压到项目的 `data/` 目录后会合并到 `data/procam_calibration/`：
 
