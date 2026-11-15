@@ -1,4 +1,5 @@
 *.firecrawl
+/.firecrawl/
 data/
 
 # Local build output and Python environments
@@ -8,6 +9,31 @@ upload-local-*/
 __pycache__/
 *.py[cod]
 .venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+*.o
+*.d
+*.elf
+*.map
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local environment and editor settings
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Accidental empty file
+/1)
 
 # Camera captures and separate local checkout
 tools/hik-preview/capture_*.png
