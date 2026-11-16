@@ -1,0 +1,18 @@
+{
+  "axis_xz_assumed_camera_vertical": [
+    -24.39271460866533,
+    393.1543093095671
+  ],
+  "axis_fit_train_views": "0000 to 0005",
+  "axis_fit_train_rmse_mm_approx": 1.2213,
+  "axis_fit_holdout_view_0006_rmse_mm_approx": 7.1644,
+  "notes": "Nominal angles not measured; marker correspondences and calibration unverified; axis parallel camera Y; ROI includes possible non-object points; 360-degree repeat view not merged.",
+  "repeat_view_median_nearest_mm": [
+    3.7317178222752614,
+    3.662634476328159
+  ],
+  "repeat_view_fraction_within_3mm": [
+    0.41316502392068705,
+    0.4201775542669472
+  ]
+}

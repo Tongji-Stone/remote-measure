@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--white-threshold', type=int, default=5)
     parser.add_argument('--roi', type=int, nargs=4, metavar=('X1', 'Y1', 'X2', 'Y2'))
     parser.add_argument('--output', default='experimental_point_cloud.ply')
+    parser.add_argument('--pixel-map', help='Optional output NPZ mapping camera pixels to reconstructed XYZ')
     args = parser.parse_args()
     if args.step < 1:
         parser.error('step must be positive')
@@ -82,12 +83,14 @@ def main():
     projector_z = (points @ rot.T + trans.reshape(1, 3))[:, 2]
     keep = np.isfinite(points).all(axis=1) & (points[:, 2] > 0) & (projector_z > 0)
     points = points[keep].astype('<f4')
+    if args.pixel_map:
+        np.savez_compressed(args.capture / args.pixel_map, camera_pixels=cam_points[keep].astype(np.int32), xyz=points)
     brightness = white[valid][keep]
     out = args.capture / args.output
     records = np.empty(len(points), dtype=[('xyz', '<f4', (3,)), ('rgb', 'u1', (3,))])
     records['xyz'] = points
     records['rgb'] = brightness[:, None]
-    header = (f'ply\nformat binary_little_endian 1.0\ncomment Experimental unverified calibration; units mm if board squares 20 mm\nelement vertex {len(points)}\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nend_header\n')
+    header = (f'ply\nformat binary_little_endian 1.0\ncomment Experimental unverified calibration; scale follows calibration board square size\nelement vertex {len(points)}\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nend_header\n')
     with out.open('wb') as f:
         f.write(header.encode('ascii'))
         records.tofile(f)

@@ -1,0 +1,244 @@
+{
+  "square_size_mm_assumed": 10,
+  "projection_resolution": [
+    1280,
+    720
+  ],
+  "train_camera_rms": 0.8193007446573233,
+  "train_projector_rms": 1.3592643298589975,
+  "train_stereo_rms": 1.34093809971415,
+  "camera_matrix": [
+    [
+      2416.5715316566943,
+      0.0,
+      1246.3507776955491
+    ],
+    [
+      0.0,
+      2412.8949191494844,
+      1010.9930156246868
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "projector_matrix": [
+    [
+      1651.5883734861463,
+      0.0,
+      629.6006864622736
+    ],
+    [
+      0.0,
+      1480.3165093846624,
+      -270.9992247865946
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rotation": [
+    [
+      0.9830694113844252,
+      0.029819356883865597,
+      -0.18079086911487663
+    ],
+    [
+      -0.047207210942416714,
+      0.9945790433831692,
+      -0.09264990932568805
+    ],
+    [
+      0.17704804894524528,
+      0.09961592452039335,
+      0.9791479234245607
+    ]
+  ],
+  "translation_mm": [
+    78.15670189700094,
+    111.16680707652027,
+    -26.88852819011162
+  ],
+  "views": [
+    {
+      "capture": "160951",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 11.726621627807617,
+      "projector_sse": 118.29222106933594,
+      "camera_rms": 0.43143579363822937,
+      "projector_rms": 1.3702752590179443,
+      "projector_median": 1.0305708646774292
+    },
+    {
+      "capture": "161029",
+      "split": "validation",
+      "camera_points": 63,
+      "projector_points": 59,
+      "camera_sse": 18.801809310913086,
+      "projector_sse": 89.6513900756836,
+      "camera_rms": 0.5462979078292847,
+      "projector_rms": 1.232686161994934,
+      "projector_median": 0.9240897297859192
+    },
+    {
+      "capture": "161052",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 10.572277069091797,
+      "projector_sse": 175.9467010498047,
+      "camera_rms": 0.409650981426239,
+      "projector_rms": 1.6711686849594116,
+      "projector_median": 1.0144680738449097
+    },
+    {
+      "capture": "161113",
+      "split": "test",
+      "camera_points": 63,
+      "projector_points": 45,
+      "camera_sse": 12.701241493225098,
+      "projector_sse": 102.0028305053711,
+      "camera_rms": 0.44900667667388916,
+      "projector_rms": 1.5055662393569946,
+      "projector_median": 0.8687812685966492
+    },
+    {
+      "capture": "161142",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 148.14317321777344,
+      "projector_sse": 217.02279663085938,
+      "camera_rms": 1.533453345298767,
+      "projector_rms": 1.8560189008712769,
+      "projector_median": 1.477171778678894
+    },
+    {
+      "capture": "161200",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 85.01904296875,
+      "projector_sse": 337.60089111328125,
+      "camera_rms": 1.1616835594177246,
+      "projector_rms": 2.3148961067199707,
+      "projector_median": 1.4593755006790161
+    },
+    {
+      "capture": "161237",
+      "split": "validation",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 29.947208404541016,
+      "projector_sse": 564.3583984375,
+      "camera_rms": 0.6894581317901611,
+      "projector_rms": 2.9930033683776855,
+      "projector_median": 2.147974729537964
+    },
+    {
+      "capture": "161309",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 34.372886657714844,
+      "projector_sse": 297.9067077636719,
+      "camera_rms": 0.7386483550071716,
+      "projector_rms": 2.1745522022247314,
+      "projector_median": 1.4717897176742554
+    },
+    {
+      "capture": "161359",
+      "split": "test",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 48.82527160644531,
+      "projector_sse": 347.21392822265625,
+      "camera_rms": 0.8803433179855347,
+      "projector_rms": 2.3476226329803467,
+      "projector_median": 1.6802347898483276
+    },
+    {
+      "capture": "161416",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 63,
+      "camera_sse": 8.907231330871582,
+      "projector_sse": 172.68104553222656,
+      "camera_rms": 0.3760114908218384,
+      "projector_rms": 1.6555871963500977,
+      "projector_median": 0.9723339676856995
+    },
+    {
+      "capture": "161432",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 59,
+      "camera_sse": 22.89618492126465,
+      "projector_sse": 446.759521484375,
+      "camera_rms": 0.6028528213500977,
+      "projector_rms": 2.7517621517181396,
+      "projector_median": 1.4165043830871582
+    },
+    {
+      "capture": "161501",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 57,
+      "camera_sse": 33.64534378051758,
+      "projector_sse": 238.28358459472656,
+      "camera_rms": 0.7307893633842468,
+      "projector_rms": 2.0446059703826904,
+      "projector_median": 1.8049802780151367
+    },
+    {
+      "capture": "161556",
+      "split": "validation",
+      "camera_points": 63,
+      "projector_points": 41,
+      "camera_sse": 33.469886779785156,
+      "projector_sse": 276.1141662597656,
+      "camera_rms": 0.7288813591003418,
+      "projector_rms": 2.595089912414551,
+      "projector_median": 2.1410741806030273
+    },
+    {
+      "capture": "161638",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 38,
+      "camera_sse": 29.37491226196289,
+      "projector_sse": 343.93402099609375,
+      "camera_rms": 0.682838499546051,
+      "projector_rms": 3.0084707736968994,
+      "projector_median": 2.7919445037841797
+    },
+    {
+      "capture": "161719",
+      "split": "test",
+      "camera_points": 63,
+      "projector_points": 25,
+      "camera_sse": 32.029632568359375,
+      "projector_sse": 119.00952911376953,
+      "camera_rms": 0.7130265831947327,
+      "projector_rms": 2.1818296909332275,
+      "projector_median": 2.131878614425659
+    },
+    {
+      "capture": "161753",
+      "split": "train",
+      "camera_points": 63,
+      "projector_points": 34,
+      "camera_sse": 38.23199462890625,
+      "projector_sse": 96.04891204833984,
+      "camera_rms": 0.7790102958679199,
+      "projector_rms": 1.6807641983032227,
+      "projector_median": 1.3663698434829712
+    }
+  ]
+}

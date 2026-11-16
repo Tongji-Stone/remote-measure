@@ -2,6 +2,7 @@
 import ctypes
 import sys
 import time
+import json
 from pathlib import Path
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
@@ -15,10 +16,13 @@ WAIT_SECONDS = 0.01
 
 
 def save_frame(path, img):
+    start = time.perf_counter()
     ok, encoded = cv2.imencode('.png', img, [cv2.IMWRITE_PNG_COMPRESSION, 1])
+    encoded_at = time.perf_counter()
     if not ok:
         raise RuntimeError(f'Image encoding failed: {path}')
     encoded.tofile(str(path))
+    return {'encode_seconds': encoded_at - start, 'write_seconds': time.perf_counter() - encoded_at}
 
 
 def monitors():
@@ -35,9 +39,11 @@ def monitors():
     return rects
 
 
-def get_frame(cam):
+def get_frame(cam, timing=None):
     frame = MV_FRAME_OUT()
+    start = time.perf_counter()
     check(cam.MV_CC_GetImageBuffer(frame, 4000), 'Receiving frame')
+    acquired = time.perf_counter()
     try:
         width, height = frame.stFrameInfo.nWidth, frame.stFrameInfo.nHeight
         buf = (c_ubyte * (width * height))()
@@ -51,10 +57,15 @@ def get_frame(cam):
         return np.frombuffer(buf, dtype=np.uint8).reshape(height, width).copy()
     finally:
         cam.MV_CC_FreeImageBuffer(frame)
+        if timing is not None:
+            timing['buffer_wait_seconds'] = acquired - start
+            timing['conversion_and_release_seconds'] = time.perf_counter() - acquired
 
 
-def main():
-    test_once = '--test-once' in sys.argv
+def main(mode='calibration', nominal_step_degrees=None):
+    if mode not in ('calibration', 'object'):
+        raise ValueError('Unknown capture mode')
+    test_once = mode == 'calibration' and '--test-once' in sys.argv
     screens = monitors()
     if len(screens) != 2:
         raise RuntimeError(f'Need exactly two extended displays; found {len(screens)}.')
@@ -65,11 +76,15 @@ def main():
     if not ok:
         raise RuntimeError('Could not generate Gray code patterns')
     patterns = list(patterns) + [np.full((h, w), 255, np.uint8), np.zeros((h, w), np.uint8)]
+    preview_window = ('Object scan - SPACE capture, Q quit' if mode == 'object'
+                      else 'Calibration preview - SPACE capture, Q quit')
     print(f'{len(patterns)} patterns per pose. SPACE: capture, E: exposure x2, D: exposure /2, Q: quit.', flush=True)
     check(MvCamera.MV_CC_Initialize(), 'SDK initialization')
     cam = MvCamera()
     created = opened = grabbing = False
     saved_enums = {}
+    session = None
+    session_info = None
     try:
         devices = MV_CC_DEVICE_INFO_LIST()
         check(MvCamera.MV_CC_EnumDevices(MV_USB_DEVICE | MV_GIGE_DEVICE, devices), 'Enumerating cameras')
@@ -91,12 +106,23 @@ def main():
         cv2.waitKey(500)
         check(cam.MV_CC_StartGrabbing(), 'Start grabbing')
         grabbing = True
-        cv2.namedWindow('Calibration preview - SPACE capture, Q quit', cv2.WINDOW_NORMAL)
+        cv2.namedWindow(preview_window, cv2.WINDOW_NORMAL)
+        if mode == 'object':
+            base = OUT.parent / 'object_scans'
+            base.mkdir(parents=True, exist_ok=True)
+            session = base / ('scan_' + datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
+            session.mkdir()
+            session_info = {'mode': 'manual_turntable', 'created': datetime.now().isoformat(timespec='seconds'),
+                            'projector_pixels': [w, h], 'pattern_count': len(patterns),
+                            'fixed_wait_seconds': WAIT_SECONDS, 'nominal_step_degrees': nominal_step_degrees,
+                            'angle_measurement': 'nominal, manually entered; not measured' if nominal_step_degrees is not None else 'not recorded', 'views': []}
+            print('Object scan folder:', session, flush=True)
+            print('SPACE: capture one stationary view. Rotate manually only after Capture complete.', flush=True)
         while True:
             img = get_frame(cam)
             scale = min(1., 1200/img.shape[1], 800/img.shape[0])
             view = cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
-            cv2.imshow('Calibration preview - SPACE capture, Q quit', view)
+            cv2.imshow(preview_window, view)
             key = 32 if test_once else cv2.waitKey(1) & 255
             if key in (27, ord('q'), ord('Q')):
                 break
@@ -110,35 +136,94 @@ def main():
                 continue
             if key != 32:
                 continue
-            OUT.mkdir(parents=True, exist_ok=True)
-            prefix = 'test_' if test_once else 'capture_'
-            folder = OUT / (prefix + datetime.now().strftime('%Y%m%d_%H%M%S'))
+            if mode == 'object':
+                folder = session / f"view_{len(session_info['views']):04d}"
+                frameinfo = {'folder': folder.name, 'started': datetime.now().isoformat(timespec='seconds'),
+                             'status': 'capturing', 'nominal_angle_degrees': (len(session_info['views']) * nominal_step_degrees if nominal_step_degrees is not None else None)}
+                for parameter, field in [('ExposureTime', 'exposure_us'), ('Gain', 'gain_db')]:
+                    value = MVCC_FLOATVALUE()
+                    if cam.MV_CC_GetFloatValue(parameter, value) == 0:
+                        frameinfo[field] = value.fCurValue
+                session_info['views'].append(frameinfo)
+            else:
+                OUT.mkdir(parents=True, exist_ok=True)
+                prefix = 'test_' if test_once else 'capture_'
+                folder = OUT / (prefix + datetime.now().strftime('%Y%m%d_%H%M%S'))
             folder.mkdir()
+            if mode == 'object':
+                (session / 'session.json').write_text(json.dumps(session_info, ensure_ascii=False, indent=2), encoding='utf-8')
             print('Capturing:', folder, flush=True)
             start = time.monotonic()
+            frame_times = []
+            camera_rate = MVCC_FLOATVALUE()
+            resulting_fps = float(camera_rate.fCurValue) if cam.MV_CC_GetFloatValue('ResultingFrameRate', camera_rate) == 0 else None
             pending = deque()
             with ThreadPoolExecutor(max_workers=2) as writer:
                 for i, pattern in enumerate(patterns):
+                    timings = {'frame': i}
+                    tick = time.perf_counter()
                     cv2.imshow('Projector', pattern)
                     cv2.waitKey(int(WAIT_SECONDS * 1000))
+                    timings['projection_display_wait_seconds'] = time.perf_counter() - tick
                     # Clear queued frames, then discard one in-flight frame before saving.
+                    tick = time.perf_counter()
                     check(cam.MV_CC_ClearImageBuffer(), 'Clear camera buffer')
-                    get_frame(cam)
-                    img = get_frame(cam)
+                    timings['clear_buffer_seconds'] = time.perf_counter() - tick
+                    timings['discarded_frame'] = {}
+                    get_frame(cam, timings['discarded_frame'])
+                    timings['saved_frame'] = {}
+                    img = get_frame(cam, timings['saved_frame'])
+                    tick = time.perf_counter()
                     preview = cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
-                    cv2.imshow('Calibration preview - SPACE capture, Q quit', preview)
+                    cv2.imshow(preview_window, preview)
                     cv2.waitKey(1)
-                    pending.append(writer.submit(save_frame, folder / f'graycode_{i:02d}.png', img))
+                    timings['preview_seconds'] = time.perf_counter() - tick
+                    tick = time.perf_counter()
+                    pending.append((writer.submit(save_frame, folder / f'graycode_{i:02d}.png', img), timings))
                     if len(pending) >= 4:
-                        pending.popleft().result()
+                        future, saved_timing = pending.popleft()
+                        saved_timing['background_save'] = future.result()
+                    timings['writer_queue_wait_seconds'] = time.perf_counter() - tick
+                    frame_times.append(timings)
                     print(f'  {i+1}/{len(patterns)}', flush=True)
+                tick = time.perf_counter()
                 while pending:
-                    pending.popleft().result()
+                    future, saved_timing = pending.popleft()
+                    saved_timing['background_save'] = future.result()
+                final_writer_wait = time.perf_counter() - tick
+            if mode == 'object':
+                frameinfo['status'] = 'complete'
+                frameinfo['finished'] = datetime.now().isoformat(timespec='seconds')
+                (session / 'session.json').write_text(json.dumps(session_info, ensure_ascii=False, indent=2), encoding='utf-8')
             cv2.imshow('Projector', patterns[-2])
             cv2.waitKey(int(WAIT_SECONDS * 1000))
             check(cam.MV_CC_ClearImageBuffer(), 'Clear camera buffer')
             get_frame(cam)
-            print(f'Capture complete in {time.monotonic()-start:.1f} s. Move the board, then press SPACE again.', flush=True)
+            elapsed = time.monotonic() - start
+            totals = {
+                'projection_display_wait_seconds': sum(t['projection_display_wait_seconds'] for t in frame_times),
+                'buffer_clear_seconds': sum(t['clear_buffer_seconds'] for t in frame_times),
+                'camera_buffer_wait_seconds': sum(t[k]['buffer_wait_seconds'] for t in frame_times for k in ('discarded_frame', 'saved_frame')),
+                'frame_conversion_seconds': sum(t[k]['conversion_and_release_seconds'] for t in frame_times for k in ('discarded_frame', 'saved_frame')),
+                'preview_seconds': sum(t['preview_seconds'] for t in frame_times),
+                'writer_queue_wait_seconds': sum(t['writer_queue_wait_seconds'] for t in frame_times),
+                'final_writer_wait_seconds': final_writer_wait,
+                'background_encode_seconds_sum': sum(t['background_save']['encode_seconds'] for t in frame_times),
+                'background_disk_write_seconds_sum': sum(t['background_save']['write_seconds'] for t in frame_times),
+            }
+            report = {'total_seconds': elapsed, 'frame_count': len(frame_times), 'resulting_fps_reported_at_start': resulting_fps,
+                      'totals': totals, 'frames': frame_times,
+                      'note': 'Background encode/write run concurrently; their sums overlap capture time and must not be added to wall time. Total includes final projector reset.'}
+            (folder / 'timing.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+            if mode == 'object':
+                frameinfo['timing_file'] = folder.name + '/timing.json'
+                (session / 'session.json').write_text(json.dumps(session_info, ensure_ascii=False, indent=2), encoding='utf-8')
+            print(f'Capture complete in {elapsed:.2f} s. Timing: {folder / "timing.json"}', flush=True)
+            print(f"Projection wait: {totals['projection_display_wait_seconds']:.2f}s; camera wait: {totals['camera_buffer_wait_seconds']:.2f}s; "
+                  f"conversion: {totals['frame_conversion_seconds']:.2f}s; preview: {totals['preview_seconds']:.2f}s; "
+                  f"waiting for saves: {totals['writer_queue_wait_seconds'] + final_writer_wait:.2f}s. "
+                  f"Encode+write worker time (overlapping): {totals['background_encode_seconds_sum'] + totals['background_disk_write_seconds_sum']:.2f}s.", flush=True)
+            print('Move the object/board, then press SPACE again.', flush=True)
             if test_once:
                 break
     finally:
