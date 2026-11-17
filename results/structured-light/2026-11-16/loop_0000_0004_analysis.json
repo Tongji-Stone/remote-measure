@@ -1,0 +1,53 @@
+{
+  "roi_pixels": [
+    720,
+    1010,
+    1370,
+    1590
+  ],
+  "depth_mm": [
+    345,
+    390
+  ],
+  "face_point_counts": [
+    30771,
+    36187
+  ],
+  "nominal_square_size_mm": 10,
+  "holdout_0004_to_0000_before": {
+    "median_mm": 3.4277639612255077,
+    "p90_mm": 6.4368995825191595,
+    "within_3mm_fraction": 0.4372720238753178,
+    "count": 9047
+  },
+  "holdout_0004_to_0000_after": {
+    "median_mm": 0.6742693170246062,
+    "p90_mm": 1.1304230351030893,
+    "within_3mm_fraction": 1.0,
+    "count": 9047
+  },
+  "holdout_0000_to_0004_before": {
+    "median_mm": 3.5490132198302393,
+    "p90_mm": 6.509949552736216,
+    "within_3mm_fraction": 0.42584167424931757,
+    "count": 7693
+  },
+  "holdout_0000_to_0004_after": {
+    "median_mm": 0.628343492794338,
+    "p90_mm": 1.061640891431263,
+    "within_3mm_fraction": 0.9987001169894709,
+    "count": 7693
+  },
+  "fit_yaw_degrees": 8.942550523594402,
+  "fit_translation_mm": [
+    -0.2201068807605356,
+    -0.1456022212314243,
+    -4.043015435425983
+  ],
+  "fit_rotation_center_camera_mm": [
+    0,
+    0,
+    365
+  ],
+  "note": "The fit aligns one nearly planar face only. Rotation and in-plane translation are ambiguous; a held-out point subset is not an independent scan. Scale and calibration unverified; transform must not be interpreted as measured turntable error or applied to other views without independent evidence."
+}
