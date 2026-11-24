@@ -19,6 +19,7 @@ def main():
     parser.add_argument('capture', type=Path)
     parser.add_argument('calibration', type=Path)
     parser.add_argument('--step', type=int, default=2)
+    parser.add_argument('--ignore-finest-bits', type=int, choices=(0, 1, 2), default=0)
     parser.add_argument('--black-threshold', type=int, default=40)
     parser.add_argument('--white-threshold', type=int, default=5)
     parser.add_argument('--roi', type=int, nargs=4, metavar=('X1', 'Y1', 'X2', 'Y2'))
@@ -54,7 +55,11 @@ def main():
     idx = 0
     for nbits in (math.ceil(math.log2(w)), math.ceil(math.log2(h))):
         code = np.zeros(white.shape, np.uint16)
-        for _ in range(nbits):
+        for bit in range(nbits):
+            if bit >= nbits - args.ignore_finest_bits:
+                code <<= 1
+                idx += 2
+                continue
             a = image(files[idx])[::args.step, ::args.step].astype(np.int16)
             b = image(files[idx+1])[::args.step, ::args.step].astype(np.int16)
             delta = a-b
@@ -64,6 +69,8 @@ def main():
         binary = code.copy()
         for shift in (1, 2, 4, 8):
             binary ^= binary >> shift
+        block = 1 << args.ignore_finest_bits
+        binary = (binary // block) * block
         grays.append(binary)
     px, py = grays
     valid &= (px < w) & (py < h)
@@ -73,6 +80,7 @@ def main():
         raise ValueError('No valid decoded pixels')
     cam_points = np.column_stack((xx * args.step, yy * args.step)).astype(np.float64)
     proj_points = np.column_stack((px[valid], py[valid])).astype(np.float64)
+    proj_points += ((1 << args.ignore_finest_bits) - 1) / 2.0
     cam_norm = cv2.undistortPoints(cam_points.reshape(-1, 1, 2), camera, cd).reshape(-1, 2)
     proj_norm = cv2.undistortPoints(proj_points.reshape(-1, 1, 2), projector, pd).reshape(-1, 2)
     proj0 = np.hstack((np.eye(3), np.zeros((3, 1))))
@@ -83,6 +91,8 @@ def main():
     projector_z = (points @ rot.T + trans.reshape(1, 3))[:, 2]
     keep = np.isfinite(points).all(axis=1) & (points[:, 2] > 0) & (projector_z > 0)
     points = points[keep].astype('<f4')
+    if not len(points):
+        raise ValueError('No points remain in front of both camera and projector; check calibration, Gray-code ordering, projector mapping and capture synchronization')
     if args.pixel_map:
         np.savez_compressed(args.capture / args.pixel_map, camera_pixels=cam_points[keep].astype(np.int32), xyz=points)
     brightness = white[valid][keep]
