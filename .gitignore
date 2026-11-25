@@ -38,3 +38,5 @@ Thumbs.db
 # Camera captures and separate local checkout
 tools/hik-preview/capture_*.png
 /procam-calibration/
+
+.tmp*
