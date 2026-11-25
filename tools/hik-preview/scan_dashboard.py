@@ -91,6 +91,12 @@ class App(tk.Tk):
         self.board_columns = tk.StringVar(value='9')
         self.board_rows = tk.StringVar(value='7')
         self.marker_calibration = tk.StringVar(value='')
+        self.calibration_capture_folder = tk.StringVar(value='')
+        self.calibration_board = tk.StringVar(value='普通棋盘格')
+        self.calibration_columns = tk.StringVar(value='9')
+        self.calibration_rows = tk.StringVar(value='7')
+        self.calibration_square = tk.StringVar(value='10')
+        self.calibration_marker = tk.StringVar(value='7')
         self.esp = tk.StringVar(value='http://192.168.4.1')
         self.settle = tk.StringVar(value='1.0')
         self.loop = tk.BooleanVar(value=False)
@@ -313,6 +319,21 @@ class App(tk.Tk):
         ttk.Label(r,text='相机采样间隔（像素）').pack(side='left');ttk.Combobox(r,textvariable=self.step,values=['1','2','4','8'],width=6).pack(side='left',padx=8)
         ttk.Button(f,text='生成单视角点云',command=self.reconstruct).pack(anchor='w',pady=8)
         ttk.Label(f,text='选择包含 44 张 graycode 图片的文件夹。新结果使用时间命名，不覆盖旧点云。',wraplength=900).pack(anchor='w')
+        box = ttk.LabelFrame(f, text='相机与投影仪标定', padding=8)
+        box.pack(fill='x', pady=10)
+        self.pathrow(box,'标定采集文件夹',self.calibration_capture_folder,'dir')
+        options = ttk.Frame(box)
+        options.pack(fill='x', pady=6)
+        board = ttk.Combobox(options, textvariable=self.calibration_board,
+                             values=['普通棋盘格','ChArUco'], state='readonly', width=12)
+        board.pack(side='left', padx=(0,8))
+        board.bind('<<ComboboxSelected>>', self._calibration_board_changed)
+        for label, variable in [('列', self.calibration_columns), ('行', self.calibration_rows),
+                                ('方格 mm', self.calibration_square), ('编码 mm', self.calibration_marker)]:
+            ttk.Label(options, text=label).pack(side='left')
+            ttk.Entry(options, textvariable=variable, width=5).pack(side='left', padx=(3,10))
+        ttk.Label(box,text='普通棋盘格填写内角点数。ChArUco 填写方格数和编码黑框边长，字典为 DICT_5X5_50。').pack(anchor='w')
+        ttk.Button(box,text='求内外参',command=self.calibrate).pack(anchor='w',pady=6)
 
     def _build_merge(self,f):
         ttk.Label(f,text='二维码标记自动重建与配准',font=('Microsoft YaHei UI',12,'bold')).pack(anchor='w',pady=5)
@@ -329,6 +350,8 @@ class App(tk.Tk):
         ttk.Label(r,text='采样间隔').pack(side='left');ttk.Entry(r,textvariable=self.step,width=5).pack(side='left',padx=6)
         ttk.Button(f,text='自动重建并拼接',command=self.marker_batch).pack(anchor='w',pady=8)
         ttk.Label(f,text='先选当前光学布局对应的标定：XML 或标定采集文件夹。ArUco DICT_4X4_50；各视角与首帧至少共享两个标记。输出保留转盘和背景，结果需验证。',wraplength=900).pack(anchor='w')
+        ttk.Button(f,text='ChArUco 板转台拼接',command=self.charuco_batch).pack(anchor='w',pady=(8,2))
+        ttk.Label(f,text='使用 XML、10×10 方格、10/7 mm、DICT_5X5_50，输出各帧和合并点云。').pack(anchor='w')
         box=ttk.LabelFrame(f,text='旧版：使用已知转轴试验拼接',padding=8);box.pack(fill='x',pady=10)
         self.pathrow(box,'转轴参数 JSON',self.axis,filetypes=[('JSON','*.json'),('所有文件','*.*')])
         self.pathrow(box,'角度修正 JSON（可空）',self.angles,filetypes=[('JSON','*.json'),('所有文件','*.*')])
@@ -687,6 +710,37 @@ class App(tk.Tk):
             cal=Path(raw).resolve();size=float(self.marker_size.get());board=float(self.board_size.get());cols=int(self.board_columns.get());rows=int(self.board_rows.get());step=int(self.step.get());bits=int(self.bits.get())
             if not math.isfinite(size) or not math.isfinite(board) or min(size,board)<=0 or min(cols,rows)<3 or step<1:raise ValueError('标记、棋盘格尺寸和采样间隔不合理')
             self.run('二维码自动拼接','automatic_marker_merge.py',[cal,scan,'--marker-size',size,'--square-size',board,'--columns',cols,'--rows',rows,'--step',step,'--bits',bits])
+        self.checked(go)
+
+    def _calibration_board_changed(self, _event):
+        charuco = self.calibration_board.get() == 'ChArUco'
+        self.calibration_columns.set('10' if charuco else '9')
+        self.calibration_rows.set('10' if charuco else '7')
+
+    def calibrate(self):
+        def go():
+            folder = self.require(self.calibration_capture_folder, 'dir')
+            board = 'charuco' if self.calibration_board.get() == 'ChArUco' else 'chessboard'
+            name = f"calibration_{board}_{datetime.now():%Y%m%d_%H%M%S_%f}.xml"
+            output = folder / name
+            args = [folder, '--output', output, '--board', board, '--square-size', self.calibration_square.get(),
+                    '--columns', self.calibration_columns.get(), '--rows', self.calibration_rows.get(),
+                    '--marker-size', self.calibration_marker.get()]
+            def done():
+                self.calibration.set(str(output))
+                self.marker_calibration.set(str(output))
+            self.run('相机与投影仪标定', 'automatic_calibration.py', args, done)
+        self.checked(go)
+
+    def charuco_batch(self):
+        def go():
+            scan = self.require(self.scan_folder, 'dir')
+            cal = self.require(self.marker_calibration)
+            output = scan / f"paper_turntable_{datetime.now():%Y%m%d_%H%M%S_%f}"
+            args = [scan, cal, '--output', output, '--step', self.step.get(), '--ignore-finest-bits',
+                    self.bits.get(), '--radius', self.radius.get(), '--clearance', self.clearance.get(), '--icp']
+            self.run('ChArUco 板转台拼接', 'paper_turntable.py', args,
+                     lambda: self.ply.set(str(output / cal.stem / 'merged_coarse.ply')))
         self.checked(go)
 
     def batch(self):

@@ -28,11 +28,6 @@ def main():
     args = parser.parse_args()
     if args.step < 1:
         parser.error('step must be positive')
-    files = sorted(args.capture.glob('graycode_*.png'))
-    w, h = 1280, 720
-    count = 2 * (math.ceil(math.log2(w)) + math.ceil(math.log2(h))) + 2
-    if len(files) != count:
-        raise ValueError(f'Expected {count} frames, found {len(files)}')
     xml = args.calibration.read_text(encoding='utf-8')
     fs = cv2.FileStorage(xml, cv2.FILE_STORAGE_READ | cv2.FILE_STORAGE_MEMORY)
     if not fs.isOpened():
@@ -40,47 +35,87 @@ def main():
     camera, cd = fs.getNode('cam_int').mat(), fs.getNode('cam_dist').mat()
     projector, pd = fs.getNode('proj_int').mat(), fs.getNode('proj_dist').mat()
     rot, trans = fs.getNode('rotation').mat(), fs.getNode('translation').mat()
+    projector_shape = fs.getNode('proj_shape').mat()
+    camera_shape = fs.getNode('img_shape').mat()
     fs.release()
     if any(x is None for x in (camera, cd, projector, pd, rot, trans)):
         raise ValueError('Missing calibration matrices')
-    white, black = image(files[-2])[::args.step, ::args.step], image(files[-1])[::args.step, ::args.step]
-    valid = white.astype(np.int16) - black.astype(np.int16) > args.black_threshold
-    if args.roi:
-        x1, y1, x2, y2 = args.roi
+    w, h = (1280, 720) if projector_shape is None else tuple(projector_shape.ravel()[::-1].astype(int))
+    decoded = decode(args.capture, (w, h), args.step, args.ignore_finest_bits,
+                     args.black_threshold, args.white_threshold, args.roi)
+    if camera_shape is not None and tuple(camera_shape.ravel()) != tuple(decoded['shape']):
+        raise ValueError('Camera image size does not match calibration')
+    print(f"Valid decoded camera pixels: {len(decoded['camera_pixels'])}", flush=True)
+    xyz, keep = triangulate(decoded, camera, cd, projector, pd, rot, trans)
+    if args.pixel_map:
+        np.savez_compressed(args.capture / args.pixel_map, camera_pixels=decoded['camera_pixels'][keep],
+                            projector_pixels=decoded['projector_pixels'][keep], xyz=xyz)
+    out = args.capture / args.output
+    save_ply(out, xyz, decoded['brightness'][keep])
+    print(f'Saved {len(xyz)} points to {out}', flush=True)
+    print('Depth percentiles (mm):', np.percentile(xyz[:, 2], [1, 50, 99]), flush=True)
+
+
+def decode(capture, projector_size, step, ignore_finest_bits=0,
+           black_threshold=40, white_threshold=5, roi=None):
+    """相机像素 -> 投影像素。该阶段与标定参数无关，同一视角可只解一次。"""
+    w, h = projector_size
+    count = 2 * (math.ceil(math.log2(w)) + math.ceil(math.log2(h))) + 2
+    files = [capture / f'graycode_{i:02d}.png' for i in range(count)]
+    white_full = image(files[-2])
+    shape = white_full.shape
+
+    def sampled(path):
+        frame = image(path)
+        if frame.shape != shape:
+            raise ValueError(f'Inconsistent image size: {path}')
+        return frame[::step, ::step]
+
+    white, black = white_full[::step, ::step], sampled(files[-1])
+    valid = white.astype(np.int16) - black.astype(np.int16) > black_threshold
+    if roi:
+        x1, y1, x2, y2 = roi
         if x1 >= x2 or y1 >= y2:
-            parser.error('invalid ROI')
+            raise ValueError('invalid ROI')
         rows, cols = np.indices(valid.shape)
-        valid &= (cols * args.step >= x1) & (cols * args.step < x2) & (rows * args.step >= y1) & (rows * args.step < y2)
+        valid &= (cols * step >= x1) & (cols * step < x2) & (rows * step >= y1) & (rows * step < y2)
     grays = []
     idx = 0
     for nbits in (math.ceil(math.log2(w)), math.ceil(math.log2(h))):
         code = np.zeros(white.shape, np.uint16)
         for bit in range(nbits):
-            if bit >= nbits - args.ignore_finest_bits:
+            if bit >= nbits - ignore_finest_bits:
                 code <<= 1
                 idx += 2
                 continue
-            a = image(files[idx])[::args.step, ::args.step].astype(np.int16)
-            b = image(files[idx+1])[::args.step, ::args.step].astype(np.int16)
+            a = sampled(files[idx]).astype(np.int16)
+            b = sampled(files[idx+1]).astype(np.int16)
             delta = a-b
-            valid &= np.abs(delta) > args.white_threshold
+            valid &= np.abs(delta) > white_threshold
             code = (code << 1) | (delta > 0).astype(np.uint16)
             idx += 2
         binary = code.copy()
         for shift in (1, 2, 4, 8):
             binary ^= binary >> shift
-        block = 1 << args.ignore_finest_bits
+        block = 1 << ignore_finest_bits
         binary = (binary // block) * block
         grays.append(binary)
     px, py = grays
     valid &= (px < w) & (py < h)
     yy, xx = np.nonzero(valid)
-    print(f'Valid decoded camera pixels: {len(xx)}', flush=True)
     if not len(xx):
         raise ValueError('No valid decoded pixels')
-    cam_points = np.column_stack((xx * args.step, yy * args.step)).astype(np.float64)
+    cam_points = np.column_stack((xx * step, yy * step)).astype(np.int32)
     proj_points = np.column_stack((px[valid], py[valid])).astype(np.float64)
-    proj_points += ((1 << args.ignore_finest_bits) - 1) / 2.0
+    proj_points += ((1 << ignore_finest_bits) - 1) / 2.0
+    return dict(camera_pixels=cam_points, projector_pixels=proj_points,
+                brightness=white[valid], shape=np.array(shape))
+
+
+def triangulate(decoded, camera, cd, projector, pd, rot, trans):
+    """用去畸变后的两条视线三角化到相机坐标系，单位跟随标定文件。"""
+    cam_points = decoded['camera_pixels'].astype(np.float64)
+    proj_points = decoded['projector_pixels']
     cam_norm = cv2.undistortPoints(cam_points.reshape(-1, 1, 2), camera, cd).reshape(-1, 2)
     proj_norm = cv2.undistortPoints(proj_points.reshape(-1, 1, 2), projector, pd).reshape(-1, 2)
     proj0 = np.hstack((np.eye(3), np.zeros((3, 1))))
@@ -93,20 +128,17 @@ def main():
     points = points[keep].astype('<f4')
     if not len(points):
         raise ValueError('No points remain in front of both camera and projector; check calibration, Gray-code ordering, projector mapping and capture synchronization')
-    if args.pixel_map:
-        np.savez_compressed(args.capture / args.pixel_map, camera_pixels=cam_points[keep].astype(np.int32), xyz=points)
-    brightness = white[valid][keep]
-    out = args.capture / args.output
+    return points, keep
+
+
+def save_ply(out, points, colors):
     records = np.empty(len(points), dtype=[('xyz', '<f4', (3,)), ('rgb', 'u1', (3,))])
     records['xyz'] = points
-    records['rgb'] = brightness[:, None]
-    header = (f'ply\nformat binary_little_endian 1.0\ncomment Experimental unverified calibration; scale follows calibration board square size\nelement vertex {len(points)}\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nend_header\n')
+    records['rgb'] = colors[:, None] if colors.ndim == 1 else colors
+    header = (f'ply\nformat binary_little_endian 1.0\ncomment Coordinates in calibration-board units\nelement vertex {len(points)}\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nend_header\n')
     with out.open('wb') as f:
         f.write(header.encode('ascii'))
         records.tofile(f)
-    print(f'Saved {len(points)} points to {out}', flush=True)
-    if len(points):
-        print('Depth percentiles (mm):', np.percentile(points[:, 2], [1, 50, 99]), flush=True)
 
 
 if __name__ == '__main__':
