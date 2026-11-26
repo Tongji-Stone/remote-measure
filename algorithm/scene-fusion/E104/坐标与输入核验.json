@@ -1,0 +1,11 @@
+{
+  "known_transform_atol": 2e-05,
+  "missing_first_accepted": true,
+  "no_markers_rejected": true,
+  "bad_angles_rejected": true,
+  "lack_of_angle_coverage_rejected": true,
+  "fixture_edge_angle_deg": 7.000000000000002,
+  "correct_pivot_shift_mm": 7.32410687763558e-15,
+  "legacy_pivot_shift_mm": 10.247369908360122,
+  "independent_image_folds": true
+}
