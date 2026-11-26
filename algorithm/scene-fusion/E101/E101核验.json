@@ -1,0 +1,82 @@
+[
+  {
+    "branch": "ChArUco",
+    "object": "三棱锥_小面坐地",
+    "views": 12,
+    "methods": 19,
+    "full_vertices": 1602271,
+    "recommended": "R06"
+  },
+  {
+    "branch": "Chessboard",
+    "object": "三棱锥_小面坐地",
+    "views": 12,
+    "methods": 19,
+    "full_vertices": 975352,
+    "recommended": "R03"
+  },
+  {
+    "branch": "ChArUco",
+    "object": "三棱锥_大面坐地",
+    "views": 12,
+    "methods": 19,
+    "full_vertices": 1502846,
+    "recommended": "R02"
+  },
+  {
+    "branch": "Chessboard",
+    "object": "三棱锥_大面坐地",
+    "views": 12,
+    "methods": 19,
+    "full_vertices": 955113,
+    "recommended": "R02"
+  },
+  {
+    "branch": "ChArUco",
+    "object": "坐着人偶",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 666400,
+    "recommended": "R06"
+  },
+  {
+    "branch": "Chessboard",
+    "object": "坐着人偶",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 496423,
+    "recommended": "R02"
+  },
+  {
+    "branch": "ChArUco",
+    "object": "小南瓜",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 1081509,
+    "recommended": "R02"
+  },
+  {
+    "branch": "Chessboard",
+    "object": "小南瓜",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 572792,
+    "recommended": "R02"
+  },
+  {
+    "branch": "ChArUco",
+    "object": "维生素包装圆柱",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 826341,
+    "recommended": "R02"
+  },
+  {
+    "branch": "Chessboard",
+    "object": "维生素包装圆柱",
+    "views": 10,
+    "methods": 18,
+    "full_vertices": 458146,
+    "recommended": "R02"
+  }
+]

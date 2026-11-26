@@ -1,0 +1,200 @@
+{
+  "scan": "scan_20261125_043648_105946_三棱锥_小面坐地",
+  "nominal_degrees": [
+    0.0,
+    29.970703125000004,
+    59.94140625000001,
+    89.912109375,
+    119.88281250000001,
+    149.853515625,
+    179.82421875,
+    209.794921875,
+    239.76562500000003,
+    269.736328125,
+    299.70703125,
+    329.677734375
+  ],
+  "fitted_degrees": [
+    0.0,
+    27.563034212376746,
+    57.690341326123644,
+    88.56502282399124,
+    117.64121704362464,
+    147.46491111980637,
+    178.20164221204763,
+    208.18926159745058,
+    237.14399082068826,
+    267.304302465567,
+    297.8465099118395,
+    327.3973816360154
+  ],
+  "axis": [
+    -0.04799774325510363,
+    0.8409503320268736,
+    0.5389793648242094
+  ],
+  "center_mm": [
+    -9.07592801086621,
+    30.732281893845695,
+    261.33752261325515
+  ],
+  "views": [
+    {
+      "view": 0,
+      "all_points": 96153,
+      "common_region_points": 61449,
+      "coded_bits_lost": [
+        45662,
+        25790,
+        24701
+      ],
+      "train_marker_corners": 28,
+      "held_marker_corners": 12,
+      "epipolar_reproj_p95": 4.898925304412842
+    },
+    {
+      "view": 1,
+      "all_points": 85976,
+      "common_region_points": 49372,
+      "coded_bits_lost": [
+        34397,
+        26835,
+        24744
+      ],
+      "train_marker_corners": 48,
+      "held_marker_corners": 20,
+      "epipolar_reproj_p95": 4.9294352531433105
+    },
+    {
+      "view": 2,
+      "all_points": 84249,
+      "common_region_points": 46092,
+      "coded_bits_lost": [
+        28352,
+        29561,
+        26336
+      ],
+      "train_marker_corners": 47,
+      "held_marker_corners": 20,
+      "epipolar_reproj_p95": 4.847217082977295
+    },
+    {
+      "view": 3,
+      "all_points": 76740,
+      "common_region_points": 38860,
+      "coded_bits_lost": [
+        32434,
+        22522,
+        21784
+      ],
+      "train_marker_corners": 52,
+      "held_marker_corners": 24,
+      "epipolar_reproj_p95": 4.903411865234375
+    },
+    {
+      "view": 4,
+      "all_points": 76275,
+      "common_region_points": 39245,
+      "coded_bits_lost": [
+        31479,
+        23075,
+        21721
+      ],
+      "train_marker_corners": 52,
+      "held_marker_corners": 20,
+      "epipolar_reproj_p95": 4.943885326385498
+    },
+    {
+      "view": 5,
+      "all_points": 77314,
+      "common_region_points": 39650,
+      "coded_bits_lost": [
+        27263,
+        25516,
+        24535
+      ],
+      "train_marker_corners": 53,
+      "held_marker_corners": 16,
+      "epipolar_reproj_p95": 4.989045143127441
+    },
+    {
+      "view": 6,
+      "all_points": 71791,
+      "common_region_points": 34751,
+      "coded_bits_lost": [
+        27148,
+        21227,
+        23416
+      ],
+      "train_marker_corners": 55,
+      "held_marker_corners": 16,
+      "epipolar_reproj_p95": 5.028136253356934
+    },
+    {
+      "view": 7,
+      "all_points": 70523,
+      "common_region_points": 30975,
+      "coded_bits_lost": [
+        28349,
+        21266,
+        20908
+      ],
+      "train_marker_corners": 44,
+      "held_marker_corners": 16,
+      "epipolar_reproj_p95": 4.975230693817139
+    },
+    {
+      "view": 8,
+      "all_points": 67478,
+      "common_region_points": 23287,
+      "coded_bits_lost": [
+        23909,
+        21394,
+        22175
+      ],
+      "train_marker_corners": 40,
+      "held_marker_corners": 12,
+      "epipolar_reproj_p95": 4.99358606338501
+    },
+    {
+      "view": 9,
+      "all_points": 78706,
+      "common_region_points": 37701,
+      "coded_bits_lost": [
+        25358,
+        26174,
+        27174
+      ],
+      "train_marker_corners": 44,
+      "held_marker_corners": 20,
+      "epipolar_reproj_p95": 4.99850606918335
+    },
+    {
+      "view": 10,
+      "all_points": 90034,
+      "common_region_points": 52985,
+      "coded_bits_lost": [
+        39994,
+        25554,
+        24486
+      ],
+      "train_marker_corners": 32,
+      "held_marker_corners": 16,
+      "epipolar_reproj_p95": 4.91628885269165
+    },
+    {
+      "view": 11,
+      "all_points": 100113,
+      "common_region_points": 63333,
+      "coded_bits_lost": [
+        50820,
+        25925,
+        23368
+      ],
+      "train_marker_corners": 20,
+      "held_marker_corners": 12,
+      "epipolar_reproj_p95": 4.831120491027832
+    }
+  ],
+  "camera_grid_px": 3
+}

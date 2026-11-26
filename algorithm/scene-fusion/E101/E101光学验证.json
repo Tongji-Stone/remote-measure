@@ -1,0 +1,866 @@
+[
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 0,
+    "marker_count": 3,
+    "shared_plane_points": 586,
+    "ChArUco": {
+      "abs_P50_mm": 0.7205352673889927,
+      "abs_P95_mm": 1.343372082617769,
+      "signed_P50_mm": 0.7205352673889927
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.677085793326235,
+      "abs_P95_mm": 11.254155082809733,
+      "signed_P50_mm": -10.677085793326235
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 1,
+    "marker_count": 5,
+    "shared_plane_points": 858,
+    "ChArUco": {
+      "abs_P50_mm": 0.4578756669691302,
+      "abs_P95_mm": 1.2051291645078288,
+      "signed_P50_mm": 0.3659745055352239
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.678247713144742,
+      "abs_P95_mm": 13.790383398345174,
+      "signed_P50_mm": -10.678247713144742
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 2,
+    "marker_count": 5,
+    "shared_plane_points": 779,
+    "ChArUco": {
+      "abs_P50_mm": 0.3197842279542229,
+      "abs_P95_mm": 0.8747470714074259,
+      "signed_P50_mm": -0.19175877453265855
+    },
+    "Chessboard": {
+      "abs_P50_mm": 13.043615095464954,
+      "abs_P95_mm": 14.309084624071522,
+      "signed_P50_mm": -13.043615095464954
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 3,
+    "marker_count": 6,
+    "shared_plane_points": 972,
+    "ChArUco": {
+      "abs_P50_mm": 0.3328951578241224,
+      "abs_P95_mm": 0.8561947615208784,
+      "signed_P50_mm": -0.27168515354512124
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.712155275557521,
+      "abs_P95_mm": 14.705162923601298,
+      "signed_P50_mm": -12.712155275557521
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 4,
+    "marker_count": 5,
+    "shared_plane_points": 1000,
+    "ChArUco": {
+      "abs_P50_mm": 0.2544447016416589,
+      "abs_P95_mm": 0.7380456110206411,
+      "signed_P50_mm": -0.0233363865624856
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.66067566188149,
+      "abs_P95_mm": 13.745840146022632,
+      "signed_P50_mm": -11.66067566188149
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 5,
+    "marker_count": 4,
+    "shared_plane_points": 792,
+    "ChArUco": {
+      "abs_P50_mm": 0.48618551871344806,
+      "abs_P95_mm": 1.0727096831090615,
+      "signed_P50_mm": 0.4791175818249746
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.080245176045569,
+      "abs_P95_mm": 12.66720622127587,
+      "signed_P50_mm": -11.080245176045569
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 6,
+    "marker_count": 4,
+    "shared_plane_points": 743,
+    "ChArUco": {
+      "abs_P50_mm": 0.5284325624988186,
+      "abs_P95_mm": 1.1797702501660994,
+      "signed_P50_mm": 0.5273395902734279
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.94865366988317,
+      "abs_P95_mm": 11.959563343899767,
+      "signed_P50_mm": -10.94865366988317
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 7,
+    "marker_count": 4,
+    "shared_plane_points": 608,
+    "ChArUco": {
+      "abs_P50_mm": 0.3730622490282123,
+      "abs_P95_mm": 1.009219708306735,
+      "signed_P50_mm": 0.33979381811858866
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.762295960135177,
+      "abs_P95_mm": 11.4519042565713,
+      "signed_P50_mm": -10.762295960135177
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 8,
+    "marker_count": 3,
+    "shared_plane_points": 459,
+    "ChArUco": {
+      "abs_P50_mm": 0.21048722351825777,
+      "abs_P95_mm": 0.6805153257844041,
+      "signed_P50_mm": 0.05373469756797444
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.08381187493098,
+      "abs_P95_mm": 12.183471609328935,
+      "signed_P50_mm": -11.08381187493098
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 9,
+    "marker_count": 5,
+    "shared_plane_points": 742,
+    "ChArUco": {
+      "abs_P50_mm": 0.29423964051809914,
+      "abs_P95_mm": 0.8022579188867947,
+      "signed_P50_mm": -0.2218233504584266
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.67559161090103,
+      "abs_P95_mm": 14.4440010465431,
+      "signed_P50_mm": -12.67559161090103
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 10,
+    "marker_count": 4,
+    "shared_plane_points": 730,
+    "ChArUco": {
+      "abs_P50_mm": 0.2896701501181278,
+      "abs_P95_mm": 0.799866848905872,
+      "signed_P50_mm": 0.2366586140999738
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.621383270174201,
+      "abs_P95_mm": 13.262825291942768,
+      "signed_P50_mm": -11.621383270174201
+    }
+  },
+  {
+    "object": "三棱锥_小面坐地",
+    "view": 11,
+    "marker_count": 3,
+    "shared_plane_points": 623,
+    "ChArUco": {
+      "abs_P50_mm": 0.5522563389071848,
+      "abs_P95_mm": 1.1247228040551946,
+      "signed_P50_mm": 0.5522563389071848
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.93129731369693,
+      "abs_P95_mm": 11.983949990707368,
+      "signed_P50_mm": -10.93129731369693
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 0,
+    "marker_count": 1,
+    "shared_plane_points": 124,
+    "ChArUco": {
+      "abs_P50_mm": 0.35281655095761977,
+      "abs_P95_mm": 0.8388248170906513,
+      "signed_P50_mm": 0.3462792255663487
+    },
+    "Chessboard": {
+      "abs_P50_mm": 9.818642400341293,
+      "abs_P95_mm": 10.410395251110524,
+      "signed_P50_mm": -9.818642400341293
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 1,
+    "marker_count": 2,
+    "shared_plane_points": 393,
+    "ChArUco": {
+      "abs_P50_mm": 0.8017368954156439,
+      "abs_P95_mm": 1.3301981344524545,
+      "signed_P50_mm": 0.8017368954156439
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.643054069840439,
+      "abs_P95_mm": 11.143810975995674,
+      "signed_P50_mm": -10.643054069840439
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 2,
+    "marker_count": 3,
+    "shared_plane_points": 627,
+    "ChArUco": {
+      "abs_P50_mm": 0.40582554510920943,
+      "abs_P95_mm": 1.1406247484738536,
+      "signed_P50_mm": 0.3566538089458504
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.70558656361338,
+      "abs_P95_mm": 12.62770372310016,
+      "signed_P50_mm": -10.70558656361338
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 3,
+    "marker_count": 4,
+    "shared_plane_points": 707,
+    "ChArUco": {
+      "abs_P50_mm": 0.32321756438891924,
+      "abs_P95_mm": 0.9617380960494653,
+      "signed_P50_mm": -0.1855489046136114
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.90917449622573,
+      "abs_P95_mm": 13.054152417173244,
+      "signed_P50_mm": -11.90917449622573
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 4,
+    "marker_count": 4,
+    "shared_plane_points": 548,
+    "ChArUco": {
+      "abs_P50_mm": 0.27835255280384263,
+      "abs_P95_mm": 0.7868287519623479,
+      "signed_P50_mm": -0.1618183450356323
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.83908388435972,
+      "abs_P95_mm": 14.603785897243787,
+      "signed_P50_mm": -11.83908388435972
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 5,
+    "marker_count": 4,
+    "shared_plane_points": 546,
+    "ChArUco": {
+      "abs_P50_mm": 0.2789776600477656,
+      "abs_P95_mm": 0.7581004135449798,
+      "signed_P50_mm": 0.11070418445655394
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.2853997014642,
+      "abs_P95_mm": 13.93865275834661,
+      "signed_P50_mm": -12.2853997014642
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 6,
+    "marker_count": 2,
+    "shared_plane_points": 398,
+    "ChArUco": {
+      "abs_P50_mm": 0.5535632664084588,
+      "abs_P95_mm": 1.2513030826097828,
+      "signed_P50_mm": 0.5535632664084588
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.642328543625728,
+      "abs_P95_mm": 12.54672256697625,
+      "signed_P50_mm": -11.642328543625728
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 7,
+    "marker_count": 2,
+    "shared_plane_points": 492,
+    "ChArUco": {
+      "abs_P50_mm": 0.5871237101130302,
+      "abs_P95_mm": 1.249525209988214,
+      "signed_P50_mm": 0.5871237101130302
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.316735394006571,
+      "abs_P95_mm": 12.06639484654969,
+      "signed_P50_mm": -11.316735394006571
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 8,
+    "marker_count": 3,
+    "shared_plane_points": 561,
+    "ChArUco": {
+      "abs_P50_mm": 0.8084249576956584,
+      "abs_P95_mm": 1.527774729832588,
+      "signed_P50_mm": 0.8032285242552124
+    },
+    "Chessboard": {
+      "abs_P50_mm": 10.16665294467258,
+      "abs_P95_mm": 13.612080147987072,
+      "signed_P50_mm": -10.16665294467258
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 9,
+    "marker_count": 3,
+    "shared_plane_points": 458,
+    "ChArUco": {
+      "abs_P50_mm": 0.3503385310547521,
+      "abs_P95_mm": 0.9319004231458549,
+      "signed_P50_mm": -0.23192678753771645
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.40717304672909,
+      "abs_P95_mm": 13.762063762227362,
+      "signed_P50_mm": -11.40717304672909
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 10,
+    "marker_count": 3,
+    "shared_plane_points": 435,
+    "ChArUco": {
+      "abs_P50_mm": 0.3367268722045349,
+      "abs_P95_mm": 0.8525374881896431,
+      "signed_P50_mm": -0.2647048864724758
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.373241056378827,
+      "abs_P95_mm": 12.964441280547277,
+      "signed_P50_mm": -12.373241056378827
+    }
+  },
+  {
+    "object": "三棱锥_大面坐地",
+    "view": 11,
+    "marker_count": 3,
+    "shared_plane_points": 593,
+    "ChArUco": {
+      "abs_P50_mm": 0.31822129579459446,
+      "abs_P95_mm": 0.8738250403918876,
+      "signed_P50_mm": 0.22949305730931968
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.090063491681246,
+      "abs_P95_mm": 11.796196905910524,
+      "signed_P50_mm": -11.090063491681246
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 0,
+    "marker_count": 10,
+    "shared_plane_points": 1104,
+    "ChArUco": {
+      "abs_P50_mm": 0.5793241983209292,
+      "abs_P95_mm": 1.1388038871383206,
+      "signed_P50_mm": 0.5709306940185286
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.208020792354699,
+      "abs_P95_mm": 13.681700541025782,
+      "signed_P50_mm": -11.208020792354699
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 1,
+    "marker_count": 9,
+    "shared_plane_points": 1071,
+    "ChArUco": {
+      "abs_P50_mm": 0.3592261585559626,
+      "abs_P95_mm": 0.9261301740631254,
+      "signed_P50_mm": 0.20157432065658298
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.517726493165505,
+      "abs_P95_mm": 13.72915802324696,
+      "signed_P50_mm": -11.517726493165505
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 2,
+    "marker_count": 9,
+    "shared_plane_points": 1032,
+    "ChArUco": {
+      "abs_P50_mm": 0.3298458802377642,
+      "abs_P95_mm": 0.9766262432123934,
+      "signed_P50_mm": -0.2563015519246825
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.279116278123787,
+      "abs_P95_mm": 14.047632992415902,
+      "signed_P50_mm": -12.279116278123787
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 3,
+    "marker_count": 7,
+    "shared_plane_points": 884,
+    "ChArUco": {
+      "abs_P50_mm": 0.27110578590139056,
+      "abs_P95_mm": 0.815474140960782,
+      "signed_P50_mm": -0.1777083239342252
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.161417828331091,
+      "abs_P95_mm": 14.20048177780887,
+      "signed_P50_mm": -12.161417828331091
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 4,
+    "marker_count": 9,
+    "shared_plane_points": 1053,
+    "ChArUco": {
+      "abs_P50_mm": 0.4055600882392074,
+      "abs_P95_mm": 0.9640156818118198,
+      "signed_P50_mm": 0.37453348463515557
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.41675531306107,
+      "abs_P95_mm": 13.684806227973517,
+      "signed_P50_mm": -11.41675531306107
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 5,
+    "marker_count": 9,
+    "shared_plane_points": 1095,
+    "ChArUco": {
+      "abs_P50_mm": 0.6095795626690403,
+      "abs_P95_mm": 1.304922658703772,
+      "signed_P50_mm": 0.6022099281389117
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.646630596430809,
+      "abs_P95_mm": 14.169297002102063,
+      "signed_P50_mm": -11.646630596430809
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 6,
+    "marker_count": 9,
+    "shared_plane_points": 1095,
+    "ChArUco": {
+      "abs_P50_mm": 0.37470415436322924,
+      "abs_P95_mm": 1.0166355658636173,
+      "signed_P50_mm": 0.286755154889633
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.874210457109115,
+      "abs_P95_mm": 14.038214869291252,
+      "signed_P50_mm": -11.874210457109115
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 7,
+    "marker_count": 10,
+    "shared_plane_points": 1144,
+    "ChArUco": {
+      "abs_P50_mm": 0.34148124526598256,
+      "abs_P95_mm": 0.8855820865259945,
+      "signed_P50_mm": -0.2933613906196093
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.639400046244305,
+      "abs_P95_mm": 14.722955680763894,
+      "signed_P50_mm": -12.639400046244305
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 8,
+    "marker_count": 10,
+    "shared_plane_points": 1144,
+    "ChArUco": {
+      "abs_P50_mm": 0.25279413235596326,
+      "abs_P95_mm": 0.7533303724328733,
+      "signed_P50_mm": -0.09717395159894338
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.30105113381361,
+      "abs_P95_mm": 14.18361283394378,
+      "signed_P50_mm": -12.30105113381361
+    }
+  },
+  {
+    "object": "坐着人偶",
+    "view": 9,
+    "marker_count": 9,
+    "shared_plane_points": 981,
+    "ChArUco": {
+      "abs_P50_mm": 0.4213414332019205,
+      "abs_P95_mm": 0.9946309893943837,
+      "signed_P50_mm": 0.3963591358273195
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.417631193040737,
+      "abs_P95_mm": 13.47036903536533,
+      "signed_P50_mm": -11.417631193040737
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 0,
+    "marker_count": 9,
+    "shared_plane_points": 1488,
+    "ChArUco": {
+      "abs_P50_mm": 0.5351198089524876,
+      "abs_P95_mm": 1.1710788855125742,
+      "signed_P50_mm": 0.5258069363532956
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.438201170944566,
+      "abs_P95_mm": 13.812746001995274,
+      "signed_P50_mm": -11.438201170944566
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 1,
+    "marker_count": 10,
+    "shared_plane_points": 1676,
+    "ChArUco": {
+      "abs_P50_mm": 0.5604764944966298,
+      "abs_P95_mm": 1.2264055241684986,
+      "signed_P50_mm": 0.5498037749024611
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.149218109455587,
+      "abs_P95_mm": 13.620892997822244,
+      "signed_P50_mm": -11.149218109455587
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 2,
+    "marker_count": 10,
+    "shared_plane_points": 1715,
+    "ChArUco": {
+      "abs_P50_mm": 0.32232732355225835,
+      "abs_P95_mm": 0.9076042499436233,
+      "signed_P50_mm": 0.10265112670737153
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.767158850221117,
+      "abs_P95_mm": 13.729031285596225,
+      "signed_P50_mm": -11.767158850221117
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 3,
+    "marker_count": 10,
+    "shared_plane_points": 1677,
+    "ChArUco": {
+      "abs_P50_mm": 0.3423596560947857,
+      "abs_P95_mm": 0.9342567323260411,
+      "signed_P50_mm": -0.29076278974571146
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.241080434105271,
+      "abs_P95_mm": 14.319757484805809,
+      "signed_P50_mm": -12.241080434105271
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 4,
+    "marker_count": 7,
+    "shared_plane_points": 1295,
+    "ChArUco": {
+      "abs_P50_mm": 0.2681204164622599,
+      "abs_P95_mm": 0.7907819634900866,
+      "signed_P50_mm": -0.057070347379363895
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.775927503949873,
+      "abs_P95_mm": 13.788251606050311,
+      "signed_P50_mm": -11.775927503949873
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 5,
+    "marker_count": 8,
+    "shared_plane_points": 1348,
+    "ChArUco": {
+      "abs_P50_mm": 0.4721429534491891,
+      "abs_P95_mm": 1.183637817060576,
+      "signed_P50_mm": 0.45868188233074414
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.092042943095482,
+      "abs_P95_mm": 13.49743941855342,
+      "signed_P50_mm": -11.092042943095482
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 6,
+    "marker_count": 7,
+    "shared_plane_points": 1277,
+    "ChArUco": {
+      "abs_P50_mm": 0.524195870867942,
+      "abs_P95_mm": 1.2787583046699003,
+      "signed_P50_mm": 0.4941052340689893
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.474444371260175,
+      "abs_P95_mm": 14.202826115951774,
+      "signed_P50_mm": -11.474444371260175
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 7,
+    "marker_count": 7,
+    "shared_plane_points": 1261,
+    "ChArUco": {
+      "abs_P50_mm": 0.30767068224261607,
+      "abs_P95_mm": 0.8922167704340556,
+      "signed_P50_mm": 0.06516687340502969
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.970331181364724,
+      "abs_P95_mm": 14.122547925367073,
+      "signed_P50_mm": -11.970331181364724
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 8,
+    "marker_count": 8,
+    "shared_plane_points": 1391,
+    "ChArUco": {
+      "abs_P50_mm": 0.3452733881777732,
+      "abs_P95_mm": 0.9176850141140536,
+      "signed_P50_mm": -0.31121358284985545
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.730087917047697,
+      "abs_P95_mm": 14.550491868067702,
+      "signed_P50_mm": -12.730087917047697
+    }
+  },
+  {
+    "object": "小南瓜",
+    "view": 9,
+    "marker_count": 9,
+    "shared_plane_points": 1573,
+    "ChArUco": {
+      "abs_P50_mm": 0.26529708779785466,
+      "abs_P95_mm": 0.772876399908205,
+      "signed_P50_mm": 0.050573915583512985
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.127894148459644,
+      "abs_P95_mm": 14.052924325578426,
+      "signed_P50_mm": -12.127894148459644
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 0,
+    "marker_count": 7,
+    "shared_plane_points": 790,
+    "ChArUco": {
+      "abs_P50_mm": 0.247658881416565,
+      "abs_P95_mm": 0.7304955702148475,
+      "signed_P50_mm": 0.07082812446059061
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.969373129998308,
+      "abs_P95_mm": 13.824039850615868,
+      "signed_P50_mm": -11.969373129998308
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 1,
+    "marker_count": 8,
+    "shared_plane_points": 846,
+    "ChArUco": {
+      "abs_P50_mm": 0.609768665609856,
+      "abs_P95_mm": 1.1748249869955103,
+      "signed_P50_mm": 0.609102843920228
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.47660109352233,
+      "abs_P95_mm": 13.260706298666683,
+      "signed_P50_mm": -11.47660109352233
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 2,
+    "marker_count": 9,
+    "shared_plane_points": 959,
+    "ChArUco": {
+      "abs_P50_mm": 0.5521459870620191,
+      "abs_P95_mm": 1.1681614574770272,
+      "signed_P50_mm": 0.5424467087963905
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.000372163527132,
+      "abs_P95_mm": 13.648640447395488,
+      "signed_P50_mm": -11.000372163527132
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 3,
+    "marker_count": 8,
+    "shared_plane_points": 878,
+    "ChArUco": {
+      "abs_P50_mm": 0.33489439276474187,
+      "abs_P95_mm": 0.9196014942134236,
+      "signed_P50_mm": 0.11412892155137122
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.440108036669574,
+      "abs_P95_mm": 13.441159763571148,
+      "signed_P50_mm": -11.440108036669574
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 4,
+    "marker_count": 8,
+    "shared_plane_points": 813,
+    "ChArUco": {
+      "abs_P50_mm": 0.33629239922000664,
+      "abs_P95_mm": 0.9027141810813589,
+      "signed_P50_mm": -0.2869091408724955
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.060259047630185,
+      "abs_P95_mm": 13.46706228181703,
+      "signed_P50_mm": -12.060259047630185
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 5,
+    "marker_count": 7,
+    "shared_plane_points": 744,
+    "ChArUco": {
+      "abs_P50_mm": 0.23313409793391493,
+      "abs_P95_mm": 0.7184713973386231,
+      "signed_P50_mm": -0.08546630288922508
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.730681764567398,
+      "abs_P95_mm": 14.03995454388296,
+      "signed_P50_mm": -11.730681764567398
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 6,
+    "marker_count": 8,
+    "shared_plane_points": 785,
+    "ChArUco": {
+      "abs_P50_mm": 0.442541626678588,
+      "abs_P95_mm": 1.0957187956336776,
+      "signed_P50_mm": 0.43202745613328375
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.115626762405505,
+      "abs_P95_mm": 13.459983408771217,
+      "signed_P50_mm": -11.115626762405505
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 7,
+    "marker_count": 7,
+    "shared_plane_points": 706,
+    "ChArUco": {
+      "abs_P50_mm": 0.5145373788983036,
+      "abs_P95_mm": 1.2837871321249539,
+      "signed_P50_mm": 0.5060291216920465
+    },
+    "Chessboard": {
+      "abs_P50_mm": 11.373888407693407,
+      "abs_P95_mm": 14.20479328841264,
+      "signed_P50_mm": -11.373888407693407
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 8,
+    "marker_count": 7,
+    "shared_plane_points": 761,
+    "ChArUco": {
+      "abs_P50_mm": 0.30152560040495047,
+      "abs_P95_mm": 0.9014475472483596,
+      "signed_P50_mm": 0.052225481203503676
+    },
+    "Chessboard": {
+      "abs_P50_mm": 12.002972610885418,
+      "abs_P95_mm": 14.19471822896893,
+      "signed_P50_mm": -12.002972610885418
+    }
+  },
+  {
+    "object": "维生素包装圆柱",
+    "view": 9,
+    "marker_count": 6,
+    "shared_plane_points": 702,
+    "ChArUco": {
+      "abs_P50_mm": 0.36323613131747373,
+      "abs_P95_mm": 0.8707682219152958,
+      "signed_P50_mm": -0.33667753662914507
+    },
+    "Chessboard": {
+      "abs_P50_mm": 13.019527485642687,
+      "abs_P95_mm": 15.02016527140965,
+      "signed_P50_mm": -13.019527485642687
+    }
+  }
+]

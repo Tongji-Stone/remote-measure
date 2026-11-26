@@ -1,0 +1,170 @@
+{
+  "scan": "scan_20261125_045127_761819_坐着人偶",
+  "nominal_degrees": [
+    0.0,
+    36.03515625,
+    72.0703125,
+    108.10546875000001,
+    144.140625,
+    180.17578125,
+    216.21093750000003,
+    252.24609375000003,
+    288.28125,
+    324.31640625
+  ],
+  "fitted_degrees": [
+    0.0,
+    36.114604663628995,
+    72.34027565117094,
+    108.71646245556116,
+    144.80585886145266,
+    181.13148826969808,
+    215.59265278614518,
+    251.23755031082908,
+    287.4316816890031,
+    323.9365726115648
+  ],
+  "axis": [
+    -0.04732681298667902,
+    0.8402731372033937,
+    0.5400937211881754
+  ],
+  "center_mm": [
+    -8.858020419759763,
+    31.464581542572446,
+    260.10574165758305
+  ],
+  "views": [
+    {
+      "view": 0,
+      "all_points": 50268,
+      "common_region_points": 21093,
+      "coded_bits_lost": [
+        16052,
+        16930,
+        17286
+      ],
+      "train_marker_corners": 94,
+      "held_marker_corners": 40,
+      "epipolar_reproj_p95": 5.043895244598389
+    },
+    {
+      "view": 1,
+      "all_points": 50341,
+      "common_region_points": 20797,
+      "coded_bits_lost": [
+        16080,
+        17755,
+        16506
+      ],
+      "train_marker_corners": 92,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 4.977822303771973
+    },
+    {
+      "view": 2,
+      "all_points": 49607,
+      "common_region_points": 19933,
+      "coded_bits_lost": [
+        16380,
+        17191,
+        16036
+      ],
+      "train_marker_corners": 104,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 4.929468631744385
+    },
+    {
+      "view": 3,
+      "all_points": 48462,
+      "common_region_points": 20460,
+      "coded_bits_lost": [
+        16327,
+        16446,
+        15689
+      ],
+      "train_marker_corners": 100,
+      "held_marker_corners": 28,
+      "epipolar_reproj_p95": 5.0176286697387695
+    },
+    {
+      "view": 4,
+      "all_points": 48352,
+      "common_region_points": 19532,
+      "coded_bits_lost": [
+        14838,
+        17783,
+        15731
+      ],
+      "train_marker_corners": 100,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 4.9689860343933105
+    },
+    {
+      "view": 5,
+      "all_points": 48375,
+      "common_region_points": 19144,
+      "coded_bits_lost": [
+        14647,
+        16951,
+        16777
+      ],
+      "train_marker_corners": 103,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 5.0495524406433105
+    },
+    {
+      "view": 6,
+      "all_points": 50440,
+      "common_region_points": 19097,
+      "coded_bits_lost": [
+        15490,
+        18100,
+        16850
+      ],
+      "train_marker_corners": 95,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 5.008187770843506
+    },
+    {
+      "view": 7,
+      "all_points": 51762,
+      "common_region_points": 18249,
+      "coded_bits_lost": [
+        15895,
+        18183,
+        17684
+      ],
+      "train_marker_corners": 104,
+      "held_marker_corners": 40,
+      "epipolar_reproj_p95": 4.984521389007568
+    },
+    {
+      "view": 8,
+      "all_points": 48929,
+      "common_region_points": 18155,
+      "coded_bits_lost": [
+        14934,
+        16626,
+        17369
+      ],
+      "train_marker_corners": 101,
+      "held_marker_corners": 40,
+      "epipolar_reproj_p95": 5.0775065422058105
+    },
+    {
+      "view": 9,
+      "all_points": 49887,
+      "common_region_points": 20047,
+      "coded_bits_lost": [
+        15069,
+        17762,
+        17056
+      ],
+      "train_marker_corners": 93,
+      "held_marker_corners": 36,
+      "epipolar_reproj_p95": 5.011013984680176
+    }
+  ],
+  "camera_grid_px": 3
+}
