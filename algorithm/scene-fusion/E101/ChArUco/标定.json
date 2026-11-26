@@ -1,0 +1,500 @@
+{
+  "cam_int": [
+    [
+      2366.7925532720874,
+      0.0,
+      1254.4639807140716
+    ],
+    [
+      0.0,
+      2375.458287043991,
+      1076.3986183206453
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "cam_dist": [
+    [
+      -0.08539089308119023,
+      0.08486810643097825,
+      0.0034297349414162156,
+      -0.0008741139703137742,
+      0.0
+    ]
+  ],
+  "proj_int": [
+    [
+      1503.294322945774,
+      0.0,
+      611.564706534825
+    ],
+    [
+      0.0,
+      1486.659811370473,
+      375.88437971954784
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "proj_dist": [
+    [
+      0.007711880070282826,
+      -0.1770475425680453,
+      0.011976756194034195,
+      0.0009016474777091828,
+      0.0
+    ]
+  ],
+  "rotation": [
+    [
+      0.9986096068440217,
+      0.05147326964319225,
+      -0.01137346170116
+    ],
+    [
+      -0.04578788651281718,
+      0.9538701128503438,
+      0.2967073933348503
+    ],
+    [
+      0.026121304858638013,
+      -0.29577408663219873,
+      0.9549007106026106
+    ]
+  ],
+  "translation": [
+    [
+      29.45051861400457
+    ],
+    [
+      -49.43275340335301
+    ],
+    [
+      98.21136475072477
+    ]
+  ],
+  "cam_train_rms": 1.2413530612957986,
+  "proj_train_rms": 0.6423792331302969,
+  "stereo_train_rms": 1.0181508381481217,
+  "training": [
+    {
+      "name": "capture_20261125_040848_952454",
+      "corners": 80
+    },
+    {
+      "name": "capture_20261125_041003_697025",
+      "corners": 50
+    },
+    {
+      "name": "capture_20261125_041049_683139",
+      "corners": 66
+    },
+    {
+      "name": "capture_20261125_041119_098518",
+      "corners": 75
+    },
+    {
+      "name": "capture_20261125_041227_286507",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_041254_962575",
+      "corners": 76
+    },
+    {
+      "name": "capture_20261125_041332_925579",
+      "corners": 76
+    },
+    {
+      "name": "capture_20261125_041444_197250",
+      "corners": 79
+    },
+    {
+      "name": "capture_20261125_041550_638545",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_041633_690625",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_041814_238366",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_041844_723722",
+      "corners": 77
+    },
+    {
+      "name": "capture_20261125_041919_750280",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_042107_369705",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_042138_664374",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_042211_149637",
+      "corners": 81
+    },
+    {
+      "name": "capture_20261125_042418_702629",
+      "corners": 81
+    }
+  ],
+  "validation": [
+    {
+      "name": "capture_20261125_040848_952454",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 80,
+      "camera_rms": 1.468233585357666,
+      "camera_p95": 2.3130300045013428,
+      "projector_p50": 0.958600640296936,
+      "projector_p95": 2.4420573711395264
+    },
+    {
+      "name": "capture_20261125_040939_761613",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 61,
+      "camera_rms": 1.4218249320983887,
+      "camera_p95": 2.162700891494751,
+      "projector_p50": 1.0972403287887573,
+      "projector_p95": 2.4377338886260986
+    },
+    {
+      "name": "capture_20261125_041003_697025",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 50,
+      "camera_rms": 1.4490398168563843,
+      "camera_p95": 2.354600667953491,
+      "projector_p50": 0.7804523706436157,
+      "projector_p95": 1.6614834070205688
+    },
+    {
+      "name": "capture_20261125_041049_683139",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 66,
+      "camera_rms": 1.4152812957763672,
+      "camera_p95": 2.3633270263671875,
+      "projector_p50": 0.7553697824478149,
+      "projector_p95": 1.4370874166488647
+    },
+    {
+      "name": "capture_20261125_041119_098518",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 75,
+      "camera_rms": 1.3865437507629395,
+      "camera_p95": 2.2042503356933594,
+      "projector_p50": 0.5789616107940674,
+      "projector_p95": 1.6301053762435913
+    },
+    {
+      "name": "capture_20261125_041148_511564",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 81,
+      "camera_rms": 1.4302330017089844,
+      "camera_p95": 2.198585271835327,
+      "projector_p50": 0.7171800136566162,
+      "projector_p95": 2.042738914489746
+    },
+    {
+      "name": "capture_20261125_041227_286507",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 1.075898289680481,
+      "camera_p95": 1.830946922302246,
+      "projector_p50": 0.6842830777168274,
+      "projector_p95": 1.5029339790344238
+    },
+    {
+      "name": "capture_20261125_041254_962575",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 76,
+      "camera_rms": 1.1989071369171143,
+      "camera_p95": 1.8724305629730225,
+      "projector_p50": 0.6032664775848389,
+      "projector_p95": 1.213791012763977
+    },
+    {
+      "name": "capture_20261125_041332_925579",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 76,
+      "camera_rms": 1.3726353645324707,
+      "camera_p95": 2.1818532943725586,
+      "projector_p50": 0.7999741435050964,
+      "projector_p95": 1.4690613746643066
+    },
+    {
+      "name": "capture_20261125_041412_509817",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 81,
+      "camera_rms": 1.0797851085662842,
+      "camera_p95": 1.8002324104309082,
+      "projector_p50": 0.5595715045928955,
+      "projector_p95": 1.2902579307556152
+    },
+    {
+      "name": "capture_20261125_041444_197250",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 79,
+      "camera_rms": 1.1882330179214478,
+      "camera_p95": 1.852105975151062,
+      "projector_p50": 0.7306807041168213,
+      "projector_p95": 1.5562134981155396
+    },
+    {
+      "name": "capture_20261125_041550_638545",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 1.1931482553482056,
+      "camera_p95": 2.0183398723602295,
+      "projector_p50": 0.5152798295021057,
+      "projector_p95": 1.0568180084228516
+    },
+    {
+      "name": "capture_20261125_041633_690625",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 1.1429619789123535,
+      "camera_p95": 1.6345206499099731,
+      "projector_p50": 0.3939575254917145,
+      "projector_p95": 0.7395078539848328
+    },
+    {
+      "name": "capture_20261125_041712_728782",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 79,
+      "camera_rms": 1.624918818473816,
+      "camera_p95": 2.6027956008911133,
+      "projector_p50": 0.5512340664863586,
+      "projector_p95": 1.1423683166503906
+    },
+    {
+      "name": "capture_20261125_041814_238366",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 1.3591691255569458,
+      "camera_p95": 2.105193853378296,
+      "projector_p50": 0.41310203075408936,
+      "projector_p95": 0.8447282910346985
+    },
+    {
+      "name": "capture_20261125_041844_723722",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 77,
+      "camera_rms": 1.7721500396728516,
+      "camera_p95": 2.7991268634796143,
+      "projector_p50": 0.5998310446739197,
+      "projector_p95": 1.1082839965820312
+    },
+    {
+      "name": "capture_20261125_041919_750280",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 1.2946122884750366,
+      "camera_p95": 2.3178133964538574,
+      "projector_p50": 0.7316460013389587,
+      "projector_p95": 1.1937665939331055
+    },
+    {
+      "name": "capture_20261125_042026_733571",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 81,
+      "camera_rms": 1.1269752979278564,
+      "camera_p95": 1.7776029109954834,
+      "projector_p50": 0.7214694023132324,
+      "projector_p95": 1.796804666519165
+    },
+    {
+      "name": "capture_20261125_042107_369705",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 0.9071606397628784,
+      "camera_p95": 1.4534542560577393,
+      "projector_p50": 0.592406690120697,
+      "projector_p95": 1.2443488836288452
+    },
+    {
+      "name": "capture_20261125_042138_664374",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 0.7730716466903687,
+      "camera_p95": 1.3513894081115723,
+      "projector_p50": 0.5087329745292664,
+      "projector_p95": 1.1820927858352661
+    },
+    {
+      "name": "capture_20261125_042211_149637",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 0.911451518535614,
+      "camera_p95": 1.5141772031784058,
+      "projector_p50": 0.5075606107711792,
+      "projector_p95": 1.0040723085403442
+    },
+    {
+      "name": "capture_20261125_042320_418293",
+      "target": "ChArUco",
+      "holdout": true,
+      "n": 81,
+      "camera_rms": 0.973673403263092,
+      "camera_p95": 1.4537054300308228,
+      "projector_p50": 0.5407601594924927,
+      "projector_p95": 0.985201358795166
+    },
+    {
+      "name": "capture_20261125_042418_702629",
+      "target": "ChArUco",
+      "holdout": false,
+      "n": 81,
+      "camera_rms": 0.9513471126556396,
+      "camera_p95": 1.5502345561981201,
+      "projector_p50": 0.674645185470581,
+      "projector_p95": 1.4252392053604126
+    },
+    {
+      "name": "capture_20261125_042538_341341",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 61,
+      "camera_rms": 1.0838990211486816,
+      "camera_p95": 2.078206777572632,
+      "projector_p50": 10.326681137084961,
+      "projector_p95": 11.809221267700195
+    },
+    {
+      "name": "capture_20261125_042603_886174",
+      "target": "Chessboard",
+      "holdout": true,
+      "n": 32,
+      "camera_rms": 1.1817072629928589,
+      "camera_p95": 2.250021457672119,
+      "projector_p50": 10.267308235168457,
+      "projector_p95": 11.829177856445312
+    },
+    {
+      "name": "capture_20261125_042629_946789",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 62,
+      "camera_rms": 1.0954394340515137,
+      "camera_p95": 1.8905121088027954,
+      "projector_p50": 10.404010772705078,
+      "projector_p95": 13.087584495544434
+    },
+    {
+      "name": "capture_20261125_042705_649966",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 37,
+      "camera_rms": 1.2395241260528564,
+      "camera_p95": 2.391862630844116,
+      "projector_p50": 9.766562461853027,
+      "projector_p95": 12.708534240722656
+    },
+    {
+      "name": "capture_20261125_042747_370240",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 56,
+      "camera_rms": 1.1616063117980957,
+      "camera_p95": 1.8792520761489868,
+      "projector_p50": 10.268112182617188,
+      "projector_p95": 13.317676544189453
+    },
+    {
+      "name": "capture_20261125_042821_863004",
+      "target": "Chessboard",
+      "holdout": true,
+      "n": 63,
+      "camera_rms": 1.125329613685608,
+      "camera_p95": 1.800611972808838,
+      "projector_p50": 9.818031311035156,
+      "projector_p95": 12.877420425415039
+    },
+    {
+      "name": "capture_20261125_042854_879003",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 63,
+      "camera_rms": 1.1539456844329834,
+      "camera_p95": 1.9056354761123657,
+      "projector_p50": 10.669941902160645,
+      "projector_p95": 13.99712085723877
+    },
+    {
+      "name": "capture_20261125_042922_826843",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 54,
+      "camera_rms": 0.9470062255859375,
+      "camera_p95": 1.7919024229049683,
+      "projector_p50": 9.792759895324707,
+      "projector_p95": 11.148198127746582
+    },
+    {
+      "name": "capture_20261125_043010_554703",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 63,
+      "camera_rms": 1.030509114265442,
+      "camera_p95": 1.917081356048584,
+      "projector_p50": 9.185462951660156,
+      "projector_p95": 12.137847900390625
+    },
+    {
+      "name": "capture_20261125_043125_840825",
+      "target": "Chessboard",
+      "holdout": true,
+      "n": 63,
+      "camera_rms": 1.144130825996399,
+      "camera_p95": 2.0718791484832764,
+      "projector_p50": 11.853084564208984,
+      "projector_p95": 13.969192504882812
+    },
+    {
+      "name": "capture_20261125_043210_629135",
+      "target": "Chessboard",
+      "holdout": false,
+      "n": 47,
+      "camera_rms": 1.0690240859985352,
+      "camera_p95": 2.1717770099639893,
+      "projector_p50": 10.721578598022461,
+      "projector_p95": 12.249571800231934
+    }
+  ],
+  "code_step_camera_px": 3,
+  "board_size_mm": 10,
+  "baseline_mm": 113.82619347878783
+}
