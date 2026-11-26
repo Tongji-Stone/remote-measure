@@ -1,0 +1,290 @@
+{
+  "source": {
+    "object": "维生素包装圆柱",
+    "camera_radial_mm": [
+      150.0,
+      350.0
+    ],
+    "board_xy_mm": [
+      0.0,
+      100.0
+    ],
+    "views": [
+      {
+        "view": 0,
+        "initial": 85189,
+        "distance_excluded": 3330,
+        "board_plane": {
+          "coefficients": [
+            -0.05172211699502615,
+            -0.011378827493844328,
+            -0.052209877292222824
+          ],
+          "support": 11196,
+          "noise_MAD_mm": 0.36943780037853435,
+          "median_plane_height_mm": -0.06616948084082708
+        },
+        "E102": 60771,
+        "board_points": 11099,
+        "board_pixels_kept_E102": 11099,
+        "M04_bottom_count": 161,
+        "M04_extra_support": 0,
+        "M01": 49607,
+        "M02": 49611,
+        "M03": 49654,
+        "M04": 49654
+      },
+      {
+        "view": 1,
+        "initial": 85008,
+        "distance_excluded": 3380,
+        "board_plane": {
+          "coefficients": [
+            -0.4276491720686794,
+            -0.01609888169441561,
+            -0.2828275712413984
+          ],
+          "support": 12211,
+          "noise_MAD_mm": 0.371498597179817,
+          "median_plane_height_mm": -0.5502396712637676
+        },
+        "E102": 63761,
+        "board_points": 12073,
+        "board_pixels_kept_E102": 12073,
+        "M04_bottom_count": 171,
+        "M04_extra_support": 0,
+        "M01": 51624,
+        "M02": 51563,
+        "M03": 51595,
+        "M04": 51595
+      },
+      {
+        "view": 2,
+        "initial": 86184,
+        "distance_excluded": 3457,
+        "board_plane": {
+          "coefficients": [
+            -0.36820550004779923,
+            -0.012960196585761847,
+            -0.4012858799970866
+          ],
+          "support": 12351,
+          "noise_MAD_mm": 0.3750363933538796,
+          "median_plane_height_mm": -0.5437943631557118
+        },
+        "E102": 64808,
+        "board_points": 12222,
+        "board_pixels_kept_E102": 12222,
+        "M04_bottom_count": 190,
+        "M04_extra_support": 0,
+        "M01": 52531,
+        "M02": 52262,
+        "M03": 52293,
+        "M04": 52293
+      },
+      {
+        "view": 3,
+        "initial": 84091,
+        "distance_excluded": 3319,
+        "board_plane": {
+          "coefficients": [
+            -0.05910102311439598,
+            0.024861720430960896,
+            -0.32965410043185395
+          ],
+          "support": 12458,
+          "noise_MAD_mm": 0.36457460335588904,
+          "median_plane_height_mm": -0.11611484128546579
+        },
+        "E102": 63409,
+        "board_points": 12381,
+        "board_pixels_kept_E102": 12381,
+        "M04_bottom_count": 145,
+        "M04_extra_support": 0,
+        "M01": 50995,
+        "M02": 50822,
+        "M03": 50840,
+        "M04": 50840
+      },
+      {
+        "view": 4,
+        "initial": 79670,
+        "distance_excluded": 3301,
+        "board_plane": {
+          "coefficients": [
+            0.22802220313683258,
+            0.05229918836817353,
+            -0.09507871323164965
+          ],
+          "support": 12647,
+          "noise_MAD_mm": 0.3392564927546052,
+          "median_plane_height_mm": 0.24906214799145232
+        },
+        "E102": 60413,
+        "board_points": 12541,
+        "board_pixels_kept_E102": 12541,
+        "M04_bottom_count": 216,
+        "M04_extra_support": 0,
+        "M01": 47780,
+        "M02": 47551,
+        "M03": 47614,
+        "M04": 47614
+      },
+      {
+        "view": 5,
+        "initial": 80449,
+        "distance_excluded": 3183,
+        "board_plane": {
+          "coefficients": [
+            0.1131362972643191,
+            -0.17809131602509942,
+            0.13770476348082253
+          ],
+          "support": 12474,
+          "noise_MAD_mm": 0.38224624127086987,
+          "median_plane_height_mm": 0.01259931397605385
+        },
+        "E102": 60286,
+        "board_points": 12420,
+        "board_pixels_kept_E102": 12420,
+        "M04_bottom_count": 128,
+        "M04_extra_support": 0,
+        "M01": 47835,
+        "M02": 47803,
+        "M03": 47817,
+        "M04": 47817
+      },
+      {
+        "view": 6,
+        "initial": 79604,
+        "distance_excluded": 3408,
+        "board_plane": {
+          "coefficients": [
+            -0.3291460303338609,
+            -0.03412384719942989,
+            0.2702800120389474
+          ],
+          "support": 12474,
+          "noise_MAD_mm": 0.3972146125344767,
+          "median_plane_height_mm": -0.4520513434542437
+        },
+        "E102": 60485,
+        "board_points": 12340,
+        "board_pixels_kept_E102": 12340,
+        "M04_bottom_count": 182,
+        "M04_extra_support": 0,
+        "M01": 48080,
+        "M02": 48085,
+        "M03": 48128,
+        "M04": 48128
+      },
+      {
+        "view": 7,
+        "initial": 80797,
+        "distance_excluded": 3244,
+        "board_plane": {
+          "coefficients": [
+            -0.4460307992794916,
+            0.0181363549983285,
+            0.4096884765060435
+          ],
+          "support": 12181,
+          "noise_MAD_mm": 0.3700226870902294,
+          "median_plane_height_mm": -0.6060992864726416
+        },
+        "E102": 59196,
+        "board_points": 12076,
+        "board_pixels_kept_E102": 12076,
+        "M04_bottom_count": 125,
+        "M04_extra_support": 0,
+        "M01": 47091,
+        "M02": 47095,
+        "M03": 47104,
+        "M04": 47104
+      },
+      {
+        "view": 8,
+        "initial": 82396,
+        "distance_excluded": 3342,
+        "board_plane": {
+          "coefficients": [
+            -0.017154812916864506,
+            0.03374669473400847,
+            0.387474729492908
+          ],
+          "support": 11415,
+          "noise_MAD_mm": 0.36962290981585433,
+          "median_plane_height_mm": -0.11253466338141038
+        },
+        "E102": 58941,
+        "board_points": 11360,
+        "board_pixels_kept_E102": 11360,
+        "M04_bottom_count": 125,
+        "M04_extra_support": 0,
+        "M01": 47569,
+        "M02": 47570,
+        "M03": 47574,
+        "M04": 47574
+      },
+      {
+        "view": 9,
+        "initial": 82953,
+        "distance_excluded": 3272,
+        "board_plane": {
+          "coefficients": [
+            0.19202190373497552,
+            -0.08591960862107145,
+            0.1864088058957773
+          ],
+          "support": 11333,
+          "noise_MAD_mm": 0.35031275022629604,
+          "median_plane_height_mm": 0.2406905249950455
+        },
+        "E102": 59174,
+        "board_points": 11256,
+        "board_pixels_kept_E102": 11256,
+        "M04_bottom_count": 154,
+        "M04_extra_support": 0,
+        "M01": 47857,
+        "M02": 47867,
+        "M03": 47907,
+        "M04": 47907
+      }
+    ]
+  },
+  "registered_vertices": [
+    60771,
+    63761,
+    64808,
+    63409,
+    60413,
+    60286,
+    60485,
+    59196,
+    58941,
+    59174
+  ],
+  "shared_evaluation_points": [
+    21441,
+    24112,
+    26303,
+    25358,
+    22750,
+    22407,
+    21619,
+    19799,
+    18427,
+    18689
+  ],
+  "e101_axis_mm": [
+    -8.000288028873445,
+    7.74884660458042,
+    249.96326938668136
+  ],
+  "axis": [
+    -0.0429152308524928,
+    0.7960539251834963,
+    0.6037022702962326
+  ],
+  "model": "ChArUco"
+}
