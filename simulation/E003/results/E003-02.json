@@ -1,0 +1,780 @@
+{
+  "E003-S01": {},
+  "E003-S02": {},
+  "E003-S03": {
+    "kind": "box",
+    "local_box_parameters": [
+      -0.14294148783568744,
+      -5.58111924795589,
+      -9.343149732580379,
+      -0.012007738629005973,
+      54.448298054832364,
+      21.414607307753748,
+      99.9904677550426
+    ],
+    "heldout_E002": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 2793,
+          "signed_center_offset": -0.16876124384101843,
+          "protrusion_P95": 3.960445901547499,
+          "protrusion_over_2": 0.09774436090225563,
+          "normal": [
+            0.9983428820069626,
+            -0.05208510253884792,
+            0.024466958118029535
+          ],
+          "distance_P95": 1.7452884425479582
+        },
+        {
+          "face": "Y+",
+          "held_count": 4500,
+          "signed_center_offset": 0.06777686299112062,
+          "protrusion_P95": 1.788593169624438,
+          "protrusion_over_2": 0.04688888888888889,
+          "normal": [
+            0.01656032624639739,
+            0.9997959884456102,
+            0.011564475028214888
+          ],
+          "distance_P95": 2.267369931313411
+        },
+        {
+          "face": "X-",
+          "held_count": 2895,
+          "signed_center_offset": -0.0728626680978195,
+          "protrusion_P95": 5.436989037104398,
+          "protrusion_over_2": 0.1153713298791019,
+          "normal": [
+            -0.9988386331881172,
+            -0.04524180186134203,
+            0.01656997933713241
+          ],
+          "distance_P95": 1.733487052705747
+        },
+        {
+          "face": "Y-",
+          "held_count": 4274,
+          "signed_center_offset": -0.59988335665523,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0156761815629387,
+          "normal": [
+            -0.040147724310687964,
+            -0.9985419987373289,
+            0.036083749671193946
+          ],
+          "distance_P95": 1.9904359291792737
+        }
+      ],
+      "mean_protrusion_over_2": 0.06892019030829628,
+      "max_face_protrusion_P95": 5.436989037104398,
+      "opposite_angle_error": [
+        "6.055",
+        "3.047"
+      ],
+      "adjacent_angle_error": [
+        "2.021",
+        "0.734",
+        "3.531",
+        "4.926"
+      ],
+      "signed_offsets": [
+        -0.16876124384101843,
+        0.06777686299112062,
+        -0.0728626680978195,
+        -0.59988335665523
+      ]
+    },
+    "heldout_E003": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 2793,
+          "signed_center_offset": -0.16876124384101843,
+          "protrusion_P95": 3.9604459015474895,
+          "protrusion_over_2": 0.09774436090225563,
+          "normal": [
+            0.9983428820069626,
+            -0.05208510253884792,
+            0.024466958118029535
+          ],
+          "distance_P95": 1.7452884425479611
+        },
+        {
+          "face": "Y+",
+          "held_count": 4500,
+          "signed_center_offset": 0.06777686299112062,
+          "protrusion_P95": 1.7885931696244592,
+          "protrusion_over_2": 0.04688888888888889,
+          "normal": [
+            0.01656032624639739,
+            0.9997959884456102,
+            0.011564475028214888
+          ],
+          "distance_P95": 2.267369931313361
+        },
+        {
+          "face": "X-",
+          "held_count": 2895,
+          "signed_center_offset": -0.0728626680978195,
+          "protrusion_P95": 5.4369890371043486,
+          "protrusion_over_2": 0.1153713298791019,
+          "normal": [
+            -0.9988386331881172,
+            -0.04524180186134203,
+            0.01656997933713241
+          ],
+          "distance_P95": 1.7334870527056832
+        },
+        {
+          "face": "Y-",
+          "held_count": 4274,
+          "signed_center_offset": -0.59988335665523,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0156761815629387,
+          "normal": [
+            -0.040147724310687964,
+            -0.9985419987373289,
+            0.036083749671193946
+          ],
+          "distance_P95": 1.9904359291792737
+        }
+      ],
+      "mean_protrusion_over_2": 0.06892019030829628,
+      "max_face_protrusion_P95": 5.4369890371043486,
+      "opposite_angle_error": [
+        "6.055",
+        "3.047"
+      ],
+      "adjacent_angle_error": [
+        "2.021",
+        "0.734",
+        "3.531",
+        "4.926"
+      ],
+      "signed_offsets": [
+        -0.16876124384101843,
+        0.06777686299112062,
+        -0.0728626680978195,
+        -0.59988335665523
+      ]
+    },
+    "axis_sensitivity_fixed_geometry": {
+      "base": {
+        "max_face_protrusion_P95": 5.4369890371043486,
+        "envelope_side_P95": 4.671937355481987,
+        "normal_distortion": 0.0
+      },
+      "+X": {
+        "max_face_protrusion_P95": 5.159760630785874,
+        "envelope_side_P95": 5.2362959801053375,
+        "normal_distortion": 7.980142217742375
+      },
+      "-X": {
+        "max_face_protrusion_P95": 12.22288065579276,
+        "envelope_side_P95": 7.7986152798128625,
+        "normal_distortion": 7.980142217742375
+      },
+      "+Y": {
+        "max_face_protrusion_P95": 8.949964597436923,
+        "envelope_side_P95": 9.110517590602667,
+        "normal_distortion": 7.980142217742375
+      },
+      "-Y": {
+        "max_face_protrusion_P95": 1.737027082328126,
+        "envelope_side_P95": 9.17586438207113,
+        "normal_distortion": 7.980142217742375
+      }
+    }
+  },
+  "E003-S04": {
+    "plane_candidates": 7,
+    "accepted_pairs": 1,
+    "initial_parallel_error_deg": 5.897804499145139,
+    "separation": 29.949538633966164,
+    "patch_sizes": [
+      708,
+      660
+    ],
+    "regularized_samples": 3388,
+    "maximum_local_move": 2.3000000000000003,
+    "heldout_pre_angle": 5.479195367519029,
+    "heldout_regularized_angle": 0.02654071628854718
+  },
+  "E003-S05": {
+    "plane_candidates": 7,
+    "accepted_pairs": 1,
+    "initial_parallel_error_deg": 19.840938198772964,
+    "separation": 46.44091596807412,
+    "patch_sizes": [
+      1065,
+      928
+    ],
+    "regularized_samples": 5799,
+    "maximum_local_move": 2.3000000000000007,
+    "heldout_pre_angle": 17.014885612387143,
+    "heldout_regularized_angle": 0.6372253844706299
+  },
+  "E003-S06": {
+    "kind": "box",
+    "local_box_parameters": [
+      0.14848350535355712,
+      4.5530957311652225,
+      0.37080547118677387,
+      3.9999999999996656,
+      42.60264850079796,
+      35.30582309353646,
+      47.32344663875486
+    ],
+    "heldout_E002": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 665,
+          "signed_center_offset": -1.655880323325313,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.9845316002584036,
+            -0.033544011795953205,
+            -0.1719660645745545
+          ],
+          "distance_P95": 2.223491613347616
+        },
+        {
+          "face": "Y+",
+          "held_count": 1834,
+          "signed_center_offset": -0.7826509635912089,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.021698236875370848,
+            0.9924328373259028,
+            -0.12085631929592654
+          ],
+          "distance_P95": 2.2366050176289667
+        },
+        {
+          "face": "X-",
+          "held_count": 1377,
+          "signed_center_offset": -0.21313616607630337,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9899924224177948,
+            0.04639870706116714,
+            -0.13327476707313463
+          ],
+          "distance_P95": 2.2036174035917355
+        },
+        {
+          "face": "Y-",
+          "held_count": 2488,
+          "signed_center_offset": -0.6571818865864358,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.043148449412882366,
+            -0.9913915372453532,
+            -0.12361646812443311
+          ],
+          "distance_P95": 2.1450875548532036
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "17.576",
+        "14.097"
+      ],
+      "adjacent_angle_error": [
+        "1.941",
+        "5.566",
+        "4.798",
+        "4.143"
+      ],
+      "signed_offsets": [
+        -1.655880323325313,
+        -0.7826509635912089,
+        -0.21313616607630337,
+        -0.6571818865864358
+      ]
+    },
+    "heldout_E003": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 665,
+          "signed_center_offset": -1.655880323325313,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.9845316002584036,
+            -0.033544011795953205,
+            -0.1719660645745545
+          ],
+          "distance_P95": 2.22349161334765
+        },
+        {
+          "face": "Y+",
+          "held_count": 1834,
+          "signed_center_offset": -0.7826509635912089,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.021698236875370848,
+            0.9924328373259028,
+            -0.12085631929592654
+          ],
+          "distance_P95": 2.2366050176289254
+        },
+        {
+          "face": "X-",
+          "held_count": 1377,
+          "signed_center_offset": -0.21313616607630337,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9899924224177948,
+            0.04639870706116714,
+            -0.13327476707313463
+          ],
+          "distance_P95": 2.2036174035917213
+        },
+        {
+          "face": "Y-",
+          "held_count": 2488,
+          "signed_center_offset": -0.6571818865864358,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.043148449412882366,
+            -0.9913915372453532,
+            -0.12361646812443311
+          ],
+          "distance_P95": 2.14508755485321
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "17.576",
+        "14.097"
+      ],
+      "adjacent_angle_error": [
+        "1.941",
+        "5.566",
+        "4.798",
+        "4.143"
+      ],
+      "signed_offsets": [
+        -1.655880323325313,
+        -0.7826509635912089,
+        -0.21313616607630337,
+        -0.6571818865864358
+      ]
+    },
+    "axis_sensitivity_fixed_geometry": {
+      "base": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 4.7889339118134675,
+        "normal_distortion": 0.0
+      },
+      "+X": {
+        "max_face_protrusion_P95": 1.5898812462396732,
+        "envelope_side_P95": 7.847748187953514,
+        "normal_distortion": 7.999885852626592
+      },
+      "-X": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 7.30876003361115,
+        "normal_distortion": 7.999885852626592
+      },
+      "+Y": {
+        "max_face_protrusion_P95": 3.842242359781013,
+        "envelope_side_P95": 9.691118347017841,
+        "normal_distortion": 7.999885852626591
+      },
+      "-Y": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 9.851527213544994,
+        "normal_distortion": 7.999885852626591
+      }
+    }
+  },
+  "E003-S07": {
+    "kind": "box",
+    "local_box_parameters": [
+      1.0797573179006386,
+      -5.685238623673823,
+      -53.102954452261265,
+      3.8615469433574727,
+      36.57669714855662,
+      30.554518247478132,
+      41.15952731721235
+    ],
+    "heldout_E002": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 1511,
+          "signed_center_offset": -0.48296822134002326,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.9926655281301718,
+            -0.009578900209124552,
+            -0.1205130446583722
+          ],
+          "distance_P95": 2.32668563028367
+        },
+        {
+          "face": "Y+",
+          "held_count": 1161,
+          "signed_center_offset": -2.157087847037346,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.01753594360172062,
+            0.9617933928718793,
+            -0.27321412867931205
+          ],
+          "distance_P95": 1.669749193482179
+        },
+        {
+          "face": "X-",
+          "held_count": 1125,
+          "signed_center_offset": 0.36163639367858025,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9936732727848417,
+            -0.006228401490749921,
+            -0.11213667539182579
+          ],
+          "distance_P95": 2.0776259106465416
+        },
+        {
+          "face": "Y-",
+          "held_count": 2499,
+          "signed_center_offset": 0.23755479571502747,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.028697345270205326,
+            -0.9968511533351997,
+            -0.07392050100428522
+          ],
+          "distance_P95": 2.0255303279054417
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "13.391",
+        "20.104"
+      ],
+      "adjacent_angle_error": [
+        "0.361",
+        "2.691",
+        "2.411",
+        "0.803"
+      ],
+      "signed_offsets": [
+        -0.48296822134002326,
+        -2.157087847037346,
+        0.36163639367858025,
+        0.23755479571502747
+      ]
+    },
+    "heldout_E003": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 1627,
+          "signed_center_offset": -0.48296822134002326,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.9926655281301718,
+            -0.009578900209124552,
+            -0.1205130446583722
+          ],
+          "distance_P95": 2.2975915543511123
+        },
+        {
+          "face": "Y+",
+          "held_count": 1203,
+          "signed_center_offset": -2.157087847037346,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.01753594360172062,
+            0.9617933928718793,
+            -0.27321412867931205
+          ],
+          "distance_P95": 1.6809754658077187
+        },
+        {
+          "face": "X-",
+          "held_count": 1121,
+          "signed_center_offset": 0.36163639367858025,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9936732727848417,
+            -0.006228401490749921,
+            -0.11213667539182579
+          ],
+          "distance_P95": 2.198914837090271
+        },
+        {
+          "face": "Y-",
+          "held_count": 2524,
+          "signed_center_offset": 0.23755479571502747,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.028697345270205326,
+            -0.9968511533351997,
+            -0.07392050100428522
+          ],
+          "distance_P95": 1.6993875251843007
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "13.391",
+        "20.104"
+      ],
+      "adjacent_angle_error": [
+        "0.361",
+        "2.691",
+        "2.411",
+        "0.803"
+      ],
+      "signed_offsets": [
+        -0.48296822134002326,
+        -2.157087847037346,
+        0.36163639367858025,
+        0.23755479571502747
+      ]
+    },
+    "axis_sensitivity_fixed_geometry": {
+      "base": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 4.924243717463525,
+        "normal_distortion": 0.0
+      },
+      "+X": {
+        "max_face_protrusion_P95": 2.025536957162049,
+        "envelope_side_P95": 7.6391097510543915,
+        "normal_distortion": 7.998337602079235
+      },
+      "-X": {
+        "max_face_protrusion_P95": 0.2184568548745175,
+        "envelope_side_P95": 6.173260342730544,
+        "normal_distortion": 7.998337602079235
+      },
+      "+Y": {
+        "max_face_protrusion_P95": 6.306844840588513,
+        "envelope_side_P95": 8.738295523344703,
+        "normal_distortion": 7.995458590279965
+      },
+      "-Y": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 10.147113898985321,
+        "normal_distortion": 7.995458590279965
+      }
+    }
+  },
+  "E003-S08": {
+    "kind": "box",
+    "local_box_parameters": [
+      1.585711620438796,
+      1.4558263938894718,
+      4.366512810968156,
+      1.4390842300841702,
+      33.22778237596303,
+      33.7539579170564,
+      57.26312298425381
+    ],
+    "heldout_E002": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 1152,
+          "signed_center_offset": -1.8126209725166404,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.975594810462762,
+            -0.014376433327378313,
+            -0.21910747126218907
+          ],
+          "distance_P95": 1.8574841361721828
+        },
+        {
+          "face": "Y+",
+          "held_count": 1332,
+          "signed_center_offset": -2.3643830733922684,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.03804850337243772,
+            0.9912760009609638,
+            -0.12619113007639293
+          ],
+          "distance_P95": 1.9691070026550366
+        },
+        {
+          "face": "X-",
+          "held_count": 3552,
+          "signed_center_offset": -0.6637689108383,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9938250850833928,
+            -0.025519463837357967,
+            -0.10798359701566204
+          ],
+          "distance_P95": 1.6778966508136952
+        },
+        {
+          "face": "Y-",
+          "held_count": 2363,
+          "signed_center_offset": -1.1786863629603488,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.007658875023800545,
+            -0.9932552858071941,
+            -0.11569476586881168
+          ],
+          "distance_P95": 2.302180870723743
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "18.996",
+        "14.003"
+      ],
+      "adjacent_angle_error": [
+        "1.359",
+        "2.700",
+        "1.498",
+        "1.732"
+      ],
+      "signed_offsets": [
+        -1.8126209725166404,
+        -2.3643830733922684,
+        -0.6637689108383,
+        -1.1786863629603488
+      ]
+    },
+    "heldout_E003": {
+      "planes": [
+        {
+          "face": "X+",
+          "held_count": 1152,
+          "signed_center_offset": -1.8126209725166404,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.975594810462762,
+            -0.014376433327378313,
+            -0.21910747126218907
+          ],
+          "distance_P95": 1.8574841361721413
+        },
+        {
+          "face": "Y+",
+          "held_count": 1332,
+          "signed_center_offset": -2.3643830733922684,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.03804850337243772,
+            0.9912760009609638,
+            -0.12619113007639293
+          ],
+          "distance_P95": 1.9691070026550188
+        },
+        {
+          "face": "X-",
+          "held_count": 3552,
+          "signed_center_offset": -0.6637689108383,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            -0.9938250850833928,
+            -0.025519463837357967,
+            -0.10798359701566204
+          ],
+          "distance_P95": 1.6778966508136743
+        },
+        {
+          "face": "Y-",
+          "held_count": 2363,
+          "signed_center_offset": -1.1786863629603488,
+          "protrusion_P95": 0.0,
+          "protrusion_over_2": 0.0,
+          "normal": [
+            0.007658875023800545,
+            -0.9932552858071941,
+            -0.11569476586881168
+          ],
+          "distance_P95": 2.302180870723782
+        }
+      ],
+      "mean_protrusion_over_2": 0.0,
+      "max_face_protrusion_P95": 0.0,
+      "opposite_angle_error": [
+        "18.996",
+        "14.003"
+      ],
+      "adjacent_angle_error": [
+        "1.359",
+        "2.700",
+        "1.498",
+        "1.732"
+      ],
+      "signed_offsets": [
+        -1.8126209725166404,
+        -2.3643830733922684,
+        -0.6637689108383,
+        -1.1786863629603488
+      ]
+    },
+    "axis_sensitivity_fixed_geometry": {
+      "base": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 4.783682492662444,
+        "normal_distortion": 0.0
+      },
+      "+X": {
+        "max_face_protrusion_P95": 1.4622246008255257,
+        "envelope_side_P95": 7.232653435333646,
+        "normal_distortion": 7.994592441686424
+      },
+      "-X": {
+        "max_face_protrusion_P95": 2.8067157652560546,
+        "envelope_side_P95": 7.52656681734852,
+        "normal_distortion": 7.994592441686424
+      },
+      "+Y": {
+        "max_face_protrusion_P95": 3.759511868649046,
+        "envelope_side_P95": 9.036454397673996,
+        "normal_distortion": 7.994447736545482
+      },
+      "-Y": {
+        "max_face_protrusion_P95": 0.0,
+        "envelope_side_P95": 9.675127904491136,
+        "normal_distortion": 7.994447736545482
+      }
+    }
+  }
+}

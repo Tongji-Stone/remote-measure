@@ -1,0 +1,66 @@
+{
+  "diagnosis": {},
+  "local_completion": {
+    "0": {
+      "kind": "low_components",
+      "components": 1,
+      "anchor_height": 8.006238824890978,
+      "virtual_points": 716,
+      "photo_support": {
+        "footprint_components": 2,
+        "heldout_visible_area_agreement": 0.7535353535353535,
+        "training_area_agreement": 0.8651026392961877,
+        "footprint_mm_star2": 458.7488,
+        "heldout_view": 7,
+        "inferred_height_range": [
+          0.48,
+          3.25
+        ],
+        "heldout_section_M03": {
+          "visible_coverage": 0.9333333333333333,
+          "section_overlap_iou": 0.5150501672240803,
+          "occupied_fraction_outside_visible_outline": 0.4652777777777778
+        },
+        "heldout_section_M05": {
+          "visible_coverage": 0.9212121212121213,
+          "section_overlap_iou": 0.5123595505617977,
+          "occupied_fraction_outside_visible_outline": 0.46415981198589895
+        },
+        "heldout_section_M06": {
+          "visible_coverage": 0.7393939393939394,
+          "section_overlap_iou": 0.4457978075517661,
+          "occupied_fraction_outside_visible_outline": 0.47109826589595377
+        },
+        "accepted_samples": 389
+      }
+    },
+    "1": {
+      "kind": "low_components",
+      "components": 1,
+      "anchor_height": 7.945524093723899,
+      "virtual_points": 651
+    }
+  },
+  "center": [
+    -13.246407217328882,
+    20.497706543972203,
+    279.8724668211592
+  ],
+  "basis": [
+    [
+      0.998519076991785,
+      -3.469446951953614e-18,
+      0.054402691877092096
+    ],
+    [
+      0.043388151917501214,
+      -0.6032702221879835,
+      -0.7963557667867075
+    ],
+    [
+      0.032819524016317755,
+      0.7975368574688326,
+      -0.6023768254357743
+    ]
+  ]
+}

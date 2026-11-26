@@ -1,0 +1,45 @@
+{
+  "E002-10": {
+    "sha256": "4d294a1f76e055ac2ace17a4d00696ced9febddf7e41268136cc363d74bc00d0",
+    "caption": "Measured object-only point cloud vs one shape candidate per captured session. Orange marks predicted points farther than 2.5 mm* from measured samples.",
+    "caption_sha256": "52257ae71d795d38c816539aa810385867d0dbe9093c810921b103cc1b596bf9",
+    "inputs": {
+      "simulation/E002/results/E002-S01/E002-S01-C00.ply": "d842c5a0cf1567c1c7e450d47b0574c626a41b167ef7eef9423779e2a472cdc3",
+      "simulation/E002/results/E002-S01/E002-S01-C03-T0.ply": "28ce240b185caf9ae0940ca082bc330ab4485383f5f51c882d383dcda25c2107",
+      "simulation/E002/results/E002-S02/E002-S02-C00.ply": "8789176563f9539c87a9bf7c770aedda9258a190ef757bd36eb57b11decca5ba",
+      "simulation/E002/results/E002-S02/E002-S02-C06-T0.ply": "6e4ec8676a2b0337ef8227906e6052a6426e4627e4c567c5c977fd3c291993d4",
+      "simulation/E002/results/E002-S03/E002-S03-C00.ply": "7b5981165685683d61eee55ffc109f9f24e152ec6a0550ecab76330129ee5eec",
+      "simulation/E002/results/E002-S03/E002-S03-C04-T0.ply": "3452b18de20ceb1de91db98388e2d7df06ad77f027a9744f65b7a34202fb1857",
+      "simulation/E002/results/E002-S04/E002-S04-C00.ply": "f5b672fd44461c0aa835bb336d491848814642a92cb29dd5ee57153eec3d4d86",
+      "simulation/E002/results/E002-S04/E002-S04-C03-T0.ply": "7296b9e0b0655d21a8d190b6a0779a2a9f3b53138468c1937327ec9f8bd75239",
+      "simulation/E002/results/E002-S05/E002-S05-C00.ply": "7b8cc06008517c33e3db454395f8daa2df85f5f2e7af1bbe9a1d4b5f45bb660b",
+      "simulation/E002/results/E002-S05/E002-S05-C03-T0.ply": "3649b4b656e91bb4c23d3c7df3a9c4f198bee42b9fda3f8dfdd20737980f6924",
+      "simulation/E002/results/E002-S06/E002-S06-C00.ply": "898ef2c39f8f2e4bb54daa86796d6c277e873be090ccdd7426bfd0a84e3c86d6",
+      "simulation/E002/results/E002-S06/E002-S06-C04-T0.ply": "4885ca03af72368765c00b0f2e86c563b88e9015e5f1a417ccfe9cdb49917efd",
+      "simulation/E002/results/E002-S07/E002-S07-C00.ply": "ccada38321782bebe0a11d12d81e31fc47015911ee29eb88e7fb7b031cec4c8d",
+      "simulation/E002/results/E002-S07/E002-S07-C04-T0.ply": "a111f792f5f1738f8106bf5f2278f73bee782221b1361a77c83106e0961e5698",
+      "simulation/E002/results/E002-S08/E002-S08-C00.ply": "2a359efae332412ab6e1f6cf6ca83e0c455d6da599aa2676314978a1b6a7d442",
+      "simulation/E002/results/E002-S08/E002-S08-C04-T0.ply": "d18bdcab13a5009cce78ce72eaed8148a23664cca038bcaac6419938c2fa4450"
+    },
+    "source": "b985a1f5edf803463df55da3be5fa2f0ca2785c593fb319ea49790e0431c6fea",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "4d294a1f76e055ac2ace17a4d00696ced9febddf7e41268136cc363d74bc00d0",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  },
+  "E002-11": {
+    "sha256": "13045d87689a137ff96d394a17e06bf5b52469aeba822c3985cfbfa143dccbe9",
+    "caption": "Recall on a deliberately withheld measured patch. Void columns represent inapplicable shape priors.",
+    "caption_sha256": "351854dc6b4d5e9e0deab4f4d967a737f7859053bbc3e6caf14e8c4749b11da4",
+    "inputs": {
+      "simulation/E002/results/E002-01.csv": "877740b4279db6d5b3fe30ba8de61445ef03a914bdd5404ec305c2a3ee1ec2ca"
+    },
+    "source": "b985a1f5edf803463df55da3be5fa2f0ca2785c593fb319ea49790e0431c6fea",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "13045d87689a137ff96d394a17e06bf5b52469aeba822c3985cfbfa143dccbe9",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  }
+}
