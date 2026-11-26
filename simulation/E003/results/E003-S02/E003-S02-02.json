@@ -1,0 +1,39 @@
+{
+  "diagnosis": {},
+  "local_completion": {
+    "0": {
+      "kind": "lower_azimuthal_contours",
+      "supported_angle_bins": 32,
+      "anchor_height_median": 32.73224248559224,
+      "virtual_points": 289
+    },
+    "1": {
+      "kind": "lower_azimuthal_contours",
+      "supported_angle_bins": 27,
+      "anchor_height_median": 32.568313163203314,
+      "virtual_points": 297
+    }
+  },
+  "center": [
+    -13.513580832484628,
+    19.86729101408686,
+    281.0595292549921
+  ],
+  "basis": [
+    [
+      0.9985384056334556,
+      0.0,
+      0.05404676192887438
+    ],
+    [
+      0.04310718441573219,
+      -0.6031992856506057,
+      -0.796424756296756
+    ],
+    [
+      0.032600968187225375,
+      0.7975905100931174,
+      -0.6023176529727952
+    ]
+  ]
+}
