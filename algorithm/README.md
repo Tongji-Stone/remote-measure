@@ -2,6 +2,25 @@
 
 **现阶段建议用 ChArUco 或多枚 ArUco 板确定机械位姿，以实测转轴和角度刚性回转，先验收拼接，再给通过验收的重叠区做小幅、绕轴约束的 ICP。** 每一帧直接变换到参考角，便于量化误差和定位缺测。优先拿哑光不对称标准块做整圈，六棱柱做解码压力测试，鸡蛋做对称性测试。后续体积线路仍可并行推进。
 
+## 实验与结果入口
+
+这部分覆盖从 Gray code 三角化和转轴标定，到去背景、去板和多视角配准。完整实验顺序和图表见 [E001–E104 汇报](../output/pdf/多视角点云拼接与缺面重建_E104拼接与网格优化.pdf)，配准后的补全、网格和体积结果见 [simulation](../simulation/README.md)。
+
+| 实验 | 做了什么 | 从哪里看 |
+| --- | --- | --- |
+| E001 | 在八组早期扫描上复跑全场拼接，比较角站减半、同批轴标定和独立回零。 | [全场预览](scene-fusion/E001/figures/full_scenes.png)、[配准评分](scene-fusion/E001/benchmark.csv)、[各组全场点云](scene-fusion/E001/clouds) |
+| E002 | 在去转盘的点云上比较轴先验与多种 ICP，检查局部重叠改善时整圈方位是否仍成立。 | [实验说明](scene-fusion/E002/README.md)、[评分与点云](scene-fusion/E002/results) |
+| E003 | 对照去噪、特征粗配准和约束精修，用留出码与深度检查偏心纸盒等案例。 | [实验说明](scene-fusion/E003/README.md)、[评分与点云](scene-fusion/E003/results) |
+| E101 | 用同一套五组、54 个相机视角比较 ChArUco 与棋盘格光学标定，保留整幅有效点。 | [目录与复跑说明](scene-fusion/E101/README.md)、[索引](scene-fusion/E101/E101索引.csv) |
+| E102 | 剔除外部背景，保留物体和棋盘格。露出的板面供后续估计贴底高度。 | [实验说明](scene-fusion/E102/README.md)、[汇总](scene-fusion/E102/汇总.csv) |
+| E103 | 从 E102 分割物体，保留可见底部，对照分割方法和配准结果。 | [实验说明](scene-fusion/E103/README.md)、[汇总](scene-fusion/E103/汇总.csv) |
+| E104 | 从共轴位姿开始做稳健精修，评估角站减半、噪声、遮码和虚假环边。 | [方法与新扫描入口](scene-fusion/E104/README.md)、[按标定和物体查看结果](scene-fusion/E104) |
+| M01 | 比较标定尺度、位姿同步和表面偏差对体积的影响，并测试截面积积分。 | [M01 说明](Math/M01/README.md)、[结果与图](Math/M01/results) |
+
+找早期物体时，先在[四类物体索引](point%20cloud/README.md)按采集场次定位 `单视角/` 与 `拼接/`。找新批次的推荐结果时，在 E104 的 `ChArUco/` 或 `Chessboard/` 下选择物体，同组对照 `推荐.ply`、`指标.csv` 和 `鲁棒性.json`。可先看预览图，再把 PLY 下载到 CloudCompare 或 MeshLab 查看。配准评分结合邻角 F1、留出深度和方位缺口来读。
+
+完整复跑需要各实验说明所列的原始图像、标定档案或本地中间产物。原始采集的共享位置见[仓库说明](../README.md#结构光实验数据)。只查看本分支的点云、图和指标表时，可直接使用上述目录。
+
 ## 1. 赛题对方案的影响
 
 依据 2026-11-17 第一轮通知，赛题 2 在 PDF 物理页 9–13。布设 10 分钟，正式测量另计 10 分钟，A/B/C 各一件并提交一次结果。目标为 50–120 mm 喷砂哑光铝件，C/B/A 权重分别为 0.5/0.3/0.2。B 类槽口与孔口尺寸至少 15 mm，深度不大于 5 mm，特征从上方可见。B 和 C 有平底，C 上表面连续且无垂向内倾遮挡。通孔、凹槽和盲孔的空缺须扣除。评分使用现场排水标准体积，提交值保留到 0.1 mm³。比赛现场离线，整机 500 mm 立方包络和 10 kg 上限按细则规定计入设备。物体表面不可贴标、喷涂或加辅助结构，测量端不得接触目标，测量期间不得触碰目标或手动调整其姿态。
@@ -14,7 +33,7 @@
 
 ## 2. 现有点云审计
 
-检查了 `result/structure-light` 的全部 17 个 PLY 与各组预览。11 月 20 日各组 PLY 头写明使用假定轴线和名义角度，文件已合并成按颜色区分的实验点云。逐文件点数和色组数量见 [result-audit.tsv](result-audit.tsv)。四种物体的点数如下。
+检查了历史结构光结果的 17 个 PLY 与各组预览。归档文件见 [results/structured-light](../results/structured-light)。11 月 20 日各组 PLY 头写明使用假定轴线和名义角度，文件已合并成按颜色区分的实验点云。逐文件点数和色组数量见 [result-audit.tsv](result-audit.tsv)。四种物体的点数如下。
 
 | 物体 | 忽略 0 级 | 忽略 1 级 | 忽略 2 级 | 观察 |
 |---|---:|---:|---:|---|
@@ -92,9 +111,9 @@
 
 | 本地目录 | 版本与提交 | 先看 |
 |---|---|---|
-| `Open3D` | v0.20.0 · `b6c5e196384ad71e75b6e6f9c5da22d046221f1d` | [robust_icp.py](Open3D/examples/python/pipelines/robust_icp.py) · [multiway_registration.py](Open3D/examples/python/pipelines/multiway_registration.py) · [Poisson 示例](Open3D/examples/python/geometry/triangle_mesh_from_point_cloud_poisson.py) |
-| `opencv` | 4.13.0 · `fe38fc608f6acb8b68953438a62305d8318f4fcd` | [ChArUco 教程](opencv/doc/tutorials/objdetect/charuco_detection/charuco_detection.markdown) |
-| `opencv_contrib` | 4.13.0 · `d99ad2a188210cc35067c2e60076eed7c2442bc3` | [Gray code 实现](opencv_contrib/modules/structured_light/src/graycodepattern.cpp) · [投影仪标定样例](opencv_contrib/modules/structured_light/samples/projectorcalibration.cpp) |
+| `Open3D` | v0.20.0 · `b6c5e196384ad71e75b6e6f9c5da22d046221f1d` | [robust_icp.py](https://github.com/isl-org/Open3D/blob/b6c5e196384ad71e75b6e6f9c5da22d046221f1d/examples/python/pipelines/robust_icp.py) · [multiway_registration.py](https://github.com/isl-org/Open3D/blob/b6c5e196384ad71e75b6e6f9c5da22d046221f1d/examples/python/pipelines/multiway_registration.py) · [Poisson 示例](https://github.com/isl-org/Open3D/blob/b6c5e196384ad71e75b6e6f9c5da22d046221f1d/examples/python/geometry/triangle_mesh_from_point_cloud_poisson.py) |
+| `opencv` | 4.13.0 · `fe38fc608f6acb8b68953438a62305d8318f4fcd` | [ChArUco 教程](https://github.com/opencv/opencv/blob/fe38fc608f6acb8b68953438a62305d8318f4fcd/doc/tutorials/objdetect/charuco_detection/charuco_detection.markdown) |
+| `opencv_contrib` | 4.13.0 · `d99ad2a188210cc35067c2e60076eed7c2442bc3` | [Gray code 实现](https://github.com/opencv/opencv_contrib/blob/d99ad2a188210cc35067c2e60076eed7c2442bc3/modules/structured_light/src/graycodepattern.cpp) · [投影仪标定样例](https://github.com/opencv/opencv_contrib/blob/d99ad2a188210cc35067c2e60076eed7c2442bc3/modules/structured_light/samples/projectorcalibration.cpp) |
 
 单目加投影仪可继续使用自有解码器，也可参考 contrib 的 `GrayCodePattern.getProjPixel()` 产出相机像素到投影像素对应。4.13 源码中其布尔返回值表示是否出错，白图减黑图的阴影判定需由单目流程应用。官方教程中 3DUNDERWORLD 的 `decode()` 示例采用双相机视差。你们用相机和已标定投影仪射线三角化。更多可对照入口见 [Moreno–Taubin 原始项目](https://mesh.brown.edu/calibration/) 和 [INESCTEC 单相机采集与标定开源实现](https://github.com/inesc-tec-robotics/carlos_projector_calibration)。
 
@@ -119,7 +138,7 @@ git -C algorithm/opencv_contrib sparse-checkout set modules/structured_light
 ```bash
 python3.14 -m venv algorithm/.venv
 algorithm/.venv/bin/python -m pip install -r algorithm/requirements.txt
-algorithm/.venv/bin/python algorithm/audit_result.py result/structure-light
+algorithm/.venv/bin/python algorithm/audit_result.py results/structured-light
 ```
 
 Apple Silicon 上 Open3D 0.20.0 的 wheel 还依赖 `libusb`。本机已在项目的 `.venv` 内补入 Homebrew 1.0.30 的 `libusb` 并改为相对路径加载。其他 Mac 如果在导入时报相同错误，可在本机用 `brew install libusb` 提供 wheel 所需的依赖。相关平台问题见 [Open3D issue #7586](https://github.com/isl-org/Open3D/issues/7586)。
