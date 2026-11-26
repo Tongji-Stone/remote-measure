@@ -1,0 +1,26 @@
+{
+  "rigid_fusions_verified": 30,
+  "registration_groups": [
+    "ChArUco/三棱锥_大面坐地",
+    "ChArUco/三棱锥_小面坐地",
+    "ChArUco/坐着人偶",
+    "ChArUco/小南瓜",
+    "ChArUco/维生素包装圆柱",
+    "Chessboard/三棱锥_大面坐地",
+    "Chessboard/三棱锥_小面坐地",
+    "Chessboard/坐着人偶",
+    "Chessboard/小南瓜",
+    "Chessboard/维生素包装圆柱"
+  ],
+  "perturbations": 50,
+  "mesh_trials_count": 243,
+  "verified_watertight_recommendations": [
+    "C1-ChArUco/S05",
+    "C1-Chessboard/S04",
+    "F1-ChArUco/S04",
+    "F1-Chessboard/S04",
+    "K1-ChArUco/S07",
+    "P1-ChArUco/S04",
+    "P2-ChArUco/S04"
+  ]
+}

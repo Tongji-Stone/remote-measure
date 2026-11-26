@@ -1,0 +1,66 @@
+{
+  "E003-10": {
+    "sha256": "3d49516b10dff5121c4f85ab20de0f48a85a30a7ba365645305e668c94ecc652",
+    "source_sha256": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "caption": "White shaded triangular models. Measured Poisson surface, selected closed surface and bottom view.",
+    "caption_sha256": "d1d58fb6dfdcbe57cc8d0b1be51dcaea05c426b51c4950b936f25dcb323f9c19",
+    "inputs": {
+      "simulation/E003/results/E003-S02/E003-S02-C00.ply": "fa12c8484ce7a50b72e66333e1662b0d3830135ed2d8ec3fa4ca0e13230cc6ae",
+      "simulation/E003/results/E003-S05/E003-S05-M01-T0.ply": "41a098511c2f9a15a49ed67b99a4d8d121bd34a9af7e247c4528251c932e92d1",
+      "simulation/E003/results/E003-S04/E003-S04-M01-T0.ply": "7fa41558c445631eb12d2d31de3df307e3f7912df3b95b95f60d59880660afde",
+      "simulation/E003/results/E003-S02/E003-S02-M01-T0.ply": "30b6fab7c4519ba8cf250224b83d72902660f656889c173aedc6e9fd9e761996",
+      "simulation/E003/results/E003-S08/E003-S08-C00.ply": "f77807ad40f151803610462dc62c364ddb371a6d48632b9994293858b5c2b4b0",
+      "simulation/E003/results/E003-S06/E003-S06-C00.ply": "26ac8dc1443c60e5fe51519914c5a73c436c6f271e1210e3e6906f053a9d2f73",
+      "simulation/E003/results/E003-S07/E003-S07-M01-T0.ply": "b82bcc131b2162208c031430490573645fd04e53d833b9f8ebc6511db728e0d6",
+      "simulation/E003/results/E003-S03/E003-S03-M01-T0.ply": "67ece6eb1b7b64d908570397f37b9b7c35e8aa0e39820189b986e5f4d2172a96",
+      "simulation/E003/results/E003-S01/E003-S01-M05-T0.ply": "ef16b60fd405a30582cb08f48dca0f2366bccca090022ef8d091cef347d4b4fe",
+      "simulation/E003/results/E003-S02/E003-S02-M03-T0.ply": "84ad65d74756e175d29acd16a092eb92e67a7b0600fcdcca708ddb9ae0383191",
+      "simulation/E003/results/E003-S05/E003-S05-M03-T0.ply": "bb98d4e27f331a83165017cdb577180adb6eca4e79e806f25acd9b7b3ad6bfe9",
+      "simulation/E003/results/E003-S08/E003-S08-M04-T0.ply": "90cb58f7561ff43fb42ee837cc1cc311a5dee7e3eb4e72a32c3fa91d451ce8fc",
+      "simulation/E003/results/E003-S07/E003-S07-C00.ply": "b7e2adb293f42e876d143de7689602b4d2ac75e565bc2391091db24828026354",
+      "simulation/E003/results/E003-S04/E003-S04-M03-T0.ply": "bf77b74ce1d8ce494df10be714a958cbf24e6eb2bc5f2d2fdb7198ab3fd654ea",
+      "simulation/E003/results/E003-S01/E003-S01-C00.ply": "345fcb6e439796b575d7c4455140fa390d769aca115bf9e256946e0a14509bc1",
+      "simulation/E003/results/E003-S06/E003-S06-M01-T0.ply": "da94d13f640ba34aad43a950dce0c378b49c2ff396a1869953be6d856628627d",
+      "simulation/E003/results/E003-S07/E003-S07-M04-T0.ply": "a9debf67c61cc0e954423b92417d70910a5945c0db5ba7e5d9b0dcab9a68a2cd",
+      "simulation/E003/results/E003-S08/E003-S08-M01-T0.ply": "db04a2ab5c097e292cf0f72973b2c2d48357a19dfd884ae0de659bc11cd3b3a9",
+      "simulation/E003/results/E003-S03/E003-S03-C00.ply": "11af72211b09715d451f0290047c4e130d2dbd8b128c7410cac1393f662d72ce",
+      "simulation/E003/results/E003-S04/E003-S04-C00.ply": "da11411cb1c44c03e538e79f65ca1581c86ef2177d4f93da8d886844d7332601",
+      "simulation/E003/results/E003-S06/E003-S06-M04-T0.ply": "b8cb91e900725c54c640fbcb1e442faba4a969181952f3c20a60af1c7a0a390d",
+      "simulation/E003/results/E003-S03/E003-S03-M04-T0.ply": "ef5aa179de46741ff87c5b5de2a2ef7650973deaab59b1cd6e1e17cca8b24fde",
+      "simulation/E003/results/E003-S01/E003-S01-M01-T0.ply": "05b2a0bea0ef5385fe7b23070317ca1526f0378d1c312bba68a8c4b8a0cf1f60",
+      "simulation/E003/results/E003-S05/E003-S05-C00.ply": "36d8b448f01a2d15483f20f818d4bcd2b51e1c958574f1a9c270fc129fea2b96"
+    },
+    "units": "mm* in geometry; panels use same scale where compared",
+    "command": "algorithm/.venv/bin/python simulation/E003/render_e003.py",
+    "visual_review": {
+      "decision": "pass",
+      "checked_hash": "3d49516b10dff5121c4f85ab20de0f48a85a30a7ba365645305e668c94ecc652",
+      "print_check": "embedded in E003.pdf at landscape A4; export, color, panel titles and units inspected"
+    }
+  },
+  "E003-11": {
+    "sha256": "d1c406a3033d9e024f3ad761caac64b7428b948fdc7523348dba79e9b28d6dda",
+    "source_sha256": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "caption": "Raw white-field foot contours and generic versus photo-assisted foot reconstruction; view 07 was held out.",
+    "caption_sha256": "8e350f03fa6e196e193d7e6238f191c6c615180b5af654d5742a7873cd610883",
+    "inputs": {
+      "simulation/E003/results/E003-S01/E003-S01-C02-T0.ply": "0a9ab0e6de98d34babe0338349713ffaed8e2d6eefb6a3616ed19f2c23ba45ea",
+      "simulation/E003/results/E003-S01/E003-S01-02.json": "8c448603d4e7bf51acd0579ac8cb9553b5adf99bfd07a2a499519e3194b27205",
+      "simulation/E003/results/E003-S01/E003-S01-C00.ply": "345fcb6e439796b575d7c4455140fa390d769aca115bf9e256946e0a14509bc1",
+      "algorithm/scene-fusion/E001/optical_inputs.json": "a058c4dbd0ce827b8c71f486deea431103f624b84677877954e436e0b2aef98c",
+      "data/object_scans/scan_20261120_095133_815739_小黄人/view_0001/graycode_42.png": "a8df7fb4db81170b6bc8760d77ac3359345a6f0d3d40d46682c9f017acf351a9",
+      "data/object_scans/scan_20261120_095133_815739_小黄人/view_0008/graycode_42.png": "76bc3b4b3257d77f09981cdb258dfd389346180a7a303457c420380ce1ff2c81",
+      "simulation/E003/results/E003-S01/E003-S01-M03-T0.ply": "8fa46a28ea116b6e3eaef3a8f13a4e6d5bd336dc254cb5c68bc03e7873cbea9a",
+      "simulation/E003/minion_footprints.json": "790ee9e9c3f420ac96256b297f195fbd8a501e9d9f91335faba78e94fdbf32b2",
+      "data/object_scans/scan_20261120_095133_815739_小黄人/view_0000/graycode_42.png": "f8e8e4aa6719478bcbb50cb969706a15a39ab750403cec8909068bdff9ed5544",
+      "simulation/E003/results/E003-S01/E003-S01-M05-T0.ply": "ef16b60fd405a30582cb08f48dca0f2366bccca090022ef8d091cef347d4b4fe"
+    },
+    "units": "mm* in geometry; panels use same scale where compared",
+    "command": "algorithm/.venv/bin/python simulation/E003/render_e003.py",
+    "visual_review": {
+      "decision": "pass",
+      "checked_hash": "d1c406a3033d9e024f3ad761caac64b7428b948fdc7523348dba79e9b28d6dda",
+      "print_check": "embedded in E003.pdf at landscape A4; export, color, panel titles and units inspected"
+    }
+  }
+}
