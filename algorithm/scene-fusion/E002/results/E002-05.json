@@ -1,0 +1,124 @@
+{
+  "equal_to_input_transformed_by_selected_pose": true,
+  "object_only_exact_subset_of_full_scene": true,
+  "rigid_transform_checks_passed": true,
+  "registration_variants_scored": 79,
+  "segmentation_frame_method_scores": 112,
+  "completion_variants_scored": 66,
+  "closed_variants": 58,
+  "cases": {
+    "E002-S01": {
+      "all_depth_samples": 403802,
+      "real_foreground_samples": 76427,
+      "completion_filtered_foreground_samples": 76427,
+      "view_exports": 9,
+      "withheld_completion_samples": 13357
+    },
+    "E002-S02": {
+      "all_depth_samples": 202786,
+      "real_foreground_samples": 68281,
+      "completion_filtered_foreground_samples": 68281,
+      "view_exports": 5,
+      "withheld_completion_samples": 9671
+    },
+    "E002-S03": {
+      "all_depth_samples": 143624,
+      "real_foreground_samples": 89035,
+      "completion_filtered_foreground_samples": 89035,
+      "view_exports": 5,
+      "withheld_completion_samples": 10997
+    },
+    "E002-S04": {
+      "all_depth_samples": 250885,
+      "real_foreground_samples": 30810,
+      "completion_filtered_foreground_samples": 30810,
+      "view_exports": 8,
+      "withheld_completion_samples": 6113
+    },
+    "E002-S05": {
+      "all_depth_samples": 417681,
+      "real_foreground_samples": 65200,
+      "completion_filtered_foreground_samples": 65200,
+      "view_exports": 8,
+      "withheld_completion_samples": 14299
+    },
+    "E002-S06": {
+      "all_depth_samples": 392068,
+      "real_foreground_samples": 90782,
+      "completion_filtered_foreground_samples": 90782,
+      "view_exports": 8,
+      "withheld_completion_samples": 14885
+    },
+    "E002-S07": {
+      "all_depth_samples": 409627,
+      "real_foreground_samples": 80303,
+      "completion_filtered_foreground_samples": 80276,
+      "view_exports": 8,
+      "withheld_completion_samples": 11146
+    },
+    "E002-S08": {
+      "all_depth_samples": 390241,
+      "real_foreground_samples": 76656,
+      "completion_filtered_foreground_samples": 76632,
+      "view_exports": 8,
+      "withheld_completion_samples": 12498
+    }
+  },
+  "pdf": {
+    "rendered_pages": 5,
+    "all_pages_text_extracted": true,
+    "sha256": "91939285674225cde43d6e6560920ce9e357cc2f725dd1d45f7483289416ba98",
+    "page_raster_sha256": [
+      "7bc06a6ba71536d24edefab5ac82ee92b69e78b5bea5935500945103acbc9fcd",
+      "810f5a7f9401be96cfd44e1b86affce83f0158774428e6553a61090fb2cd5c1c",
+      "46fc653589151cf056fd30d54417ab7c6b12e5bad4cd7c7f622dbdde3ec90a3f",
+      "1dc0485c2ce2e09a96af5b03f9fa2ff9484107b85a5713c6afe8d4d39744e280",
+      "adefe0d65d74895903151379be8c44a1e96229dd16123e786afd5ed90208522e"
+    ]
+  },
+  "closed_mesh_checks": "oriented paired edges; all positive-volume meshes also verified edge and vertex manifold",
+  "total_valid_depth_samples": 2610714,
+  "total_numbered_views": 59,
+  "literature": {
+    "A_Point_Cloud_Multi-View_Registration_with_Rotating_Platform_Motion.pdf": {
+      "sha256": "0654040c7d26f0a4735935b2702e1c164e3775e4256b8a55ef8bdd6cd6187f79",
+      "evidence_printed_pages": [
+        53,
+        54,
+        55,
+        56
+      ]
+    },
+    "物体三维重构与位姿估计_朱贺勇.pdf": {
+      "sha256": "e256a2b37d49c849822877ee375b51958edd5ec006dfc3459c83e7b5ddae930d",
+      "evidence_printed_pages": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        65
+      ]
+    },
+    "基于旋转平台的多视角三维重建_李怀泽.pdf": {
+      "sha256": "d4b368c808c50e4820a1c91a008b6582cb914e7ae58d8c4890ad3ce97f73bd86",
+      "evidence_printed_pages": [
+        35,
+        36,
+        37,
+        43,
+        44,
+        45,
+        46,
+        47,
+        55,
+        56
+      ]
+    }
+  }
+}

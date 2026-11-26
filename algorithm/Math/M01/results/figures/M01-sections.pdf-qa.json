@@ -1,0 +1,194 @@
+{
+  "pdf": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf",
+  "sha256": "03b9cf79021c95ceffae84e9b25c78da8152cdcc63d439ea0593fcd9a2eb6725",
+  "pymupdf_version": "1.28.2",
+  "pages": [
+    {
+      "page": 1,
+      "size_mm": [
+        179.99999491373697,
+        71.99999796549479
+      ],
+      "page_bbox_pt": [
+        0.0,
+        0.0,
+        510.2362060546875,
+        204.094482421875
+      ],
+      "spans": [
+        {
+          "text": "T0",
+          "bbox_pt": [
+            122.15479278564453,
+            163.65011596679688,
+            133.38023376464844,
+            174.13510131835938
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "T1",
+          "bbox_pt": [
+            269.9181823730469,
+            163.65011596679688,
+            281.14361572265625,
+            174.13510131835938
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "T2",
+          "bbox_pt": [
+            417.68157958984375,
+            163.65011596679688,
+            428.9070129394531,
+            174.13510131835938
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Visibility condition",
+          "bbox_pt": [
+            234.43380737304688,
+            176.65597534179688,
+            316.6466064453125,
+            187.14096069335938
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "0",
+          "bbox_pt": [
+            38.30487060546875,
+            149.17535400390625,
+            44.02886962890625,
+            159.66033935546875
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "10",
+          "bbox_pt": [
+            32.58612060546875,
+            126.64302825927734,
+            44.02679443359375,
+            137.12802124023438
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "20",
+          "bbox_pt": [
+            32.58612060546875,
+            104.11068725585938,
+            44.02679443359375,
+            114.59568786621094
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "30",
+          "bbox_pt": [
+            32.58612060546875,
+            81.57836151123047,
+            44.02679443359375,
+            92.06336212158203
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "40",
+          "bbox_pt": [
+            32.58612060546875,
+            59.04602813720703,
+            44.02679443359375,
+            69.5310287475586
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "50",
+          "bbox_pt": [
+            32.58612060546875,
+            36.513694763183594,
+            44.02679443359375,
+            46.998695373535156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Signed volume error (%)",
+          "bbox_pt": [
+            18.063013076782227,
+            41.3543586730957,
+            28.54801368713379,
+            151.51275634765625
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "S04",
+          "bbox_pt": [
+            180.0463104248047,
+            10.664634704589844,
+            197.2078399658203,
+            21.149635314941406
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "S07",
+          "bbox_pt": [
+            240.40255737304688,
+            10.664634704589844,
+            257.5640869140625,
+            21.149635314941406
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "R-flat",
+          "bbox_pt": [
+            300.7588195800781,
+            10.664634704589844,
+            324.6197509765625,
+            21.149635314941406
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "R-pole",
+          "bbox_pt": [
+            367.81817626953125,
+            10.664634704589844,
+            396.2208557128906,
+            21.149635314941406
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        }
+      ],
+      "rendered_png": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf-qa-page-001.png"
+    }
+  ],
+  "issues": [],
+  "automatic_status": "PASS",
+  "blind_spots": [
+    "Content already clipped out of the PDF may not be recoverable from text extraction; pre-export renderer bboxes are required.",
+    "PDF import scaling and captions belong to final LaTeX page QA, not this standalone figure check."
+  ]
+}

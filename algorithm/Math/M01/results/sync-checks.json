@@ -1,0 +1,10 @@
+{
+  "toy_clean_worst_shift_mm": 0.0026554154813201157,
+  "toy_clean_worst_angle_deg": 0.0010907220120395299,
+  "toy_clean_edge_after": 0.0019334609138239108,
+  "toy_clean_edge_before": 0.9520770674391219,
+  "toy_noise_edge_after": 0.09279610887406686,
+  "toy_noise_edge_before": 0.9844351828723219,
+  "toy_noise_worst_shift_mm": 0.48298974523292904,
+  "node_product_identity_norm": 7.128225322816338e-16
+}

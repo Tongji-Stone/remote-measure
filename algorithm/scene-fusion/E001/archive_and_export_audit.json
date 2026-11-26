@@ -1,0 +1,207 @@
+{
+  "archive_review": {
+    "calibration_files": {
+      "data/procam_calibration/calibration_20261116_10mm_experimental.xml": {
+        "sha256": "f91e263f618af98e1dfbb21080d9169bd90f8685d24d03c62896c62031be8366",
+        "legacy_stereo_rms": 1.2734825976254307,
+        "focal_px": [
+          2416.1534516204333,
+          2413.265544276569
+        ],
+        "baseline_nominal_mm": 137.59994297495595
+      },
+      "data/procam_calibration/20261120_analysis/calibration_10mm_experimental.xml": {
+        "sha256": "0d14bea44c0b51e8eec6a4c5bd57f65c2ee7740584e0056c326b5cd636fa1d14",
+        "legacy_stereo_rms": 0.9610755662275413,
+        "focal_px": [
+          2404.4019298506296,
+          2345.815106451023
+        ],
+        "baseline_nominal_mm": 40.67893808304818
+      },
+      "data/procam_calibration/20261123_1711_analysis/calibration_20261123_10mm_experimental.xml": {
+        "sha256": "7620301404fae4eb99a149666fd0ccb9fc5ff22b09b27af18021d4a5bbb24523",
+        "legacy_stereo_rms": 4.249370300712854,
+        "focal_px": [
+          2646.8893157168545,
+          3232.264546031891
+        ],
+        "baseline_nominal_mm": 56.66862525215373
+      },
+      "data/procam_calibration/calibration_20261116_split_train_experimental.xml": {
+        "sha256": "17d0a7b05c48457ca833a1c4467e82fa5e899a4affa09a08ef585fc313d9ddca",
+        "legacy_stereo_rms": 1.34093809971415,
+        "focal_px": [
+          2416.5715316566943,
+          2412.8949191494844
+        ],
+        "baseline_nominal_mm": 138.52625020275173
+      },
+      "data/procam_calibration/calibrate_20261116_temp.py": {
+        "sha256": "ccaa03718a89bacb584eaf8dd3ef5b251726f49b9c383cb3e07713cc3517d513"
+      },
+      "data/procam_calibration/20261120_analysis/graycode_validity.json": {
+        "sha256": "a5b42f54c33a539c7122ff149f78d392aec6418fff29fa7106ec764d401485d2"
+      },
+      "data/procam_calibration/20261120_analysis/axis_approx.json": {
+        "sha256": "8c51da6e33dac204d473560e5fa0c88d23185321ebca1e48f79da384842af2eb"
+      }
+    },
+    "original_results": {
+      "minion": {
+        "archive": "data/object_scans/scan_20261120_095133_815739_小黄人/merged_ignore0_corrected_uncropped_experimental.ply",
+        "metadata": "data/object_scans/scan_20261120_095133_815739_小黄人/merged_ignore0_corrected_uncropped_metadata.json",
+        "metadata_sha256": "426fe19f8b8a23b04d6589b708028cc8d4cbf02c787e4b8e77865b41856cc329",
+        "archive_vertices": 145289,
+        "metadata_point_count": 145289,
+        "archive_repeat_median_nearest_mm": null,
+        "same_pixel_sampling_assumed": false
+      },
+      "apple": {
+        "archive": "data/object_scans/scan_20261120_095754_604145_苹果/merged_ignore0_uncropped_experimental.ply",
+        "metadata": "data/object_scans/scan_20261120_095754_604145_苹果/merged_ignore0_uncropped_metadata.json",
+        "metadata_sha256": "bc49f4320ac24466966e40705132a75cec6f626256fc6397980ba151fc071267",
+        "archive_vertices": 47487,
+        "metadata_point_count": 47487,
+        "archive_repeat_median_nearest_mm": null,
+        "same_pixel_sampling_assumed": false
+      },
+      "box_1116": {
+        "archive": "data/object_scans/scan_20261116_174014_915028用格雷码弯曲转台标定测试的长方体/axis_fit_box_experimental.ply",
+        "metadata": "data/object_scans/scan_20261116_174014_915028用格雷码弯曲转台标定测试的长方体/axis_fit_box_metadata.json",
+        "metadata_sha256": "2aac96da1c5e684e3cc489ce8d3eb1b76ac3d2f3b8abb7bf276b5821bc364d5a",
+        "archive_vertices": 53294,
+        "metadata_point_count": null,
+        "archive_repeat_median_nearest_mm": [
+          3.7317178222752614,
+          3.662634476328159
+        ],
+        "same_pixel_sampling_assumed": false
+      },
+      "charger": [
+        {
+          "file": "data/object_scans/scan_20261123_174129_740645_充电头_二维码_中心/aruco_reconstruction_20261123_202019_014793/registration.json",
+          "sha256": "f97f0ef92d3d19b24687ac3cd197b4016f77913463f0ea0b17f71396b3e4b308",
+          "warnings": [
+            "experiment only; calibration and marker size must be verified",
+            "point cloud retains turntable and background; static background may ghost",
+            "no independent 360-degree validation"
+          ],
+          "marker_dictionary": "DICT_4X4_50",
+          "view_points": [
+            692,
+            36672,
+            36044,
+            4010,
+            37418,
+            36916,
+            1026,
+            36274
+          ]
+        },
+        {
+          "file": "data/object_scans/scan_20261123_174129_740645_充电头_二维码_中心/aruco_reconstruction_20261123_204217_046558/registration.json",
+          "sha256": "d2435cc72502e334d29556e6fd9f68ef73ff3dba5f10721d4e12f72cc7ae0812",
+          "warnings": [
+            "experiment only; calibration and marker size must be verified",
+            "point cloud retains turntable and background; static background may ghost",
+            "no independent 360-degree validation"
+          ],
+          "marker_dictionary": "DICT_4X4_50",
+          "view_points": [
+            692,
+            36672,
+            36044,
+            4010,
+            37418,
+            36916,
+            1026,
+            36274
+          ]
+        },
+        {
+          "file": "data/object_scans/scan_20261123_174129_740645_充电头_二维码_中心/aruco_reconstruction_20261123_205013_723110/registration.json",
+          "sha256": "919df7f0b952d3a08ab07605772ad14c99d35f35a365d597fab75ecc3ed4ff10",
+          "warnings": [
+            "view_0001 多标记位姿分歧 1.09 度 / 7.59 mm",
+            "view_0002 多标记位姿分歧 1.62 度 / 13.37 mm",
+            "view_0003 多标记位姿分歧 1.19 度 / 7.12 mm",
+            "view_0004 多标记位姿分歧 1.60 度 / 11.67 mm",
+            "view_0005 多标记位姿分歧 1.80 度 / 7.51 mm",
+            "view_0006 多标记位姿分歧 2.12 度 / 8.86 mm",
+            "view_0007 多标记位姿分歧 1.54 度 / 12.97 mm",
+            "view_0000 标记平面差 121.6 mm",
+            "view_0001 标记平面差 125.3 mm",
+            "view_0002 标记平面差 126.4 mm",
+            "view_0003 标记平面差 36.6 mm",
+            "view_0004 标记平面差 126.1 mm",
+            "view_0005 标记平面差 125.0 mm",
+            "view_0006 标记平面差 123.8 mm",
+            "view_0007 标记平面差 128.0 mm"
+          ],
+          "marker_dictionary": "DICT_4X4_50",
+          "view_points": [
+            692,
+            36672,
+            36044,
+            4010,
+            37418,
+            36916,
+            1026,
+            36274
+          ]
+        }
+      ]
+    }
+  },
+  "complete_export_verification": {
+    "minion": {
+      "full_scene_vertices": 403802,
+      "single_views": 9,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "be7fa47ac7841c5d5692f50de193f652ee7d826bb29c70ce92b167361b3d346a"
+    },
+    "apple": {
+      "full_scene_vertices": 202786,
+      "single_views": 5,
+      "fused_unique_views": 4,
+      "full_scene_sha256": "3a4a47fb9390b295e4b9fae79e0c9ed928f8203972e9a6b7accc0ba687aa7bf4"
+    },
+    "box_1116": {
+      "full_scene_vertices": 143624,
+      "single_views": 5,
+      "fused_unique_views": 4,
+      "full_scene_sha256": "22c6e8f820a391dd25f1c3dcbf57b5ac2ac7dcfc5fd96d1e44b718352437a8d7"
+    },
+    "charger_1716": {
+      "full_scene_vertices": 250885,
+      "single_views": 8,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "12e8293ace7e480557794493bb7ff8bfdbb116d9dd7db3576bffd64b77b467c2"
+    },
+    "charger": {
+      "full_scene_vertices": 417681,
+      "single_views": 8,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "f04fa174aa0f3f7f6ffd7115c8f090b7f49a9bfb8edb2d0c239f27329d8775cd"
+    },
+    "box_center": {
+      "full_scene_vertices": 392068,
+      "single_views": 8,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "da782bc92a4f1c2362d8cc252859ed54bda05517ed0b1a7226a535bbfdb05c08"
+    },
+    "box_offset": {
+      "full_scene_vertices": 409627,
+      "single_views": 8,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "857f0cdb005ac20bfd3cf0d25f79b077a65bfb1ac230d3d96c18aacbef669caa"
+    },
+    "box_1750": {
+      "full_scene_vertices": 390241,
+      "single_views": 8,
+      "fused_unique_views": 8,
+      "full_scene_sha256": "82b13f87719f8f95b0c541f9e927617fd5d65aad7221d9b4da5a585dbdc9084d"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+minion [np.int64(50178), np.int64(50809), np.int64(50649), np.int64(50133), np.int64(49533), np.int64(50631), np.int64(50936), np.int64(50933), np.int64(50151)]
+apple [np.int64(50864), np.int64(51408), np.int64(49174), np.int64(51340), np.int64(50981)]
+box_1116 [np.int64(40176), np.int64(31596), np.int64(40319), np.int64(31533), np.int64(40693)]
+charger_1716 [np.int64(26198), np.int64(49785), np.int64(51113), np.int64(1738), np.int64(49951), np.int64(11511), np.int64(50949), np.int64(9640)]
+charger features 32
+charger [np.int64(53746), np.int64(52362), np.int64(51503), np.int64(50152), np.int64(53428), np.int64(53049), np.int64(53453), np.int64(51997)]
+box_center features 16
+box_center [np.int64(53713), np.int64(47152), np.int64(45027), np.int64(43279), np.int64(52904), np.int64(51479), np.int64(51464), np.int64(48684)]
+box_offset features 5
+box_offset [np.int64(47612), np.int64(51525), np.int64(54647), np.int64(51731), np.int64(52469), np.int64(53441), np.int64(55624), np.int64(50109)]
+box_1750 features 38
+box_1750 [np.int64(52698), np.int64(53525), np.int64(53966), np.int64(48360), np.int64(45556), np.int64(42628), np.int64(40752), np.int64(54318)]

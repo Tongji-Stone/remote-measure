@@ -1,0 +1,1053 @@
+{
+  "schema": "science-figure-qa/1.0",
+  "canvas_pixels": [
+    0.0,
+    0.0,
+    708.6614173228347,
+    303.1496062992126
+  ],
+  "dpi": 100.0,
+  "actual_size_mm": [
+    180.0,
+    77.0
+  ],
+  "target_print_width_mm": 180.0,
+  "max_slot_width_mm": 180,
+  "minimum_base_label_pt": 8,
+  "texts": [
+    {
+      "text": "P1",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        75.89923104922278,
+        26.281714785651808,
+        91.89923104922278,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "P2",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        105.10365095768228,
+        26.281714785651808,
+        121.10365095768228,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "F1",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        134.80807086614175,
+        26.281714785651808,
+        149.80807086614175,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "K1",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        163.01249077460125,
+        26.281714785651808,
+        180.01249077460125,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "C1",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        192.21691068306075,
+        26.281714785651808,
+        209.21691068306075,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Held-out P95 (mm)",
+      "role": "y_label:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        16.624804345745847,
+        78.84737942913387,
+        30.627734033245854,
+        203.08175442913387
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0.0",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        40.75247216412403,
+        56.18328958880141,
+        53.25247216412403
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0.2",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        72.09505857811043,
+        56.18328958880141,
+        84.59505857811043
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0.4",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        103.4376449920968,
+        56.18328958880141,
+        115.9376449920968
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0.6",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        134.7802314060832,
+        56.18328958880141,
+        147.2802314060832
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0.8",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        166.1228178200696,
+        56.18328958880141,
+        178.6228178200696
+      ],
+      "gid": ""
+    },
+    {
+      "text": "1.0",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        36.18328958880141,
+        197.465404234056,
+        56.18328958880141,
+        209.965404234056
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Surface fit",
+      "role": "title:0",
+      "font_pt": 10.0,
+      "effective_print_font_pt": 10.0,
+      "bbox_pixels": [
+        105.80807086614175,
+        238.4219416420604,
+        178.80807086614175,
+        252.75853018372706
+      ],
+      "gid": ""
+    },
+    {
+      "text": "P1",
+      "role": "x_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        317.331317663396,
+        26.281714785651808,
+        333.331317663396,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "P2",
+      "role": "x_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        346.5357375718555,
+        26.281714785651808,
+        362.5357375718555,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "F1",
+      "role": "x_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        376.240157480315,
+        26.281714785651808,
+        391.240157480315,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "K1",
+      "role": "x_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        404.4445773887745,
+        26.281714785651808,
+        421.4445773887745,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "C1",
+      "role": "x_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        433.648997297234,
+        26.281714785651808,
+        450.648997297234,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Marker P50 (px)",
+      "role": "y_label:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        270.0568909599191,
+        89.69112942913387,
+        284.0598206474191,
+        192.23800442913387
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0",
+      "role": "y_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        289.61537620297463,
+        40.75247216412403,
+        297.61537620297463,
+        53.25247216412403
+      ],
+      "gid": ""
+    },
+    {
+      "text": "2",
+      "role": "y_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        289.61537620297463,
+        83.75741631354722,
+        297.61537620297463,
+        96.25741631354722
+      ],
+      "gid": ""
+    },
+    {
+      "text": "4",
+      "role": "y_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        289.61537620297463,
+        126.7623604629704,
+        297.61537620297463,
+        139.2623604629704
+      ],
+      "gid": ""
+    },
+    {
+      "text": "6",
+      "role": "y_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        289.61537620297463,
+        169.76730461239362,
+        297.61537620297463,
+        182.26730461239362
+      ],
+      "gid": ""
+    },
+    {
+      "text": "8",
+      "role": "y_tick:1",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        289.61537620297463,
+        212.7722487618168,
+        297.61537620297463,
+        225.2722487618168
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Fiducial consistency",
+      "role": "title:1",
+      "font_pt": 10.0,
+      "effective_print_font_pt": 10.0,
+      "bbox_pixels": [
+        313.247969980315,
+        238.4219416420604,
+        454.232344980315,
+        252.75853018372706
+      ],
+      "gid": ""
+    },
+    {
+      "text": "P1",
+      "role": "x_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        558.7634042775693,
+        26.281714785651808,
+        574.7634042775693,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "P2",
+      "role": "x_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        587.9678241860288,
+        26.281714785651808,
+        603.9678241860288,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "F1",
+      "role": "x_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        617.6722440944883,
+        26.281714785651808,
+        632.6722440944883,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "K1",
+      "role": "x_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        645.8766640029478,
+        26.281714785651808,
+        662.8766640029478,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "C1",
+      "role": "x_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        675.0810839114072,
+        26.281714785651808,
+        692.0810839114072,
+        38.78171478565181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Change vs. R02 (%)",
+      "role": "y_label:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        511.4889775740925,
+        77.46456692913387,
+        525.4919072615925,
+        204.46456692913387
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0",
+      "role": "y_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        531.047462817148,
+        44.52637542621627,
+        539.047462817148,
+        57.02637542621627
+      ],
+      "gid": ""
+    },
+    {
+      "text": "2",
+      "role": "y_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        531.047462817148,
+        94.8450855874461,
+        539.047462817148,
+        107.3450855874461
+      ],
+      "gid": ""
+    },
+    {
+      "text": "4",
+      "role": "y_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        531.047462817148,
+        145.16379574867597,
+        539.047462817148,
+        157.66379574867597
+      ],
+      "gid": ""
+    },
+    {
+      "text": "6",
+      "role": "y_tick:2",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        531.047462817148,
+        195.48250590990583,
+        539.047462817148,
+        207.98250590990583
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Volume change",
+      "role": "title:2",
+      "font_pt": 10.0,
+      "effective_print_font_pt": 10.0,
+      "bbox_pixels": [
+        569.7113065944883,
+        238.4219416420604,
+        680.6331815944883,
+        252.75853018372706
+      ],
+      "gid": ""
+    },
+    {
+      "text": "R02",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        302.6771653543308,
+        274.8651805487205,
+        327.6771653543308,
+        287.3651805487205
+      ],
+      "gid": ""
+    },
+    {
+      "text": "R06c",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        387.6771653543308,
+        274.8651805487205,
+        419.6771653543308,
+        287.3651805487205
+      ],
+      "gid": ""
+    },
+    {
+      "text": "H1",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        479.6771653543308,
+        274.8651805487205,
+        497.6771653543308,
+        287.3651805487205
+      ],
+      "gid": ""
+    }
+  ],
+  "axes": [
+    {
+      "index": 0,
+      "label": "",
+      "gid": null,
+      "bbox_pixels": [
+        65.90551181102363,
+        48.50393700787403,
+        218.71062992125988,
+        233.42519685039372
+      ],
+      "width_mm": 38.812500000000014,
+      "height_mm": 46.97
+    },
+    {
+      "index": 1,
+      "label": "",
+      "gid": null,
+      "bbox_pixels": [
+        307.33759842519686,
+        48.50393700787403,
+        460.1427165354332,
+        233.42519685039372
+      ],
+      "width_mm": 38.81250000000002,
+      "height_mm": 46.97
+    },
+    {
+      "index": 2,
+      "label": "",
+      "gid": null,
+      "bbox_pixels": [
+        548.7696850393702,
+        48.50393700787403,
+        701.5748031496064,
+        233.42519685039372
+      ],
+      "width_mm": 38.81249999999999,
+      "height_mm": 46.97
+    }
+  ],
+  "exemptions": [],
+  "issues": [],
+  "automatic_status": "PASS",
+  "visual_review_status": "PASS",
+  "blind_spots": [
+    "Bounding boxes are conservative rectangles, not glyph outlines.",
+    "Legend detection tests centerlines, scatter centers and errorbar segments; large markers, rasters and 3D depth occlusion require visual review.",
+    "Physical correctness, units, consistent colors and semantic emphasis require the caption/data contract and independent review.",
+    "Inset/annotation intentional overlaps must be individually explained; exemptions are never inferred from words.",
+    "Renderers can differ across PNG/PDF; final PDF is parsed/rendered separately.",
+    "No automatic proof of colorblind/grayscale readability or all page-layout conditions."
+  ],
+  "data_bindings": [],
+  "pdf_qa_command": [
+    "/Users/percyayanami/.local/share/codex-science/venv/bin/python",
+    "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/pdf_qa.py",
+    "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.pdf"
+  ],
+  "pdf_qa_exitcode": 0,
+  "pdf_qa_stdout": "{\"status\": \"PASS\", \"pages\": 1, \"issues\": 0}\n",
+  "pdf_qa_stderr": "",
+  "final_pdf": {
+    "pdf": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.pdf",
+    "sha256": "cc7cfeb7cc418d426a96b8c8dc62427bf698cd7c7d2fe8c4d597f80593c66979",
+    "pymupdf_version": "1.28.2",
+    "pages": [
+      {
+        "page": 1,
+        "size_mm": [
+          179.99999491373697,
+          76.99999961853027
+        ],
+        "page_bbox_pt": [
+          0.0,
+          0.0,
+          510.2362060546875,
+          218.26771545410156
+        ],
+        "spans": [
+          {
+            "text": "P1",
+            "bbox_pt": [
+              54.837135314941406,
+              188.82177734375,
+              65.9827651977539,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "P2",
+            "bbox_pt": [
+              75.86431884765625,
+              188.82177734375,
+              87.00994873046875,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "F1",
+            "bbox_pt": [
+              97.01649475097656,
+              188.82177734375,
+              107.91061401367188,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "K1",
+            "bbox_pt": [
+              117.6764907836914,
+              188.82177734375,
+              129.3088836669922,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "C1",
+            "bbox_pt": [
+              138.51617431640625,
+              188.82177734375,
+              150.5192413330078,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0.0",
+            "bbox_pt": [
+              26.155094146728516,
+              178.40283203125,
+              40.45630645751953,
+              188.8878173828125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0.2",
+            "bbox_pt": [
+              26.155094146728516,
+              155.83615112304688,
+              40.45630645751953,
+              166.32115173339844
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0.4",
+            "bbox_pt": [
+              26.155094146728516,
+              133.26950073242188,
+              40.45630645751953,
+              143.75448608398438
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0.6",
+            "bbox_pt": [
+              26.155094146728516,
+              110.70284271240234,
+              40.45630645751953,
+              121.1878433227539
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0.8",
+            "bbox_pt": [
+              26.155094146728516,
+              88.13617706298828,
+              40.45630645751953,
+              98.62117767333984
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "1.0",
+            "bbox_pt": [
+              26.155094146728516,
+              65.56951141357422,
+              40.45630645751953,
+              76.05451202392578
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Held-out P95 (mm)",
+            "bbox_pt": [
+              11.63198471069336,
+              73.87196350097656,
+              22.116985321044922,
+              159.67947387695312
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Surface fit",
+            "bbox_pt": [
+              76.71961975097656,
+              34.91156768798828,
+              128.20016479492188,
+              46.56156921386719
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 10.0
+          },
+          {
+            "text": "P1",
+            "bbox_pt": [
+              228.66824340820312,
+              188.82177734375,
+              239.81387329101562,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "P2",
+            "bbox_pt": [
+              249.69541931152344,
+              188.82177734375,
+              260.841064453125,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "F1",
+            "bbox_pt": [
+              270.84759521484375,
+              188.82177734375,
+              281.74169921875,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "K1",
+            "bbox_pt": [
+              291.5075988769531,
+              188.82177734375,
+              303.1399841308594,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "C1",
+            "bbox_pt": [
+              312.3472900390625,
+              188.82177734375,
+              324.3503723144531,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0",
+            "bbox_pt": [
+              208.56431579589844,
+              178.40283203125,
+              214.28831481933594,
+              188.8878173828125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "2",
+            "bbox_pt": [
+              208.56431579589844,
+              147.43927001953125,
+              214.28831481933594,
+              157.92425537109375
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "4",
+            "bbox_pt": [
+              208.56431579589844,
+              116.4757080078125,
+              214.28831481933594,
+              126.96070861816406
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "6",
+            "bbox_pt": [
+              208.56431579589844,
+              85.51214599609375,
+              214.28831481933594,
+              95.99714660644531
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "8",
+            "bbox_pt": [
+              208.56431579589844,
+              54.54859161376953,
+              214.28831481933594,
+              65.0335922241211
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Marker P50 (px)",
+            "bbox_pt": [
+              194.04119873046875,
+              80.89708709716797,
+              204.5261993408203,
+              152.65603637695312
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Fiducial consistency",
+            "bbox_pt": [
+              226.37103271484375,
+              34.91156768798828,
+              326.2342529296875,
+              46.56156921386719
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 10.0
+          },
+          {
+            "text": "P1",
+            "bbox_pt": [
+              402.49932861328125,
+              188.82177734375,
+              413.64495849609375,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "P2",
+            "bbox_pt": [
+              423.5265197753906,
+              188.82177734375,
+              434.6721496582031,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "F1",
+            "bbox_pt": [
+              444.6787109375,
+              188.82177734375,
+              455.57281494140625,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "K1",
+            "bbox_pt": [
+              465.33868408203125,
+              188.82177734375,
+              476.9710693359375,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "C1",
+            "bbox_pt": [
+              486.1783752441406,
+              188.82177734375,
+              498.18145751953125,
+              199.3067626953125
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0",
+            "bbox_pt": [
+              382.3954162597656,
+              175.68560791015625,
+              388.1194152832031,
+              186.1706085205078
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "2",
+            "bbox_pt": [
+              382.3954162597656,
+              139.45614624023438,
+              388.1194152832031,
+              149.94113159179688
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "4",
+            "bbox_pt": [
+              382.3954162597656,
+              103.22667694091797,
+              388.1194152832031,
+              113.71167755126953
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "6",
+            "bbox_pt": [
+              382.3954162597656,
+              66.99720001220703,
+              388.1194152832031,
+              77.4822006225586
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Change vs. R02 (%)",
+            "bbox_pt": [
+              367.872314453125,
+              72.1884765625,
+              378.3572998046875,
+              161.35916137695312
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Volume change",
+            "bbox_pt": [
+              411.5302734375,
+              34.91156768798828,
+              488.7246398925781,
+              46.56156921386719
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 10.0
+          },
+          {
+            "text": "R02",
+            "bbox_pt": [
+              218.5213165283203,
+              8.765419006347656,
+              236.2135772705078,
+              19.25041961669922
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "R06c",
+            "bbox_pt": [
+              279.4088134765625,
+              8.765419006347656,
+              302.04376220703125,
+              19.25041961669922
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "H1",
+            "bbox_pt": [
+              345.2494201660156,
+              8.765419006347656,
+              357.7394714355469,
+              19.25041961669922
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          }
+        ],
+        "rendered_png": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.pdf-qa-page-001.png"
+      }
+    ],
+    "issues": [],
+    "automatic_status": "PASS",
+    "blind_spots": [
+      "Content already clipped out of the PDF may not be recoverable from text extraction; pre-export renderer bboxes are required.",
+      "PDF import scaling and captions belong to final LaTeX page QA, not this standalone figure check."
+    ]
+  },
+  "visual_review": {
+    "reviewer": "Codex",
+    "decision": "PASS",
+    "notes": "All three axes, marker units, method legend and 5 sample labels rendered without clipping.",
+    "utc": "2026-11-26T02:59:54.822268+00:00",
+    "export_sha256": "cc7cfeb7cc418d426a96b8c8dc62427bf698cd7c7d2fe8c4d597f80593c66979"
+  }
+}

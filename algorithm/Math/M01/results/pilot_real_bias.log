@@ -1,0 +1,14 @@
+P1 D2 [('D0', 137.91421600733636, 0.974328229824109), ('D1', 136.77460676716433, 0.9872643184737342), ('D2', 137.726084089481, 0.9179894785424312), ('D3', 137.726084089481, 0.9179894785424312)] 6.9s
+P2 D2 [('D0', 151.7452727336897, 1.0701034159807388), ('D1', 150.62285322316052, 1.0656991227128192), ('D2', 151.55244408246946, 0.9909967150789775), ('D3', 151.55244408246946, 0.9909967150789775)] 11.7s
+F1 D0 [('D0', 50.45023770714126, 0.7656429038948488), ('D1', None, None), ('D2', None, None), ('D3', 50.45023770714126, 0.7656429038948488)] 16.2s
+Traceback (most recent call last):
+  File "/Users/percyayanami/remote-measure/algorithm/Math/M01/run_bias.py", line 144, in <module>
+    measured()
+    ~~~~~~~~^^
+  File "/Users/percyayanami/remote-measure/algorithm/Math/M01/run_bias.py", line 84, in measured
+    budgets.append(dict(case=code,**sensitivity(mesh,rs[0]['coverage_area_fraction'])))
+                                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/percyayanami/remote-measure/algorithm/Math/M01/run_bias.py", line 54, in sensitivity
+    assert np.isclose(floor_slope,-cap,rtol=.2), (floor_slope,cap)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (-638.3387059658629, 443.61667295336287)

@@ -1,0 +1,451 @@
+{
+  "schema": "science-figure-qa/1.0",
+  "canvas_pixels": [
+    0.0,
+    0.0,
+    708.6614173228347,
+    283.46456692913387
+  ],
+  "dpi": 100.0,
+  "actual_size_mm": [
+    180.0,
+    72.0
+  ],
+  "target_print_width_mm": 180.0,
+  "max_slot_width_mm": 180,
+  "minimum_base_label_pt": 8,
+  "texts": [
+    {
+      "text": "Visibility condition",
+      "role": "x_label:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        322.3177903543308,
+        21.998820093777333,
+        443.0365403543308,
+        36.00174978127733
+      ],
+      "gid": ""
+    },
+    {
+      "text": "T0",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        169.45023496345752,
+        41.55730533683289,
+        185.45023496345752,
+        54.05730533683289
+      ],
+      "gid": ""
+    },
+    {
+      "text": "T1",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        374.6771653543308,
+        41.55730533683289,
+        390.6771653543308,
+        54.05730533683289
+      ],
+      "gid": ""
+    },
+    {
+      "text": "T2",
+      "role": "x_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        579.904095745204,
+        41.55730533683289,
+        595.904095745204,
+        54.05730533683289
+      ],
+      "gid": ""
+    },
+    {
+      "text": "Signed volume error (%)",
+      "role": "y_label:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        25.585434267005695,
+        70.7775590551181,
+        39.58836395450571,
+        228.2775590551181
+      ],
+      "gid": ""
+    },
+    {
+      "text": "0",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        53.14391951006126,
+        61.66114507636034,
+        61.14391951006126,
+        74.16114507636034
+      ],
+      "gid": ""
+    },
+    {
+      "text": "10",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        45.14391951006126,
+        92.95604708222275,
+        61.14391951006126,
+        105.45604708222275
+      ],
+      "gid": ""
+    },
+    {
+      "text": "20",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        45.14391951006126,
+        124.25094908808518,
+        61.14391951006126,
+        136.75094908808518
+      ],
+      "gid": ""
+    },
+    {
+      "text": "30",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        45.14391951006126,
+        155.5458510939476,
+        61.14391951006126,
+        168.0458510939476
+      ],
+      "gid": ""
+    },
+    {
+      "text": "40",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        45.14391951006126,
+        186.84075309981,
+        61.14391951006126,
+        199.34075309981
+      ],
+      "gid": ""
+    },
+    {
+      "text": "50",
+      "role": "y_tick:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        45.14391951006126,
+        218.1356551056724,
+        61.14391951006126,
+        230.6356551056724
+      ],
+      "gid": ""
+    },
+    {
+      "text": "S04",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        248.17716535433078,
+        252.54234590305117,
+        272.1771653543308,
+        265.04234590305117
+      ],
+      "gid": ""
+    },
+    {
+      "text": "S07",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        332.1771653543308,
+        252.54234590305117,
+        356.1771653543308,
+        265.04234590305117
+      ],
+      "gid": ""
+    },
+    {
+      "text": "R-flat",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        416.1771653543308,
+        252.54234590305117,
+        450.6771653543308,
+        266.54527559055117
+      ],
+      "gid": ""
+    },
+    {
+      "text": "R-pole",
+      "role": "figure_legend_text:0",
+      "font_pt": 9.0,
+      "effective_print_font_pt": 9.0,
+      "bbox_pixels": [
+        510.6771653543308,
+        252.54234590305117,
+        552.1771653543308,
+        266.54527559055117
+      ],
+      "gid": ""
+    }
+  ],
+  "axes": [
+    {
+      "index": 0,
+      "label": "",
+      "gid": null,
+      "bbox_pixels": [
+        70.86614173228348,
+        63.77952755905511,
+        694.4881889763781,
+        235.2755905511811
+      ],
+      "width_mm": 158.4,
+      "height_mm": 43.559999999999995
+    }
+  ],
+  "exemptions": [],
+  "issues": [],
+  "automatic_status": "PASS",
+  "visual_review_status": "PASS",
+  "blind_spots": [
+    "Bounding boxes are conservative rectangles, not glyph outlines.",
+    "Legend detection tests centerlines, scatter centers and errorbar segments; large markers, rasters and 3D depth occlusion require visual review.",
+    "Physical correctness, units, consistent colors and semantic emphasis require the caption/data contract and independent review.",
+    "Inset/annotation intentional overlaps must be individually explained; exemptions are never inferred from words.",
+    "Renderers can differ across PNG/PDF; final PDF is parsed/rendered separately.",
+    "No automatic proof of colorblind/grayscale readability or all page-layout conditions."
+  ],
+  "data_bindings": [],
+  "pdf_qa_command": [
+    "/Users/percyayanami/.local/share/codex-science/venv/bin/python",
+    "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/pdf_qa.py",
+    "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf"
+  ],
+  "pdf_qa_exitcode": 0,
+  "pdf_qa_stdout": "{\"status\": \"PASS\", \"pages\": 1, \"issues\": 0}\n",
+  "pdf_qa_stderr": "",
+  "final_pdf": {
+    "pdf": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf",
+    "sha256": "03b9cf79021c95ceffae84e9b25c78da8152cdcc63d439ea0593fcd9a2eb6725",
+    "pymupdf_version": "1.28.2",
+    "pages": [
+      {
+        "page": 1,
+        "size_mm": [
+          179.99999491373697,
+          71.99999796549479
+        ],
+        "page_bbox_pt": [
+          0.0,
+          0.0,
+          510.2362060546875,
+          204.094482421875
+        ],
+        "spans": [
+          {
+            "text": "T0",
+            "bbox_pt": [
+              122.15479278564453,
+              163.65011596679688,
+              133.38023376464844,
+              174.13510131835938
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "T1",
+            "bbox_pt": [
+              269.9181823730469,
+              163.65011596679688,
+              281.14361572265625,
+              174.13510131835938
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "T2",
+            "bbox_pt": [
+              417.68157958984375,
+              163.65011596679688,
+              428.9070129394531,
+              174.13510131835938
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Visibility condition",
+            "bbox_pt": [
+              234.43380737304688,
+              176.65597534179688,
+              316.6466064453125,
+              187.14096069335938
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "0",
+            "bbox_pt": [
+              38.30487060546875,
+              149.17535400390625,
+              44.02886962890625,
+              159.66033935546875
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "10",
+            "bbox_pt": [
+              32.58612060546875,
+              126.64302825927734,
+              44.02679443359375,
+              137.12802124023438
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "20",
+            "bbox_pt": [
+              32.58612060546875,
+              104.11068725585938,
+              44.02679443359375,
+              114.59568786621094
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "30",
+            "bbox_pt": [
+              32.58612060546875,
+              81.57836151123047,
+              44.02679443359375,
+              92.06336212158203
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "40",
+            "bbox_pt": [
+              32.58612060546875,
+              59.04602813720703,
+              44.02679443359375,
+              69.5310287475586
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "50",
+            "bbox_pt": [
+              32.58612060546875,
+              36.513694763183594,
+              44.02679443359375,
+              46.998695373535156
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "Signed volume error (%)",
+            "bbox_pt": [
+              18.063013076782227,
+              41.3543586730957,
+              28.54801368713379,
+              151.51275634765625
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "S04",
+            "bbox_pt": [
+              180.0463104248047,
+              10.664634704589844,
+              197.2078399658203,
+              21.149635314941406
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "S07",
+            "bbox_pt": [
+              240.40255737304688,
+              10.664634704589844,
+              257.5640869140625,
+              21.149635314941406
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "R-flat",
+            "bbox_pt": [
+              300.7588195800781,
+              10.664634704589844,
+              324.6197509765625,
+              21.149635314941406
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          },
+          {
+            "text": "R-pole",
+            "bbox_pt": [
+              367.81817626953125,
+              10.664634704589844,
+              396.2208557128906,
+              21.149635314941406
+            ],
+            "font": "DejaVuSans",
+            "size_pt": 9.0
+          }
+        ],
+        "rendered_png": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf-qa-page-001.png"
+      }
+    ],
+    "issues": [],
+    "automatic_status": "PASS",
+    "blind_spots": [
+      "Content already clipped out of the PDF may not be recoverable from text extraction; pre-export renderer bboxes are required.",
+      "PDF import scaling and captions belong to final LaTeX page QA, not this standalone figure check."
+    ]
+  },
+  "visual_review": {
+    "reviewer": "Codex",
+    "decision": "PASS",
+    "notes": "Four methods and T0\u2013T2 marks checked. Small signed T2 R-pole bar also recorded in table.",
+    "utc": "2026-11-26T02:59:54.822806+00:00",
+    "export_sha256": "03b9cf79021c95ceffae84e9b25c78da8152cdcc63d439ea0593fcd9a2eb6725"
+  }
+}

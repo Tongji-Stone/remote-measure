@@ -1,0 +1,73 @@
+{
+  "schema": "science-figure-manifest/1.0",
+  "figure_id": "M01-bias",
+  "caption": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.caption.md",
+    "sha256": "431602337d5ad1512b8943b7d0671d4d9e49d3691b62276672116c8467d1262b"
+  },
+  "data": [
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/injected_bias.csv",
+      "sha256": "f803da2d3691fb47dfcb592b740fd07909f6c337bc8438de4574f4978d613979"
+    }
+  ],
+  "source": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+    "sha256": "c0ff7cd1637748b11e8b4c1bdf170c48d03a4890635dfadd2bfb02d550c6ff4f"
+  },
+  "qa_engines": [
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/figure_qa.py",
+      "sha256": "d67f2c174de17405c80485711c2e1e6e5b4d57479094b0f3ee7622b1675f03ea"
+    },
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/pdf_qa.py",
+      "sha256": "02e833f80919ba6d3ba3b2819b621d50f6343c9122d9269349e2718bf8a7dcdd"
+    }
+  ],
+  "qa": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.qa.json",
+    "sha256": "8d75c98eefff25009e3b3409c6e382e14ba0a21d53e08ee0e2b8f95ba0d0972a"
+  },
+  "exports": {
+    "pdf": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.pdf",
+      "sha256": "06ecb60433dd9a0d07d7723e1ac38621435fdeac25047313de9c1ae30d9d3c8d"
+    },
+    "svg": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.svg",
+      "sha256": "d7ddecbb9b800565473a67f9edd2e2176ee05726e541d2c6b33296545285d292"
+    },
+    "png": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.png",
+      "sha256": "837b6f8a4f1f7b564494c14a8aab26c97f981c237b2dda2757b1ffef727f773c"
+    }
+  },
+  "command": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python /Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+  "python": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python",
+  "platform": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2"
+  },
+  "semantics": {
+    "D0": "#4c647b",
+    "D3": "#bf7444",
+    "D4": "#137f76",
+    "ordinate": "percent"
+  },
+  "actual_size_mm": [
+    180.0,
+    70.0
+  ],
+  "target_print_width_mm": 180.0,
+  "automatic_status": "PASS",
+  "visual_review_status": "PASS",
+  "visual_review": {
+    "reviewer": "Codex",
+    "decision": "PASS",
+    "notes": "Rendered PDF checked for close-to-zero bars, aligned grouped labels and open legend.",
+    "utc": "2026-11-26T02:59:54.821386+00:00",
+    "export_sha256": "06ecb60433dd9a0d07d7723e1ac38621435fdeac25047313de9c1ae30d9d3c8d"
+  }
+}

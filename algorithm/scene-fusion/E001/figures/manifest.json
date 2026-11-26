@@ -1,0 +1,80 @@
+{
+  "full_scenes": {
+    "filename": "full_scenes.png",
+    "sha256": "5cac194e9a6e85fe4aa54d4ab595b0f74fdc5507e5ba49b8e8f469b14603a1ab",
+    "caption": "Full scene exports, viewed at common oblique orientation per stage. Preview framing is quantile-based; PLY points are unchanged.",
+    "caption_sha256": "2b2f5a3700dd16b355c778a3dc8ac4ed4823d3c6bd65ec23a276a6501c1d23cb",
+    "sources": {
+      "algorithm/scene-fusion/results/clouds/minion/full_scene.ply": "be7fa47ac7841c5d5692f50de193f652ee7d826bb29c70ce92b167361b3d346a",
+      "algorithm/scene-fusion/results/clouds/minion/poses_and_metrics.json": "186615ec655ab9e9a462b63a55454d90f2f86ebc12e367ac3620c28842649244",
+      "algorithm/scene-fusion/results/clouds/apple/full_scene.ply": "3a4a47fb9390b295e4b9fae79e0c9ed928f8203972e9a6b7accc0ba687aa7bf4",
+      "algorithm/scene-fusion/results/clouds/apple/poses_and_metrics.json": "5ea666bb0440a622e5cf4e940e5334a29b4395ea4cc2635d5c811028d0597232",
+      "algorithm/scene-fusion/results/clouds/charger/full_scene.ply": "f04fa174aa0f3f7f6ffd7115c8f090b7f49a9bfb8edb2d0c239f27329d8775cd",
+      "algorithm/scene-fusion/results/clouds/charger/poses_and_metrics.json": "fc5381b0c9a323e94c9726634eb1e36c7b0289892e469d12a05d600c868967df",
+      "algorithm/scene-fusion/results/clouds/box_center/full_scene.ply": "da782bc92a4f1c2362d8cc252859ed54bda05517ed0b1a7226a535bbfdb05c08",
+      "algorithm/scene-fusion/results/clouds/box_center/poses_and_metrics.json": "8b23a2770743c1adf2b2a0cf1b10f903001233239a3d38bd4f464685729c3192",
+      "algorithm/scene-fusion/results/clouds/box_offset/full_scene.ply": "857f0cdb005ac20bfd3cf0d25f79b077a65bfb1ac230d3d96c18aacbef669caa",
+      "algorithm/scene-fusion/results/clouds/box_offset/poses_and_metrics.json": "a19427e4b5a7c68536021479e371758568dd584a86cfb49fe7448f5aff75aeb6",
+      "algorithm/scene-fusion/results/clouds/box_1116/full_scene.ply": "22c6e8f820a391dd25f1c3dcbf57b5ac2ac7dcfc5fd96d1e44b718352437a8d7",
+      "algorithm/scene-fusion/results/clouds/box_1116/poses_and_metrics.json": "132f33d8a86729a2cfe7604b4a82ab891af60a04501034ff8f8055afce905213"
+    },
+    "code": "ff14260b3beaf62eac34853479c1882722ec4428407efb9d8e6a6333a0932cc6",
+    "visual_review": {
+      "status": "checked",
+      "reviewer": "Codex",
+      "checks": [
+        "labels and glyphs",
+        "panel clipping",
+        "color meaning",
+        "figure-file hash"
+      ]
+    }
+  },
+  "pose_comparison": {
+    "filename": "pose_comparison.png",
+    "sha256": "c4ce720548bad90ad4bfc15ba55bda16e47a3811a3129f893d4dbcd9310600ea",
+    "caption": "Same observed object evaluation subset plotted under three pose hypotheses, with common within-object 2D extent. This diagnostic uses object points; all full PLYs retain the stage.",
+    "caption_sha256": "6b88c6627dc2069bab498319ee1b6e8728b65dd8d5a7567db0bffb96beffb6f7",
+    "sources": {
+      "algorithm/scene-fusion/results/clouds/minion/object_evaluation_points.npz": "9ca509f8a01f3caaf15b870d8acfd4686950409d040a423cce0a77f719be2629",
+      "algorithm/scene-fusion/results/clouds/minion/poses_and_metrics.json": "186615ec655ab9e9a462b63a55454d90f2f86ebc12e367ac3620c28842649244",
+      "algorithm/scene-fusion/results/clouds/apple/object_evaluation_points.npz": "9bcc143dc70ce51918f308ed3bd095cc51f8e94d479de866f2a22d34b54d09b5",
+      "algorithm/scene-fusion/results/clouds/apple/poses_and_metrics.json": "5ea666bb0440a622e5cf4e940e5334a29b4395ea4cc2635d5c811028d0597232",
+      "algorithm/scene-fusion/results/clouds/box_1116/object_evaluation_points.npz": "108eb31c51f6504afd6c980bcf10bf682ed4134da01607ee58e6ac127bf154fa",
+      "algorithm/scene-fusion/results/clouds/box_1116/poses_and_metrics.json": "132f33d8a86729a2cfe7604b4a82ab891af60a04501034ff8f8055afce905213",
+      "algorithm/scene-fusion/results/clouds/box_center/object_evaluation_points.npz": "5aa0909cc53d73016b2f70e1c90c6dcf1d96090db477e2e9445e49d172f1c6fd",
+      "algorithm/scene-fusion/results/clouds/box_center/poses_and_metrics.json": "8b23a2770743c1adf2b2a0cf1b10f903001233239a3d38bd4f464685729c3192"
+    },
+    "code": "ff14260b3beaf62eac34853479c1882722ec4428407efb9d8e6a6333a0932cc6",
+    "visual_review": {
+      "status": "checked",
+      "reviewer": "Codex",
+      "checks": [
+        "labels and glyphs",
+        "panel clipping",
+        "color meaning",
+        "figure-file hash"
+      ]
+    }
+  },
+  "paper_box_edges": {
+    "filename": "paper_box_edges.png",
+    "sha256": "6522baeb87a5f17302908cc59af22dfc232577df9b62cacc035f784d783d80b3",
+    "caption": "Held-out edge-to-edge horizontal gap on legacy box, before and after rectangular face pose fit.",
+    "caption_sha256": "5bc9949a632582a8bab8b4d5078c6a8084bfdfb02e4336a19dfcc95336da86c0",
+    "sources": {
+      "algorithm/scene-fusion/results/clouds/box_1116/poses_and_metrics.json": "132f33d8a86729a2cfe7604b4a82ab891af60a04501034ff8f8055afce905213"
+    },
+    "code": "ff14260b3beaf62eac34853479c1882722ec4428407efb9d8e6a6333a0932cc6",
+    "visual_review": {
+      "status": "checked",
+      "reviewer": "Codex",
+      "checks": [
+        "labels and glyphs",
+        "panel clipping",
+        "color meaning",
+        "figure-file hash"
+      ]
+    }
+  }
+}

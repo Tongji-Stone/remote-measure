@@ -1,0 +1,28 @@
+{
+  "real_cases": 5,
+  "replayed_scans": 9,
+  "injected_bias_cases": 9,
+  "pose_reconstructions": 15,
+  "analytic_volume_controls": 7,
+  "columns_per_volume_model": 24,
+  "checks_passed": true,
+  "csv_sha256": {
+    "algorithm/Math/M01/results/calibration_pair.csv": "ad2f7122a3c78f8540fc8ec790c5e5ffc8c87f179e490322346fd51ce034d5bf",
+    "algorithm/Math/M01/results/calibration_plane_scale.csv": "463cf3fbb0000397c660b40760c3dcb5ca7e59a47483fcf324c7e104058d9a2b",
+    "algorithm/Math/M01/results/injected_bias.csv": "f803da2d3691fb47dfcb592b740fd07909f6c337bc8438de4574f4978d613979",
+    "algorithm/Math/M01/results/pose_C1.csv": "828bdb39c9f574ad8409144093e4cb9d13fca164506e1c0b4ec7bc2bc7b16988",
+    "algorithm/Math/M01/results/pose_F1.csv": "0ad934a82e7fa9a3759550725f673a6bc25169019f1e3eb92865f7eece6eb033",
+    "algorithm/Math/M01/results/pose_K1.csv": "80e8a508cb74a81445443a1bf7a4633310021c35ff5f14af46c53e7e77336181",
+    "algorithm/Math/M01/results/pose_P1.csv": "75bca304c5e8a21ef97e5e97a5a3b8078b8cbe85b04dca208bd7c2b00e61a6c1",
+    "algorithm/Math/M01/results/pose_P2.csv": "dee4b58be93de0c674db71eabbb88bfcd63a641865869b130ba7a70f01e8605c",
+    "algorithm/Math/M01/results/real_bias.csv": "8dc1bcfa6df7523ece37efd9a2cca4e57b6ce4a480b1dcc5883f54ac8771c701",
+    "algorithm/Math/M01/results/section_areas.csv": "c4e1b4cad25f78489b07d0d25cfb35733f6d9f379c0f424fa03d377dda1413b2",
+    "algorithm/Math/M01/results/sections.csv": "dc2ba6d99a4b09a9de000166ab2ba8f7835f59d48c60dd50b8556df690727c69",
+    "algorithm/Math/M01/results/synthetic_scans.csv": "651cd356e551a2b4e36a0074c36210e453161542b92d3dfdd7d47f8531f6c170",
+    "algorithm/Math/M01/results/volume_sensitivity.csv": "43dfd00b5f5e28c9c52bac4a8e317014fd886818333637d34a57d2b5d91e6928",
+    "computing volume/V001/V001-columns.csv": "24a4b2dc79d590f4eae1dc6b0204fb0f2e4b4264a2fdcd88ba4f70369a85c50c",
+    "computing volume/V001/V001-derivative.csv": "b246788e17d27e1f09ae9747d8d1a99fd6456cee6a6279ece36b3decf2770c8a",
+    "computing volume/V001/V001-reference-template.csv": "002de6ea76abf2861b26096434a63f3ba06e8e6b3db1dc6e1198a8a8764af0c6",
+    "computing volume/V001/V001-summary.csv": "a0743ed609a44e3688818e2acd9042bd40a0f715828d4e15a74f03e4748f5a64"
+  }
+}

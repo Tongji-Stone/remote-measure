@@ -1,0 +1,148 @@
+{
+  "E002-10": {
+    "filename": "E002-10.png",
+    "sha256": "a0b7a2b0b9187b05609a813cf8e7574dc09c795bb1039955f80026573cb4cd4e",
+    "caption": "All eight sessions. Full calibrated scene and selected object mask. Axes are fit to each panel for preview.",
+    "caption_sha256": "712022a1f8ba876cacc8992e04d18dd172895b8c1f6c80801a10bf24db95c9e1",
+    "sources": {
+      "algorithm/scene-fusion/E002/results/clouds/E002-S01/E002-S01-01.ply": "b481c1ce02ab49b52e75e40b3fb2fb6367d527c44fb2faf09bccf34b49b977a4",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S01/E002-S01-02.ply": "957cd2f35fdbcb52f98cf38c175f5539d721bf72bf67bdd310f4608503fc03d5",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S02/E002-S02-01.ply": "9952eab41c59df2548daad7cfd247192c3eda68500414b85d23880534f7c3bb4",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S02/E002-S02-02.ply": "046a69270b8971bd3f62c1ca074cf6a3321f62f13ae16f4aa0b99349f9f00208",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-01.ply": "acaf55724528d0d8d454585503e36c6a09bf27b2f4d058c5381b9eaced1cf49a",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-02.ply": "baef262eca88edfdacf88e950548c7a0f0c5a75f59ad79181d4902796f61a541",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S04/E002-S04-01.ply": "0d2c33b192c25fe54562cb422ee397fa78ae704d6d625963bf1bd65b011671d3",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S04/E002-S04-02.ply": "de474a4c0dd518a5b08cb15599180ceb1f728def11890e9fed7955406695640d",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S05/E002-S05-01.ply": "72c60db41e223904e5e5b83ca069ad21063e41524d07eb0dfa97b019f54f6f9e",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S05/E002-S05-02.ply": "b9ed00ab876e3fe523d3762b23d56fe9595335389531fac245c3e9c6936f81b1",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-01.ply": "e8affaa24670f1119ef0c5b14732c8312bc67aa533e751ee650e4b5cfba0bb3b",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-02.ply": "be10b7dc34a45a1884f05a731ce3b156570aa2b101894ab66ccc7a8f5f429adb",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-01.ply": "61e12cc5df89b83d08158c1d85df820f9cc0106637097b2c2ef7f3bce08aff97",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-02.ply": "f81fb1043b8c64e2d86855421f14daa82485ec37188863ec910788134390e591",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-01.ply": "e6cce2e54e20ce14d6742d2ebcb2211b4a9ab7c59adaaee30cd9cd9221b1ff55",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-02.ply": "c3fa9aab13fb313668d450562a0a7525e54996bda5ce8a4d056944a9ae4e892d"
+    },
+    "script": "ff914a084d3b499afa84a2f20fc3d772f9a2b8d1302fdad620cadd6a69f330f1",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "a0b7a2b0b9187b05609a813cf8e7574dc09c795bb1039955f80026573cb4cd4e",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  },
+  "E002-11": {
+    "filename": "E002-11.png",
+    "sha256": "41e2163804a33cbfcb972412ec925fd26b9834f675aae2d7e79b0c0eb09ad741",
+    "caption": "Segmentation metrics. F1 is macro averaged across 16 labeled frames; the near-contact retention rate pools reference samples.",
+    "caption_sha256": "901c7b76900e5ba19287c5517ca48dcf04eb6231ffdb4ad15117fb1711a41dd8",
+    "sources": {
+      "algorithm/scene-fusion/E002/results/E002-01.csv": "efa9f445f9bc3e3a8cd8ec800868e3e4ae005d4e9b3bc42c45213d89f803768d"
+    },
+    "script": "ff914a084d3b499afa84a2f20fc3d772f9a2b8d1302fdad620cadd6a69f330f1",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "41e2163804a33cbfcb972412ec925fd26b9834f675aae2d7e79b0c0eb09ad741",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  },
+  "E002-12": {
+    "filename": "E002-12.png",
+    "sha256": "48476a639a7ae35ef78a3455bbd1ae0be46b3e715cc25c8719343c3b14162f75",
+    "caption": "Box poses on identical segmented observations and per-row scale. Compare R01 baseline, R06 gated graph, R07 shape only, and R08 shape plus training markers.",
+    "caption_sha256": "49fc66b86f44425a7189e587cdb6299d0a2e57d7b321bdc6c7e2c6902412beb9",
+    "sources": {
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-02.ply": "baef262eca88edfdacf88e950548c7a0f0c5a75f59ad79181d4902796f61a541",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-R06.ply": "baef262eca88edfdacf88e950548c7a0f0c5a75f59ad79181d4902796f61a541",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-R07.ply": "68b941cfa5e5b0dc51ff19cdd4cdbff913433740bf7f9128d048c957e66a0363",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-03.json": "4fa8617a1d1616f10e025a8d3361025b19756bcfbaf41bfbcb6f80b57467f54c",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-02.ply": "be10b7dc34a45a1884f05a731ce3b156570aa2b101894ab66ccc7a8f5f429adb",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-R06.ply": "0a1e7ac249b69a8271b76e529ff6c508b025e85bdd637f3d084ba316683b7368",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-R07.ply": "f13b8194272e12b99fd016d6ad6112513b235c7f58b9bf8534a089e3d6ee6a32",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-R08.ply": "064ccfcd64c114ef88a7a7d852055a9756509348b35c06a8ef0b0d58afdd64c3",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-03.json": "963895ed54565a3a951b91e941cf263ca0ab8f1943fe48b69e67ecd25bd3655f",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-R01.ply": "1eb45538df71e08c79194ea1359349a5a010c9cdfc461309a46102a40151e74a",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-02.ply": "f81fb1043b8c64e2d86855421f14daa82485ec37188863ec910788134390e591",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-R07.ply": "e17d60b723a302e33a02eb6d5e68d2054a228550968a5e7f18e8ba3cde0469ae",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-R08.ply": "9ce3a9645b44f59e98a9c178ab8570a6315899dbebc36ba3e5b068888ba3d34e",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-03.json": "c727d5c8be62ded46bacadded607535886e7d1b988b24d4c67610e55105c64a8",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-R01.ply": "cebae3f40ee1939541b85cec595bf5ba9a547601afe4ab40c822eb43174d5f8f",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-R06.ply": "7ac4bd32c8295bcd3e8f790147822b4d52a8642739d5403b5cf49f8c282d9591",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-R07.ply": "59f7a4ab04cf5ae5ae4bc35add96593b19c649098ae50a1970bc5621fd9ad5ca",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-02.ply": "c3fa9aab13fb313668d450562a0a7525e54996bda5ce8a4d056944a9ae4e892d",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-03.json": "5d1109f6c8c429198639e023827742c9f1080cd09aeb73ea5734ba82bd1523a0"
+    },
+    "script": "ff914a084d3b499afa84a2f20fc3d772f9a2b8d1302fdad620cadd6a69f330f1",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "48476a639a7ae35ef78a3455bbd1ae0be46b3e715cc25c8719343c3b14162f75",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  },
+  "E002-13": {
+    "filename": "E002-13.png",
+    "sha256": "e8edfd469063692a90349792659b1681d4ecf3cfe6a74fa2e6e0ba75f69a02da",
+    "caption": "Green points show the retained actual depth pixels overlaying the raw white-field image, frame 0 of eight sessions.",
+    "caption_sha256": "eefdb05b48fc964dec2f192e7fa79d2f118d81b9161698a663dee5561c7b681f",
+    "sources": {
+      "data/object_scans/scan_20261120_095133_815739_小黄人/view_0000/graycode_42.png": "f8e8e4aa6719478bcbb50cb969706a15a39ab750403cec8909068bdff9ed5544",
+      "algorithm/scene-fusion/E002/results/cache/E002-S01/V00.npz": "525e432791ba9e3e97693e6ee6134babd00ecac9eafb5abbe368acaca48eb23c",
+      "algorithm/scene-fusion/results/intermediate/minion/00.npz": "dca98d025980ef002b8e6a31e093bd20ad8cdbbe01efad937dd0d4d5fac2d5d3",
+      "data/object_scans/scan_20261120_095754_604145_苹果/view_0000/graycode_42.png": "3e3ede711f82a6bfa4abf70370605177320f75393548d708e65e963ffdd1ca10",
+      "algorithm/scene-fusion/E002/results/cache/E002-S02/V00.npz": "4a6bb44697cb319374ae68114907abfa806f70101f479e033a2e9c755d9fbb91",
+      "algorithm/scene-fusion/results/intermediate/apple/00.npz": "5c7e5a91a0f9ce9160ffbdd3da71cac92aeedcc6b47b0d1910c31edc40aad54e",
+      "data/object_scans/scan_20261116_174014_915028用格雷码弯曲转台标定测试的长方体/view_0000/graycode_42.png": "84d8d9a21afd997fe1769566e8b4cbce2d79a0d5679dd90a7b0972c7db734390",
+      "algorithm/scene-fusion/E002/results/cache/E002-S03/V00.npz": "d5a92b7270c0a39b785ee0e8054e6c0ffbf5a488cf92d86a48cd663c7e02bfeb",
+      "algorithm/scene-fusion/results/intermediate/box_1116/00.npz": "595875a9234eb4b1f35d3fbdd5f6f941067ee9a3973fa85617480e2766e306fa",
+      "data/object_scans/scan_20261123_171640_110748_充电头_棋盘格贴转台/view_0000/graycode_42.png": "5b226129909ff0243613a606002a6dfe4eb516a11d899dd08884907e48b4c9aa",
+      "algorithm/scene-fusion/E002/results/cache/E002-S04/V00.npz": "69b30f648fb005b8ceb6a4f5a98d2cffb433723dfdc12a8d6ff94af0949a51cf",
+      "algorithm/scene-fusion/results/intermediate/charger_1716/00.npz": "6732510914d4722c5fc3d9c62d8d1995b8a135157878aed8acb606fa57358195",
+      "data/object_scans/scan_20261123_174129_740645_充电头_二维码_中心/view_0000/graycode_42.png": "08a179d18dfc4b5b0f378bce7eab8c1def345e3eaa1d2cba04ab93c26a13fbc7",
+      "algorithm/scene-fusion/E002/results/cache/E002-S05/V00.npz": "f558b4f86f9e925ebbe9c8b801b7f8a865783c7314dc8ecb15f23c33327fd557",
+      "algorithm/scene-fusion/results/intermediate/charger/00.npz": "f73b7784e873c9b0143f2b7c0ef13d8e6fc6c39d7172ef0eeb921d8b1781b59d",
+      "data/object_scans/scan_20261123_174531_873516包装盒_转盘中心/view_0000/graycode_42.png": "07d588787fe9bfc6c113131e51fca80a9d4989d8426e4d18ba80073795e2a129",
+      "algorithm/scene-fusion/E002/results/cache/E002-S06/V00.npz": "69d1727189768bd2292f57363462d725969874e44271b1f301b7ce4887a9bac8",
+      "algorithm/scene-fusion/results/intermediate/box_center/00.npz": "4ebb8a7adb80186650825c91bee642dd8edea26bd1327ab6a3edf60082a7cb22",
+      "data/object_scans/scan_20261123_174747_132362包装盒转盘边缘/view_0000/graycode_42.png": "1d65d9f1af1bbd14b9dc0ee2c5b6fd922aba8c721c191baa9bac674cfed0d952",
+      "algorithm/scene-fusion/E002/results/cache/E002-S07/V00.npz": "9a5a8b42e626c586c9bf95d951f698a190d59afefc37efce46f8019fa7a0b06a",
+      "algorithm/scene-fusion/results/intermediate/box_offset/00.npz": "b3697e76ea46ba14e0a21405ece7365eb42336f5f8fc5ce3c0442550d453f046",
+      "data/object_scans/scan_20261123_175006_029822/view_0000/graycode_42.png": "debc850a33aa7ea82e944cafbb3a405eea39cee0a43cfda8aeaabb09eb99809f",
+      "algorithm/scene-fusion/E002/results/cache/E002-S08/V00.npz": "b06e6fbbbe73fb6c81e581d2ede441e958c075b5273eb4083e56350c5687a05f",
+      "algorithm/scene-fusion/results/intermediate/box_1750/00.npz": "510764263a5387eea898e69a5e736e97f43af5d85e8ebbe6ecd8c478d2cde7f4"
+    },
+    "script": "ff914a084d3b499afa84a2f20fc3d772f9a2b8d1302fdad620cadd6a69f330f1",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "e8edfd469063692a90349792659b1681d4ecf3cfe6a74fa2e6e0ba75f69a02da",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  },
+  "E002-14": {
+    "filename": "E002-14.png",
+    "sha256": "3373edd5119cf258ab41f29db8dae572c1d27de6f6906348d59d4486a7d9a9b3",
+    "caption": "Same selected segmented observations rendered from distinct azimuths and elevations for each of eight sessions.",
+    "caption_sha256": "1408673397ff1787afd7dd7b2f26d7d9909cbb1d809e5eaf6c36057f5ff5ea37",
+    "sources": {
+      "algorithm/scene-fusion/E002/results/clouds/E002-S01/E002-S01-02.ply": "957cd2f35fdbcb52f98cf38c175f5539d721bf72bf67bdd310f4608503fc03d5",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S01/E002-S01-03.json": "02950bf5ee542e0b15bf1eefa3789b54955fed21f52565873732c599ad4294c1",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S02/E002-S02-02.ply": "046a69270b8971bd3f62c1ca074cf6a3321f62f13ae16f4aa0b99349f9f00208",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S02/E002-S02-03.json": "77bd438e4894fe3f61ea2b0a9528dff658fb6cc65edf47a153dd0ca38e523d42",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-02.ply": "baef262eca88edfdacf88e950548c7a0f0c5a75f59ad79181d4902796f61a541",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S03/E002-S03-03.json": "4fa8617a1d1616f10e025a8d3361025b19756bcfbaf41bfbcb6f80b57467f54c",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S04/E002-S04-02.ply": "de474a4c0dd518a5b08cb15599180ceb1f728def11890e9fed7955406695640d",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S04/E002-S04-03.json": "d07f22b8a5e21757a1c502f4281fa17abaf204aa003d28a940d2c431620499f0",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S05/E002-S05-02.ply": "b9ed00ab876e3fe523d3762b23d56fe9595335389531fac245c3e9c6936f81b1",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S05/E002-S05-03.json": "6436e188391dca17090b10f89939b11f82bc9a0cb1b4bad8c3f980da7632c8f3",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-02.ply": "be10b7dc34a45a1884f05a731ce3b156570aa2b101894ab66ccc7a8f5f429adb",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S06/E002-S06-03.json": "963895ed54565a3a951b91e941cf263ca0ab8f1943fe48b69e67ecd25bd3655f",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-02.ply": "f81fb1043b8c64e2d86855421f14daa82485ec37188863ec910788134390e591",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S07/E002-S07-03.json": "c727d5c8be62ded46bacadded607535886e7d1b988b24d4c67610e55105c64a8",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-02.ply": "c3fa9aab13fb313668d450562a0a7525e54996bda5ce8a4d056944a9ae4e892d",
+      "algorithm/scene-fusion/E002/results/clouds/E002-S08/E002-S08-03.json": "5d1109f6c8c429198639e023827742c9f1080cd09aeb73ea5734ba82bd1523a0"
+    },
+    "script": "ff914a084d3b499afa84a2f20fc3d772f9a2b8d1302fdad620cadd6a69f330f1",
+    "visual_review": {
+      "result": "pass",
+      "checked_output_sha256": "3373edd5119cf258ab41f29db8dae572c1d27de6f6906348d59d4486a7d9a9b3",
+      "checked": "titles, labels, contrasts, per-case view framing and chart bounds at export"
+    }
+  }
+}

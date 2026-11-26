@@ -1,0 +1,98 @@
+{
+  "cases": {
+    "E002-S01": {
+      "case": "minion",
+      "label": "小黄人",
+      "segmentation": "M07",
+      "registration": "R06",
+      "full_count": 403802,
+      "object_count": 76427,
+      "index": "clouds/E002-S01/E002-S01-03.json"
+    },
+    "E002-S02": {
+      "case": "apple",
+      "label": "苹果",
+      "segmentation": "M07",
+      "registration": "R01",
+      "full_count": 202786,
+      "object_count": 68281,
+      "index": "clouds/E002-S02/E002-S02-03.json"
+    },
+    "E002-S03": {
+      "case": "box_1116",
+      "label": "纸盒 11/16",
+      "segmentation": "M07",
+      "registration": "R01",
+      "full_count": 143624,
+      "object_count": 89035,
+      "index": "clouds/E002-S03/E002-S03-03.json"
+    },
+    "E002-S04": {
+      "case": "charger_1716",
+      "label": "充电头 17:16",
+      "segmentation": "M07",
+      "registration": "R06",
+      "full_count": 250885,
+      "object_count": 30810,
+      "index": "clouds/E002-S04/E002-S04-03.json"
+    },
+    "E002-S05": {
+      "case": "charger",
+      "label": "充电头 17:41",
+      "segmentation": "M07",
+      "registration": "R01",
+      "full_count": 417681,
+      "object_count": 65200,
+      "index": "clouds/E002-S05/E002-S05-03.json"
+    },
+    "E002-S06": {
+      "case": "box_center",
+      "label": "纸盒 17:45",
+      "segmentation": "M07",
+      "registration": "R01",
+      "full_count": 392068,
+      "object_count": 90782,
+      "index": "clouds/E002-S06/E002-S06-03.json"
+    },
+    "E002-S07": {
+      "case": "box_offset",
+      "label": "纸盒 17:47",
+      "segmentation": "M07",
+      "registration": "R06",
+      "full_count": 409627,
+      "object_count": 80303,
+      "index": "clouds/E002-S07/E002-S07-03.json"
+    },
+    "E002-S08": {
+      "case": "box_1750",
+      "label": "纸盒 17:50",
+      "segmentation": "M07",
+      "registration": "R08",
+      "full_count": 390241,
+      "object_count": 76656,
+      "index": "clouds/E002-S08/E002-S08-03.json"
+    }
+  },
+  "segmentation": {
+    "M01": "统一高度阈值",
+    "M02": "逐帧盘面与自适应高度",
+    "M03": "逐帧盘面与三维连通域",
+    "M04": "三维连通域与跨视角支持",
+    "M05": "多视角支持与 GrabCut",
+    "M06": "图像限制与近底恢复",
+    "M07": "近底恢复与偏心门控"
+  },
+  "registration": {
+    "R01": "E001 留存位姿",
+    "R02": "同期转轴摆正",
+    "R03": "R01 初值 + 串联 P2P",
+    "R04": "R01 初值 + 串联 P2Plane",
+    "R05": "R01 初值 + 串联 GICP",
+    "R06": "法向门控与分批加入的位姿图",
+    "R07": "直立长方体与微量位姿联合拟合",
+    "R08": "直立长方体 + 训练码约束",
+    "R09": "R02 初值 + 串联 P2P",
+    "R10": "R02 初值 + 串联 P2Plane",
+    "R11": "R02 初值 + 串联 GICP"
+  }
+}

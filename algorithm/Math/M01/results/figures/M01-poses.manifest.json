@@ -1,0 +1,90 @@
+{
+  "schema": "science-figure-manifest/1.0",
+  "figure_id": "M01-poses",
+  "caption": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.caption.md",
+    "sha256": "92032cf2f570379851bf218ecf83fce5d60b00a95290560b26543d38d788c433"
+  },
+  "data": [
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/pose_P1.csv",
+      "sha256": "75bca304c5e8a21ef97e5e97a5a3b8078b8cbe85b04dca208bd7c2b00e61a6c1"
+    },
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/pose_P2.csv",
+      "sha256": "dee4b58be93de0c674db71eabbb88bfcd63a641865869b130ba7a70f01e8605c"
+    },
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/pose_F1.csv",
+      "sha256": "0ad934a82e7fa9a3759550725f673a6bc25169019f1e3eb92865f7eece6eb033"
+    },
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/pose_K1.csv",
+      "sha256": "80e8a508cb74a81445443a1bf7a4633310021c35ff5f14af46c53e7e77336181"
+    },
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/pose_C1.csv",
+      "sha256": "828bdb39c9f574ad8409144093e4cb9d13fca164506e1c0b4ec7bc2bc7b16988"
+    }
+  ],
+  "source": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+    "sha256": "c0ff7cd1637748b11e8b4c1bdf170c48d03a4890635dfadd2bfb02d550c6ff4f"
+  },
+  "qa_engines": [
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/figure_qa.py",
+      "sha256": "d67f2c174de17405c80485711c2e1e6e5b4d57479094b0f3ee7622b1675f03ea"
+    },
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/pdf_qa.py",
+      "sha256": "02e833f80919ba6d3ba3b2819b621d50f6343c9122d9269349e2718bf8a7dcdd"
+    }
+  ],
+  "qa": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.qa.json",
+    "sha256": "55aa97c23f4387f93e6b7c7911aa40275506f7f97a6d0729eeb772acceb8ff8d"
+  },
+  "exports": {
+    "pdf": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.pdf",
+      "sha256": "cc7cfeb7cc418d426a96b8c8dc62427bf698cd7c7d2fe8c4d597f80593c66979"
+    },
+    "svg": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.svg",
+      "sha256": "10edd7051e72e10664c1fefd2bf0c6dc22bc76ce0503dbe32b03bf59b6df7d54"
+    },
+    "png": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-poses.png",
+      "sha256": "f2b6016fa52728a4f4cdf800c5ff0c1ab240c66d454ff1cb253c2eb311d22bc9"
+    }
+  },
+  "command": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python /Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+  "python": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python",
+  "platform": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2"
+  },
+  "semantics": {
+    "R02": "#4c647b",
+    "R06c": "#337bbb",
+    "H1": "#bf7444",
+    "surface": "mm",
+    "volume": "percent"
+  },
+  "actual_size_mm": [
+    180.0,
+    77.0
+  ],
+  "target_print_width_mm": 180.0,
+  "automatic_status": "PASS",
+  "visual_review_status": "PASS",
+  "visual_review": {
+    "reviewer": "Codex",
+    "decision": "PASS",
+    "notes": "All three axes, marker units, method legend and 5 sample labels rendered without clipping.",
+    "utc": "2026-11-26T02:59:54.822268+00:00",
+    "export_sha256": "cc7cfeb7cc418d426a96b8c8dc62427bf698cd7c7d2fe8c4d597f80593c66979"
+  }
+}

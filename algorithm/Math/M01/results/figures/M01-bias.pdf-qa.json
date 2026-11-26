@@ -1,0 +1,293 @@
+{
+  "pdf": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.pdf",
+  "sha256": "06ecb60433dd9a0d07d7723e1ac38621435fdeac25047313de9c1ae30d9d3c8d",
+  "pymupdf_version": "1.28.2",
+  "pages": [
+    {
+      "page": 1,
+      "size_mm": [
+        179.99999491373697,
+        70.00000161064995
+      ],
+      "page_bbox_pt": [
+        0.0,
+        0.0,
+        510.2362060546875,
+        198.42520141601562
+      ],
+      "spans": [
+        {
+          "text": "SPH",
+          "bbox_pt": [
+            63.50996398925781,
+            160.24853515625,
+            81.42044830322266,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "ELL",
+          "bbox_pt": [
+            111.08550262451172,
+            160.24853515625,
+            126.80194091796875,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "TOR",
+          "bbox_pt": [
+            156.0126190185547,
+            160.24853515625,
+            174.84620666503906,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Known shape",
+          "bbox_pt": [
+            88.85113525390625,
+            173.25439453125,
+            149.05821228027344,
+            183.73939514160156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "0",
+          "bbox_pt": [
+            35.753692626953125,
+            140.40985107421875,
+            41.477691650390625,
+            150.8948516845703
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "2",
+          "bbox_pt": [
+            35.753692626953125,
+            116.8604965209961,
+            41.477691650390625,
+            127.34549713134766
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "4",
+          "bbox_pt": [
+            35.753692626953125,
+            93.31112670898438,
+            41.477691650390625,
+            103.79612731933594
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "6",
+          "bbox_pt": [
+            35.753692626953125,
+            69.76176452636719,
+            41.477691650390625,
+            80.24676513671875
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "8",
+          "bbox_pt": [
+            35.753692626953125,
+            46.21240997314453,
+            41.477691650390625,
+            56.697410583496094
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Signed volume error (%)",
+          "bbox_pt": [
+            21.230581283569336,
+            46.116580963134766,
+            31.7155818939209,
+            156.2749786376953
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Uniform bias",
+          "bbox_pt": [
+            87.25738525390625,
+            32.332054138183594,
+            150.64990234375,
+            43.9820556640625
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 10.0
+        },
+        {
+          "text": "SPH",
+          "bbox_pt": [
+            221.36822509765625,
+            160.24853515625,
+            239.27871704101562,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "ELL",
+          "bbox_pt": [
+            268.94378662109375,
+            160.24853515625,
+            284.66021728515625,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "TOR",
+          "bbox_pt": [
+            313.8708801269531,
+            160.24853515625,
+            332.7044677734375,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Known shape",
+          "bbox_pt": [
+            246.7093963623047,
+            173.25439453125,
+            306.9164733886719,
+            183.73939514160156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Localized bias",
+          "bbox_pt": [
+            241.7562713623047,
+            32.332054138183594,
+            311.8731689453125,
+            43.9820556640625
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 10.0
+        },
+        {
+          "text": "SPH",
+          "bbox_pt": [
+            379.22650146484375,
+            160.24853515625,
+            397.1369934082031,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "ELL",
+          "bbox_pt": [
+            426.8020324707031,
+            160.24853515625,
+            442.5184631347656,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "TOR",
+          "bbox_pt": [
+            471.7291564941406,
+            160.24853515625,
+            490.562744140625,
+            170.73353576660156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Known shape",
+          "bbox_pt": [
+            404.5676574707031,
+            173.25439453125,
+            464.77471923828125,
+            183.73939514160156
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "Hidden cap",
+          "bbox_pt": [
+            406.3489074707031,
+            32.332054138183594,
+            462.9920959472656,
+            43.9820556640625
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 10.0
+        },
+        {
+          "text": "D0  baseline",
+          "bbox_pt": [
+            116.75568389892578,
+            8.567008972167969,
+            172.82882690429688,
+            19.05200958251953
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "D3  geometry selection",
+          "bbox_pt": [
+            216.0181884765625,
+            8.567008972167969,
+            321.3032531738281,
+            19.05200958251953
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        },
+        {
+          "text": "D4  volume selection",
+          "bbox_pt": [
+            364.4994201660156,
+            8.567008972167969,
+            459.5086669921875,
+            19.05200958251953
+          ],
+          "font": "DejaVuSans",
+          "size_pt": 9.0
+        }
+      ],
+      "rendered_png": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-bias.pdf-qa-page-001.png"
+    }
+  ],
+  "issues": [],
+  "automatic_status": "PASS",
+  "blind_spots": [
+    "Content already clipped out of the PDF may not be recoverable from text extraction; pre-export renderer bboxes are required.",
+    "PDF import scaling and captions belong to final LaTeX page QA, not this standalone figure check."
+  ]
+}

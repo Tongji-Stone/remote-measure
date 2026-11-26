@@ -1,0 +1,78 @@
+{
+  "schema": "science-figure-manifest/1.0",
+  "figure_id": "M01-sections",
+  "caption": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.caption.md",
+    "sha256": "5da3794d76caa7707bac94ed419af6b4fc11501c58af4b982835af6c0de13a1f"
+  },
+  "data": [
+    {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/sections.csv",
+      "sha256": "dc2ba6d99a4b09a9de000166ab2ba8f7835f59d48c60dd50b8556df690727c69"
+    },
+    {
+      "path": "/Users/percyayanami/remote-measure/simulation/E104/\u573a\u666f/G3/\u7ed3\u679c.json",
+      "sha256": "03d61469295c17d895cfb06ee4db2c6ab760bc888edd357d372d8b943366e4e3"
+    }
+  ],
+  "source": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+    "sha256": "c0ff7cd1637748b11e8b4c1bdf170c48d03a4890635dfadd2bfb02d550c6ff4f"
+  },
+  "qa_engines": [
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/figure_qa.py",
+      "sha256": "d67f2c174de17405c80485711c2e1e6e5b4d57479094b0f3ee7622b1675f03ea"
+    },
+    {
+      "path": "/Users/percyayanami/.local/share/codex-science/templates/rectangle/figures/source/pdf_qa.py",
+      "sha256": "02e833f80919ba6d3ba3b2819b621d50f6343c9122d9269349e2718bf8a7dcdd"
+    }
+  ],
+  "qa": {
+    "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.qa.json",
+    "sha256": "9f202f6f934e9b1daf2511a0cafcb2635dea6b33146e15d0917d10ffacee3d8c"
+  },
+  "exports": {
+    "pdf": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.pdf",
+      "sha256": "03b9cf79021c95ceffae84e9b25c78da8152cdcc63d439ea0593fcd9a2eb6725"
+    },
+    "svg": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.svg",
+      "sha256": "19da36c98b0e0aaec76050f8350b7f1439934828d56d7983e8f49c145d20b7b8"
+    },
+    "png": {
+      "path": "/Users/percyayanami/remote-measure/algorithm/Math/M01/results/figures/M01-sections.png",
+      "sha256": "37817c4cd4958f38b1677a43617ce1fc60592c033ae1db465686782c7479edb1"
+    }
+  },
+  "command": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python /Users/percyayanami/remote-measure/algorithm/Math/M01/figures.py",
+  "python": "/Users/percyayanami/.local/share/codex-science/releases/2.0.0/physics-venv/bin/python",
+  "platform": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2"
+  },
+  "semantics": {
+    "S04": "#4c647b",
+    "S07": "#337bbb",
+    "R-flat": "#bf7444",
+    "R-pole": "#137f76",
+    "ordinate": "percent"
+  },
+  "actual_size_mm": [
+    180.0,
+    72.0
+  ],
+  "target_print_width_mm": 180.0,
+  "automatic_status": "PASS",
+  "visual_review_status": "PASS",
+  "visual_review": {
+    "reviewer": "Codex",
+    "decision": "PASS",
+    "notes": "Four methods and T0\u2013T2 marks checked. Small signed T2 R-pole bar also recorded in table.",
+    "utc": "2026-11-26T02:59:54.822806+00:00",
+    "export_sha256": "03b9cf79021c95ceffae84e9b25c78da8152cdcc63d439ea0593fcd9a2eb6725"
+  }
+}

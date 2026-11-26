@@ -1,0 +1,84 @@
+{
+  "E003-10": {
+    "sha256": "09988da861400d0ed65fd44b9f8c157060b9accb40984819e41c73d7f9cae827",
+    "source_sha256": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "caption": "Same registered views, previous scene mask versus E003 denoising. Color marks affected samples.",
+    "caption_sha256": "d3569a009e2f4bc747647f90663fc5c8e015711841d5dd325d13561b562a94a5",
+    "inputs": {
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-D00.ply": "6ed427dc432372e60be0fa83ca16b1526cea4975468f3ff2195cc3a0525c8c45",
+      "algorithm/scene-fusion/E003/results/E003-S08/E003-S08-D02.ply": "5a832af26fc36e7e1381d7b5c9dc0fc5662f07a590b0ec6ea6169838ee834265",
+      "algorithm/scene-fusion/E003/results/E003-S01/E003-S01-D02.ply": "b5f2aba88989bfc8e562f5a28a8211fa39db5a37aa742497d746a5a710e00a7a",
+      "algorithm/scene-fusion/E003/results/E003-S06/E003-S06-D00.ply": "c4bcfb4585d1ae6319dcb97b90ab924da9dee045b9bb13f57bf62fc45a2960ae",
+      "algorithm/scene-fusion/E003/results/E003-S06/E003-S06-01.json": "3d1edbb69cbed2d678269f3191727879db053b405bc8c18fd86f458305e5187d",
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-D02.ply": "ac0f94cbdc46994c88162ce1a4d1e19a5262773a9d836dc9467cd67765cef0ac",
+      "algorithm/scene-fusion/E003/results/E003-S01/E003-S01-01.json": "99cc9813dca3873a3efbeee8eb9ec3575158efda57dc863ab47303643c1de1db",
+      "algorithm/scene-fusion/E003/results/E003-S05/E003-S05-D00.ply": "b723bd6f1f341861208c228b5473933df05e8098370d77e9ab6dc048fb9282cb",
+      "algorithm/scene-fusion/E003/results/E003-S04/E003-S04-01.json": "3171ca0a3f0154d3cd6ff37a6d420517c100c53a872da7245449927802af8bb8",
+      "algorithm/scene-fusion/E003/results/E003-S02/E003-S02-D02.ply": "fa923e4e7d6503c4a8533f2c7f8eb357c8c1a7fbe3dbb5051e8f976cb9c8d912",
+      "algorithm/scene-fusion/E003/results/E003-S07/E003-S07-D02.ply": "70482da73553deddbfc5ed6a7c50bf69ccdcf79a71f483df167474bfb3f23a17",
+      "algorithm/scene-fusion/E003/results/E003-S02/E003-S02-D00.ply": "499cd2dffd4e98d34f128055f901c961beab29a437380053f776a427b842d2bd",
+      "algorithm/scene-fusion/E003/results/E003-S07/E003-S07-01.json": "694fe8107c96d310c33ff69446bc9ff86821cbcfae3c240161ffbe14f1b41ede",
+      "algorithm/scene-fusion/E003/results/E003-S04/E003-S04-D00.ply": "3489cf3a217bec5cc4c35c9def13e860d2f2c919fae03fd3658dd67c603fed7e",
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-01.json": "f4b9298048fe97c54ed85ebef7f4634aeaf5af867c849650d0fb5b60f582ff88",
+      "algorithm/scene-fusion/E003/results/E003-S08/E003-S08-01.json": "7c7b24b0b5a6d7afd78e59a4829d3f5944dabcf44cf3f9ed51a041cdc2fba02b",
+      "algorithm/scene-fusion/E003/results/E003-S07/E003-S07-D00.ply": "2deb1e44164d8629ae7ddb2cedf129a9fb42dd2a9148292305e461db9d2d4c8a",
+      "algorithm/scene-fusion/E003/results/E003-S06/E003-S06-D02.ply": "5861a62936dd70b8caa3142ac0cb2633b0c1dc3295a9ddec1cd8887d8bd77597",
+      "algorithm/scene-fusion/E003/results/E003-S08/E003-S08-D00.ply": "4c7e485cdff81bf65671338c27147828484ad0478511bbe9fa563e70a9eeb482",
+      "algorithm/scene-fusion/E003/results/E003-S05/E003-S05-D02.ply": "6671815f4cff61f0f026f9199056020ca767590f8991122855bf874f876da69d",
+      "algorithm/scene-fusion/E003/results/E003-S01/E003-S01-D00.ply": "00862e36f3b783df4acda6edf9be89de1035011cfd27f5b75870d015f9038f88",
+      "algorithm/scene-fusion/E003/results/E003-S05/E003-S05-01.json": "2805c937fc23d2f9367c7934c04123ceeb262d75392d42152702b5993f2b8969",
+      "algorithm/scene-fusion/E003/results/E003-S02/E003-S02-01.json": "c0c998fd910a4d3cb70c850ff80a2c74cafdafc1c85720c6ef55a93b323afb11",
+      "algorithm/scene-fusion/E003/results/E003-S04/E003-S04-D02.ply": "ef0dd5b04d4a225aefc04d0fe652d10a982ece9fbf906392b29a9974685df08b"
+    },
+    "units": "mm* in geometry; panels use same scale where compared",
+    "command": "algorithm/.venv/bin/python simulation/E003/render_e003.py",
+    "visual_review": {
+      "decision": "pass",
+      "checked_hash": "09988da861400d0ed65fd44b9f8c157060b9accb40984819e41c73d7f9cae827",
+      "print_check": "embedded in E003.pdf at landscape A4; export, color, panel titles and units inspected"
+    }
+  },
+  "E003-12": {
+    "sha256": "f755395b79392075f0a10286e3c80af68ab109e79907fbde5d77ba4ef7686f5f",
+    "source_sha256": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "caption": "Observed training clouds, ISS keypoints, raw sampled FPFH hypothesis, and chosen turntable registration in the same viewport.",
+    "caption_sha256": "057d648b9fd28fc4471e2821ef0e4e9607b13e2ddb790d364d72c2fc8674d7bf",
+    "inputs": {
+      "algorithm/scene-fusion/E003/results/E003-S01/E003-S01-V01.npz": "f12a0e789f39f6c07709b180ddfa1aa0b5e49f4999d456363000afdacbb85890",
+      "algorithm/scene-fusion/E003/results/E003-03.csv": "0dd664bb4565bdcf52e929bc36f655603f7dc876fb4c1a3688715a16db087b0e",
+      "algorithm/scene-fusion/E003/results/E003-S01/E003-S01-V00.npz": "b8ebda1e879fc322e476e2f50ca8c5370c9011dfe8e993a2562bd9d0004db13c",
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-V00.npz": "930e988a93002defcbf6856c19fcc8d30ba43d2fc67a110d55f66e94ef6a9661",
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-V01.npz": "494a2eee52800ad9cd2862800413bc27af6577df9451f6c78a3d4890a2af0455"
+    },
+    "units": "mm* in geometry; panels use same scale where compared",
+    "command": "algorithm/.venv/bin/python simulation/E003/render_e003.py",
+    "visual_review": {
+      "decision": "pass",
+      "checked_hash": "f755395b79392075f0a10286e3c80af68ab109e79907fbde5d77ba4ef7686f5f",
+      "print_check": "embedded in E003.pdf at landscape A4; export, color, panel titles and units inspected"
+    }
+  },
+  "E003-11": {
+    "sha256": "f2689a84ec01e16817b30f5fc51505ace65675d1704ed1f4dbc986b8e23f92d9",
+    "source_sha256": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "caption": "Fixed-envelope measured box top view and synthetic four parallel inward displacement case.",
+    "caption_sha256": "131e21cb5fdef93e63d3742310e82f40d60774ce962306a524e259eea92dd5c2",
+    "inputs": {
+      "algorithm/scene-fusion/E003/results/E003-S08/E003-S08-D02.ply": "5a832af26fc36e7e1381d7b5c9dc0fc5662f07a590b0ec6ea6169838ee834265",
+      "simulation/E003/results/E003-S08/E003-S08-02.json": "7c490d4f4c0902312ff125b4426012a7be9b68b029ef7d0016f881eaeeff4371",
+      "algorithm/scene-fusion/E003/results/E003-S03/E003-S03-D02.ply": "ac0f94cbdc46994c88162ce1a4d1e19a5262773a9d836dc9467cd67765cef0ac",
+      "algorithm/scene-fusion/E003/results/E003-S06/E003-S06-D02.ply": "5861a62936dd70b8caa3142ac0cb2633b0c1dc3295a9ddec1cd8887d8bd77597",
+      "simulation/E003/results/E003-S03/E003-S03-02.json": "def9178ad298fd0d93d75cad6a4535706ba67882c0e304a385aa022231fb78ee",
+      "algorithm/scene-fusion/E003/results/E003-S07/E003-S07-D02.ply": "70482da73553deddbfc5ed6a7c50bf69ccdcf79a71f483df167474bfb3f23a17",
+      "simulation/E003/results/E003-S06/E003-S06-02.json": "606d9b8eb5222f7872d41727dadab0bdbe4b99f82a4f54fe8492eb132ceaa9d0",
+      "simulation/E003/results/E003-S07/E003-S07-02.json": "12d1509d642cfb73eedfa75ba00dd69f1d71ac21489734af8c8b2da586fd89dc"
+    },
+    "units": "mm* in geometry; panels use same scale where compared",
+    "command": "algorithm/.venv/bin/python simulation/E003/render_e003.py",
+    "visual_review": {
+      "decision": "pass",
+      "checked_hash": "f2689a84ec01e16817b30f5fc51505ace65675d1704ed1f4dbc986b8e23f92d9",
+      "print_check": "embedded in E003.pdf at landscape A4; export, color, panel titles and units inspected"
+    }
+  }
+}

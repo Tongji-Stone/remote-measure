@@ -1,0 +1,125 @@
+{
+  "cases": {
+    "E003-S01": {
+      "views": 9,
+      "retained_exact_subset": 75987,
+      "mesh": "M05",
+      "selected_mesh_sha256": "ef16b60fd405a30582cb08f48dca0f2366bccca090022ef8d091cef347d4b4fe",
+      "heldout_samples": 13065,
+      "volume_mm_star3": 85942.84179726228
+    },
+    "E003-S02": {
+      "views": 5,
+      "retained_exact_subset": 66765,
+      "mesh": "M03",
+      "selected_mesh_sha256": "84ad65d74756e175d29acd16a092eb92e67a7b0600fcdcca708ddb9ae0383191",
+      "heldout_samples": 12375,
+      "volume_mm_star3": 329775.24900277203
+    },
+    "E003-S03": {
+      "views": 5,
+      "retained_exact_subset": 88964,
+      "mesh": "M04",
+      "selected_mesh_sha256": "ef5aa179de46741ff87c5b5de2a2ef7650973deaab59b1cd6e1e17cca8b24fde",
+      "heldout_samples": 12117,
+      "volume_mm_star3": 465693.64162430994
+    },
+    "E003-S04": {
+      "views": 8,
+      "retained_exact_subset": 30593,
+      "mesh": "M03",
+      "selected_mesh_sha256": "bf77b74ce1d8ce494df10be714a958cbf24e6eb2bc5f2d2fdb7198ab3fd654ea",
+      "heldout_samples": 5550,
+      "volume_mm_star3": 19382.8232818686
+    },
+    "E003-S05": {
+      "views": 8,
+      "retained_exact_subset": 64696,
+      "mesh": "M03",
+      "selected_mesh_sha256": "bb98d4e27f331a83165017cdb577180adb6eca4e79e806f25acd9b7b3ad6bfe9",
+      "heldout_samples": 10503,
+      "volume_mm_star3": 58704.389001788644
+    },
+    "E003-S06": {
+      "views": 8,
+      "retained_exact_subset": 90557,
+      "mesh": "M04",
+      "selected_mesh_sha256": "b8cb91e900725c54c640fbcb1e442faba4a969181952f3c20a60af1c7a0a390d",
+      "heldout_samples": 17045,
+      "volume_mm_star3": 285529.0937781424
+    },
+    "E003-S07": {
+      "views": 8,
+      "retained_exact_subset": 79899,
+      "mesh": "M04",
+      "selected_mesh_sha256": "a9debf67c61cc0e954423b92417d70910a5945c0db5ba7e5d9b0dcab9a68a2cd",
+      "heldout_samples": 16417,
+      "volume_mm_star3": 183680.92778727628
+    },
+    "E003-S08": {
+      "views": 8,
+      "retained_exact_subset": 76438,
+      "mesh": "M04",
+      "selected_mesh_sha256": "90cb58f7561ff43fb42ee837cc1cc311a5dee7e3eb4e72a32c3fa91d451ce8fc",
+      "heldout_samples": 15546,
+      "volume_mm_star3": 257203.0810499627
+    }
+  },
+  "rigid_all_poses": true,
+  "selected_meshes_closed": 8,
+  "reference_views": 59,
+  "source_evidence": {
+    "thesis_sha256": "e256a2b37d49c849822877ee375b51958edd5ec006dfc3459c83e7b5ddae930d",
+    "printed_pages": [
+      33,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      52,
+      53,
+      54,
+      55,
+      57,
+      59,
+      61,
+      63,
+      65
+    ],
+    "rendered_physical_pages": [
+      49,
+      52,
+      63,
+      64,
+      72
+    ]
+  },
+  "report": {
+    "pages": 6,
+    "sha256": "e57b0fc6c982ef219b016d13e80744430df2728df37cce10eaf1e83486ddd700",
+    "visual_review_checked_rasters": [
+      "4270a9cf5adf89ba6ed3d508accd3e992e29d0842e79bd7d1fc6e41cbbddba2d",
+      "044dd4bd051ad2e4044bd04f7c64d55c41fdc12049ac729afb9da3ced3c529da",
+      "6e12d74387559e960b91c73af062545b16a9f90eecde6a1910f7d34b92d93ea0",
+      "963f7ed15bc6fd64ee5ebdac8c5c121411e02f694f1122afe39345ade4328256",
+      "7af74a01f0ead93dc308b3caf6346f53c3e83804915d4b5d79609ffca9a07ffc",
+      "7c9375d8fceab0e369283689081fe08e5479ae9b9a04767cd85d1417d7798141"
+    ]
+  },
+  "source_scripts": {
+    "algorithm/scene-fusion/E003/registration_pipeline.py": "d9caace3f7fbed0a2c50da3da73978f32bd0de045acf55a7a14f1efc606ecc48",
+    "algorithm/scene-fusion/E003/build_report.py": "c616dafd33cf9b102d6707961a1eb0fa801f89f32c2540b3680592f9c17d3de0",
+    "algorithm/scene-fusion/E003/chapter4_background.py": "2052f288c586105ff3e634e586242c5058a9076d66f4ac636add415f7c44277f",
+    "simulation/E003/poisson_mesh.py": "5169d39de6a407eaa30b67a3274dec05ede01f0619d14774047e3dec5df38a26",
+    "simulation/E003/render_e003.py": "a8dbd3c1fabc49481b3902a014071311d872634e1495c7f6c5fe3a88617d8fcb",
+    "simulation/E003/surface_pipeline.py": "6a5a370c0992ada532447746684c4b08772a0d21796c259ccd7e799c616915bb",
+    "simulation/E003/geometry.py": "8bb3219d464d110561eaca32e89072b6778630ca42696d93d6855c94bd07de78"
+  }
+}
