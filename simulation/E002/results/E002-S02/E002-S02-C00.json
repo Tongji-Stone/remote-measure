@@ -1,0 +1,191 @@
+{
+  "source": "data/object_scans/scan_20261120_095754_604145_苹果",
+  "case": "apple",
+  "id": "E002-S02",
+  "rows": [
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 0,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 457538.3060625,
+      "pitch_mm_star": 1.35,
+      "input_points": 68281,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 317,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.5099230769230769,
+      "observed_to_surface_P50": 2.3715723505295245,
+      "observed_to_surface_P95": 5.812001919457945
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 0,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 439651.5848437501,
+      "pitch_mm_star": 1.35,
+      "input_points": 68281,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 317,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.48315384615384616,
+      "observed_to_surface_P50": 1.3395953601452755,
+      "observed_to_surface_P95": 4.306650985361877
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 0,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 438906.29625000013,
+      "pitch_mm_star": 1.35,
+      "input_points": 68281,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 317,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.4773076923076923,
+      "observed_to_surface_P50": 1.3176522638236081,
+      "observed_to_surface_P95": 4.299202426710691
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 0,
+      "method": "C06",
+      "watertight": true,
+      "volume_mm_star_3": 329030.9451884906,
+      "pitch_mm_star": 1.35,
+      "input_points": 68281,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 317,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.331,
+      "observed_to_surface_P50": 1.4555592821450978,
+      "observed_to_surface_P95": 5.402591269124431
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 0,
+      "method": "C05",
+      "watertight": false,
+      "volume_mm_star_3": null,
+      "pitch_mm_star": 1.35,
+      "input_points": 68281,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 317,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.4053076923076923,
+      "observed_to_surface_P50": 1.0467251181170334,
+      "observed_to_surface_P95": 2.272208924733756
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 1,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 451281.7774687501,
+      "pitch_mm_star": 1.35,
+      "input_points": 58610,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 86,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.5661538461538461,
+      "observed_to_surface_P50": 2.3742357217573296,
+      "observed_to_surface_P95": 5.561219676692479,
+      "hidden_recall_2": 0.5318444995864351,
+      "hidden_P95": 8.111705697206087
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 1,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 380315.746125,
+      "pitch_mm_star": 1.35,
+      "input_points": 58610,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 86,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.5928461538461538,
+      "observed_to_surface_P50": 1.4262017133585128,
+      "observed_to_surface_P95": 4.3084666037776405,
+      "hidden_recall_2": 0.1869313482216708,
+      "hidden_P95": 13.57544227022346
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 1,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 380116.25071875006,
+      "pitch_mm_star": 1.35,
+      "input_points": 58610,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 86,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.5995384615384616,
+      "observed_to_surface_P50": 1.4466892560970706,
+      "observed_to_surface_P95": 4.289027267002772,
+      "hidden_recall_2": 0.17886683209263854,
+      "hidden_P95": 13.550874193339284
+    },
+    {
+      "id": "E002-S02",
+      "case": "apple",
+      "test": 1,
+      "method": "C06",
+      "watertight": true,
+      "volume_mm_star_3": 327045.0769415936,
+      "pitch_mm_star": 1.35,
+      "input_points": 58610,
+      "removed_for_validation": 9671,
+      "voxel_votes_removed": 86,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.3703076923076923,
+      "observed_to_surface_P50": 1.4007752902493433,
+      "observed_to_surface_P95": 4.324736470697727,
+      "hidden_recall_2": 0.5423904052936311,
+      "hidden_P95": 13.61041238179798
+    }
+  ],
+  "table_coordinate_transform": {
+    "up": [
+      0.05404676192887438,
+      -0.796424756296756,
+      -0.6023176529727952
+    ],
+    "basis": [
+      [
+        0.9985384056334556,
+        0.0,
+        0.05404676192887438
+      ],
+      [
+        0.04310718441573219,
+        -0.6031992856506057,
+        -0.796424756296756
+      ],
+      [
+        0.032600968187225375,
+        0.7975905100931174,
+        -0.6023176529727952
+      ]
+    ],
+    "origin_in_ref_camera": [
+      -13.513580832484628,
+      19.86729101408686,
+      281.0595292549921
+    ]
+  },
+  "T0": "all valid unique captures after segmentation",
+  "T1": "spatial patch is masked across all source views",
+  "volume_is_provisional": true
+}
