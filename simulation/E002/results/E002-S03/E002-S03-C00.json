@@ -1,0 +1,191 @@
+{
+  "source": "data/object_scans/scan_20261116_174014_915028用格雷码弯曲转台标定测试的长方体",
+  "case": "box_1116",
+  "id": "E002-S03",
+  "rows": [
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 0,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 721704.6691875001,
+      "pitch_mm_star": 1.35,
+      "input_points": 89035,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 31,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.7718461538461538,
+      "observed_to_surface_P50": 6.149563896570886,
+      "observed_to_surface_P95": 11.528942942993663
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 0,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 544623.2791875008,
+      "pitch_mm_star": 1.35,
+      "input_points": 89035,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 31,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.4113076923076923,
+      "observed_to_surface_P50": 1.6842597246172732,
+      "observed_to_surface_P95": 3.996938811829098
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 0,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 544541.2666875008,
+      "pitch_mm_star": 1.35,
+      "input_points": 89035,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 31,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.41384615384615386,
+      "observed_to_surface_P50": 1.678832862311532,
+      "observed_to_surface_P95": 3.970219874801811
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 0,
+      "method": "C04",
+      "watertight": true,
+      "volume_mm_star_3": 462800.7464697764,
+      "pitch_mm_star": 1.35,
+      "input_points": 89035,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 31,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.24969230769230769,
+      "observed_to_surface_P50": 1.5367855775501926,
+      "observed_to_surface_P95": 5.3554738069636
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 0,
+      "method": "C05",
+      "watertight": false,
+      "volume_mm_star_3": null,
+      "pitch_mm_star": 1.35,
+      "input_points": 89035,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 31,
+      "usable_silhouettes": 4,
+      "unsupported_area_sample_fraction": 0.19076923076923077,
+      "observed_to_surface_P50": 1.0478163378856031,
+      "observed_to_surface_P95": 2.119369305427855
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 1,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 683910.6437812492,
+      "pitch_mm_star": 1.35,
+      "input_points": 78038,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 21,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.788,
+      "observed_to_surface_P50": 5.9676716353921755,
+      "observed_to_surface_P95": 11.51309251766814,
+      "hidden_recall_2": 0.21585742862338608,
+      "hidden_P95": 12.65172548785803
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 1,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 453654.1940624973,
+      "pitch_mm_star": 1.35,
+      "input_points": 78038,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 21,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.43638461538461537,
+      "observed_to_surface_P50": 1.6530427161538903,
+      "observed_to_surface_P95": 3.816595872861101,
+      "hidden_recall_2": 0.040370976541189305,
+      "hidden_P95": 19.4981868585236
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 1,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 453602.52618749737,
+      "pitch_mm_star": 1.35,
+      "input_points": 78038,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 21,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.42938461538461536,
+      "observed_to_surface_P50": 1.6508062817033915,
+      "observed_to_surface_P95": 3.7563766492843746,
+      "hidden_recall_2": 0.042735042735042736,
+      "hidden_P95": 19.205745860818606
+    },
+    {
+      "id": "E002-S03",
+      "case": "box_1116",
+      "test": 1,
+      "method": "C04",
+      "watertight": true,
+      "volume_mm_star_3": 514816.1260870733,
+      "pitch_mm_star": 1.35,
+      "input_points": 78038,
+      "removed_for_validation": 10997,
+      "voxel_votes_removed": 21,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.38653846153846155,
+      "observed_to_surface_P50": 1.947864473684541,
+      "observed_to_surface_P95": 6.0006058984220205,
+      "hidden_recall_2": 0.42516821240225494,
+      "hidden_P95": 6.093849268052566
+    }
+  ],
+  "table_coordinate_transform": {
+    "up": [
+      0.007828173533186055,
+      -0.9999232707559711,
+      -0.009600640594012949
+    ],
+    "basis": [
+      [
+        0.9999693593801434,
+        2.710505431213761e-20,
+        0.007828173533186055
+      ],
+      [
+        0.00782781273238297,
+        -0.009600934772605584,
+        -0.9999232707559711
+      ],
+      [
+        7.515778348075671e-05,
+        0.9999539099636005,
+        -0.009600640594012949
+      ]
+    ],
+    "origin_in_ref_camera": [
+      -25.148567160833686,
+      96.5480073952607,
+      394.08130315617416
+    ]
+  },
+  "T0": "all valid unique captures after segmentation",
+  "T1": "spatial patch is masked across all source views",
+  "volume_is_provisional": true
+}
