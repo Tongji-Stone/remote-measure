@@ -1,0 +1,56 @@
+{
+  "diagnosis": {
+    "plane_candidates": 7,
+    "accepted_pairs": 1,
+    "initial_parallel_error_deg": 19.840938198772964,
+    "separation": 46.44091596807412,
+    "patch_sizes": [
+      1065,
+      928
+    ],
+    "regularized_samples": 5799,
+    "maximum_local_move": 2.3000000000000007,
+    "heldout_pre_angle": 17.014885612387143,
+    "heldout_regularized_angle": 0.6372253844706299
+  },
+  "local_completion": {
+    "0": {
+      "kind": "low_components",
+      "components": 2,
+      "anchor_height": 4.871574886370403,
+      "regularized_samples": 5799,
+      "maximum_local_move": 2.3000000000000007,
+      "virtual_points": 1622
+    },
+    "1": {
+      "kind": "low_components",
+      "components": 1,
+      "anchor_height": 5.056609993765316,
+      "regularized_samples": 0,
+      "maximum_local_move": 0.0,
+      "virtual_points": 721
+    }
+  },
+  "center": [
+    -20.222965138780957,
+    34.60294109382011,
+    365.31351075548577
+  ],
+  "basis": [
+    [
+      0.999964299761824,
+      -4.336808689942018e-19,
+      0.008449804840642408
+    ],
+    [
+      0.007313235809013094,
+      -0.5009232949087161,
+      -0.8654607843223153
+    ],
+    [
+      0.004232704082110215,
+      0.8654916825815229,
+      -0.50090541182778
+    ]
+  ]
+}
