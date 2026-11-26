@@ -1,0 +1,70 @@
+{
+  "C1-ChArUco": {
+    "watertight": "S05",
+    "surface": "S05",
+    "eligible": {
+      "S04": 0.6630762281197063,
+      "S05": 0.9981246000376436
+    }
+  },
+  "C1-Chessboard": {
+    "watertight": "S04",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.7878747862093798,
+      "S05": 0.7502983166801692
+    }
+  },
+  "F1-ChArUco": {
+    "watertight": "S04",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.7863207779756198
+    }
+  },
+  "F1-Chessboard": {
+    "watertight": "S04",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.6579379396390389
+    }
+  },
+  "K1-ChArUco": {
+    "watertight": "S07",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.7251255944055944,
+      "S07": 0.9884634202161475
+    }
+  },
+  "K1-Chessboard": {
+    "watertight": null,
+    "surface": "S05",
+    "eligible": {}
+  },
+  "P1-ChArUco": {
+    "watertight": "S04",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.5690970807414047,
+      "S05": 0.4988115611332953
+    }
+  },
+  "P1-Chessboard": {
+    "watertight": null,
+    "surface": "S02",
+    "eligible": {}
+  },
+  "P2-ChArUco": {
+    "watertight": "S04",
+    "surface": "S01",
+    "eligible": {
+      "S04": 0.8934046214355948
+    }
+  },
+  "P2-Chessboard": {
+    "watertight": null,
+    "surface": "S02",
+    "eligible": {}
+  }
+}
