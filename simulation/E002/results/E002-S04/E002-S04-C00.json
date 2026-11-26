@@ -1,0 +1,157 @@
+{
+  "source": "data/object_scans/scan_20261123_171640_110748_充电头_棋盘格贴转台",
+  "case": "charger_1716",
+  "id": "E002-S04",
+  "rows": [
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 0,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 50276.73796875003,
+      "pitch_mm_star": 1.35,
+      "input_points": 30810,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 1376,
+      "usable_silhouettes": 6,
+      "unsupported_area_sample_fraction": 0.5881538461538461,
+      "observed_to_surface_P50": 3.934281882392548,
+      "observed_to_surface_P95": 8.549610421041367
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 0,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 35864.47631250002,
+      "pitch_mm_star": 1.35,
+      "input_points": 30810,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 1376,
+      "usable_silhouettes": 6,
+      "unsupported_area_sample_fraction": 0.3811538461538462,
+      "observed_to_surface_P50": 1.0043771138723203,
+      "observed_to_surface_P95": 4.392804074038527
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 0,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 32386.53121875001,
+      "pitch_mm_star": 1.35,
+      "input_points": 30810,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 1376,
+      "usable_silhouettes": 6,
+      "unsupported_area_sample_fraction": 0.36853846153846154,
+      "observed_to_surface_P50": 0.9897383973248266,
+      "observed_to_surface_P95": 3.0613099335991043
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 0,
+      "method": "C05",
+      "watertight": false,
+      "volume_mm_star_3": null,
+      "pitch_mm_star": 1.35,
+      "input_points": 30810,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 1376,
+      "usable_silhouettes": 6,
+      "unsupported_area_sample_fraction": 0.209,
+      "observed_to_surface_P50": 0.5964943408138876,
+      "observed_to_surface_P95": 1.5341111126190559
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 1,
+      "method": "C01",
+      "watertight": true,
+      "volume_mm_star_3": 43541.256375,
+      "pitch_mm_star": 1.35,
+      "input_points": 24697,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 599,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.5294615384615384,
+      "observed_to_surface_P50": 3.3647181712988914,
+      "observed_to_surface_P95": 7.360066415133716,
+      "hidden_recall_2": 0.5479228001308473,
+      "hidden_P95": 3.7912393909203117
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 1,
+      "method": "C02",
+      "watertight": true,
+      "volume_mm_star_3": 29909.75371875,
+      "pitch_mm_star": 1.35,
+      "input_points": 24697,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 599,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.3294615384615385,
+      "observed_to_surface_P50": 0.9840327344256464,
+      "observed_to_surface_P95": 3.6219837923168794,
+      "hidden_recall_2": 0.4052993130520118,
+      "hidden_P95": 4.3987526978668905
+    },
+    {
+      "id": "E002-S04",
+      "case": "charger_1716",
+      "test": 1,
+      "method": "C03",
+      "watertight": true,
+      "volume_mm_star_3": 28393.957687500002,
+      "pitch_mm_star": 1.35,
+      "input_points": 24697,
+      "removed_for_validation": 6113,
+      "voxel_votes_removed": 599,
+      "usable_silhouettes": 0,
+      "unsupported_area_sample_fraction": 0.322,
+      "observed_to_surface_P50": 0.9894618254988344,
+      "observed_to_surface_P95": 2.9983104286175792,
+      "hidden_recall_2": 0.4075891396794243,
+      "hidden_P95": 4.40171697091541
+    }
+  ],
+  "table_coordinate_transform": {
+    "up": [
+      -0.023019779981492634,
+      -0.8709753292997562,
+      -0.49078718960541856
+    ],
+    "basis": [
+      [
+        0.9997350097548869,
+        0.0,
+        -0.023019779981492634
+      ],
+      [
+        -0.02005497482248243,
+        -0.49091727789521833,
+        -0.8709753292997562
+      ],
+      [
+        -0.011300807726261203,
+        0.8712061904417054,
+        -0.49078718960541856
+      ]
+    ],
+    "origin_in_ref_camera": [
+      -23.529212484944114,
+      27.076523958091613,
+      272.30005398326347
+    ]
+  },
+  "T0": "all valid unique captures after segmentation",
+  "T1": "spatial patch is masked across all source views",
+  "volume_is_provisional": true
+}
