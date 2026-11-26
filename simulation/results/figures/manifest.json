@@ -1,0 +1,48 @@
+{
+  "volume_errors": {
+    "image": "volume_errors.png",
+    "sha256": "fbc53dacedb77b2aa3c31bf9020f6b5a870dc0d0048ad3ffbc0ed39f4ae9c121",
+    "caption": "Signed volume error (all plotted estimates are above reference). Unclosed Poisson meshes have no valid volume and are omitted.",
+    "caption_sha256": "3c473522e498154ecce5447b585de370c54febff9b23335716bfa9d27af83e08",
+    "inputs": {
+      "results/benchmark.csv": "c9656f22f6e15a0156fff5c47d2ebfae93770fd4a89e04e2cda77a7651077b69",
+      "results/parameters.json": "e400a2fd4055ff49efe2d7fba45e66e18a1c8dbb35655eea07f9e66e6d3062f9"
+    },
+    "script_sha256": "67f425bac41c031c1f2d189e09b8b99c2d019bbb6fa198debc94f39107385849",
+    "visual_review": {
+      "status": "checked",
+      "reviewer": "Codex",
+      "checks": [
+        "labels and glyphs",
+        "panel clipping",
+        "color meaning",
+        "figure-file hash"
+      ]
+    }
+  },
+  "completion_examples": {
+    "image": "completion_examples.png",
+    "sha256": "691bc8fd140e84aaa6350f73607a532a12f5bd1d51e29a631527e8fd06c2a7db",
+    "caption": "Simulated point clouds for four low camera views with an unilluminated patch. Orange colors label predictions not directly supported by a nearby measured sample.",
+    "caption_sha256": "7898f16e634d32a49b3a83264fd5483a3058e7fa5786ef469d6d75af87920001",
+    "inputs": {
+      "results/A_box/four_low/observed.ply": "30cc82baa6112645acbf53a746dcdec0154bee5a74c6752808e027184cd51674",
+      "results/A_box/four_low/cuboid_fit_points.ply": "ebff41d513041553b1a85efc596416b2b30b12bd7ac4d9d9b7bb3ea4bc60c2be",
+      "results/B_features/four_low/observed.ply": "ee1413aa711590c4e52ed4adada5aadbbfa637d7035ea78a730113ea36779119",
+      "results/B_features/four_low/heightfield_depth_points.ply": "c12d2484f0c61cd753d24616cb36459aa568bde17d6758913fb54b881b984a4d",
+      "results/C_freeform/four_low/observed.ply": "1294734944fe650caad9b089cdc1d501618964320c7150219ebc8ff5c6f00ee5",
+      "results/C_freeform/four_low/heightfield_depth_points.ply": "0d5bdd395ffd8636a537f9560b8025dc22d94435de0d11a04262c21f65dce88f"
+    },
+    "script_sha256": "67f425bac41c031c1f2d189e09b8b99c2d019bbb6fa198debc94f39107385849",
+    "visual_review": {
+      "status": "checked",
+      "reviewer": "Codex",
+      "checks": [
+        "labels and glyphs",
+        "panel clipping",
+        "color meaning",
+        "figure-file hash"
+      ]
+    }
+  }
+}

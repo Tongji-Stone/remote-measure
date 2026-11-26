@@ -1,0 +1,29 @@
+{
+  "input": "algorithm/scene-fusion/results/clouds/box_1116/object_evaluation_points.npz",
+  "source_scene": "algorithm/scene-fusion/results/clouds/box_1116/full_scene.ply",
+  "frame": "11/16 reference camera",
+  "units": "mm* provisional from 11/16 archive",
+  "dimensions": [
+    43.15710327423623,
+    108.38741653355987,
+    102.58885183568076
+  ],
+  "height_quantiles_97_99_99_7": [
+    100.6387557574595,
+    102.58885183568076,
+    103.32703580850738
+  ],
+  "closed_box_volume": 479878.5312894453,
+  "height_only_sensitivity_volume": [
+    470756.5923541207,
+    483331.5248103087
+  ],
+  "supported_surface_fraction_at_2_5": 0.6619411764705883,
+  "scale_validated": false,
+  "assumptions": [
+    "rectangular box model",
+    "flat bottom on measured turntable",
+    "outer envelope volume",
+    "height estimated from observed endpoints of side faces"
+  ]
+}

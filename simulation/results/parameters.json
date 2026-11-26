@@ -1,0 +1,122 @@
+{
+  "units": "mm",
+  "pitch": 1.5,
+  "seed": 441,
+  "truth": {
+    "A_box": {
+      "quadrature_reference_mm3": 198288.0,
+      "voxel_reference_mm3": 198288.0,
+      "reference_watertight": true
+    },
+    "B_features": {
+      "quadrature_reference_mm3": 185724.75,
+      "voxel_reference_mm3": 187251.75,
+      "reference_watertight": true
+    },
+    "C_freeform": {
+      "quadrature_reference_mm3": 145910.63530173415,
+      "voxel_reference_mm3": 145762.875,
+      "reference_watertight": true
+    }
+  },
+  "scenario": {
+    "four_low": [
+      [
+        0,
+        24
+      ],
+      [
+        90,
+        24
+      ],
+      [
+        180,
+        24
+      ],
+      [
+        270,
+        24
+      ]
+    ],
+    "eight_low": [
+      [
+        0,
+        25
+      ],
+      [
+        45,
+        25
+      ],
+      [
+        90,
+        25
+      ],
+      [
+        135,
+        25
+      ],
+      [
+        180,
+        25
+      ],
+      [
+        225,
+        25
+      ],
+      [
+        270,
+        25
+      ],
+      [
+        315,
+        25
+      ]
+    ],
+    "eight_plus_high": [
+      [
+        0,
+        25
+      ],
+      [
+        45,
+        25
+      ],
+      [
+        90,
+        25
+      ],
+      [
+        135,
+        25
+      ],
+      [
+        180,
+        25
+      ],
+      [
+        225,
+        25
+      ],
+      [
+        270,
+        25
+      ],
+      [
+        315,
+        25
+      ],
+      [
+        30,
+        76
+      ],
+      [
+        190,
+        76
+      ]
+    ]
+  },
+  "ground_truth_distinct_from_inputs": "ray-cast measured surfaces only; no GT geometric features passed to reconstruction",
+  "mesh": "shared-face marching tetrahedra, iso-value 0.5",
+  "sample_spacing_depth_noise_sigma": 0.18,
+  "counterexample_blind_hole_volume_span_mm3": 1134.9003461093127
+}

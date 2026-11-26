@@ -1,0 +1,66 @@
+{
+  "hole_radius_mm": 8.5,
+  "depths_mm": [
+    1.5,
+    4.5
+  ],
+  "analytic_volume_difference_mm3": 680.9402076655876,
+  "observations": [
+    {
+      "camera_deg": 0,
+      "depth_masked_pixels": 353,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 45,
+      "depth_masked_pixels": 414,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 90,
+      "depth_masked_pixels": 503,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 135,
+      "depth_masked_pixels": 535,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 180,
+      "depth_masked_pixels": 513,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 225,
+      "depth_masked_pixels": 437,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 270,
+      "depth_masked_pixels": 365,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    },
+    {
+      "camera_deg": 315,
+      "depth_masked_pixels": 340,
+      "raw_silhouette_differing_pixels": 0,
+      "visible_unmasked_depth_differing_pixels": 0,
+      "visible_unmasked_depth_max_delta_mm": 0.0
+    }
+  ]
+}

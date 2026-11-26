@@ -1,0 +1,42 @@
+{
+  "method": "heightfield_depth",
+  "estimator": "occupied voxel volume (not mesh); same raw depth across resolutions",
+  "cases": [
+    {
+      "case": "A_box",
+      "pitch_mm": 1.5,
+      "occupied_volume_mm3": 205078.5,
+      "volume_error_pct": 3.424564270152497
+    },
+    {
+      "case": "B_features",
+      "pitch_mm": 1.5,
+      "occupied_volume_mm3": 193053.375,
+      "volume_error_pct": 3.9459603526185827
+    },
+    {
+      "case": "C_freeform",
+      "pitch_mm": 1.5,
+      "occupied_volume_mm3": 150835.5,
+      "volume_error_pct": 3.3752609520762755
+    },
+    {
+      "case": "A_box",
+      "pitch_mm": 0.75,
+      "occupied_volume_mm3": 204320.390625,
+      "volume_error_pct": 3.0422368600217853
+    },
+    {
+      "case": "B_features",
+      "pitch_mm": 0.75,
+      "occupied_volume_mm3": 193487.484375,
+      "volume_error_pct": 4.179698384302566
+    },
+    {
+      "case": "C_freeform",
+      "pitch_mm": 0.75,
+      "occupied_volume_mm3": 150534.28125,
+      "volume_error_pct": 3.1688203801624404
+    }
+  ]
+}
