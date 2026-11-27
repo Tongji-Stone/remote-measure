@@ -1,0 +1,1608 @@
+{
+  "experiment": "simulation/E201",
+  "method": "G03-2DGS-anchored",
+  "volume_unit": "mL",
+  "coordinate_system": "measured plate coordinate system, millimetres",
+  "objects": {
+    "小南瓜": {
+      "input_point_cloud": "algorithm/scene-fusion/E204/小南瓜/融合.ply",
+      "geometry_source": "simulation/E201/小南瓜/G03-2DGS-anchored.ply",
+      "metrics_source": "simulation/E201/小南瓜/精确闭合.json",
+      "plate_datum": {
+        "plate_points": 66246,
+        "plane_coefficients": [
+          0.0013078315877482313,
+          -0.00046532599259799105,
+          -0.7621458451920542
+        ],
+        "plane_residual_p50_mm": 0.4653909616106328,
+        "plane_residual_p95_mm": 1.3716684707312878,
+        "world_to_plate_mm": [
+          [
+            0.9999991447895512,
+            6.085673794941652e-07,
+            0.0013078301860947722,
+            -74.99898474442725
+          ],
+          [
+            0.0,
+            0.9999998917358778,
+            -0.0004653259422198809,
+            -75.00034652642435
+          ],
+          [
+            -0.0013078303276858746,
+            0.0004653255442682731,
+            0.9999990365255217,
+            0.8253329696403038
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 62047,
+        "triangles": 124094,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          0
+        ],
+        "component_signed_mm3": [
+          20426.349576719324
+        ],
+        "observed_P50_mm": 0.2250279188156128,
+        "observed_P95_mm": 1.0207595825195312,
+        "reference_P95_mm": 1.0207595825195312,
+        "unsupported_fraction_2mm": 0.0,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 106.76098896041972,
+        "ray_hit_fraction": 0.9860788863109049,
+        "ray_front_1p5_fraction": 0.008823529411764706,
+        "ray_abs_P95_mm": 1.2879279679272624,
+        "volume_ml": 20.426349576719325,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20443.302263793947,
+            "odd_rays": 0,
+            "hit_rays": 1327,
+            "multi_interval_rays": 226,
+            "relative_difference": 0.0008299420809847469
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20444.616087646486,
+            "odd_rays": 0,
+            "hit_rays": 1370,
+            "multi_interval_rays": 159,
+            "relative_difference": 0.0008942621322793887
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20428.728419189458,
+            "odd_rays": 0,
+            "hit_rays": 1707,
+            "multi_interval_rays": 27,
+            "relative_difference": 0.00011645950056804466
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20423.303817749023,
+            "odd_rays": 0,
+            "hit_rays": 5302,
+            "multi_interval_rays": 890,
+            "relative_difference": -0.00014910931387224213
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20421.723486328126,
+            "odd_rays": 0,
+            "hit_rays": 5486,
+            "multi_interval_rays": 610,
+            "relative_difference": -0.00022647660923558188
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20426.774954338078,
+            "odd_rays": 0,
+            "hit_rays": 6834,
+            "multi_interval_rays": 111,
+            "relative_difference": 2.0824945600628197e-05
+          }
+        ],
+        "step_mm": 0.55,
+        "anchored_splat_updates": 23147,
+        "elapsed_s": 9.236158084007911
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 3508,
+        "board_hits_cap": 0,
+        "board_hits_cap_fraction": 0.0
+      },
+      "preview": "小南瓜/G03-2DGS-anchored.png",
+      "color_mesh": "小南瓜/G03-2DGS-anchored.ply",
+      "coarse_grid_check": {
+        "status": "scored",
+        "vertices": 34037,
+        "triangles": 68074,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          0
+        ],
+        "component_signed_mm3": [
+          20417.612083873115
+        ],
+        "observed_P50_mm": 0.23051273822784424,
+        "observed_P95_mm": 1.0254899263381958,
+        "reference_P95_mm": 1.0254899263381958,
+        "unsupported_fraction_2mm": 0.0,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 104.99906344539039,
+        "ray_hit_fraction": 0.9854988399071926,
+        "ray_front_1p5_fraction": 0.00824014125956445,
+        "ray_abs_P95_mm": 1.3288413037562634,
+        "volume_ml": 20.417612083873117,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20429.40882247925,
+            "odd_rays": 0,
+            "hit_rays": 1326,
+            "multi_interval_rays": 220,
+            "relative_difference": 0.0005777726875051403
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20438.494482269292,
+            "odd_rays": 0,
+            "hit_rays": 1369,
+            "multi_interval_rays": 155,
+            "relative_difference": 0.0010227639897553154
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20429.07855606079,
+            "odd_rays": 0,
+            "hit_rays": 1702,
+            "multi_interval_rays": 19,
+            "relative_difference": 0.0005615971221597515
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20414.44446224213,
+            "odd_rays": 0,
+            "hit_rays": 5293,
+            "multi_interval_rays": 858,
+            "relative_difference": -0.0001551416305675124
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20413.348346138002,
+            "odd_rays": 0,
+            "hit_rays": 5483,
+            "multi_interval_rays": 589,
+            "relative_difference": -0.00020882646401543248
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 20417.619946117404,
+            "odd_rays": 0,
+            "hit_rays": 6818,
+            "multi_interval_rays": 96,
+            "relative_difference": 3.8507168498291833e-07
+          }
+        ],
+        "step_mm": 0.74,
+        "anchored_splat_updates": 23147,
+        "elapsed_s": 3.1297665840247646
+      },
+      "fitted_2dgs": {
+        "n_discs": 24043,
+        "observed_fit_count": 23943,
+        "max_normal_update_mm": 0.17279999999999998,
+        "tuning_stations": [
+          1,
+          6
+        ],
+        "held_stations": [
+          2,
+          7
+        ],
+        "sampling_search": [
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.74,
+            "criterion": 1.9151649627312926,
+            "coverage": 0.9939517409593964,
+            "depth_p50_mm": 0.5730819702148438,
+            "depth_p95_mm": 1.7699089050292969,
+            "mean_ray_distortion_mm": 0.5346702933311462
+          },
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.9,
+            "criterion": 1.968476081037886,
+            "coverage": 0.9950113381146082,
+            "depth_p50_mm": 0.6305084228515625,
+            "depth_p95_mm": 1.8523772954940796,
+            "mean_ray_distortion_mm": 0.4255439043045044
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.74,
+            "criterion": 2.0748172793377115,
+            "coverage": 0.9974642128607818,
+            "depth_p50_mm": 0.7607955932617188,
+            "depth_p95_mm": 1.9666144847869873,
+            "mean_ray_distortion_mm": 0.421260803937912
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.9,
+            "criterion": 2.128576882367097,
+            "coverage": 0.9979035741925372,
+            "depth_p50_mm": 0.8250274658203125,
+            "depth_p95_mm": 2.0372512340545654,
+            "mean_ray_distortion_mm": 0.3560648560523987
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.74,
+            "criterion": 2.2372488976643123,
+            "coverage": 0.9987549440801982,
+            "depth_p50_mm": 0.9192047119140625,
+            "depth_p95_mm": 2.1397018432617188,
+            "mean_ray_distortion_mm": 0.3919202387332916
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.9,
+            "criterion": 2.3101967296804125,
+            "coverage": 0.9989975874691799,
+            "depth_p50_mm": 0.9749679565429688,
+            "depth_p95_mm": 2.2251510620117188,
+            "mean_ray_distortion_mm": 0.34266233444213867
+          }
+        ],
+        "selected": {
+          "radius_factor": 0.86,
+          "opacity": 0.74,
+          "criterion": 1.9151649627312926,
+          "coverage": 0.9939517409593964,
+          "depth_p50_mm": 0.5730819702148438,
+          "depth_p95_mm": 1.7699089050292969,
+          "mean_ray_distortion_mm": 0.5346702933311462
+        },
+        "rgb_updates": [
+          {
+            "iteration": 1,
+            "aligned_photometric_MAE": 0.06507302820682526,
+            "directly_observed_splats": 7839
+          },
+          {
+            "iteration": 2,
+            "aligned_photometric_MAE": 0.05359528958797455,
+            "directly_observed_splats": 7839
+          }
+        ],
+        "rgb_held_PSNR_before": 16.4647216796875,
+        "rgb_held_PSNR_after": 16.197359085083008,
+        "depth_held": {
+          "coverage": 0.9934003336122663,
+          "depth_p50_mm": 0.5764007568359375,
+          "depth_p95_mm": 1.7840545177459717,
+          "mean_ray_distortion_mm": 0.5469358563423157
+        },
+        "projected_camera_views": 16,
+        "virtual_views": 40
+      },
+      "gaussian_disc_input": "simulation/E201/小南瓜/2D高斯盘.npz",
+      "gaussian_tsdf_input": "simulation/E201/小南瓜/G01-2DGS-TSDF.ply"
+    },
+    "坐着人偶": {
+      "input_point_cloud": "algorithm/scene-fusion/E204/坐着人偶/融合.ply",
+      "geometry_source": "simulation/E201/坐着人偶/G03-2DGS-anchored.ply",
+      "metrics_source": "simulation/E201/坐着人偶/精确闭合.json",
+      "plate_datum": {
+        "plate_points": 64996,
+        "plane_coefficients": [
+          0.0005024304897562061,
+          -0.001609439128490578,
+          -0.5998817640508592
+        ],
+        "plane_residual_p50_mm": 0.4491086503942409,
+        "plane_residual_p95_mm": 1.276543661801889,
+        "world_to_plate_mm": [
+          [
+            0.9999998737821524,
+            8.086290929092849e-07,
+            0.0005024291249012086,
+            -74.99974978277365
+          ],
+          [
+            0.0,
+            0.9999987048553621,
+            -0.0016094370440341208,
+            -75.00086833608526
+          ],
+          [
+            -0.0005024297756204384,
+            0.001609436840894441,
+            0.9999985786376778,
+            0.5168553815059719
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 127137,
+        "triangles": 254282,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -4
+        ],
+        "component_signed_mm3": [
+          45443.162479619066
+        ],
+        "observed_P50_mm": 0.24875475466251373,
+        "observed_P95_mm": 1.0168497562408447,
+        "reference_P95_mm": 1.0168497562408447,
+        "unsupported_fraction_2mm": 0.0024444444444444444,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 336.4440630220251,
+        "ray_hit_fraction": 0.9923159399571122,
+        "ray_front_1p5_fraction": 0.009004141905276427,
+        "ray_abs_P95_mm": 1.1980586253714192,
+        "volume_ml": 45.44316247961907,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45411.864543457035,
+            "odd_rays": 0,
+            "hit_rays": 3166,
+            "multi_interval_rays": 178,
+            "relative_difference": -0.0006887270703500592
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45387.84043548585,
+            "odd_rays": 0,
+            "hit_rays": 3098,
+            "multi_interval_rays": 220,
+            "relative_difference": -0.0012173898363263547
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45436.884368591316,
+            "odd_rays": 0,
+            "hit_rays": 2224,
+            "multi_interval_rays": 996,
+            "relative_difference": -0.0001381530396473707
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45427.917163009646,
+            "odd_rays": 0,
+            "hit_rays": 12671,
+            "multi_interval_rays": 670,
+            "relative_difference": -0.0003354809783816526
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45426.6307327652,
+            "odd_rays": 0,
+            "hit_rays": 12396,
+            "multi_interval_rays": 890,
+            "relative_difference": -0.00036378953294191607
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45442.70949970246,
+            "odd_rays": 0,
+            "hit_rays": 8889,
+            "multi_interval_rays": 3982,
+            "relative_difference": -9.968054419773331e-06
+          }
+        ],
+        "step_mm": 0.55,
+        "anchored_splat_updates": 49570,
+        "elapsed_s": 15.272243833052926
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 5841,
+        "board_hits_cap": 0,
+        "board_hits_cap_fraction": 0.0
+      },
+      "preview": "坐着人偶/G03-2DGS-anchored.png",
+      "color_mesh": "坐着人偶/G03-2DGS-anchored.ply",
+      "coarse_grid_check": {
+        "status": "scored",
+        "vertices": 69891,
+        "triangles": 139790,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -4
+        ],
+        "component_signed_mm3": [
+          45426.83433721659
+        ],
+        "observed_P50_mm": 0.2509147524833679,
+        "observed_P95_mm": 1.0199689865112305,
+        "reference_P95_mm": 1.0199689865112305,
+        "unsupported_fraction_2mm": 0.0,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 336.4123191118065,
+        "ray_hit_fraction": 0.9919585418155825,
+        "ray_front_1p5_fraction": 0.008647090614303729,
+        "ray_abs_P95_mm": 1.1970546935819755,
+        "volume_ml": 45.42683433721659,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45399.06835021973,
+            "odd_rays": 0,
+            "hit_rays": 3166,
+            "multi_interval_rays": 155,
+            "relative_difference": -0.0006112243435399956
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45370.32677276612,
+            "odd_rays": 0,
+            "hit_rays": 3097,
+            "multi_interval_rays": 202,
+            "relative_difference": -0.0012439247699057576
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45413.90967613221,
+            "odd_rays": 0,
+            "hit_rays": 2219,
+            "multi_interval_rays": 991,
+            "relative_difference": -0.0002845159974925737
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45408.49886699677,
+            "odd_rays": 0,
+            "hit_rays": 12646,
+            "multi_interval_rays": 616,
+            "relative_difference": -0.00040362641349189765
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45410.36107906342,
+            "odd_rays": 0,
+            "hit_rays": 12385,
+            "multi_interval_rays": 827,
+            "relative_difference": -0.00036263275646475357
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 45428.705066528324,
+            "odd_rays": 0,
+            "hit_rays": 8882,
+            "multi_interval_rays": 3951,
+            "relative_difference": 4.118115072349049e-05
+          }
+        ],
+        "step_mm": 0.74,
+        "anchored_splat_updates": 49570,
+        "elapsed_s": 15.304955708037596
+      },
+      "fitted_2dgs": {
+        "n_discs": 51987,
+        "observed_fit_count": 51166,
+        "max_normal_update_mm": 0.17279999999999998,
+        "tuning_stations": [
+          1,
+          6
+        ],
+        "held_stations": [
+          2,
+          7
+        ],
+        "sampling_search": [
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.74,
+            "criterion": 2.191754155723358,
+            "coverage": 0.9966490079362815,
+            "depth_p50_mm": 0.6639251708984375,
+            "depth_p95_mm": 2.0316665172576904,
+            "mean_ray_distortion_mm": 0.6279370188713074
+          },
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.9,
+            "criterion": 2.2591027529702226,
+            "coverage": 0.997239307574373,
+            "depth_p50_mm": 0.735504150390625,
+            "depth_p95_mm": 2.138345241546631,
+            "mean_ray_distortion_mm": 0.47094786167144775
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.74,
+            "criterion": 2.43030697612753,
+            "coverage": 0.9987538140842229,
+            "depth_p50_mm": 0.8730316162109375,
+            "depth_p95_mm": 2.3192596435546875,
+            "mean_ray_distortion_mm": 0.4481584131717682
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.9,
+            "criterion": 2.5265493269771926,
+            "coverage": 0.9988627477767001,
+            "depth_p50_mm": 0.9300537109375,
+            "depth_p95_mm": 2.4334654808044434,
+            "mean_ray_distortion_mm": 0.3745814561843872
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.74,
+            "criterion": 2.670563501272999,
+            "coverage": 0.9994408083265726,
+            "depth_p50_mm": 1.022613525390625,
+            "depth_p95_mm": 2.572052001953125,
+            "mean_ray_distortion_mm": 0.40394097566604614
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.9,
+            "criterion": 2.775942476055637,
+            "coverage": 0.9995500163444399,
+            "depth_p50_mm": 1.0764923095703125,
+            "depth_p95_mm": 2.6908042430877686,
+            "mean_ray_distortion_mm": 0.34949278831481934
+          }
+        ],
+        "selected": {
+          "radius_factor": 0.86,
+          "opacity": 0.74,
+          "criterion": 2.191754155723358,
+          "coverage": 0.9966490079362815,
+          "depth_p50_mm": 0.6639251708984375,
+          "depth_p95_mm": 2.0316665172576904,
+          "mean_ray_distortion_mm": 0.6279370188713074
+        },
+        "rgb_updates": [
+          {
+            "iteration": 1,
+            "aligned_photometric_MAE": 0.06751886755228043,
+            "directly_observed_splats": 19726
+          },
+          {
+            "iteration": 2,
+            "aligned_photometric_MAE": 0.05008181929588318,
+            "directly_observed_splats": 19726
+          }
+        ],
+        "rgb_held_PSNR_before": 14.250802993774414,
+        "rgb_held_PSNR_after": 14.271766662597656,
+        "depth_held": {
+          "coverage": 0.9963524045864983,
+          "depth_p50_mm": 0.6393661499023438,
+          "depth_p95_mm": 1.932159423828125,
+          "mean_ray_distortion_mm": 0.5945324301719666
+        },
+        "projected_camera_views": 24,
+        "virtual_views": 40
+      },
+      "gaussian_disc_input": "simulation/E201/坐着人偶/2D高斯盘.npz",
+      "gaussian_tsdf_input": "simulation/E201/坐着人偶/G01-2DGS-TSDF.ply"
+    },
+    "三棱锥_大面坐地": {
+      "input_point_cloud": "algorithm/scene-fusion/E202/三棱锥_大面坐地/整圈/推荐.ply",
+      "geometry_source": "simulation/E201/三棱锥_大面坐地/G03-2DGS-anchored.ply",
+      "metrics_source": "simulation/E201/三棱锥_大面坐地/精确闭合.json",
+      "plate_datum": {
+        "plate_points": 40871,
+        "plane_coefficients": [
+          -0.003191383926593977,
+          -0.002498041623963972,
+          0.25111141182711916
+        ],
+        "plane_residual_p50_mm": 0.4101133847569396,
+        "plane_residual_p95_mm": 1.1855554211870887,
+        "world_to_plate_mm": [
+          [
+            0.9999949076049934,
+            -7.972119541323847e-06,
+            -0.0031913477601199594,
+            -74.99821877756723
+          ],
+          [
+            0.0,
+            0.999996879908625,
+            -0.0024980338298458468,
+            -74.99913870834506
+          ],
+          [
+            0.003191357717447648,
+            0.002498021108870845,
+            0.9999917875295071,
+            -0.677812761555946
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 207085,
+        "triangles": 414178,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -4
+        ],
+        "component_signed_mm3": [
+          132269.26723021347
+        ],
+        "observed_P50_mm": 0.35075199604034424,
+        "observed_P95_mm": 0.988737940788269,
+        "reference_P95_mm": 0.988737940788269,
+        "unsupported_fraction_2mm": 0.32711111111111113,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 6431.058244313727,
+        "ray_hit_fraction": 0.9921985815602837,
+        "ray_front_1p5_fraction": 0.017393376221110316,
+        "ray_abs_P95_mm": 1.138952999074172,
+        "volume_ml": 132.26926723021347,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131649.4561001587,
+            "odd_rays": 0,
+            "hit_rays": 5113,
+            "multi_interval_rays": 58,
+            "relative_difference": -0.004685979918343297
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131651.67227432254,
+            "odd_rays": 0,
+            "hit_rays": 4825,
+            "multi_interval_rays": 52,
+            "relative_difference": -0.004669224898751545
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 132265.19313491823,
+            "odd_rays": 0,
+            "hit_rays": 10277,
+            "multi_interval_rays": 161,
+            "relative_difference": -3.080152616374843e-05
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131960.93541137697,
+            "odd_rays": 0,
+            "hit_rays": 20498,
+            "multi_interval_rays": 247,
+            "relative_difference": -0.002331091910412253
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131956.74691535952,
+            "odd_rays": 0,
+            "hit_rays": 19316,
+            "multi_interval_rays": 222,
+            "relative_difference": -0.002362758344385596
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 132268.82712755204,
+            "odd_rays": 0,
+            "hit_rays": 41071,
+            "multi_interval_rays": 633,
+            "relative_difference": -3.3273236531572437e-06
+          }
+        ],
+        "step_mm": 0.55,
+        "anchored_splat_updates": 106500,
+        "elapsed_s": 38.93002020899439
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 22089,
+        "board_hits_cap": 1176,
+        "board_hits_cap_fraction": 0.053239168817058265
+      },
+      "preview": "三棱锥_大面坐地/G03-2DGS-anchored.png",
+      "color_mesh": "三棱锥_大面坐地/G03-2DGS-anchored.ply",
+      "coarse_grid_check": {
+        "status": "scored",
+        "vertices": 114306,
+        "triangles": 228616,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -2
+        ],
+        "component_signed_mm3": [
+          132259.41256353576
+        ],
+        "observed_P50_mm": 0.3515926003456116,
+        "observed_P95_mm": 0.9924050569534302,
+        "reference_P95_mm": 0.9924050569534302,
+        "unsupported_fraction_2mm": 0.3293333333333333,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 6430.1007146118345,
+        "ray_hit_fraction": 0.9919621749408983,
+        "ray_front_1p5_fraction": 0.017397521448999045,
+        "ray_abs_P95_mm": 1.151432023417719,
+        "volume_ml": 132.25941256353576,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131640.3696336365,
+            "odd_rays": 0,
+            "hit_rays": 5108,
+            "multi_interval_rays": 56,
+            "relative_difference": -0.004680520787901488
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131640.81924560547,
+            "odd_rays": 0,
+            "hit_rays": 4818,
+            "multi_interval_rays": 44,
+            "relative_difference": -0.004677121317419486
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 132250.9454177094,
+            "odd_rays": 0,
+            "hit_rays": 10273,
+            "multi_interval_rays": 154,
+            "relative_difference": -6.401923055809888e-05
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131950.54508674622,
+            "odd_rays": 0,
+            "hit_rays": 20486,
+            "multi_interval_rays": 227,
+            "relative_difference": -0.0023353156558226784
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131947.58459918978,
+            "odd_rays": 0,
+            "hit_rays": 19316,
+            "multi_interval_rays": 201,
+            "relative_difference": -0.0023576996018803698
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 132257.88413232806,
+            "odd_rays": 0,
+            "hit_rays": 41056,
+            "multi_interval_rays": 591,
+            "relative_difference": -1.1556313294303067e-05
+          }
+        ],
+        "step_mm": 0.74,
+        "anchored_splat_updates": 106500,
+        "elapsed_s": 17.022517624951433
+      },
+      "fitted_2dgs": {
+        "n_discs": 98007,
+        "observed_fit_count": 95654,
+        "max_normal_update_mm": 0.17279999999999998,
+        "tuning_stations": [
+          1,
+          6
+        ],
+        "held_stations": [
+          2,
+          7
+        ],
+        "sampling_search": [
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.74,
+            "criterion": 1.8839669368854568,
+            "coverage": 0.999072333808761,
+            "depth_p50_mm": 0.6448974609375,
+            "depth_p95_mm": 1.787023901939392,
+            "mean_ray_distortion_mm": 0.3931063711643219
+          },
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.9,
+            "criterion": 1.9417198471207233,
+            "coverage": 0.9993493879132749,
+            "depth_p50_mm": 0.6909255981445312,
+            "depth_p95_mm": 1.868200659751892,
+            "mean_ray_distortion_mm": 0.29873937368392944
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.74,
+            "criterion": 2.0563777672255252,
+            "coverage": 0.9997466381460353,
+            "depth_p50_mm": 0.7828140258789062,
+            "depth_p95_mm": 1.9869155883789062,
+            "mean_ray_distortion_mm": 0.28646957874298096
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.9,
+            "criterion": 2.1316471431474997,
+            "coverage": 0.9998126592727958,
+            "depth_p50_mm": 0.8245849609375,
+            "depth_p95_mm": 2.0739455223083496,
+            "mean_ray_distortion_mm": 0.23823758959770203
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.74,
+            "criterion": 2.2225149239135167,
+            "coverage": 0.9998566733573029,
+            "depth_p50_mm": 0.888214111328125,
+            "depth_p95_mm": 2.1595382690429688,
+            "mean_ray_distortion_mm": 0.26073047518730164
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.9,
+            "criterion": 2.294608047243575,
+            "coverage": 0.9998679577464789,
+            "depth_p50_mm": 0.9298858642578125,
+            "depth_p95_mm": 2.239489793777466,
+            "mean_ray_distortion_mm": 0.22811856865882874
+          }
+        ],
+        "selected": {
+          "radius_factor": 0.86,
+          "opacity": 0.74,
+          "criterion": 1.8839669368854568,
+          "coverage": 0.999072333808761,
+          "depth_p50_mm": 0.6448974609375,
+          "depth_p95_mm": 1.787023901939392,
+          "mean_ray_distortion_mm": 0.3931063711643219
+        },
+        "rgb_updates": [
+          {
+            "iteration": 1,
+            "aligned_photometric_MAE": 0.04739435017108917,
+            "directly_observed_splats": 24801
+          },
+          {
+            "iteration": 2,
+            "aligned_photometric_MAE": 0.03181547671556473,
+            "directly_observed_splats": 24801
+          }
+        ],
+        "rgb_held_PSNR_before": 21.18929100036621,
+        "rgb_held_PSNR_after": 21.379905700683594,
+        "depth_held": {
+          "coverage": 0.9990654220075301,
+          "depth_p50_mm": 0.6182098388671875,
+          "depth_p95_mm": 2.2070374488830566,
+          "mean_ray_distortion_mm": 0.42505943775177
+        },
+        "projected_camera_views": 8,
+        "virtual_views": 40
+      },
+      "gaussian_disc_input": "simulation/E201/三棱锥_大面坐地/2D高斯盘.npz",
+      "gaussian_tsdf_input": "simulation/E201/三棱锥_大面坐地/G01-2DGS-TSDF.ply"
+    },
+    "三棱锥_小面坐地": {
+      "input_point_cloud": "algorithm/scene-fusion/E202/三棱锥_小面坐地/整圈/推荐.ply",
+      "geometry_source": "simulation/E201/三棱锥_小面坐地/G03-2DGS-anchored.ply",
+      "metrics_source": "simulation/E201/三棱锥_小面坐地/精确闭合.json",
+      "plate_datum": {
+        "plate_points": 51701,
+        "plane_coefficients": [
+          0.0016891481405555747,
+          -0.002003272967521739,
+          -0.03193598359119468
+        ],
+        "plane_residual_p50_mm": 0.4291835733755877,
+        "plane_residual_p95_mm": 1.2284843990952379,
+        "world_to_plate_mm": [
+          [
+            0.9999985733980576,
+            3.383806401181343e-06,
+            0.0016891389521256656,
+            -75.00009284602055
+          ],
+          [
+            -4.235164736271502e-22,
+            0.9999979934547484,
+            -0.002003268947863878,
+            -74.99991348547037
+          ],
+          [
+            -0.0016891423414662104,
+            0.0020032660899965055,
+            0.9999965668556683,
+            0.008376592810581479
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 243145,
+        "triangles": 486294,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -2
+        ],
+        "component_signed_mm3": [
+          126736.7101617515
+        ],
+        "observed_P50_mm": 0.29938000440597534,
+        "observed_P95_mm": 0.9823393821716309,
+        "reference_P95_mm": 0.9823393821716309,
+        "unsupported_fraction_2mm": 0.1521111111111111,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 3527.700608363924,
+        "ray_hit_fraction": 0.9882060831781502,
+        "ray_front_1p5_fraction": 0.018425460636515914,
+        "ray_abs_P95_mm": 1.1122269562944567,
+        "volume_ml": 126.7367101617515,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126401.26931625367,
+            "odd_rays": 0,
+            "hit_rays": 7735,
+            "multi_interval_rays": 71,
+            "relative_difference": -0.0026467536128222946
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126410.62881073,
+            "odd_rays": 0,
+            "hit_rays": 5240,
+            "multi_interval_rays": 76,
+            "relative_difference": -0.002572903704106899
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126756.82090530396,
+            "odd_rays": 0,
+            "hit_rays": 6429,
+            "multi_interval_rays": 311,
+            "relative_difference": 0.00015868128127038972
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126566.15011032106,
+            "odd_rays": 0,
+            "hit_rays": 30966,
+            "multi_interval_rays": 294,
+            "relative_difference": -0.0013457825377726218
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126566.8661985779,
+            "odd_rays": 0,
+            "hit_rays": 20965,
+            "multi_interval_rays": 326,
+            "relative_difference": -0.0013401323338504412
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126735.38264667513,
+            "odd_rays": 0,
+            "hit_rays": 25704,
+            "multi_interval_rays": 1287,
+            "relative_difference": -1.0474589995812522e-05
+          }
+        ],
+        "step_mm": 0.55,
+        "anchored_splat_updates": 128050,
+        "elapsed_s": 37.84588391700527
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 16834,
+        "board_hits_cap": 20,
+        "board_hits_cap_fraction": 0.001188071759534276
+      },
+      "preview": "三棱锥_小面坐地/G03-2DGS-anchored.png",
+      "color_mesh": "三棱锥_小面坐地/G03-2DGS-anchored.ply",
+      "coarse_grid_check": {
+        "status": "scored",
+        "vertices": 134043,
+        "triangles": 268090,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -2
+        ],
+        "component_signed_mm3": [
+          126719.70367550821
+        ],
+        "observed_P50_mm": 0.3002256751060486,
+        "observed_P95_mm": 0.9859090447425842,
+        "reference_P95_mm": 0.9859090447425842,
+        "unsupported_fraction_2mm": 0.1501111111111111,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 3527.0594417421216,
+        "ray_hit_fraction": 0.9879991723567143,
+        "ray_front_1p5_fraction": 0.018219895287958116,
+        "ray_abs_P95_mm": 1.1085977429555016,
+        "volume_ml": 126.71970367550821,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126383.05557281496,
+            "odd_rays": 0,
+            "hit_rays": 7731,
+            "multi_interval_rays": 76,
+            "relative_difference": -0.0026566358106021593
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126394.30879989626,
+            "odd_rays": 0,
+            "hit_rays": 5236,
+            "multi_interval_rays": 69,
+            "relative_difference": -0.0025678317276150997
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126736.93251350404,
+            "odd_rays": 0,
+            "hit_rays": 6428,
+            "multi_interval_rays": 296,
+            "relative_difference": 0.0001359602137325222
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126552.62546821596,
+            "odd_rays": 0,
+            "hit_rays": 30944,
+            "multi_interval_rays": 304,
+            "relative_difference": -0.0013184864109222483
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126550.53421127322,
+            "odd_rays": 0,
+            "hit_rays": 20933,
+            "multi_interval_rays": 313,
+            "relative_difference": -0.0013349894241244664
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 126725.68584957124,
+            "odd_rays": 0,
+            "hit_rays": 25700,
+            "multi_interval_rays": 1227,
+            "relative_difference": 4.720792338930302e-05
+          }
+        ],
+        "step_mm": 0.74,
+        "anchored_splat_updates": 128050,
+        "elapsed_s": 15.911586624977645
+      },
+      "fitted_2dgs": {
+        "n_discs": 108025,
+        "observed_fit_count": 105487,
+        "max_normal_update_mm": 0.17279999999999998,
+        "tuning_stations": [
+          1,
+          6
+        ],
+        "held_stations": [
+          2,
+          7
+        ],
+        "sampling_search": [
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.74,
+            "criterion": 1.8183247350892837,
+            "coverage": 0.9985441812716277,
+            "depth_p50_mm": 0.5800323486328125,
+            "depth_p95_mm": 1.7016311883926392,
+            "mean_ray_distortion_mm": 0.4692387580871582
+          },
+          {
+            "radius_factor": 0.86,
+            "opacity": 0.9,
+            "criterion": 1.8779774721314866,
+            "coverage": 0.9987968442038994,
+            "depth_p50_mm": 0.6316757202148438,
+            "depth_p95_mm": 1.792829155921936,
+            "mean_ray_distortion_mm": 0.3407476544380188
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.74,
+            "criterion": 2.000926976706038,
+            "coverage": 0.999412083446465,
+            "depth_p50_mm": 0.7336883544921875,
+            "depth_p95_mm": 1.9233977794647217,
+            "mean_ray_distortion_mm": 0.31617939472198486
+          },
+          {
+            "radius_factor": 1.13,
+            "opacity": 0.9,
+            "criterion": 2.0780019219469836,
+            "coverage": 0.999549067596885,
+            "depth_p50_mm": 0.7803497314453125,
+            "depth_p95_mm": 2.013442277908325,
+            "mean_ray_distortion_mm": 0.26373714208602905
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.74,
+            "criterion": 2.1790556536548378,
+            "coverage": 0.9997787948721562,
+            "depth_p50_mm": 0.8520050048828125,
+            "depth_p95_mm": 2.1081695556640625,
+            "mean_ray_distortion_mm": 0.29277756810188293
+          },
+          {
+            "radius_factor": 1.4,
+            "opacity": 0.9,
+            "criterion": 2.2583446957926654,
+            "coverage": 0.9998315580451522,
+            "depth_p50_mm": 0.8988800048828125,
+            "depth_p95_mm": 2.1959166526794434,
+            "mean_ray_distortion_mm": 0.2581515610218048
+          }
+        ],
+        "selected": {
+          "radius_factor": 0.86,
+          "opacity": 0.74,
+          "criterion": 1.8183247350892837,
+          "coverage": 0.9985441812716277,
+          "depth_p50_mm": 0.5800323486328125,
+          "depth_p95_mm": 1.7016311883926392,
+          "mean_ray_distortion_mm": 0.4692387580871582
+        },
+        "rgb_updates": [
+          {
+            "iteration": 1,
+            "aligned_photometric_MAE": 0.049581076949834824,
+            "directly_observed_splats": 32500
+          },
+          {
+            "iteration": 2,
+            "aligned_photometric_MAE": 0.03465814143419266,
+            "directly_observed_splats": 32500
+          }
+        ],
+        "rgb_held_PSNR_before": 22.28947639465332,
+        "rgb_held_PSNR_after": 22.633312225341797,
+        "depth_held": {
+          "coverage": 0.9989275150212387,
+          "depth_p50_mm": 0.6042938232421875,
+          "depth_p95_mm": 1.947998046875,
+          "mean_ray_distortion_mm": 0.5050429701805115
+        },
+        "projected_camera_views": 8,
+        "virtual_views": 40
+      },
+      "gaussian_disc_input": "simulation/E201/三棱锥_小面坐地/2D高斯盘.npz",
+      "gaussian_tsdf_input": "simulation/E201/三棱锥_小面坐地/G01-2DGS-TSDF.ply"
+    }
+  },
+  "known_volume_controls": {
+    "球": {
+      "true_volume_ml": 9.202772079915702,
+      "status": "scored",
+      "vertices": 30814,
+      "triangles": 61624,
+      "boundary": 0,
+      "nonmanifold_edges": 0,
+      "orientation_errors": 0,
+      "vertex_manifold": true,
+      "degenerate": 0,
+      "components": 1,
+      "chi": [
+        2
+      ],
+      "component_signed_mm3": [
+        9444.450159762719
+      ],
+      "observed_P50_mm": 0.0065131583251059055,
+      "observed_P95_mm": 0.015291563235223293,
+      "reference_P95_mm": 0.7551194429397583,
+      "unsupported_fraction_2mm": 0.1272222222222222,
+      "below_plate_area_fraction": 0.0,
+      "min_z_mm": 0.0,
+      "plate_cap_area_mm2": 165.06963856341847,
+      "ray_hit_fraction": 1.0,
+      "ray_front_1p5_fraction": 0.0,
+      "ray_abs_P95_mm": 0.035955358673427106,
+      "volume_ml": 9.444450159762718,
+      "self_intersections": false,
+      "column_checks": [
+        {
+          "pitch_mm": 0.8,
+          "axis": "x",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9431.093423614502,
+          "odd_rays": 0,
+          "hit_rays": 849,
+          "multi_interval_rays": 0,
+          "relative_difference": -0.0014142417951572561
+        },
+        {
+          "pitch_mm": 0.8,
+          "axis": "y",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9431.06861984253,
+          "odd_rays": 0,
+          "hit_rays": 848,
+          "multi_interval_rays": 0,
+          "relative_difference": -0.0014168680753061658
+        },
+        {
+          "pitch_mm": 0.8,
+          "axis": "z",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9449.56583999634,
+          "odd_rays": 0,
+          "hit_rays": 833,
+          "multi_interval_rays": 2,
+          "relative_difference": 0.0005416599322443094
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "x",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9437.981164817811,
+          "odd_rays": 0,
+          "hit_rays": 3402,
+          "multi_interval_rays": 0,
+          "relative_difference": -0.0006849519914318147
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "y",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9437.873002738954,
+          "odd_rays": 0,
+          "hit_rays": 3400,
+          "multi_interval_rays": 1,
+          "relative_difference": -0.0006964044399097036
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "z",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 9445.84577440262,
+          "odd_rays": 0,
+          "hit_rays": 3324,
+          "multi_interval_rays": 8,
+          "relative_difference": 0.0001477708724482163
+        }
+      ],
+      "relative_volume_error": 0.026261443589856936
+    },
+    "双球相交": {
+      "true_volume_ml": 15.529677884857747,
+      "status": "scored",
+      "vertices": 46075,
+      "triangles": 92146,
+      "boundary": 0,
+      "nonmanifold_edges": 0,
+      "orientation_errors": 0,
+      "vertex_manifold": true,
+      "degenerate": 0,
+      "components": 1,
+      "chi": [
+        2
+      ],
+      "component_signed_mm3": [
+        15774.009818199449
+      ],
+      "observed_P50_mm": 0.016450630500912666,
+      "observed_P95_mm": 0.029820235446095467,
+      "reference_P95_mm": 0.35441938042640686,
+      "unsupported_fraction_2mm": 0.1361111111111111,
+      "below_plate_area_fraction": 0.0,
+      "min_z_mm": 0.0,
+      "plate_cap_area_mm2": 140.5049586278593,
+      "ray_hit_fraction": 1.0,
+      "ray_front_1p5_fraction": 0.0,
+      "ray_abs_P95_mm": 0.08693842241631841,
+      "volume_ml": 15.774009818199449,
+      "self_intersections": false,
+      "column_checks": [
+        {
+          "pitch_mm": 0.8,
+          "axis": "x",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15769.034893646243,
+          "odd_rays": 0,
+          "hit_rays": 839,
+          "multi_interval_rays": 167,
+          "relative_difference": -0.00031538743861225793
+        },
+        {
+          "pitch_mm": 0.8,
+          "axis": "y",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15763.107858123782,
+          "odd_rays": 0,
+          "hit_rays": 1348,
+          "multi_interval_rays": 0,
+          "relative_difference": -0.000691134353364542
+        },
+        {
+          "pitch_mm": 0.8,
+          "axis": "z",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15775.524533462525,
+          "odd_rays": 0,
+          "hit_rays": 1336,
+          "multi_interval_rays": 0,
+          "relative_difference": 9.602601244296238e-05
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "x",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15770.13358547211,
+          "odd_rays": 0,
+          "hit_rays": 3362,
+          "multi_interval_rays": 666,
+          "relative_difference": -0.0002457354072943341
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "y",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15769.657096977237,
+          "odd_rays": 0,
+          "hit_rays": 5414,
+          "multi_interval_rays": 0,
+          "relative_difference": -0.00027594259623131556
+        },
+        {
+          "pitch_mm": 0.4,
+          "axis": "z",
+          "offset_a": 0.31,
+          "offset_b": 0.62,
+          "column_volume_mm3": 15777.416173553467,
+          "odd_rays": 0,
+          "hit_rays": 5356,
+          "multi_interval_rays": 0,
+          "relative_difference": 0.00021594733319418857
+        }
+      ],
+      "relative_volume_error": 0.015733226094788444
+    }
+  }
+}
