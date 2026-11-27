@@ -1,0 +1,55 @@
+{
+  "calibration": "camera.json",
+  "angles": [
+    {
+      "angle_deg": 0.0,
+      "cloud": "stations/00.npz",
+      "markers": "stations/00-tags.npz"
+    },
+    {
+      "angle_deg": 36.03515625,
+      "cloud": "stations/01.npz",
+      "markers": "stations/01-tags.npz"
+    },
+    {
+      "angle_deg": 72.0703125,
+      "cloud": "stations/02.npz",
+      "markers": "stations/02-tags.npz"
+    },
+    {
+      "angle_deg": 108.10546875,
+      "cloud": "stations/03.npz",
+      "markers": "stations/03-tags.npz"
+    },
+    {
+      "angle_deg": 144.140625,
+      "cloud": "stations/04.npz",
+      "markers": "stations/04-tags.npz"
+    },
+    {
+      "angle_deg": 180.17578125,
+      "cloud": "stations/05.npz",
+      "markers": "stations/05-tags.npz"
+    },
+    {
+      "angle_deg": 216.2109375,
+      "cloud": "stations/06.npz",
+      "markers": "stations/06-tags.npz"
+    },
+    {
+      "angle_deg": 252.24609375,
+      "cloud": "stations/07.npz",
+      "markers": "stations/07-tags.npz"
+    },
+    {
+      "angle_deg": 288.28125,
+      "cloud": "stations/08.npz",
+      "markers": "stations/08-tags.npz"
+    },
+    {
+      "angle_deg": 324.31640625,
+      "cloud": "stations/09.npz",
+      "markers": "stations/09-tags.npz"
+    }
+  ]
+}

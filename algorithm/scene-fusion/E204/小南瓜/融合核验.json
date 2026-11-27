@@ -1,0 +1,48 @@
+{
+  "output_vertices": 38796,
+  "farther_than_measured_075mm": 21,
+  "surface_variants": {
+    "B01-TSDF": 33007,
+    "B02-MLS": 28225,
+    "B03-Hybrid": 31022,
+    "B04-Clearance": 30998,
+    "B05-Anchor": 38796
+  },
+  "old_to_new_P50_mm": 0.23715672331023052,
+  "old_to_new_P95_mm": 0.4534822383782781,
+  "new_to_old_P50_mm": 0.23661222425428696,
+  "new_to_old_P95_mm": 0.5710687777812883,
+  "old_to_new_within_1mm": 0.9999491508186719,
+  "color": [
+    {
+      "source": 0,
+      "shift_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "held_before": 0.014379084967320285,
+      "held_after": 0.014379084967320285
+    },
+    {
+      "source": 1,
+      "shift_rgb": [
+        0.1,
+        0.1,
+        0.06666666666666668
+      ],
+      "held_before": 0.13594771241830064,
+      "held_after": 0.09019607843137255
+    }
+  ],
+  "pitch_mm": 0.4,
+  "input_oriented_samples": 52939,
+  "query_voxels": 480170,
+  "active_bridge_voxels": 115611,
+  "rejected_inferred_points": 24,
+  "anchor_points": 38714,
+  "input_anchors_eligible": 38760,
+  "extra_candidates": 106,
+  "inserted_points": 82,
+  "anchor_max_shift_mm": 0.22749999999999998
+}
