@@ -1,0 +1,32 @@
+{
+  "S04-GuideEnvelope": {
+    "nearby_exposed_board_points": 16866,
+    "board_hits_cap": 143,
+    "board_hits_cap_fraction": 0.00847859599193644
+  },
+  "S05-Planes": {
+    "nearby_exposed_board_points": 25535,
+    "board_hits_cap": 1536,
+    "board_hits_cap_fraction": 0.06015273154493832
+  },
+  "S08-PrecisePoisson": {
+    "nearby_exposed_board_points": 16881,
+    "board_hits_cap": 28,
+    "board_hits_cap_fraction": 0.0016586695101001125
+  },
+  "S09-ExposedPlate": {
+    "nearby_exposed_board_points": 16881,
+    "board_hits_cap": 1,
+    "board_hits_cap_fraction": 5.9238196789289736e-05
+  },
+  "G02-2DGS-closed": {
+    "nearby_exposed_board_points": 17471,
+    "board_hits_cap": 161,
+    "board_hits_cap_fraction": 0.009215271020548338
+  },
+  "G03-2DGS-anchored": {
+    "nearby_exposed_board_points": 16834,
+    "board_hits_cap": 20,
+    "board_hits_cap_fraction": 0.001188071759534276
+  }
+}
