@@ -1,0 +1,300 @@
+{
+  "experiment": "simulation/E201",
+  "method": "S09-ExposedPlate",
+  "volume_unit": "mL",
+  "coordinate_system": "measured plate coordinate system, millimetres",
+  "objects": {
+    "三棱锥_大面坐地": {
+      "input_point_cloud": "algorithm/scene-fusion/E202/三棱锥_大面坐地/整圈/推荐.ply",
+      "geometry_source": "simulation/E201/三棱锥_大面坐地/S09-ExposedPlate.ply",
+      "metrics_source": "simulation/E201/三棱锥_大面坐地/露板补充实验.json",
+      "plate_datum": {
+        "plate_points": 40871,
+        "plane_coefficients": [
+          -0.003191383926593977,
+          -0.002498041623963972,
+          0.25111141182711916
+        ],
+        "plane_residual_p50_mm": 0.4101133847569396,
+        "plane_residual_p95_mm": 1.1855554211870887,
+        "world_to_plate_mm": [
+          [
+            0.9999949076049934,
+            -7.972119541323847e-06,
+            -0.0031913477601199594,
+            -74.99821877756723
+          ],
+          [
+            0.0,
+            0.999996879908625,
+            -0.0024980338298458468,
+            -74.99913870834506
+          ],
+          [
+            0.003191357717447648,
+            0.002498021108870845,
+            0.9999917875295071,
+            -0.677812761555946
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 207026,
+        "triangles": 414060,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -4
+        ],
+        "component_signed_mm3": [
+          131470.98470538302
+        ],
+        "observed_P50_mm": 0.3520960211753845,
+        "observed_P95_mm": 0.971484899520874,
+        "reference_P95_mm": 0.971484899520874,
+        "unsupported_fraction_2mm": 0.3283333333333333,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 6341.794193493829,
+        "ray_hit_fraction": 0.991016548463357,
+        "ray_front_1p5_fraction": 0.014551526717557252,
+        "ray_abs_P95_mm": 1.1105924694558338,
+        "volume_ml": 131.47098470538302,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 130869.997011261,
+            "odd_rays": 0,
+            "hit_rays": 5091,
+            "multi_interval_rays": 56,
+            "relative_difference": -0.004571257266147266
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 130884.89285110476,
+            "odd_rays": 0,
+            "hit_rays": 4804,
+            "multi_interval_rays": 51,
+            "relative_difference": -0.004457955917738454
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131459.53992797853,
+            "odd_rays": 1,
+            "hit_rays": 10240,
+            "multi_interval_rays": 151,
+            "relative_difference": -8.705173563683388e-05
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131161.44618309021,
+            "odd_rays": 0,
+            "hit_rays": 20423,
+            "multi_interval_rays": 239,
+            "relative_difference": -0.002354424613054018
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131162.2243526459,
+            "odd_rays": 0,
+            "hit_rays": 19262,
+            "multi_interval_rays": 216,
+            "relative_difference": -0.002348505667840173
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 131469.73403684617,
+            "odd_rays": 0,
+            "hit_rays": 40953,
+            "multi_interval_rays": 610,
+            "relative_difference": -9.512886357754269e-06
+          }
+        ]
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 21972,
+        "board_hits_cap": 90,
+        "board_hits_cap_fraction": 0.004096122337520481
+      },
+      "preview": "三棱锥_大面坐地/S09-ExposedPlate.png",
+      "color_mesh": "三棱锥_大面坐地/S09-ExposedPlate.ply",
+      "exposed_board_evidence": "三棱锥_大面坐地/同期露板证据.npz"
+    },
+    "三棱锥_小面坐地": {
+      "input_point_cloud": "algorithm/scene-fusion/E202/三棱锥_小面坐地/整圈/推荐.ply",
+      "geometry_source": "simulation/E201/三棱锥_小面坐地/S09-ExposedPlate.ply",
+      "metrics_source": "simulation/E201/三棱锥_小面坐地/露板补充实验.json",
+      "plate_datum": {
+        "plate_points": 51701,
+        "plane_coefficients": [
+          0.0016891481405555747,
+          -0.002003272967521739,
+          -0.03193598359119468
+        ],
+        "plane_residual_p50_mm": 0.4291835733755877,
+        "plane_residual_p95_mm": 1.2284843990952379,
+        "world_to_plate_mm": [
+          [
+            0.9999985733980576,
+            3.383806401181343e-06,
+            0.0016891389521256656,
+            -75.00009284602055
+          ],
+          [
+            -4.235164736271502e-22,
+            0.9999979934547484,
+            -0.002003268947863878,
+            -74.99991348547037
+          ],
+          [
+            -0.0016891423414662104,
+            0.0020032660899965055,
+            0.9999965668556683,
+            0.008376592810581479
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "mesh_metrics": {
+        "status": "scored",
+        "vertices": 242277,
+        "triangles": 484562,
+        "boundary": 0,
+        "nonmanifold_edges": 0,
+        "orientation_errors": 0,
+        "vertex_manifold": true,
+        "degenerate": 0,
+        "components": 1,
+        "chi": [
+          -4
+        ],
+        "component_signed_mm3": [
+          125883.59926228343
+        ],
+        "observed_P50_mm": 0.29815438389778137,
+        "observed_P95_mm": 0.9710341691970825,
+        "reference_P95_mm": 0.9710341691970825,
+        "unsupported_fraction_2mm": 0.1497777777777778,
+        "below_plate_area_fraction": 0.0,
+        "min_z_mm": 0.0,
+        "plate_cap_area_mm2": 3517.6825619945434,
+        "ray_hit_fraction": 0.9863438857852266,
+        "ray_front_1p5_fraction": 0.01657226767358926,
+        "ray_abs_P95_mm": 1.0564988983516657,
+        "volume_ml": 125.88359926228343,
+        "self_intersections": false,
+        "column_checks": [
+          {
+            "pitch_mm": 0.8,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125551.92442214966,
+            "odd_rays": 0,
+            "hit_rays": 7709,
+            "multi_interval_rays": 74,
+            "relative_difference": -0.0026347740458445568
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125552.63133163453,
+            "odd_rays": 0,
+            "hit_rays": 5225,
+            "multi_interval_rays": 85,
+            "relative_difference": -0.002629158465347947
+          },
+          {
+            "pitch_mm": 0.8,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125895.04475158693,
+            "odd_rays": 0,
+            "hit_rays": 6411,
+            "multi_interval_rays": 314,
+            "relative_difference": 9.092121110754192e-05
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "x",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125712.92303611756,
+            "odd_rays": 0,
+            "hit_rays": 30873,
+            "multi_interval_rays": 291,
+            "relative_difference": -0.0013558257562231724
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "y",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125715.63162467958,
+            "odd_rays": 0,
+            "hit_rays": 20913,
+            "multi_interval_rays": 326,
+            "relative_difference": -0.0013343091442268307
+          },
+          {
+            "pitch_mm": 0.4,
+            "axis": "z",
+            "offset_a": 0.31,
+            "offset_b": 0.62,
+            "column_volume_mm3": 125881.14047994615,
+            "odd_rays": 0,
+            "hit_rays": 25618,
+            "multi_interval_rays": 1307,
+            "relative_difference": -1.9532189671211952e-05
+          }
+        ]
+      },
+      "exposed_plate_check": {
+        "nearby_exposed_board_points": 16881,
+        "board_hits_cap": 1,
+        "board_hits_cap_fraction": 5.9238196789289736e-05
+      },
+      "preview": "三棱锥_小面坐地/S09-ExposedPlate.png",
+      "color_mesh": "三棱锥_小面坐地/S09-ExposedPlate.ply",
+      "exposed_board_evidence": "三棱锥_小面坐地/同期露板证据.npz"
+    }
+  }
+}
