@@ -1,6 +1,7 @@
 """Structured light experiment control panel for acquisition and reconstruction."""
 import os
 import ctypes
+import json
 
 # Must be set before Tk creates any window; Windows otherwise bitmap-scales it.
 if os.name == 'nt':
@@ -17,15 +18,28 @@ import subprocess
 import sys
 import threading
 import tkinter as tk
+from concurrent.futures import Future
+from contextlib import ExitStack
 from datetime import datetime
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
+
+from camera_preview import CameraPreview
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS = Path(__file__).resolve().parent
 DATA = ROOT / 'data'
 DEFAULT_CAL = DATA / 'procam_calibration' / '20261120_analysis' / 'all11' / 'calibration_20261116_unit_provisional.xml'
 DEFAULT_AXIS = DATA / 'procam_calibration' / '20261120_analysis' / 'axis_approx.json'
+HIK_EXPOSURE_MAX_US = 200_000
+
+
+def put_latest(frames, frame):
+    try:
+        frames.get_nowait()
+    except queue.Empty:
+        pass
+    frames.put_nowait(frame)
 
 
 class EmbeddedCaptureUI:
@@ -36,19 +50,56 @@ class EmbeddedCaptureUI:
         try: return self.app.capture_commands.get_nowait()
         except queue.Empty: return -1
     def show_frame(self, frame):
-        q=self.app.preview_frames
-        try:
-            while True:q.get_nowait()
-        except queue.Empty:pass
-        try:q.put_nowait(frame)
-        except queue.Full:pass
+        put_latest(self.app.preview_frames, frame)
     def set_capturing(self,busy): self.app.preview_events.put(('capture_busy',busy))
+    def pattern_progress(self, completed, total):
+        self.app.preview_events.put(('pattern_progress', (completed, total)))
+    def calibration_session(self, folder):
+        self.app.preview_events.put(('calibration_session', folder))
     def auto_exposure_result(self,value): self.app.preview_events.put(('auto_result',value))
     def roi_exposure_result(self,result): self.app.preview_events.put(('roi_auto_result',result))
+    def manual_exposure_result(self,result): self.app.preview_events.put(('manual_result',('海康',result)))
     def focus_status(self,mode,score,best,ratio,saturation):
         self.app.preview_events.put(('focus_status',(mode,score,best,ratio,saturation)))
     def log(self,*args,**kwargs):
         self.app.preview_events.put(('capture_log',' '.join(str(x) for x in args)))
+
+    def usb_capture_frame(self, purpose, wait_for_camera=False, defer=False):
+        import time
+        import cv2
+        from calibration_capture import CaptureInterrupted
+
+        deadline = time.monotonic() + 4
+        while wait_for_camera and not self.app.usb_stream_ready.is_set() and time.monotonic() < deadline:
+            if self.cancelled():
+                raise CaptureInterrupted('用户停止采集')
+            cv2.waitKey(15)
+        if not self.app.usb_stream_ready.is_set():
+            raise RuntimeError('FHD C3 Camera 未连接或没有画面')
+        request = Future()
+        self.app.usb_commands.put((purpose, request))
+        deadline = time.monotonic() + 8
+        def result():
+            try:
+                while not request.done():
+                    if self.cancelled():
+                        raise CaptureInterrupted('用户停止采集')
+                    if not self.app.usb_stream_ready.is_set():
+                        raise RuntimeError('FHD C3 Camera 已停止取流')
+                    if time.monotonic() >= deadline:
+                        raise TimeoutError('等待 FHD C3 Camera 图像超时')
+                    cv2.waitKey(10)
+                return request.result()
+            finally:
+                request.cancel()
+
+        return result if defer else result()
+
+    def texture_frame(self):
+        return self.usb_capture_frame('texture')
+
+    def calibration_frame(self, wait_for_camera=False, defer=False):
+        return self.usb_capture_frame('calibration', wait_for_camera, defer)
 
 
 class App(tk.Tk):
@@ -58,33 +109,53 @@ class App(tk.Tk):
         self.geometry('1200x900')
         self.minsize(900, 700)
         if os.name == 'nt': self.state('zoomed')
+        self.log_path = DATA / 'logs' / f"scan_dashboard_{datetime.now():%Y%m%d_%H%M%S_%f}.log"
         self.process = None
         self.preview_thread = None
         self.preview_stop_event = threading.Event()
         self.preview_frames = queue.Queue(maxsize=1)
         self.preview_events = queue.Queue()
         self.preview_next = None
-        self.preview_photo = None
-        self.preview_current_frame = None
+        self.preview_active = False
+        self.usb_thread = None
+        self.usb_stop = threading.Event()
+        self.usb_stream_ready = threading.Event()
+        self.usb_frames = queue.Queue(maxsize=1)
+        self.usb_commands = queue.Queue()
+        self.usb_meter_ready = False
+        self.usb_restart = None
+        self.close_requested = False
+        self.usb_focus_text = tk.StringVar(value='')
+        self.usb_focus_history = []
+        self.usb_focus_best = 0.0
+        self.focus_mode = None
+        self.usb_focus_auto = False
+        self.focus_tone = None
+        self.focus_audio_view = None
+        self.focus_audio_text = tk.StringVar(value='')
         self.capture_thread = None
         self.capture_stop_event = threading.Event()
         self.capture_commands = queue.Queue()
         self.capture_kind = None
         self.capture_buttons = {}
-        self.focus_start_point = None
-        self.selected_roi = None
-        self.focus_zoom = False
         self.preview_commands = queue.Queue()
-        self.roi_metering = False
-        self.focus_text = tk.StringVar(value='调焦：启动后在画面拖框选择区域')
+        self.roi_pending = set()
+        self.focus_text = tk.StringVar(value='')
+        self.roi_hint = tk.StringVar(value='分别在两台画面左键拖框，蓝框为各自的曝光区域。')
         self.task_has_warnings = False
         self.messages = queue.Queue()
         self.status = tk.StringVar(value='就绪')
         self.calibration = tk.StringVar(value=str(DEFAULT_CAL) if DEFAULT_CAL.exists() else '')
         self.axis = tk.StringVar(value=str(DEFAULT_AXIS) if DEFAULT_AXIS.exists() else '')
         self.exposure = tk.StringVar(value='50000')
+        self.exposure_camera = tk.StringVar(value='海康相机')
+        self.usb_exposure = tk.StringVar(value='')
+        self.usb_manual_exposure = None
+        self.usb_exposure_values = ()
+        self.manual_pending = set()
         self.gain = tk.StringVar(value='0')
         self.auto_exposure = tk.BooleanVar(value=False)
+        self.roi_compensation_ev = tk.StringVar(value='0')
         self.view_count = tk.StringVar(value='8')
         self.marker_size = tk.StringVar(value='20')
         self.board_size = tk.StringVar(value='10')
@@ -130,11 +201,22 @@ class App(tk.Tk):
             notebook.add(frame, text=title)
         self._build_capture(capture); self._build_reconstruction(reconstruction); self._build_merge(merging); self._build_viewer(viewer); self._build_advanced(advanced)
         logs = ttk.LabelFrame(self, text='运行日志', padding=8); logs.pack(fill='x', padx=16, pady=(0, 8))
-        self.log = tk.Text(logs, height=5, wrap='word', font=('Consolas', 9)); self.log.pack(side='left', fill='both', expand=True)
-        bar = ttk.Scrollbar(logs, command=self.log.yview); bar.pack(side='right', fill='y'); self.log.configure(yscrollcommand=bar.set)
+        progress = ttk.Frame(logs)
+        progress.pack(fill='x', pady=(0, 5))
+        ttk.Label(progress, text='图案采集').pack(side='left', padx=(0, 8))
+        self.pattern_bar = ttk.Progressbar(progress, mode='determinate')
+        self.pattern_bar.pack(side='left', fill='x', expand=True)
+        self.pattern_label = ttk.Label(progress, text='待采集', width=12, anchor='e')
+        self.pattern_label.pack(side='right')
+        transcript = ttk.Frame(logs)
+        transcript.pack(fill='both', expand=True)
+        self.log = tk.Text(transcript, height=5, wrap='word', font=('Consolas', 9)); self.log.pack(side='left', fill='both', expand=True)
+        bar = ttk.Scrollbar(transcript, command=self.log.yview); bar.pack(side='right', fill='y'); self.log.configure(yscrollcommand=bar.set)
         footer = ttk.Frame(self, padding=(16, 0, 16, 10)); footer.pack(fill='x')
         ttk.Label(footer, textvariable=self.status).pack(side='left')
         ttk.Button(footer, text='清空日志', command=lambda: self.log.delete('1.0','end')).pack(side='right')
+        ttk.Button(footer, text='打开日志文件', command=self.open_log_file).pack(side='right', padx=(0, 8))
+        self.append(f'本次运行日志文件：{self.log_path}')
         self.append('提示：预览和采集均显示在右侧；再次点击相同的开始按钮可停止。')
 
     def pathrow(self, parent, label, variable, kind='file', filetypes=None):
@@ -161,14 +243,28 @@ class App(tk.Tk):
         scroll.bind('<Configure>',lambda event:scroll.itemconfigure(left_window,width=event.width))
         ttk.Label(left,text='相机参数',font=('Microsoft YaHei UI',12,'bold')).pack(anchor='w')
         r=ttk.Frame(left);r.pack(fill='x',pady=4)
+        ttk.Label(r,text='手动曝光').pack(side='left')
+        selector = ttk.Combobox(r, textvariable=self.exposure_camera, width=21, state='readonly',
+                                values=('海康相机', 'FHD C3 Camera（彩色）'))
+        selector.pack(side='left', padx=5)
+        selector.bind('<<ComboboxSelected>>', lambda event: self._update_exposure_options())
+        r=ttk.Frame(left);r.pack(fill='x',pady=4)
         ttk.Label(r,text='曝光（微秒）').pack(side='left')
-        ttk.Combobox(r,textvariable=self.exposure,width=9,values=['500','1000','2000','3000','5000','7500','10000','15000','20000','25000','30000','40000','50000','100000']).pack(side='left',padx=5)
-        ttk.Label(r,text='增益 dB').pack(side='left')
+        self.manual_exposure_box = ttk.Combobox(r, width=10)
+        self.manual_exposure_box.pack(side='left', padx=5)
+        ttk.Button(r, text='应用曝光', command=lambda: self.checked(self.apply_manual_exposure)).pack(side='left')
+        r=ttk.Frame(left);r.pack(fill='x',pady=4)
+        ttk.Label(r,text='海康增益 dB').pack(side='left')
         ttk.Combobox(r,textvariable=self.gain,width=5,values=['0','1','2','3','4','6','8','10','12','16','20','24']).pack(side='left',padx=5)
+        self._update_exposure_options()
         ttk.Checkbutton(left,text='自动曝光一次后锁定',variable=self.auto_exposure).pack(anchor='w',pady=4)
         self.preview_button=ttk.Button(left,text='启动实时预览',command=self.preview);self.preview_button.pack(fill='x',pady=3)
+        r=ttk.Frame(left);r.pack(fill='x',pady=2)
+        ttk.Label(r,text='框选测光补偿 EV').pack(side='left')
+        ttk.Combobox(r,textvariable=self.roi_compensation_ev,width=7,state='readonly',values=['-1','-0.5','0','0.3','0.5','1','1.5','2']).pack(side='left',padx=5)
+        ttk.Label(r,text='正值更亮').pack(side='left')
         self.roi_button=ttk.Button(left,text='按框选区自动曝光',command=self.meter_selected_roi,state='disabled');self.roi_button.pack(fill='x',pady=3)
-        ttk.Label(left,text='在右侧画面拖框；该框用于测光和调焦。',wraplength=420).pack(anchor='w')
+        ttk.Label(left,textvariable=self.roi_hint,wraplength=420).pack(anchor='w')
         self.capture_buttons['focus']=ttk.Button(left,text='开始手动调焦',command=self.focus_guide)
         self.capture_buttons['focus'].pack(fill='x',pady=3)
         r=ttk.Frame(left);r.pack(fill='x')
@@ -176,9 +272,10 @@ class App(tk.Tk):
         self.focus_mode_button.pack(side='left',fill='x',expand=True)
         self.focus_reset_button=ttk.Button(r,text='重置最高分',command=lambda:self.focus_command(ord('b')),state='disabled')
         self.focus_reset_button.pack(side='left',fill='x',expand=True)
-        self.focus_zoom_button=ttk.Button(left,text='显示选区放大',command=self.toggle_focus_zoom,state='disabled')
-        self.focus_zoom_button.pack(fill='x',pady=2)
-        ttk.Label(left,textvariable=self.focus_text,wraplength=440,justify='left').pack(anchor='w',pady=3)
+        self.focus_label = ttk.Label(left, textvariable=self.focus_text, wraplength=440, justify='left')
+        self.focus_label.pack(anchor='w', pady=3)
+        self.usb_focus_label = ttk.Label(left, textvariable=self.usb_focus_text, wraplength=440, justify='left')
+        self.focus_audio_label = ttk.Label(left, textvariable=self.focus_audio_text, wraplength=440, justify='left')
         ttk.Separator(left).pack(fill='x',pady=8)
         ttk.Label(left,text='采集',font=('Microsoft YaHei UI',12,'bold')).pack(anchor='w')
         self.capture_buttons['calibration']=ttk.Button(left,text='开始标定采集',command=self.cal_capture)
@@ -201,115 +298,194 @@ class App(tk.Tk):
         self.capture_buttons['automatic'].pack(fill='x',pady=3)
         ttk.Label(box,text='再次点击可停止；每圈按 4096 半步计算，间隔 3 ms。',wraplength=300,justify='left').pack(anchor='w')
         ttk.Label(right,text='相机实时预览',font=('Microsoft YaHei UI',11,'bold')).pack(anchor='w',pady=(0,5))
-        self.preview_canvas=tk.Canvas(right,bg='#1c222b',highlightthickness=0,width=400,height=260)
-        self.preview_canvas.pack(fill='both',expand=True)
-        self.preview_image_id=self.preview_canvas.create_image(0,0,anchor='center')
-        self.preview_text_id=self.preview_canvas.create_text(0,0,text='启动实时预览或采集',fill='#d7dee8')
-        self.preview_canvas.bind('<Configure>',lambda event:self._render_preview())
-        self.preview_canvas.bind('<ButtonPress-1>',self._focus_drag_start)
-        self.preview_canvas.bind('<B1-Motion>',self._focus_drag_move)
-        self.preview_canvas.bind('<ButtonRelease-1>',self._focus_drag_end)
-        self.focus_rect=self.preview_canvas.create_rectangle(0,0,0,0,outline='#00ff80',width=2,state='hidden')
-        ttk.Label(right,text='采集期间画面显示在这里；投影仪另显示结构光图案。',wraplength=800).pack(anchor='w',pady=5)
+        previews = ttk.Frame(right)
+        previews.pack(fill='both', expand=True)
+        previews.rowconfigure(0, weight=1)
+        self.hik_view = CameraPreview(previews, '海康相机', '启动实时预览或采集')
+        self.usb_view = CameraPreview(previews, 'FHD C3 Camera', '启动实时预览或采集')
+        self.preview_ratios = {self.hik_view: 2448 / 2048, self.usb_view: 16 / 9}
+        for column, view in enumerate(self.preview_ratios):
+            view.grid(row=0, column=column, sticky='nsew', padx=(0, 8) if column == 0 else 0)
+            previews.columnconfigure(column, weight=round(1000 * self.preview_ratios[view]), uniform='cameras')
+            view.canvas.bind('<Configure>', lambda event, pane=view: self._render_preview(pane))
+            for button in (1, 3):
+                view.canvas.bind(f'<ButtonPress-{button}>', lambda event, pane=view, key=button: self._roi_start(pane, event, key))
+                view.canvas.bind(f'<B{button}-Motion>', lambda event, pane=view, key=button: self._roi_move(pane, event, key))
+                view.canvas.bind(f'<ButtonRelease-{button}>', lambda event, pane=view, key=button: self._roi_end(pane, event, key))
+        ttk.Label(right,text='结构光采集使用海康相机，投影仪显示结构光图案。',wraplength=800).pack(anchor='w',pady=5)
 
-    def _render_preview(self):
-        canvas=self.preview_canvas
-        width=max(1,canvas.winfo_width());height=max(1,canvas.winfo_height())
-        canvas.coords(self.preview_image_id,width//2,height//2)
-        canvas.coords(self.preview_text_id,width//2,height//2)
-        if self.preview_current_frame is not None and width>2 and height>2:
-            from PIL import Image, ImageTk
-            image=Image.fromarray(self.preview_current_frame)
-            if self.capture_kind=='focus' and self.focus_zoom and self.selected_roi is not None:
-                iw,ih=image.size;x0,y0,x1,y1=self.selected_roi
-                ax=max(0,min(iw-1,int(x0*iw)));ay=max(0,min(ih-1,int(y0*ih)))
-                bounds=(ax,ay,min(iw,max(ax+1,int(x1*iw))),min(ih,max(ay+1,int(y1*ih))))
-                image=image.crop(bounds)
-                scale=min((width-4)/image.width,(height-4)/image.height)
-                image=image.resize((max(1,round(image.width*scale)),max(1,round(image.height*scale))),Image.Resampling.LANCZOS)
-            else:
-                image.thumbnail((max(1,width-4),max(1,height-4)),Image.Resampling.LANCZOS)
-            self.preview_photo=ImageTk.PhotoImage(image)
-            canvas.itemconfigure(self.preview_image_id,image=self.preview_photo)
-            canvas.itemconfigure(self.preview_text_id,text='')
-            if self.focus_start_point is None:self._draw_selected_roi()
+    def _show_frame(self, view, frame):
+        ratio = view.set_frame(frame)
+        if ratio != self.preview_ratios[view]:
+            self.preview_ratios[view] = ratio
+            column = 0 if view is self.hik_view else 1
+            view.master.columnconfigure(column, weight=round(1000 * ratio))
+        self._render_preview(view)
 
-    def _draw_selected_roi(self):
-        if self.selected_roi is None or self.preview_photo is None or (self.capture_kind=='focus' and self.focus_zoom):
-            self.preview_canvas.itemconfigure(self.focus_rect,state='hidden');return
-        w,h=self.preview_photo.width(),self.preview_photo.height()
-        left=(self.preview_canvas.winfo_width()-w)/2;top=(self.preview_canvas.winfo_height()-h)/2
-        x0,y0,x1,y1=self.selected_roi
-        self.preview_canvas.coords(self.focus_rect,left+x0*w,top+y0*h,left+x1*w,top+y1*h)
-        self.preview_canvas.itemconfigure(self.focus_rect,state='normal');self.preview_canvas.tag_raise(self.focus_rect)
+    def _render_preview(self, view):
+        view.render(focusing=self.capture_kind == 'focus')
 
-    def _preview_message(self,text):
-        self.preview_current_frame=None;self.preview_photo=None
-        self.preview_canvas.itemconfigure(self.preview_image_id,image='')
-        self.preview_canvas.itemconfigure(self.preview_text_id,text=text)
-        self.preview_canvas.itemconfigure(self.focus_rect,state='hidden')
+    def _roi_kind(self, button):
+        if self.capture_kind == 'focus' and not self.capture_stop_event.is_set():
+            return 'focus' if button == 1 else 'exposure'
+        if self.preview_active and button == 1:
+            return 'exposure'
+        return None
 
-    def _focus_drag_start(self,event):
-        if (self.capture_kind != 'focus' and self.preview_thread is None) or self.preview_photo is None:return
-        self.focus_start_point=(event.x,event.y)
-        self.preview_canvas.coords(self.focus_rect,event.x,event.y,event.x,event.y)
-        self.preview_canvas.itemconfigure(self.focus_rect,state='normal')
-        self.preview_canvas.tag_raise(self.focus_rect)
+    def _roi_start(self, view, event, button=1):
+        kind = self._roi_kind(button)
+        if kind is None or view.drag_kind is not None:
+            return
+        view.drag_start = view.point(event.x, event.y)
+        if view.drag_start is not None:
+            view.drag_kind = kind
+            if kind == 'focus':
+                self._select_focus_audio(view)
 
-    def _focus_drag_move(self,event):
-        if self.focus_start_point:
-            self.preview_canvas.coords(self.focus_rect,*self.focus_start_point,event.x,event.y)
+    def _roi_move(self, view, event, button=1):
+        if view.drag_kind is not None and view.drag_kind == self._roi_kind(button):
+            view.draw_box(view.drag_kind, view.drag_box(event.x, event.y))
 
-    def _focus_drag_end(self,event):
-        if self.focus_start_point is None or self.preview_photo is None:return
-        x0,y0=self.focus_start_point;self.focus_start_point=None
-        w,h=self.preview_photo.width(),self.preview_photo.height()
-        left=(self.preview_canvas.winfo_width()-w)/2;top=(self.preview_canvas.winfo_height()-h)/2
-        xs=sorted((max(0,min(1,(x0-left)/w)),max(0,min(1,(event.x-left)/w))))
-        ys=sorted((max(0,min(1,(y0-top)/h)),max(0,min(1,(event.y-top)/h))))
-        if xs[1]-xs[0]>.01 and ys[1]-ys[0]>.01:
-            if self.capture_kind=='focus' and self.focus_zoom and self.selected_roi is not None:
-                bx0,by0,bx1,by1=self.selected_roi
-                candidate=(bx0+xs[0]*(bx1-bx0),by0+ys[0]*(by1-by0),bx0+xs[1]*(bx1-bx0),by0+ys[1]*(by1-by0))
-            else:
-                candidate=(xs[0],ys[0],xs[1],ys[1])
-            if self.capture_kind=='focus' and self.preview_current_frame is not None:
-                h0,w0=self.preview_current_frame.shape[:2]
-                scale=min(1.,1100/w0,750/h0)
-                if (candidate[2]-candidate[0])*w0*scale<=11 or (candidate[3]-candidate[1])*h0*scale<=11:
+    def _roi_end(self, view, event, button=1):
+        kind = self._roi_kind(button)
+        if kind is None or view.drag_kind != kind:
+            return
+        candidate = view.drag_box(event.x, event.y)
+        view.drag_start = None
+        view.drag_kind = None
+        if candidate is None:
+            return
+        x0, y0, x1, y1 = candidate
+        if x1 - x0 > .01 and y1 - y0 > .01:
+            if kind == 'exposure':
+                view.exposure_roi = candidate
+                self._render_preview(view)
+                return
+            if view.frame is not None:
+                h, w = view.frame.shape[:2]
+                scale = min(1., 1100 / w, 750 / h)
+                if (x1 - x0) * w * scale <= 11 or (y1 - y0) * h * scale <= 11:
                     self.append('选区太小，请选大一些的区域。')
-                    self._render_preview();return
-            self.selected_roi=candidate
-            if self.capture_kind=='focus':
-                self.focus_zoom=True;self.focus_zoom_button.configure(text='返回全图重新选框')
-                self.capture_commands.put(('roi',*self.selected_roi))
-            self.append('已选择共用区域：可用于调焦和自动曝光。')
-        self._render_preview()
+                    self._render_preview(view)
+                    return
+            view.focus_roi = candidate
+            view.exposure_roi = candidate
+            view.set_focus_zoom(True)
+            if view is self.hik_view:
+                self.capture_commands.put(('roi', *candidate))
+            else:
+                self._reset_usb_focus()
+        self._render_preview(view)
 
-    def toggle_focus_zoom(self):
-        if self.capture_kind!='focus':return
-        if self.focus_zoom:
-            self.focus_zoom=False;self.focus_zoom_button.configure(text='显示选区放大')
-        elif self.selected_roi is not None:
-            self.focus_zoom=True;self.focus_zoom_button.configure(text='返回全图重新选框')
+    def _meter_targets(self):
+        targets = {}
+        focus = self.capture_kind == 'focus' and not self.capture_stop_event.is_set()
+        if self.preview_active or focus:
+            if self.hik_view.frame is not None:
+                targets['海康'] = self.capture_commands if focus else self.preview_commands
+            if self.usb_meter_ready and not self.usb_stop.is_set() and self.usb_view.frame is not None:
+                targets['USB'] = self.usb_commands
+        return targets
+
+    def _update_exposure_options(self):
+        usb = self.exposure_camera.get() == 'FHD C3 Camera（彩色）'
+        self.manual_exposure_box.configure(
+            textvariable=self.usb_exposure if usb else self.exposure,
+            values=self.usb_exposure_values if usb else
+            ('500', '1000', '2000', '3000', '5000', '7500', '10000', '15000', '20000',
+             '25000', '30000', '40000', '50000', '100000', str(HIK_EXPOSURE_MAX_US)),
+        )
+
+    def _manual_exposure_us(self, source):
+        entry = self.exposure if source == '海康' else self.usb_exposure
+        try:
+            exposure = float(entry.get())
+        except ValueError:
+            raise ValueError('请输入有效的曝光时间（微秒）') from None
+        if not math.isfinite(exposure) or exposure <= 0:
+            raise ValueError('曝光时间必须大于 0')
+        if source == '海康' and exposure > HIK_EXPOSURE_MAX_US:
+            raise ValueError(f'海康曝光不能超过 {HIK_EXPOSURE_MAX_US} 微秒（200 ms）')
+        return exposure
+
+    def apply_manual_exposure(self):
+        source = '海康' if self.exposure_camera.get() == '海康相机' else 'USB'
+        exposure = self._manual_exposure_us(source)
+        if self.roi_pending or source in self.manual_pending:
+            raise ValueError('请等当前曝光调整完成')
+        commands = self._meter_targets().get(source)
+        if commands is not None:
+            self.manual_pending.add(source)
+            commands.put(('manual', exposure))
         else:
-            messagebox.showinfo('请先框选','请在画面上拖框选择区域。');return
-        self._render_preview()
+            if source == 'USB':
+                if (self.preview_active or self.capture_kind == 'focus') and self.usb_thread is not None and self.usb_view.frame is None:
+                    raise ValueError('请等待 USB 相机画面出现后再应用曝光')
+                if self.usb_view.frame is not None and not self.usb_meter_ready:
+                    raise ValueError('当前 USB 相机未提供手动曝光控制')
+                self.usb_manual_exposure = exposure
+            else:
+                self.auto_exposure.set(False)
+            self.append(f'{source} 手动曝光已设为 {exposure:g} 微秒，下次启动时应用。')
 
     def meter_selected_roi(self):
-        if self.roi_metering:return
-        if self.selected_roi is None:
-            messagebox.showinfo('请先框选','请先在右侧画面上拖框选择测光区域。');return
-        if self.capture_kind=='focus':commands=self.capture_commands
-        elif self.preview_thread is not None:commands=self.preview_commands
-        else:
-            messagebox.showinfo('请先预览','请先启动实时预览或手动调焦。');return
-        self.roi_metering=True;self.roi_button.configure(state='disabled')
+        targets = self._meter_targets()
+        if self.roi_pending or self.manual_pending or not targets:
+            return
+        regions = {'海康': self.hik_view.exposure_roi, 'USB': self.usb_view.exposure_roi}
+        selected = {source: commands for source, commands in targets.items() if regions[source] is not None}
+        if not selected:
+            if any(region is not None for region in regions.values()):
+                messagebox.showinfo('相机暂不能测光', '已框选的相机当前没有可用的曝光控制。')
+            else:
+                messagebox.showinfo('请先框选', '请先在右侧画面上拖框选择测光区域。')
+            return
+        try:compensation=float(self.roi_compensation_ev.get())
+        except ValueError:
+            messagebox.showerror('参数错误','请输入有效曝光补偿');return
+        if not math.isfinite(compensation) or not -2<=compensation<=2:
+            messagebox.showerror('参数错误','曝光补偿应在 -2 到 +2 EV 之间');return
+        self.roi_pending = set(selected)
+        self.roi_button.state(['disabled'])
         self.status.set('正在按框选区域自动曝光…')
-        commands.put(('auto_roi',self.selected_roi))
+        for source, commands in selected.items():
+            commands.put(('auto_roi', (regions[source],compensation)))
 
     def focus_command(self,key):
-        if self.capture_kind=='focus':self.capture_commands.put(key)
+        if self.capture_kind == 'focus':
+            if key == ord('m') and (self.roi_pending or self.manual_pending):
+                return
+            if key == ord('b'):
+                self._reset_usb_focus()
+            self.capture_commands.put(key)
+
+    def _reset_usb_focus(self):
+        self.usb_focus_history.clear()
+        self.usb_focus_best = 0.0
+
+    def _select_focus_audio(self, view):
+        self.focus_audio_view = view
+        self.focus_audio_text.set(f'提示音：{view.name}（点击画面切换）')
+
+    def _update_usb_focus(self, frame):
+        import cv2
+        from statistics import median
+        from camera_metrics import focus_score
+
+        gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        height, width = gray.shape
+        scale = min(1., 1100 / width, 750 / height)
+        gray = cv2.resize(gray, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
+        height, width = gray.shape
+        x0, y0, x1, y1 = self.usb_view.focus_roi or (.2, .2, .8, .8)
+        score, saturation = focus_score(gray[int(y0 * height):int(y1 * height), int(x0 * width):int(x1 * width)])
+        self.usb_focus_history = (self.usb_focus_history + [score])[-5:]
+        score = median(self.usb_focus_history)
+        self.usb_focus_best = max(score, self.usb_focus_best)
+        ratio = score / self.usb_focus_best if self.usb_focus_best else 0.
+        self.usb_focus_text.set(f'USB | 清晰度 {score:.1f} / 最高 {self.usb_focus_best:.1f} | 相对 {ratio:.0%} | 极暗或过亮 {saturation:.0%}')
+        if self.focus_audio_view is self.usb_view:
+            self.focus_tone.update(score, ratio, saturation)
 
     def _build_reconstruction(self,f):
         self.pathrow(f,'采集文件夹',self.view_folder,'dir')
@@ -387,16 +563,35 @@ class App(tk.Tk):
         ttk.Label(f,text='该比较脚本依赖 view_0000 / view_0004 内的 box_view_10mm.ply，并会覆盖既有比较结果。',wraplength=900).pack(anchor='w')
 
     def append(self,text):
-        self.log.insert('end',text+'\n');self.log.see('end')
+        self.log.insert('end', text + '\n')
+        if self.log_path is not None:
+            try:
+                self.log_path.parent.mkdir(parents=True, exist_ok=True)
+                with self.log_path.open('a', encoding='utf-8') as stream:
+                    stream.write(f'[{datetime.now():%Y-%m-%d %H:%M:%S.%f}] {text}\n')
+            except OSError as exc:
+                self.log.insert('end', f'日志文件无法写入：{exc}\n')
+                self.log_path = None
+        self.log.see('end')
+
+    def open_log_file(self):
+        if self.log_path is None:
+            messagebox.showerror('日志文件不可用', '当前会话的运行日志未能写入文件。')
+            return
+        try:
+            os.startfile(str(self.log_path))
+        except OSError as exc:
+            messagebox.showerror('打开日志失败', str(exc))
 
     def run(self,title,script,args,on_success=None):
         if self.capture_thread is not None:
             messagebox.showinfo('正在采集','请先点击当前采集按钮停止。');return
         if self.preview_next is not None:
             messagebox.showinfo('正在释放相机','请稍候。');return
-        if self.preview_thread is not None:
-            self.preview_next=lambda:self.run(title,script,args,on_success)
+        if self.preview_active or self.preview_thread is not None:
+            self.preview_next = lambda: self.run(title,script,args,on_success)
             self.stop_preview()
+            self._stop_usb()
             return
         if self.process is not None:
             messagebox.showinfo('正在运行','请先结束当前任务。相机预览或采集请在其窗口按 Q 退出。');return
@@ -416,14 +611,46 @@ class App(tk.Tk):
             self.capture_stop_event.set()
             self.status.set('正在停止采集，完成后请再次关闭窗口')
             return
-        if self.preview_thread is not None:
-            self.preview_next=self.destroy
-            self.stop_preview()
-            return
         if self.process is not None:
             messagebox.showinfo('任务正在运行', '请先在预览或采集窗口按 Q 退出；点云查看窗口请直接关闭。任务结束后再关闭操作台。')
             return
-        self.destroy()
+        self.close_requested = True
+        self.preview_next = None
+        self.stop_preview()
+        if self.preview_thread is None and self.usb_thread is None:
+            self.destroy()
+
+    def _report_roi(self, source, payload, startup=False):
+        if not startup:
+            self.roi_pending.discard(source)
+        if isinstance(payload, dict):
+            if source == '海康':
+                self.exposure.set(str(round(payload['exposure_us'])))
+                self.auto_exposure.set(False)
+            else:
+                self.usb_exposure.set(str(round(payload['exposure_us'])))
+                self._reset_usb_focus()
+            exposure_label = '当前曝光' if payload.get('no_usable_signal') else '曝光已锁定为'
+            self.append(f"{source} {exposure_label} {payload['exposure_us']:.0f} 微秒，"
+                        f"P90={payload['p90']:.0f}，过亮比例={payload['clipped']:.1%}。{payload['status']}。")
+        else:
+            self.append(f'{source} 测光失败：{payload}')
+        if not startup and not self.roi_pending:
+            self.status.set('区域测光结束，请查看运行日志')
+
+    def _report_manual_exposure(self, source, result):
+        self.manual_pending.discard(source)
+        if isinstance(result, str):
+            self.append(f'{source} 手动曝光设置失败：{result}')
+            return
+        if source == 'USB':
+            self.usb_manual_exposure = result
+            self.usb_exposure.set(str(round(result)))
+            self._reset_usb_focus()
+        else:
+            self.exposure.set(f'{result:g}')
+            self.auto_exposure.set(False)
+        self.append(f'{source} 手动曝光已应用：{result:.0f} 微秒。')
 
     def _poll(self):
         try:
@@ -438,21 +665,51 @@ class App(tk.Tk):
                     if payload >= 199000:
                         self.append('警告：已接近自动曝光上限 200000 微秒，画面仍可能偏暗；请增加照明或手动调整。')
                 elif event == 'roi_auto_result':
-                    self.roi_metering=False
-                    if isinstance(payload,dict):
-                        self.exposure.set(str(round(payload['exposure_us'])))
-                        self.auto_exposure.set(False)
-                        self.append(f"区域曝光锁定：{payload['exposure_us']:.0f} 微秒；区域亮度 P90={payload['p90']:.0f}，过亮比例={payload['clipped']:.1%}；{payload['status']}。已切换手动锁定，供采集使用。")
-                        self.status.set('区域测光完成：'+payload['status'])
-                    else:
-                        self.append('区域测光失败：'+str(payload));self.status.set('区域测光失败')
-                    if self.preview_thread is not None or self.capture_kind=='focus':self.roi_button.configure(state='normal')
+                    self._report_roi('海康', payload)
+                elif event == 'usb_roi_result':
+                    result, startup = payload
+                    self._report_roi('USB', result, startup)
+                elif event == 'manual_result':
+                    self._report_manual_exposure(*payload)
+                elif event == 'usb_ready':
+                    self.usb_meter_ready = bool(payload)
+                    self.usb_exposure_values = payload
+                    self._update_exposure_options()
+                    self.append('FHD C3 Camera 实时预览中')
+                    if not payload:
+                        self.append('FHD C3 Camera 未提供手动曝光控制，区域测光不可用。')
+                elif event == 'usb_done':
+                    self.usb_thread = None
+                    self.usb_meter_ready = False
+                    self.roi_pending.discard('USB')
+                    self.manual_pending.discard('USB')
+                    if payload:
+                        self.append(f'FHD C3 Camera 预览失败：{payload}')
+                    self.usb_view.show_message(payload or 'USB 预览已停止')
+                    self.usb_focus_text.set('USB | 无可用画面')
+                    if self.capture_kind == 'focus' and self.focus_audio_view is self.usb_view:
+                        self._select_focus_audio(self.hik_view)
+                    restart, self.usb_restart = self.usb_restart, None
+                    if restart is not None:
+                        self._start_usb(restart)
                 elif event == 'focus_status':
                     mode,score,best,ratio,saturation=payload
                     names=['白光：调整相机镜头','竖条纹：调整投影仪','横条纹：调整投影仪']
-                    self.focus_text.set(f'{names[mode]} | 清晰度 {score:.1f} / 最高 {best:.1f} | 相对 {ratio:.0%} | 极暗或过亮 {saturation:.0%}')
+                    if mode != self.focus_mode:
+                        self.focus_mode = mode
+                        self._reset_usb_focus()
+                    self.focus_text.set(f'{names[mode]}\n海康 | 清晰度 {score:.1f} / 最高 {best:.1f} | 相对 {ratio:.0%} | 极暗或过亮 {saturation:.0%}')
+                    if (self.focus_audio_view is self.hik_view and not self.roi_pending
+                            and not self.capture_stop_event.is_set()):
+                        self.focus_tone.update(score, ratio, saturation)
                 elif event == 'capture_busy':
                     self.capture_one_button.configure(state='disabled' if payload else 'normal')
+                elif event == 'pattern_progress':
+                    completed, total = payload
+                    self.pattern_bar.configure(maximum=total, value=completed)
+                    self.pattern_label.configure(text=f'{completed}/{total}')
+                elif event == 'calibration_session':
+                    self.calibration_capture_folder.set(str(payload))
                 elif event == 'capture_log':
                     self.append(payload)
                 elif event == 'capture_done':
@@ -461,35 +718,58 @@ class App(tk.Tk):
                     labels={'calibration':'开始标定采集','manual':'开始手动转台采集','automatic':'开始自动旋转采集','focus':'开始手动调焦'}
                     for name,button in self.capture_buttons.items():button.configure(text=labels[name],state='normal')
                     self.capture_one_button.configure(state='disabled')
+                    if 0 < self.pattern_bar['value'] < self.pattern_bar['maximum']:
+                        self.pattern_label.configure(text='已停止')
                     self.focus_mode_button.configure(state='disabled');self.focus_reset_button.configure(state='disabled')
-                    self.focus_zoom=False;self.focus_zoom_button.configure(state='disabled',text='显示选区放大')
-                    self.roi_metering=False;self.roi_button.configure(state='disabled')
-                    self.focus_text.set('调焦：启动后在画面拖框选择区域')
+                    for view in self.preview_ratios:
+                        view.set_focus_mode(False)
+                    self.roi_pending.discard('海康')
+                    self.manual_pending.discard('海康')
+                    self._stop_usb()
+                    self.usb_focus_label.pack_forget()
+                    self.focus_audio_label.pack_forget()
+                    self.focus_text.set('')
+                    self.roi_hint.set('分别在两台画面左键拖框，蓝框为各自的曝光区域。')
                     self.preview_button.configure(state='normal')
                     self.status.set('采集已结束' if not err else '采集已停止或失败：'+err)
                     self.append(self.status.get())
-                    self._preview_message('采集已结束，可启动实时预览')
+                    self.hik_view.show_message('采集已结束，可启动实时预览')
                 elif event == 'error':
-                    self.append('相机预览失败：'+payload)
-                    self.status.set('相机预览失败')
-                    self._preview_message('相机预览失败：'+payload)
+                    self.append('海康预览失败：'+payload)
+                    self.status.set('海康预览失败')
+                    self.hik_view.show_message('海康预览失败：'+payload)
                 elif event == 'done':
                     self.preview_thread=None
-                    self.roi_metering=False;self.roi_button.configure(state='disabled')
-                    self.preview_button.configure(text='启动实时预览')
-                    if self.preview_next is not None:
-                        callback=self.preview_next;self.preview_next=None
-                        self.after_idle(callback)
-                    elif payload:
-                        self.status.set('相机预览已停止')
-                        self._preview_message('预览已停止')
+                    self.roi_pending.discard('海康')
+                    self.manual_pending.discard('海康')
+                    if not self.preview_active:
+                        self._finish_preview()
         except queue.Empty: pass
         try:
             frame=self.preview_frames.get_nowait()
-            if ((self.preview_thread is not None and not self.preview_stop_event.is_set()) or (self.capture_thread is not None and not self.capture_stop_event.is_set())):
-                self.preview_current_frame=frame
-                self._render_preview()
+            if ((self.preview_active and self.preview_thread is not None) or
+                    (self.capture_thread is not None and not self.capture_stop_event.is_set())):
+                self._show_frame(self.hik_view, frame)
         except queue.Empty: pass
+        try:
+            frame = self.usb_frames.get_nowait()
+            if self.usb_thread is not None and not self.usb_stop.is_set():
+                self._show_frame(self.usb_view, frame)
+                if (self.capture_kind == 'focus' and self.focus_mode is not None
+                        and not self.capture_stop_event.is_set() and not (self.roi_pending or self.manual_pending)):
+                    self._update_usb_focus(frame)
+        except queue.Empty: pass
+        if (self.capture_kind == 'focus' and self.focus_mode is not None and
+                self.usb_focus_auto and self.usb_meter_ready and self.usb_view.frame is not None):
+            self.usb_focus_auto = False
+            self.usb_commands.put(('startup', (0., 0., 1., 1.)))
+        busy = self.roi_pending or self.manual_pending
+        self.roi_button.state(['!disabled'] if not busy and self._meter_targets() else ['disabled'])
+        if self.capture_kind == 'focus':
+            self.focus_mode_button.state(['disabled'] if busy else ['!disabled'])
+        if self.close_requested and self.preview_thread is None and self.usb_thread is None:
+            self.destroy()
+            return
         try:
             while True:
                 kind,payload=self.messages.get_nowait()
@@ -507,8 +787,7 @@ class App(tk.Tk):
         gain=float(self.gain.get())
         if not math.isfinite(gain) or gain<0: raise ValueError('增益不能小于 0')
         if self.auto_exposure.get(): return ['--gain-db',str(gain),'--auto-exposure']
-        exposure=float(self.exposure.get())
-        if not math.isfinite(exposure) or exposure<=0: raise ValueError('曝光时间必须大于 0')
+        exposure=self._manual_exposure_us('海康')
         return ['--gain-db',str(gain),'--exposure-us',str(exposure)]
 
     def checked(self,action):
@@ -518,7 +797,7 @@ class App(tk.Tk):
     def preview(self):
         def go():
             if self.process is not None: raise ValueError('请先结束正在运行的采集或其他任务')
-            if self.preview_thread is not None:
+            if self.preview_active or self.preview_thread is not None:
                 self.stop_preview();return
             if self.capture_thread is not None: raise ValueError('请先停止采集')
             self.camera_args()
@@ -531,25 +810,39 @@ class App(tk.Tk):
             while not self.preview_commands.empty():
                 try:self.preview_commands.get_nowait()
                 except queue.Empty:break
-            self.roi_button.configure(state='normal')
-            self._preview_message('正在连接相机…')
+            self.preview_active = True
+            self.hik_view.show_message('正在连接海康相机…')
             self.preview_button.configure(text='停止实时预览')
             self.preview_thread=threading.Thread(target=self._preview_worker,args=(exposure,gain,automatic),daemon=True)
             self.preview_thread.start()
+            self._start_usb(automatic)
         self.checked(go)
 
     def stop_preview(self):
-        if self.preview_thread is not None:
-            self.preview_stop_event.set()
-            self.status.set('正在停止相机预览…')
+        self.preview_active = False
+        self.preview_stop_event.set()
+        if self.preview_next is None:
+            self._stop_usb()
+        self.status.set('正在停止相机预览…')
+        if self.preview_thread is None:
+            self._finish_preview()
+
+    def _finish_preview(self):
+        self.preview_button.configure(text='启动实时预览')
+        self.hik_view.show_message('海康预览已停止')
+        if self.preview_next is not None:
+            callback, self.preview_next = self.preview_next, None
+            self.after_idle(callback)
+        else:
+            self.status.set('海康预览已停止')
 
     def _preview_worker(self,exposure,gain,automatic):
         import time
-        saved={};created=opened=grabbing=initialized=False; success=False
+        saved={};created=opened=grabbing=initialized=False
         try:
             from preview import (MvCamera, MV_CC_DEVICE_INFO_LIST, MV_CC_DEVICE_INFO,
-                MV_USB_DEVICE, MV_GIGE_DEVICE, MV_ACCESS_Exclusive, MVCC_ENUMVALUE,
-                MV_TRIGGER_MODE_OFF, check, set_float_parameter, run_auto_exposure_once, run_roi_auto_exposure,
+                MV_USB_DEVICE, MV_ACCESS_Exclusive, MVCC_ENUMVALUE,
+                check, set_float_parameter, run_auto_exposure_once, run_roi_auto_exposure,
                 cast, POINTER)
             from calibration_capture import get_frame
             camera=MvCamera()
@@ -570,22 +863,27 @@ class App(tk.Tk):
             if automatic:
                 result=run_auto_exposure_once(camera)
                 self.preview_events.put(('auto_result',result))
-            self.preview_events.put(('info','相机实时预览中'))
+            self.preview_events.put(('info','海康相机实时预览中'))
             while not self.preview_stop_event.is_set():
                 try:command=self.preview_commands.get_nowait()
                 except queue.Empty:command=None
                 if command and command[0]=='auto_roi':
-                    try: result=run_roi_auto_exposure(camera,command[1],cancelled=self.preview_stop_event.is_set)
+                    try:
+                        result = run_roi_auto_exposure(camera, command[1][0], cancelled=self.preview_stop_event.is_set,
+                                                       compensation_ev=command[1][1],
+                                                       diagnostic=lambda text: self.preview_events.put(('capture_log', text)))
                     except Exception as exc: result=str(exc)
                     self.preview_events.put(('roi_auto_result',result))
+                elif command and command[0] == 'manual':
+                    try:
+                        set_float_parameter(camera, 'ExposureTime', command[1])
+                        result = command[1]
+                    except Exception as exc:
+                        result = str(exc)
+                    self.preview_events.put(('manual_result', ('海康', result)))
                 img=get_frame(camera)
-                if self.preview_frames.full():
-                    try:self.preview_frames.get_nowait()
-                    except queue.Empty:pass
-                try:self.preview_frames.put_nowait(img)
-                except queue.Full:pass
+                put_latest(self.preview_frames, img)
                 time.sleep(0.03)
-            success=True
         except Exception as exc:
             self.preview_events.put(('error',str(exc)))
         finally:
@@ -595,7 +893,114 @@ class App(tk.Tk):
                 camera.MV_CC_CloseDevice()
             if created:camera.MV_CC_DestroyHandle()
             if initialized:MvCamera.MV_CC_Finalize()
-            self.preview_events.put(('done',success))
+            self.preview_events.put(('done', None))
+
+    def _start_usb(self, automatic=False):
+        if self.usb_thread is not None:
+            if self.usb_stop.is_set():
+                self.usb_restart = automatic
+            return
+        self.usb_stop.clear()
+        self.usb_meter_ready = False
+        self.usb_commands = queue.Queue()
+        self.usb_frames = queue.Queue(maxsize=1)
+        self.usb_view.show_message('正在连接 FHD C3 Camera…')
+        self.usb_thread = threading.Thread(target=self._usb_worker, args=(automatic, self.usb_manual_exposure), daemon=True)
+        self.usb_thread.start()
+
+    def _stop_usb(self):
+        self.usb_restart = None
+        self.usb_stop.set()
+        self.usb_meter_ready = False
+        self.usb_stream_ready.clear()
+
+    def _usb_worker(self, automatic, manual_us):
+        error = None
+        try:
+            import cv2
+            from usb_camera import (
+                discover, exposure_levels, exposure_us, meter, open_camera, read_exposure,
+                read_frame, set_exposure, set_manual_exposure, settled_frame, lock_texture_settings, projected_frame,
+            )
+
+            with discover() as (index, control, proc_amp):
+                capture, frame = open_camera(index)
+                original = None
+                texture_settings = None
+                texture_restore = ExitStack()
+                try:
+                    levels = exposure_levels(control)
+                    if levels:
+                        try:
+                            original = read_exposure(control)
+                        except RuntimeError:
+                            levels = range(0)
+                    if automatic and levels:
+                        self.usb_commands.put(('startup', (0., 0., 1., 1.)))
+                    elif manual_us is not None and levels:
+                        self.usb_commands.put(('manual', manual_us))
+                    self.preview_events.put(('usb_ready', tuple(str(round(exposure_us(level))) for level in levels)))
+                    self.usb_stream_ready.set()
+                    while not self.usb_stop.is_set():
+                        try:
+                            command, value = self.usb_commands.get_nowait()
+                        except queue.Empty:
+                            pass
+                        else:
+                            if command in ('texture', 'calibration'):
+                                request = value
+                                if request.set_running_or_notify_cancel():
+                                    try:
+                                        first = texture_settings is None
+                                        if texture_settings is None:
+                                            if not levels:
+                                                raise RuntimeError('FHD C3 Camera 不支持锁定曝光')
+                                            with ExitStack() as rollback:
+                                                requested = self.usb_manual_exposure if command == 'calibration' else None
+                                                texture_settings = lock_texture_settings(control, proc_amp, levels, rollback, requested)
+                                                texture_restore.enter_context(rollback.pop_all())
+                                        read_projected = projected_frame if command == 'calibration' and not first else settled_frame
+                                        frame = read_projected(capture, self.capture_stop_event)
+                                    except Exception as exc:
+                                        request.set_exception(exc)
+                                    else:
+                                        request.set_result((frame, texture_settings))
+                                continue
+                            try:
+                                if command == 'manual':
+                                    result = set_manual_exposure(control, levels, value)
+                                else:
+                                    roi,compensation = value if command == 'auto_roi' else (value,0.0)
+                                    result = meter(capture, control, levels, roi, self.usb_stop, compensation_ev=compensation)
+                            except Exception as exc:
+                                result = str(exc)
+                            if command == 'manual':
+                                self.preview_events.put(('manual_result', ('USB', result)))
+                            else:
+                                self.preview_events.put(('usb_roi_result', (result, command == 'startup')))
+                            if self.usb_stop.is_set():
+                                break
+                            frame = settled_frame(capture, self.usb_stop) if command == 'manual' else read_frame(capture)
+                        put_latest(self.usb_frames, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                        if self.usb_stop.wait(.03):
+                            break
+                        frame = read_frame(capture)
+                finally:
+                    try:
+                        try:
+                            texture_restore.close()
+                        finally:
+                            if original is not None:
+                                set_exposure(control, *original)
+                    finally:
+                        capture.release()
+        except Exception as exc:
+            if not self.usb_stop.is_set():
+                error = str(exc)
+        finally:
+            self.usb_stream_ready.clear()
+            self.preview_events.put(('usb_done', error))
+
     def focus_guide(self):
         if self.capture_kind=='focus':self.capture_stop_event.set();self.status.set('正在停止调焦…');return
         self.checked(lambda:self._toggle_capture('focus',self._capture_camera_config()))
@@ -611,7 +1016,7 @@ class App(tk.Tk):
             else:messagebox.showinfo('正在采集','请先停止当前采集。')
             return
         if self.process is not None:raise ValueError('请先结束当前任务')
-        if self.preview_thread is not None:
+        if self.preview_active or self.preview_thread is not None:
             if self.preview_next is not None:raise ValueError('正在释放相机，请稍候')
             self.preview_next=lambda:self._toggle_capture(kind,config)
             self.stop_preview();return
@@ -620,19 +1025,34 @@ class App(tk.Tk):
             try:self.capture_commands.get_nowait()
             except queue.Empty:break
         self.capture_kind=kind
-        if kind=='focus' and self.selected_roi is not None:self.capture_commands.put(('roi',*self.selected_roi))
+        if kind == 'focus':
+            from camera_metrics import FocusTone
+
+            self.roi_hint.set('左键拖框用于调焦和曝光，右键只调整曝光框。')
+            self.focus_mode = None
+            self.usb_focus_auto = config['auto']
+            self._reset_usb_focus()
+            self.focus_tone = FocusTone()
+            self._select_focus_audio(self.hik_view)
+            self.usb_focus_text.set('USB | 等待调焦画面')
+            self.usb_focus_label.pack(after=self.focus_label, anchor='w', pady=3)
+            self.focus_audio_label.pack(after=self.usb_focus_label, anchor='w', pady=3)
+            for view in self.preview_ratios:
+                view.set_focus_mode(True)
+            if self.hik_view.focus_roi is not None:
+                self.capture_commands.put(('roi', *self.hik_view.focus_roi))
         labels={'calibration':'停止标定采集','manual':'停止手动采集','automatic':'停止自动采集','focus':'停止手动调焦'}
         for name,button in self.capture_buttons.items():
             button.configure(text=labels[name] if name==kind else button.cget('text'),state='normal' if name==kind else 'disabled')
         self.capture_one_button.configure(state='normal' if kind in ('manual','calibration') else 'disabled')
         self.focus_mode_button.configure(state='normal' if kind=='focus' else 'disabled');self.focus_reset_button.configure(state='normal' if kind=='focus' else 'disabled')
-        self.focus_zoom=(kind=='focus' and self.selected_roi is not None)
-        self.focus_zoom_button.configure(state='normal' if kind=='focus' else 'disabled',text='返回全图重新选框' if self.focus_zoom else '显示选区放大')
-        self.roi_button.configure(state='normal' if kind=='focus' else 'disabled')
         self.preview_button.configure(state='disabled')
-        self._preview_message('正在启动采集…')
+        self.hik_view.show_message('正在启动采集…')
         self.status.set('正在启动采集…')
+        self.pattern_bar.configure(value=0)
+        self.pattern_label.configure(text='待采集')
         self.capture_thread=threading.Thread(target=self._capture_worker,args=(kind,config),daemon=True)
+        self._start_usb()
         self.capture_thread.start()
 
     def _capture_worker(self,kind,config):
@@ -653,7 +1073,9 @@ class App(tk.Tk):
             ui=EmbeddedCaptureUI(self)
             main(mode='calibration' if kind=='calibration' else 'object',nominal_step_degrees=angle,
                  auto_turntable=controller,exposure_us=config['exposure'],gain_db=config['gain'],
-                 auto_exposure=config['auto'],ui=ui)
+                 auto_exposure=config['auto'],ui=ui,
+                 read_texture_frame=ui.texture_frame if kind in ('manual', 'automatic') else None,
+                 read_calibration_frame=ui.calibration_frame if kind == 'calibration' else None)
         except Exception as exc:
             error=str(exc)
             if not self.capture_stop_event.is_set():self.preview_events.put(('capture_log','采集失败：'+error))
@@ -727,8 +1149,12 @@ class App(tk.Tk):
                     '--columns', self.calibration_columns.get(), '--rows', self.calibration_rows.get(),
                     '--marker-size', self.calibration_marker.get()]
             def done():
-                self.calibration.set(str(output))
-                self.marker_calibration.set(str(output))
+                metadata = json.loads(output.with_suffix('.json').read_text(encoding='utf-8'))
+                if metadata.get('camera') == 'usb':
+                    self.append(f'FHD C3 单机标定已保存到 {output}。海康重建参数保留原设置。')
+                else:
+                    self.calibration.set(str(output))
+                    self.marker_calibration.set(str(output))
             self.run('相机与投影仪标定', 'automatic_calibration.py', args, done)
         self.checked(go)
 

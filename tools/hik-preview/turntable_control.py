@@ -23,7 +23,8 @@ class Turntable:
                 'nominal_degrees_per_move': 360.0 * self.steps / 4096.0, 'angle_is_measured': False}
 
     def request(self, path, post=False):
-        req = Request(self.url + path, data=b'' if post else None, method='POST' if post else 'GET')
+        req = Request(self.url + path, data=b'' if post else None, method='POST' if post else 'GET',
+                      headers={'Cache-Control': 'no-cache'})
         with self.opener.open(req, timeout=3) as response:
             data = json.load(response)
         if not isinstance(data, dict) or not isinstance(data.get('running'), bool) or not isinstance(data.get('remaining'), int) or data.get('mode') not in ('idle', 'move', 'continuous'):
@@ -46,7 +47,8 @@ class Turntable:
 
     def move_and_wait(self, cancelled=lambda: False):
         self.check_idle()
-        deadline = time.monotonic() + self.timeout
+        commanded = time.monotonic()
+        deadline = commanded + self.timeout
         try:
             # Do not retry: if the response is lost, the first command may have moved it.
             status = self.request('/api/move?' + urlencode({'steps': self.steps, 'interval': self.interval_ms}), post=True)
@@ -68,12 +70,17 @@ class Turntable:
                     raise RuntimeError('Turntable status changed unexpectedly')
                 previous = status['remaining']
                 time.sleep(0.1)
-            until = time.monotonic() + self.settle_seconds
+            idle = time.monotonic()
+            if idle - commanded < (self.steps - 1) * self.interval_ms / 1000:
+                raise RuntimeError('Turntable reported idle before the commanded steps could finish')
+            until = idle + self.settle_seconds
             while time.monotonic() < until:
                 if cancelled():
                     raise RuntimeError('Stopped by user')
                 time.sleep(min(0.05, max(0, until-time.monotonic())))
             self.check_idle()
+            return {'controller_motion_seconds': idle - commanded,
+                    'settle_wait_seconds': time.monotonic() - idle}
         except Exception:
             self.stop()
             raise

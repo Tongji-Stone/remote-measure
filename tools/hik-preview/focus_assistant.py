@@ -1,19 +1,7 @@
 """Manual focus guide: camera texture then projected stripes, with audio feedback."""
 import argparse
-import threading
-import time
-import winsound
-
 from calibration_capture import *
-
-
-def focus_score(gray):
-    gray = np.asarray(gray, dtype=np.uint8)
-    if gray.size < 400:
-        return 0.0, 0.0
-    saturation = float(np.mean((gray <= 5) | (gray >= 250)))
-    score = float(cv2.Laplacian(cv2.GaussianBlur(gray, (3, 3), 0), cv2.CV_64F).var())
-    return score, saturation
+from camera_metrics import FocusTone, focus_score
 
 
 def main(ui=None, exposure_us=50000, gain_db=0, auto_exposure=False):
@@ -28,7 +16,8 @@ def main(ui=None, exposure_us=50000, gain_db=0, auto_exposure=False):
     screens=monitors()
     if len(screens)!=2:raise RuntimeError(f'Need two extended displays; found {len(screens)}')
     x,y,w,h=screens[1]
-    camera=MvCamera();created=opened=grabbing=False;saved={};mode=0;roi=None;best=0.0;history=[];busy=False;last_beep=0
+    camera=MvCamera();created=opened=grabbing=False;saved={};mode=0;roi=None;best=0.0;history=[]
+    tone = FocusTone() if ui is None else None
     check(MvCamera.MV_CC_Initialize(),'SDK initialization')
     try:
         devices=MV_CC_DEVICE_INFO_LIST();check(MvCamera.MV_CC_EnumDevices((MV_USB_DEVICE if ui else MV_USB_DEVICE|MV_GIGE_DEVICE),devices),'Enumerating cameras')
@@ -65,11 +54,23 @@ def main(ui=None, exposure_us=50000, gain_db=0, auto_exposure=False):
                 key=27 if ui.cancelled() else ui.poll_key()
                 if isinstance(key,tuple) and key[0]=='auto_roi':
                     try:
-                        result=run_roi_auto_exposure(camera,key[1],cancelled=ui.cancelled)
+                        ui.log('海康调焦测光图案：' + ('白光', '竖条纹', '横条纹')[mode])
+                        result=run_roi_auto_exposure(camera,key[1][0],cancelled=ui.cancelled,
+                                                     compensation_ev=key[1][1],diagnostic=ui.log)
                         best=0;history=[]
                     except Exception as exc:result=str(exc)
                     ui.roi_exposure_result(result)
                     key=-1
+                if isinstance(key, tuple) and key[0] == 'manual':
+                    try:
+                        set_float_parameter(camera, 'ExposureTime', key[1])
+                        best = 0.0
+                        history = []
+                        result = key[1]
+                    except Exception as exc:
+                        result = str(exc)
+                    ui.manual_exposure_result(result)
+                    key = -1
                 if isinstance(key,tuple) and key[0]=='roi':
                     _,x0,y0,x1,y1=key
                     ix0,iy0=max(0,min(W-1,int(x0*W))),max(0,min(H-1,int(y0*H)))
@@ -88,13 +89,8 @@ def main(ui=None, exposure_us=50000, gain_db=0, auto_exposure=False):
                 factor=2.0 if key in (ord('e'),ord('E')) else 0.5
                 target=max(current.fMin,min(current.fMax,current.fCurValue*factor));set_float_parameter(camera,'ExposureTime',target);best=0;history=[]
             if key in (ord('b'),ord('B')):best=0;history=[]
-            if time.monotonic()-last_beep>.4 and smoothed>1 and saturation<.8 and not busy:
-                frequency=int(350+900*np.clip(ratio,0,1));last_beep=time.monotonic();busy=True
-                def beep(freq):
-                    nonlocal busy
-                    try:winsound.Beep(freq,90)
-                    finally:busy=False
-                threading.Thread(target=beep,args=(frequency,),daemon=True).start()
+            if tone is not None:
+                tone.update(smoothed, ratio, saturation)
     finally:
         if grabbing:camera.MV_CC_StopGrabbing()
         if opened:

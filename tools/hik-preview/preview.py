@@ -7,6 +7,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+from camera_metrics import exposure_score, roi_brightness
 
 sdk = Path(os.environ.get('MVCAM_COMMON_RUNENV', r'C:\Program Files (x86)\MVS\Development'))
 sys.path.insert(0, str(sdk / 'Samples' / 'Python' / 'MvImport'))
@@ -60,7 +61,8 @@ def run_auto_exposure_once(camera, timeout_seconds=12, upper_limit_us=200000):
             check(camera.MV_CC_SetIntValueEx('AutoExposureTimeUpperLimit', old_upper), 'Restore auto exposure upper limit')
 
 
-def run_roi_auto_exposure(camera, roi, cancelled=lambda: False, max_steps=8, upper_limit_us=200000):
+def run_roi_auto_exposure(camera, roi, cancelled=lambda: False, max_steps=8, upper_limit_us=200000,
+                          compensation_ev=0.0, diagnostic=None):
     """Adjust manual exposure from ROI brightness; keep full camera resolution.
 
     roi is normalized (x0,y0,x1,y1). The 90th percentile targets bright
@@ -68,28 +70,98 @@ def run_roi_auto_exposure(camera, roi, cancelled=lambda: False, max_steps=8, upp
     Frames are discarded after each change to avoid metering a stale exposure.
     """
     from calibration_capture import get_frame
+    if not np.isfinite(compensation_ev) or not -2 <= compensation_ev <= 2:
+        raise ValueError('曝光补偿应在 -2 到 +2 EV 之间')
     if len(roi)!=4 or not (0<=roi[0]<roi[2]<=1 and 0<=roi[1]<roi[3]<=1):
         raise ValueError('测光区域无效')
     state=MVCC_FLOATVALUE();check(camera.MV_CC_GetFloatValue('ExposureTime',state),'Read exposure')
     original=float(state.fCurValue)
-    lower=max(float(state.fMin),15.0);upper=min(float(state.fMax),float(upper_limit_us))
+    camera_upper = float(state.fMax)
+    lower=max(float(state.fMin),15.0);upper=min(camera_upper,float(upper_limit_us))
     if upper<lower:raise ValueError('相机曝光范围无效')
+    if diagnostic is not None:
+        bounds = ', '.join(f'{value:.3f}' for value in roi)
+        diagnostic(f'海康框选测光：原曝光 {original:.0f} 微秒，实际测光上限 {upper:.0f} 微秒'
+                   f'（程序 {upper_limit_us:.0f}，相机 {camera_upper:.0f}），'
+                   f'补偿 {compensation_ev:+g} EV，归一化选区 [{bounds}]。')
     check(camera.MV_CC_SetEnumValue('ExposureAuto',0),'Disable automatic exposure')
     current=max(lower,min(upper,original));status='未达到目标';p90=0.0;clipped=0.0
+    best = None
+    attempted = []
+    no_usable_signal = False
+    restart_for_metering = False
+    actual = MVCC_FLOATVALUE()
+
+    def wait_for_new_stream(exposure_us):
+        deadline = time.monotonic() + .15 + exposure_us / 1e6
+        while time.monotonic() < deadline:
+            if cancelled():
+                raise InterruptedError('用户停止区域测光')
+            time.sleep(min(.02, max(0., deadline - time.monotonic())))
+
+    def measure_at(exposure, phase='search'):
+        nonlocal restart_for_metering
+        if cancelled():
+            raise InterruptedError('用户停止区域测光')
+        if restart_for_metering:
+            check(camera.MV_CC_StopGrabbing(), 'Stop stream for ROI exposure change')
+        try:
+            check(camera.MV_CC_SetFloatValue('ExposureTime', float(exposure)), 'Set ROI exposure')
+        finally:
+            if restart_for_metering:
+                check(camera.MV_CC_StartGrabbing(), 'Start clean stream for ROI metering')
+        check(camera.MV_CC_GetFloatValue('ExposureTime', actual), 'Read back ROI exposure')
+        expected = float(actual.fCurValue)
+        if restart_for_metering:
+            wait_for_new_stream(expected)
+        check(camera.MV_CC_ClearImageBuffer(), 'Clear buffer for ROI metering')
+        samples = []
+        for index in range(10):
+            if cancelled():
+                raise InterruptedError('用户停止区域测光')
+            timing = {}
+            frame = get_frame(camera, timing)
+            measured = timing['camera_exposure_us']
+            if index == 0:
+                continue  # One frame may already have been in flight.
+            matched = np.isfinite(measured) and measured > 0 and abs(measured - expected) <= max(2., expected * .02)
+            missing_metadata = not np.isfinite(measured) or measured <= 0
+            if missing_metadata and not restart_for_metering:
+                restart_for_metering = True
+                if diagnostic is not None:
+                    diagnostic('海康未提供逐帧曝光值，改用重启取流后测光。')
+                check(camera.MV_CC_StopGrabbing(), 'Discard stream with unverified exposure')
+                check(camera.MV_CC_StartGrabbing(), 'Start clean stream for ROI metering')
+                wait_for_new_stream(expected)
+                check(camera.MV_CC_ClearImageBuffer(), 'Clear buffer after starting clean stream')
+                samples.clear()
+                continue
+            if matched or missing_metadata and restart_for_metering:
+                p90, clipped = roi_brightness(frame, roi)
+                p99_frame = float(np.percentile(frame[::8, ::8], 99))
+                samples.append((p90, clipped, p99_frame, measured if matched else None))
+                if len(samples) == 2:
+                    p90, clipped, p99_frame = np.median([sample[:3] for sample in samples], axis=0)
+                    frame_exposures = [sample[3] for sample in samples]
+                    attempted.append({'phase': phase, 'requested_us': exposure, 'actual_us': expected,
+                                      'frame_exposure_us': frame_exposures,
+                                      'p90': float(p90), 'clipped': float(clipped), 'frame_p99': float(p99_frame)})
+                    if diagnostic is not None:
+                        label = {'search': f'试拍 {len(attempted)}', 'recheck': '复测', 'compensation': '补偿后复测'}[phase]
+                        frame_values = '/'.join(f'{value:.0f}' if value is not None else '未知' for value in frame_exposures)
+                        diagnostic(f'海康{label}：请求 {exposure:.0f}，回读 {expected:.0f}，'
+                                   f'帧曝光 {frame_values} 微秒。选区 P90={p90:.1f}，'
+                                   f'全图 P99={p99_frame:.1f}，选区过亮 {clipped:.1%}。')
+                    return float(p90), float(clipped)
+        raise RuntimeError('曝光已写入，但连续取帧未确认新曝光')
+
     try:
         for iteration in range(max_steps):
-            if cancelled():raise InterruptedError('用户停止区域测光')
-            check(camera.MV_CC_SetFloatValue('ExposureTime',float(current)),'Set ROI exposure')
-            check(camera.MV_CC_ClearImageBuffer(),'Clear buffer for ROI metering')
-            get_frame(camera);img=get_frame(camera)
-            h,w=img.shape[:2];x0,y0,x1,y1=roi
-            x0=max(0,min(w-1,int(x0*w)));x1=max(x0+1,min(w,int(x1*w)))
-            y0=max(0,min(h-1,int(y0*h)));y1=max(y0+1,min(h,int(y1*h)))
-            part=img[y0:y1,x0:x1]
-            if part.size<400:raise ValueError('测光框过小，请框住更大的物体区域')
-            # Subsampling bounds CPU work while preserving spatial coverage.
-            sample=part[::max(1,part.shape[0]//400),::max(1,part.shape[1]//400)]
-            p90=float(np.percentile(sample,90));clipped=float(np.mean(sample>=250))
+            p90,clipped=measure_at(current)
+            current = float(actual.fCurValue)
+            sample = (exposure_score(p90, clipped), -current if p90 < 165 and clipped <= .05 else 0., current)
+            if best is None or sample < best:
+                best = sample
             if 165<=p90<=210 and clipped<=0.05:
                 status='已达到目标';break
             if clipped>0.05:
@@ -98,15 +170,36 @@ def run_roi_auto_exposure(camera, roi, cancelled=lambda: False, max_steps=8, upp
                 factor=max(0.35,min(4.0,190.0/max(p90,1.0)))
             target=max(lower,min(upper,current*factor))
             if abs(target-current)<max(1.0,current*0.02):
-                status='达到曝光上限' if current>=upper*.98 and p90<165 else '达到曝光下限或无法继续调整'
+                status='达到有效曝光上限，选区仍偏暗' if current>=upper*.98 and p90<165 else '达到曝光下限或无法继续调整'
                 break
             if iteration==max_steps-1:
                 status='达到迭代次数，请检查画面';break
             current=target
-        actual=MVCC_FLOATVALUE();check(camera.MV_CC_GetFloatValue('ExposureTime',actual),'Read ROI exposure')
-        return {'exposure_us':float(actual.fCurValue),'p90':p90,'clipped':clipped,'status':status,'steps':iteration+1}
+        if status != '已达到目标':
+            _, _, best_exposure = best
+            # At essentially black levels, small differences can reflect noise.
+            no_usable_signal = max(sample['p90'] for sample in attempted) <= 16
+            if no_usable_signal:
+                best_exposure = max(sample['actual_us'] for sample in attempted)
+            if best_exposure != current:
+                p90,clipped=measure_at(best_exposure, 'recheck')
+                if status.startswith('达到有效曝光上限'):
+                    status='曾试至有效曝光上限，已回退到实测较优曝光'
+        if no_usable_signal:
+            status='选区信号过低，测光未达标，暂留本轮最长曝光供排查'
+        elif compensation_ev:
+            adjusted=max(lower,min(upper,float(actual.fCurValue)*(2.0**compensation_ev)))
+            p90,clipped=measure_at(adjusted, 'compensation')
+            status=f'已应用 {compensation_ev:+g} EV 曝光补偿'
+            if clipped>0.05:status+='；警告：选区过亮像素超过 5%'
+            if adjusted>=upper*.999 and compensation_ev>0:status+='；已达到曝光上限'
+        return {'exposure_us':float(actual.fCurValue),'p90':p90,'clipped':clipped,'status':status,'steps':iteration+1,
+                'compensation_ev':compensation_ev, 'effective_upper_us':upper, 'camera_upper_us':camera_upper,
+                'program_upper_us':float(upper_limit_us), 'roi':roi, 'attempts':attempted,
+                'no_usable_signal':no_usable_signal}
     except Exception:
         camera.MV_CC_SetFloatValue('ExposureTime',original)
+        camera.MV_CC_ClearImageBuffer()
         raise
 
 
