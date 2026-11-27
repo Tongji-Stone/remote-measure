@@ -1,0 +1,270 @@
+{
+  "G01-2DGS-TSDF": {
+    "status": "scored",
+    "vertices": 95910,
+    "triangles": 191820,
+    "boundary": 0,
+    "nonmanifold_edges": 0,
+    "orientation_errors": 0,
+    "vertex_manifold": true,
+    "degenerate": 0,
+    "components": 1,
+    "chi": [
+      0
+    ],
+    "component_signed_mm3": [
+      21657.43013489803
+    ],
+    "observed_P50_mm": 0.3488715589046478,
+    "observed_P95_mm": 1.2896734476089478,
+    "reference_P95_mm": 1.2896734476089478,
+    "unsupported_fraction_2mm": 0.0,
+    "below_plate_area_fraction": 0.0077777777777777776,
+    "min_z_mm": -1.543913390040398,
+    "plate_cap_area_mm2": 3.060748628098405,
+    "ray_hit_fraction": 0.9965197215777262,
+    "ray_front_1p5_fraction": 0.07043073341094296,
+    "ray_abs_P95_mm": 1.6445767218555303,
+    "volume_ml": null,
+    "self_intersections": true,
+    "column_checks": [],
+    "voxel_mm": 0.47,
+    "elapsed_s": 15.466068292036653
+  },
+  "G01-coarse": {
+    "status": "scored",
+    "vertices": 47280,
+    "triangles": 94556,
+    "boundary": 0,
+    "nonmanifold_edges": 0,
+    "orientation_errors": 0,
+    "vertex_manifold": true,
+    "degenerate": 0,
+    "components": 1,
+    "chi": [
+      2
+    ],
+    "component_signed_mm3": [
+      21661.385795364866
+    ],
+    "observed_P50_mm": 0.3659551739692688,
+    "observed_P95_mm": 1.312613606452942,
+    "reference_P95_mm": 1.312613606452942,
+    "unsupported_fraction_2mm": 0.0,
+    "below_plate_area_fraction": 0.00811111111111111,
+    "min_z_mm": -1.4211762738227844,
+    "plate_cap_area_mm2": 1.8931003339881562,
+    "ray_hit_fraction": 0.9965197215777262,
+    "ray_front_1p5_fraction": 0.06577415599534342,
+    "ray_abs_P95_mm": 1.625831471445023,
+    "volume_ml": null,
+    "self_intersections": true,
+    "column_checks": [],
+    "voxel_mm": 0.66,
+    "elapsed_s": 4.949299791012891
+  },
+  "G02-2DGS-closed": {
+    "status": "scored",
+    "vertices": 38988,
+    "triangles": 77972,
+    "boundary": 0,
+    "nonmanifold_edges": 0,
+    "orientation_errors": 0,
+    "vertex_manifold": true,
+    "degenerate": 0,
+    "components": 1,
+    "chi": [
+      2
+    ],
+    "component_signed_mm3": [
+      22261.125664288982
+    ],
+    "observed_P50_mm": 0.4847264289855957,
+    "observed_P95_mm": 1.5978657007217407,
+    "reference_P95_mm": 1.5978657007217407,
+    "unsupported_fraction_2mm": 0.001,
+    "below_plate_area_fraction": 0.0,
+    "min_z_mm": 0.0,
+    "plate_cap_area_mm2": 679.8278984205308,
+    "ray_hit_fraction": 0.9959396751740139,
+    "ray_front_1p5_fraction": 0.128130460104834,
+    "ray_abs_P95_mm": 2.238677163142221,
+    "volume_ml": 22.261125664288983,
+    "self_intersections": false,
+    "column_checks": [
+      {
+        "pitch_mm": 0.8,
+        "axis": "x",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22209.0904296875,
+        "odd_rays": 0,
+        "hit_rays": 1384,
+        "multi_interval_rays": 131,
+        "relative_difference": -0.002337493412786218
+      },
+      {
+        "pitch_mm": 0.8,
+        "axis": "y",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22212.051181182862,
+        "odd_rays": 0,
+        "hit_rays": 1422,
+        "multi_interval_rays": 99,
+        "relative_difference": -0.002204492434308647
+      },
+      {
+        "pitch_mm": 0.8,
+        "axis": "z",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22264.380933685305,
+        "odd_rays": 0,
+        "hit_rays": 1762,
+        "multi_interval_rays": 12,
+        "relative_difference": 0.00014623112260414572
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "x",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22224.495803260805,
+        "odd_rays": 0,
+        "hit_rays": 5529,
+        "multi_interval_rays": 517,
+        "relative_difference": -0.0016454631082263305
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "y",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22221.491375083926,
+        "odd_rays": 0,
+        "hit_rays": 5705,
+        "multi_interval_rays": 349,
+        "relative_difference": -0.0017804261025594625
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "z",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22258.568131256106,
+        "odd_rays": 0,
+        "hit_rays": 7026,
+        "multi_interval_rays": 41,
+        "relative_difference": -0.0001148878574895873
+      }
+    ],
+    "splat_surface_support": 95075,
+    "fallback_measured_points": 2360,
+    "contact_guides": 564,
+    "closure_grid_mm": 0.67,
+    "elapsed_s": 10.447442666976713
+  },
+  "G02-coarse": {
+    "status": "scored",
+    "vertices": 26951,
+    "triangles": 53898,
+    "boundary": 0,
+    "nonmanifold_edges": 0,
+    "orientation_errors": 0,
+    "vertex_manifold": true,
+    "degenerate": 0,
+    "components": 1,
+    "chi": [
+      2
+    ],
+    "component_signed_mm3": [
+      22283.814662215475
+    ],
+    "observed_P50_mm": 0.46865370869636536,
+    "observed_P95_mm": 1.5431764125823975,
+    "reference_P95_mm": 1.5431764125823975,
+    "unsupported_fraction_2mm": 0.0012222222222222222,
+    "below_plate_area_fraction": 0.0,
+    "min_z_mm": 0.0,
+    "plate_cap_area_mm2": 668.063810616397,
+    "ray_hit_fraction": 0.9982598607888631,
+    "ray_front_1p5_fraction": 0.13596746077861707,
+    "ray_abs_P95_mm": 2.3423825880993263,
+    "volume_ml": 22.283814662215473,
+    "self_intersections": false,
+    "column_checks": [
+      {
+        "pitch_mm": 0.8,
+        "axis": "x",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22197.765326843262,
+        "odd_rays": 0,
+        "hit_rays": 1389,
+        "multi_interval_rays": 156,
+        "relative_difference": -0.0038615172795399832
+      },
+      {
+        "pitch_mm": 0.8,
+        "axis": "y",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22166.98929992676,
+        "odd_rays": 0,
+        "hit_rays": 1426,
+        "multi_interval_rays": 118,
+        "relative_difference": -0.0052426105700297265
+      },
+      {
+        "pitch_mm": 0.8,
+        "axis": "z",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22266.48381645203,
+        "odd_rays": 0,
+        "hit_rays": 1761,
+        "multi_interval_rays": 19,
+        "relative_difference": -0.0007777324495895632
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "x",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22239.528728027348,
+        "odd_rays": 0,
+        "hit_rays": 5580,
+        "multi_interval_rays": 651,
+        "relative_difference": -0.0019873587560939043
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "y",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22241.700855216983,
+        "odd_rays": 0,
+        "hit_rays": 5747,
+        "multi_interval_rays": 463,
+        "relative_difference": -0.0018898832016360778
+      },
+      {
+        "pitch_mm": 0.4,
+        "axis": "z",
+        "offset_a": 0.31,
+        "offset_b": 0.62,
+        "column_volume_mm3": 22295.1570816803,
+        "odd_rays": 0,
+        "hit_rays": 7071,
+        "multi_interval_rays": 87,
+        "relative_difference": 0.0005089981063277627
+      }
+    ],
+    "splat_surface_support": 95075,
+    "fallback_measured_points": 2360,
+    "contact_guides": 564,
+    "closure_grid_mm": 0.82,
+    "elapsed_s": 3.7151081250049174
+  }
+}

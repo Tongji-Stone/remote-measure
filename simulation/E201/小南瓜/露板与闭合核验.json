@@ -1,0 +1,22 @@
+{
+  "S04-GuideEnvelope": {
+    "nearby_exposed_board_points": 3391,
+    "board_hits_cap": 0,
+    "board_hits_cap_fraction": 0.0
+  },
+  "S08-PrecisePoisson": {
+    "nearby_exposed_board_points": 3438,
+    "board_hits_cap": 0,
+    "board_hits_cap_fraction": 0.0
+  },
+  "G02-2DGS-closed": {
+    "nearby_exposed_board_points": 3697,
+    "board_hits_cap": 0,
+    "board_hits_cap_fraction": 0.0
+  },
+  "G03-2DGS-anchored": {
+    "nearby_exposed_board_points": 3508,
+    "board_hits_cap": 0,
+    "board_hits_cap_fraction": 0.0
+  }
+}
