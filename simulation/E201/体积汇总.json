@@ -1,0 +1,66 @@
+{
+  "小南瓜": {
+    "method": "S08-PrecisePoisson",
+    "mesh": "小南瓜/S08-PrecisePoisson.ply",
+    "volume_ml": 20.00698012874142,
+    "direct_2DGS_Mesh": null,
+    "gaussian_method": "G03-2DGS-anchored",
+    "gaussian_anchored_ml": 20.426349576719325,
+    "fine_coarse_volume_drift_percent": 0.04935695290428921,
+    "finer_two_family_range_ml": [
+      20.00698012874142,
+      20.426349576719325
+    ],
+    "volume_estimate_sensitivity_per_half_mm_ml": 0.03301981716915007,
+    "grid_column_max_relative_difference": 0.00031660335508920667
+  },
+  "坐着人偶": {
+    "method": "S08-PrecisePoisson",
+    "mesh": "坐着人偶/S08-PrecisePoisson.ply",
+    "volume_ml": 44.62522876641372,
+    "direct_2DGS_Mesh": null,
+    "gaussian_method": "G03-2DGS-anchored",
+    "gaussian_anchored_ml": 45.44316247961907,
+    "fine_coarse_volume_drift_percent": 0.04428734392585287,
+    "finer_two_family_range_ml": [
+      44.62522876641372,
+      45.44316247961907
+    ],
+    "volume_estimate_sensitivity_per_half_mm_ml": 0.1592751652668505,
+    "grid_column_max_relative_difference": 0.0003167037707513254
+  },
+  "三棱锥_大面坐地": {
+    "method": "S09-ExposedPlate",
+    "mesh": "三棱锥_大面坐地/S09-ExposedPlate.ply",
+    "volume_ml": 131.47098470538302,
+    "direct_2DGS_Mesh": null,
+    "gaussian_method": "G03-2DGS-anchored",
+    "gaussian_anchored_ml": 132.26926723021347,
+    "fine_coarse_volume_drift_percent": 0.007396562786010641,
+    "finer_two_family_range_ml": [
+      131.47098470538302,
+      132.26926723021347
+    ],
+    "volume_estimate_sensitivity_per_half_mm_ml": 3.1708970967469146,
+    "grid_column_max_relative_difference": 0.002354424613054018,
+    "exposed_plate_alternative_ml": 131.47098470538302,
+    "precise_poisson_before_exposed_plate_ml": 131.50548719908252
+  },
+  "三棱锥_小面坐地": {
+    "method": "S09-ExposedPlate",
+    "mesh": "三棱锥_小面坐地/S09-ExposedPlate.ply",
+    "volume_ml": 125.88359926228343,
+    "direct_2DGS_Mesh": null,
+    "gaussian_method": "G03-2DGS-anchored",
+    "gaussian_anchored_ml": 126.7367101617515,
+    "fine_coarse_volume_drift_percent": 0.012584748548061242,
+    "finer_two_family_range_ml": [
+      125.88359926228343,
+      126.7367101617515
+    ],
+    "volume_estimate_sensitivity_per_half_mm_ml": 1.7588412809972718,
+    "grid_column_max_relative_difference": 0.0013558257562231724,
+    "exposed_plate_alternative_ml": 125.88359926228343,
+    "precise_poisson_before_exposed_plate_ml": 125.8873766122833
+  }
+}

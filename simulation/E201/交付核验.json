@@ -1,0 +1,92 @@
+{
+  "analytic_renderer": {
+    "front_depth_mm": 29,
+    "center_opacity": 0.9099999666213989,
+    "weighted_ray_distortion_mm": 1.0650891065597534
+  },
+  "spatial_intersection_fixture": [
+    0,
+    180
+  ],
+  "measured": {
+    "小南瓜": [
+      {
+        "mesh": "S08-PrecisePoisson",
+        "volume_ml": 20.00698012874142,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      },
+      {
+        "mesh": "G03-2DGS-anchored",
+        "volume_ml": 20.426349576719325,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      }
+    ],
+    "坐着人偶": [
+      {
+        "mesh": "S08-PrecisePoisson",
+        "volume_ml": 44.62522876641372,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      },
+      {
+        "mesh": "G03-2DGS-anchored",
+        "volume_ml": 45.44316247961907,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      }
+    ],
+    "三棱锥_大面坐地": [
+      {
+        "mesh": "S09-ExposedPlate",
+        "volume_ml": 131.47098470538302,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": [
+          {
+            "original_odd": 1,
+            "shifted": {
+              "pitch_mm": 0.8,
+              "axis": "z",
+              "offset_a": 0.57,
+              "offset_b": 0.29,
+              "column_volume_mm3": 131466.3615766907,
+              "odd_rays": 0,
+              "hit_rays": 10243,
+              "multi_interval_rays": 144
+            }
+          }
+        ]
+      },
+      {
+        "mesh": "G03-2DGS-anchored",
+        "volume_ml": 132.26926723021347,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      }
+    ],
+    "三棱锥_小面坐地": [
+      {
+        "mesh": "S09-ExposedPlate",
+        "volume_ml": 125.88359926228343,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      },
+      {
+        "mesh": "G03-2DGS-anchored",
+        "volume_ml": 126.7367101617515,
+        "topology": "closed and orientable",
+        "components": 1,
+        "shifted_coarse_ray_checks": []
+      }
+    ]
+  },
+  "methods_in_csv": 64
+}

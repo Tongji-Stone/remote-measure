@@ -1,0 +1,134 @@
+[traditional.log]
+小南瓜 S01-Poisson surface 101024 0.78s
+[1;33m[Open3D WARNING] Ignoring attribute 'normals' for TensorMap with primary key 'indices'[0;m
+小南瓜 S02-BPA surface 11847 5.54s
+小南瓜 S03-Hull surface 534 0.01s
+小南瓜 S05-GuidedPoisson surface 101060 0.78s
+小南瓜 S04-GuideEnvelope surface 76554 4.48s
+小南瓜 S07-PolarEnvelope surface 76538 3.76s
+小南瓜 S06-RawTSDF surface 92880 0.26s
+小南瓜 S01-Poisson audit
+小南瓜 S01-Poisson None 0.9336808
+小南瓜 S01-visible audit
+小南瓜 S01-visible None 0.9560021
+小南瓜 S02-BPA audit
+小南瓜 S02-BPA None 1.5630312
+小南瓜 S03-Hull audit
+小南瓜 S03-Hull 27.522911715338257 4.539308
+小南瓜 S05-GuidedPoisson audit
+小南瓜 S05-GuidedPoisson None 0.93614507
+小南瓜 S04-GuideEnvelope audit
+小南瓜 S04-GuideEnvelope 20.865222083364696 1.26586
+小南瓜 S07-PolarEnvelope audit
+小南瓜 S07-PolarEnvelope 20.852037186616133 1.2628654
+小南瓜 S06-RawTSDF audit
+小南瓜 S06-RawTSDF None 1.4553266
+坐着人偶 S01-Poisson surface 83648 0.69s
+[1;33m[Open3D WARNING] Ignoring attribute 'normals' for TensorMap with primary key 'indices'[0;m
+坐着人偶 S02-BPA surface 23505 15.82s
+坐着人偶 S03-Hull surface 714 0.01s
+坐着人偶 S05-GuidedPoisson surface 83772 0.69s
+坐着人偶 S04-GuideEnvelope surface 162906 43.88s
+坐着人偶 S06-RawTSDF surface 188392 0.65s
+坐着人偶 S01-Poisson audit
+坐着人偶 S01-Poisson None 0.95470786
+坐着人偶 S01-visible audit
+坐着人偶 S01-visible None 1.0142012
+坐着人偶 S02-BPA audit
+坐着人偶 S02-BPA None 1.6896459
+坐着人偶 S03-Hull audit
+坐着人偶 S03-Hull 75.30095337217028 11.699941
+坐着人偶 S05-GuidedPoisson audit
+坐着人偶 S05-GuidedPoisson None 0.9544203
+坐着人偶 S04-GuideEnvelope audit
+坐着人偶 S04-GuideEnvelope 45.18162924839798 1.059262
+坐着人偶 S06-RawTSDF audit
+坐着人偶 S06-RawTSDF None 1.3737009
+
+[complete.log]
+小南瓜 G01-2DGS-TSDF 191820 audit
+小南瓜 G01-2DGS-TSDF None
+小南瓜 G01-coarse 94556 audit
+小南瓜 G01-coarse None
+小南瓜 G02-2DGS-closed 77972 audit
+小南瓜 G02-2DGS-closed 22.261125664288983
+小南瓜 G02-coarse 53898 audit
+小南瓜 G02-coarse 22.283814662215473
+坐着人偶 G01-2DGS-TSDF 399118 audit
+坐着人偶 G01-2DGS-TSDF None
+坐着人偶 G01-coarse 196380 audit
+坐着人偶 G01-coarse None
+坐着人偶 G02-2DGS-closed 170072 audit
+坐着人偶 G02-2DGS-closed 48.86237201114302
+坐着人偶 G02-coarse 112396 audit
+坐着人偶 G02-coarse 48.901802260445905
+
+[topology-final.log]
+小南瓜 S08-PrecisePoisson 20.00698012874142 0
+小南瓜 S08-coarse 19.99711016449531 0
+小南瓜 G03-2DGS-anchored 20.426349576719325 0
+小南瓜 G03-coarse 20.417612083873117 0
+坐着人偶 S08-PrecisePoisson 44.62522876641372 0
+坐着人偶 S08-coarse 44.605474186650916 0
+坐着人偶 G03-2DGS-anchored 45.44316247961907 0
+坐着人偶 G03-coarse 45.42683433721659 0
+
+[control-final.log]
+球 9.202772079915702 11911
+球 [('S01-Poisson', None, None), ('S04-GuideEnvelope', 10.078211028681892, 0.09512774424531978), ('G01-2DGS-TSDF', None, None), ('G02-2DGS-closed', 9.702565223171232, 0.05430897765536202), ('S08-PrecisePoisson', 9.41904178127, 0.023500495228637508), ('G03-2DGS-anchored', 9.444450159762718, 0.026261443589856936)]
+双球相交 15.529677884857747 17264
+双球相交 [('S01-Poisson', None, None), ('S04-GuideEnvelope', 17.10819273733367, np.float64(0.10164504789987028)), ('G01-2DGS-TSDF', None, None), ('G02-2DGS-closed', 16.450953990984377, np.float64(0.059323581142975534)), ('S08-PrecisePoisson', 15.70395360223223, np.float64(0.01122210767451981)), ('G03-2DGS-anchored', 15.774009818199449, np.float64(0.015733226094788444))]
+
+[plate-witness.log]
+小南瓜 {'S04-GuideEnvelope': {'nearby_exposed_board_points': 3391, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}, 'S08-PrecisePoisson': {'nearby_exposed_board_points': 3438, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}, 'G02-2DGS-closed': {'nearby_exposed_board_points': 3697, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}, 'G03-2DGS-anchored': {'nearby_exposed_board_points': 3508, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}}
+坐着人偶 {'S04-GuideEnvelope': {'nearby_exposed_board_points': 5783, 'board_hits_cap': 44, 'board_hits_cap_fraction': 0.00760850769496801}, 'S08-PrecisePoisson': {'nearby_exposed_board_points': 5764, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}, 'G02-2DGS-closed': {'nearby_exposed_board_points': 6011, 'board_hits_cap': 89, 'board_hits_cap_fraction': 0.014806188654134087}, 'G03-2DGS-anchored': {'nearby_exposed_board_points': 5841, 'board_hits_cap': 0, 'board_hits_cap_fraction': 0.0}}
+
+[三棱锥 大面-final.log]
+三棱锥_大面坐地 S01-Poisson surface 44381 0.44s
+[1;33m[Open3D WARNING] Ignoring attribute 'normals' for TensorMap with primary key 'indices'[0;m
+三棱锥_大面坐地 S02-BPA surface 21267 0.40s
+三棱锥_大面坐地 S03-Hull surface 304 0.02s
+三棱锥_大面坐地 S05-GuidedPoisson surface 49716 0.63s
+三棱锥_大面坐地 S05-Planes surface empty 0.07s
+三棱锥_大面坐地 S04-GuideEnvelope surface 274826 9.23s
+三棱锥_大面坐地 S06-RawTSDF surface 242424 1.68s
+三棱锥_大面坐地 G01-2DGS-TSDF 570434 audit
+三棱锥_大面坐地 G01-2DGS-TSDF None
+三棱锥_大面坐地 G01-coarse 282668 audit
+三棱锥_大面坐地 G01-coarse None
+三棱锥_大面坐地 G02-2DGS-closed 280422 audit
+三棱锥_大面坐地 G02-2DGS-closed 137.28525384161873
+三棱锥_大面坐地 G02-coarse 186222 audit
+三棱锥_大面坐地 G02-coarse 137.30818096243792
+三棱锥_大面坐地 S08-PrecisePoisson 131.50548719908252 0.9714849 0.014551526717557252
+三棱锥_大面坐地 S08-coarse 131.4957610325568 0.97582924 0.014558472553699284
+三棱锥_大面坐地 G03-2DGS-anchored 132.26926723021347 0.98873794 0.017393376221110316
+三棱锥_大面坐地 G03-coarse 132.25941256353576 0.99240506 0.017397521448999045
+
+[三棱锥 小面-final.log]
+三棱锥_小面坐地 S01-Poisson surface 48438 0.52s
+[1;33m[Open3D WARNING] Ignoring attribute 'normals' for TensorMap with primary key 'indices'[0;m
+三棱锥_小面坐地 S02-BPA surface 25396 0.32s
+三棱锥_小面坐地 S03-Hull surface 284 0.02s
+三棱锥_小面坐地 S05-GuidedPoisson surface 48978 0.63s
+三棱锥_小面坐地 S05-Planes surface 65536 0.20s
+三棱锥_小面坐地 S04-GuideEnvelope surface 320154 10.76s
+三棱锥_小面坐地 S06-RawTSDF surface 327590 1.69s
+三棱锥_小面坐地 G01-2DGS-TSDF 708884 audit
+三棱锥_小面坐地 G01-2DGS-TSDF None
+三棱锥_小面坐地 G01-coarse 352930 audit
+三棱锥_小面坐地 G01-coarse None
+三棱锥_小面坐地 G02-2DGS-closed 330532 audit
+三棱锥_小面坐地 G02-2DGS-closed 132.49274510180976
+三棱锥_小面坐地 G02-coarse 219566 audit
+三棱锥_小面坐地 G02-coarse 132.5651656617734
+三棱锥_小面坐地 S08-PrecisePoisson 125.8873766122833 0.97102326 0.01657226767358926
+三棱锥_小面坐地 S08-coarse 125.87153599598462 0.97729343 0.01657922350472193
+三棱锥_小面坐地 G03-2DGS-anchored 126.7367101617515 0.9823394 0.018425460636515914
+三棱锥_小面坐地 G03-coarse 126.71970367550821 0.98590904 0.018219895287958116
+
+[三棱锥 plate-sensitivity.log]
+三棱锥_大面坐地 {'S04-GuideEnvelope': {'nearby_exposed_board_points': 22000, 'board_hits_cap': 1158, 'board_hits_cap_fraction': 0.052636363636363634}, 'S08-PrecisePoisson': {'nearby_exposed_board_points': 21972, 'board_hits_cap': 1153, 'board_hits_cap_fraction': 0.05247587839067905}, 'S09-ExposedPlate': {'nearby_exposed_board_points': 21972, 'board_hits_cap': 90, 'board_hits_cap_fraction': 0.004096122337520481}, 'G02-2DGS-closed': {'nearby_exposed_board_points': 22554, 'board_hits_cap': 492, 'board_hits_cap_fraction': 0.02181431231710561}, 'G03-2DGS-anchored': {'nearby_exposed_board_points': 22089, 'board_hits_cap': 1176, 'board_hits_cap_fraction': 0.053239168817058265}}
+三棱锥_大面坐地 131.47098470538302 0.9714849 0
+三棱锥_小面坐地 {'S04-GuideEnvelope': {'nearby_exposed_board_points': 16866, 'board_hits_cap': 143, 'board_hits_cap_fraction': 0.00847859599193644}, 'S05-Planes': {'nearby_exposed_board_points': 25535, 'board_hits_cap': 1536, 'board_hits_cap_fraction': 0.06015273154493832}, 'S08-PrecisePoisson': {'nearby_exposed_board_points': 16881, 'board_hits_cap': 28, 'board_hits_cap_fraction': 0.0016586695101001125}, 'S09-ExposedPlate': {'nearby_exposed_board_points': 16881, 'board_hits_cap': 1, 'board_hits_cap_fraction': 5.9238196789289736e-05}, 'G02-2DGS-closed': {'nearby_exposed_board_points': 17471, 'board_hits_cap': 161, 'board_hits_cap_fraction': 0.009215271020548338}, 'G03-2DGS-anchored': {'nearby_exposed_board_points': 16834, 'board_hits_cap': 20, 'board_hits_cap_fraction': 0.001188071759534276}}
+三棱锥_小面坐地 125.88359926228343 0.97103417 0
