@@ -1,0 +1,18 @@
+{
+  "scan": "scan_20261127_022214_655449_三棱锥_小面坐地",
+  "matched_links": 39,
+  "three_view_tracks": 1,
+  "leave_camera_out_pass": 1,
+  "matching_active_surface": 1,
+  "supplement_candidates": 0,
+  "supplement_low_0_to_5mm": 0,
+  "applied": false,
+  "novelty_band_active_mm": [
+    1.4,
+    7.0
+  ],
+  "height_mm": [
+    0.55,
+    12.0
+  ]
+}
