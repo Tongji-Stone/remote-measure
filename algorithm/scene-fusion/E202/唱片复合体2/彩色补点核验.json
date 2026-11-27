@@ -1,0 +1,18 @@
+{
+  "scan": "scan_20261127_002030_552296_唱片复合体2",
+  "matched_links": 66,
+  "three_view_tracks": 8,
+  "leave_camera_out_pass": 2,
+  "matching_active_surface": 2,
+  "supplement_candidates": 0,
+  "supplement_low_0_to_5mm": 0,
+  "applied": false,
+  "novelty_band_active_mm": [
+    1.4,
+    7.0
+  ],
+  "height_mm": [
+    0.55,
+    12.0
+  ]
+}

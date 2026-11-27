@@ -1,0 +1,18 @@
+{
+  "scan": "scan_20261127_022943_505226_坐着人偶_正视角",
+  "matched_links": 110,
+  "three_view_tracks": 8,
+  "leave_camera_out_pass": 6,
+  "matching_active_surface": 6,
+  "supplement_candidates": 0,
+  "supplement_low_0_to_5mm": 0,
+  "applied": false,
+  "novelty_band_active_mm": [
+    1.4,
+    7.0
+  ],
+  "height_mm": [
+    0.55,
+    12.0
+  ]
+}
