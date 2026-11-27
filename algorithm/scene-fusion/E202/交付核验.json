@@ -1,0 +1,19 @@
+{
+  "scans": 10,
+  "stations": 100,
+  "measured_ply_files": 240,
+  "E201_points": 6202375,
+  "E202_points": 1923308,
+  "E201_rgb_points": 2064672,
+  "E202_rgb_points": 1553936,
+  "rejected_verified_marker_points": 777834,
+  "E202_near_bottom_points": 55038,
+  "RGB_independent_supplement_points": 0,
+  "placement_supplements": [
+    {
+      "object": "坐着人偶",
+      "added_points": 10020,
+      "newly_observed_lower_points": 7313
+    }
+  ]
+}
