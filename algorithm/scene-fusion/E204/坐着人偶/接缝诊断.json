@@ -1,0 +1,18 @@
+{
+  "height_band_mm": [
+    18.0,
+    31.0
+  ],
+  "reference_measured_points": 33008,
+  "before_p95_mm": 0.7381385250741564,
+  "after_p95_mm": 0.4475562356801446,
+  "before_fraction_within_half_mm": 0.8115608337372758,
+  "after_fraction_within_half_mm": 0.9769449830344159,
+  "cross_source_pair_count": 1284,
+  "cross_source_pair_distance_mm": [
+    0.78,
+    1.45
+  ],
+  "cross_source_rgb_jump_before_median": 34.16666666666667,
+  "cross_source_rgb_jump_after_median": 14.333333333333334
+}

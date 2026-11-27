@@ -1,0 +1,18 @@
+{
+  "scan": "scan_20261127_015016_936547_小南瓜_正视角",
+  "matched_links": 52,
+  "three_view_tracks": 6,
+  "leave_camera_out_pass": 0,
+  "matching_active_surface": 0,
+  "supplement_candidates": 0,
+  "supplement_low_0_to_5mm": 0,
+  "applied": false,
+  "novelty_band_active_mm": [
+    1.4,
+    7.0
+  ],
+  "height_mm": [
+    0.55,
+    12.0
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "signed_two_group_bias_mm": 0.3,
+  "bias_noise_sigma_mm": 0.12,
+  "biased_sphere": [
+    {
+      "method": "B01-TSDF",
+      "scored_points": 9766,
+      "absolute_radial_p95_mm": 0.15502044761208067,
+      "absolute_radial_median_mm": 0.053652508540091404
+    },
+    {
+      "method": "B02-MLS",
+      "scored_points": 11788,
+      "absolute_radial_p95_mm": 0.16835180263131083,
+      "absolute_radial_median_mm": 0.07449342348632282
+    },
+    {
+      "method": "B03-Hybrid",
+      "scored_points": 11832,
+      "absolute_radial_p95_mm": 0.15597361101547674,
+      "absolute_radial_median_mm": 0.060511347216086975
+    },
+    {
+      "method": "B04-Clearance",
+      "scored_points": 11832,
+      "absolute_radial_p95_mm": 0.15597361101547674,
+      "absolute_radial_median_mm": 0.060511347216086975
+    },
+    {
+      "method": "B05-Anchor",
+      "scored_points": 9666,
+      "absolute_radial_p95_mm": 0.213329697125471,
+      "absolute_radial_median_mm": 0.08479848963663006
+    },
+    {
+      "method": "B00-measured",
+      "scored_points": 20861,
+      "absolute_radial_p95_mm": 0.4161229442702048,
+      "absolute_radial_median_mm": 0.2055956591611512
+    }
+  ],
+  "groove_widths": [
+    {
+      "width_mm": 1.2,
+      "method": "B01-TSDF",
+      "false_free_points": 40,
+      "output_points": 7529
+    },
+    {
+      "width_mm": 1.2,
+      "method": "B02-MLS",
+      "false_free_points": 221,
+      "output_points": 7996
+    },
+    {
+      "width_mm": 1.2,
+      "method": "B03-Hybrid",
+      "false_free_points": 84,
+      "output_points": 8309
+    },
+    {
+      "width_mm": 1.2,
+      "method": "B04-Clearance",
+      "false_free_points": 67,
+      "output_points": 8138
+    },
+    {
+      "width_mm": 1.2,
+      "method": "B05-Anchor",
+      "false_free_points": 2,
+      "output_points": 3920
+    },
+    {
+      "width_mm": 1.8,
+      "method": "B01-TSDF",
+      "false_free_points": 91,
+      "output_points": 7643
+    },
+    {
+      "width_mm": 1.8,
+      "method": "B02-MLS",
+      "false_free_points": 512,
+      "output_points": 8349
+    },
+    {
+      "width_mm": 1.8,
+      "method": "B03-Hybrid",
+      "false_free_points": 199,
+      "output_points": 8584
+    },
+    {
+      "width_mm": 1.8,
+      "method": "B04-Clearance",
+      "false_free_points": 62,
+      "output_points": 8285
+    },
+    {
+      "width_mm": 1.8,
+      "method": "B05-Anchor",
+      "false_free_points": 1,
+      "output_points": 4037
+    },
+    {
+      "width_mm": 2.8,
+      "method": "B01-TSDF",
+      "false_free_points": 58,
+      "output_points": 7662
+    },
+    {
+      "width_mm": 2.8,
+      "method": "B02-MLS",
+      "false_free_points": 214,
+      "output_points": 8205
+    },
+    {
+      "width_mm": 2.8,
+      "method": "B03-Hybrid",
+      "false_free_points": 172,
+      "output_points": 8665
+    },
+    {
+      "width_mm": 2.8,
+      "method": "B04-Clearance",
+      "false_free_points": 24,
+      "output_points": 8326
+    },
+    {
+      "width_mm": 2.8,
+      "method": "B05-Anchor",
+      "false_free_points": 0,
+      "output_points": 4139
+    }
+  ]
+}
